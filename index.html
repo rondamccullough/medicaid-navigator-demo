@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radiant Motive Navigator Demo: Medicaid 2027</title>
+</head>
+<body>
+
+    <!-- Main Navigation Header -->
+    <header>
+        <div class="logo-area">
+            <span class="status-indicator" aria-hidden="true">🟢</span>
+            <strong>RADIANT MOTIVE NAVIGATOR DEMO: MEDICAID 2027</strong>
+        </div>
+        <nav aria-label="Language options">
+            <ul>
+                <li><a href="?lang=en" lang="en" aria-current="true">English</a></li>
+                <li><a href="?lang=es" lang="es">Español</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Navigator Workspace -->
+    <main>
+        <!-- Application Meta & Progress Banner -->
+        <section class="meta-banner" aria-label="Metadata and Progress">
+            <p class="guide-title">Maryland Medicaid 2027 guide</p>
+            <p class="disclaimer"><em>General information only, not legal or eligibility advice.</em></p>
+            <p class="verification-date"><small>Content last verified Nov. 5, 2026</small></p>
+            
+            <!-- Progress Tracker -->
+            <div class="progress-tracker">
+                <span class="step-indicator">Step 1 of 4</span> • 
+                <span class="step-name">Objective Discovery</span>
+            </div>
+        </section>
+
+        <!-- Dynamic Content Node (WELCOME_SCREEN) -->
+        <article id="welcome-screen-node" data-logic-node="WELCOME_SCREEN">
+            <h1>Let's make navigating your benefits easier.</h1>
+            
+            <p>Maryland is preparing structural changes to certain Medicaid eligibility and renewal requirements beginning in 2027.</p>
+            <p>Select your core objective today to initiate a personalized guidance track. We do not make eligibility decisions or ask for personal documentation.</p>
+
+            <!-- Accessible Disclosure Widget for Contextual Help -->
+            <details class="contextual-help">
+                <summary>💡 Why am I being asked this?</summary>
+                <div class="help-content">
+                    <p>Your objective helps us filter out irrelevant policy tracks so you only see info that applies directly to your situation.</p>
+                </div>
+            </details>
+            
+            <!-- Dynamic Choice Actions (Placeholder UI targets) -->
+            <div class="action-grid" role="group" aria-label="Select your core objective">
+                <!-- Add your navigation target buttons here in your interactive code -->
+            </div>
+        </article>
+    </main>
+
+    <!-- Auxiliary Demo Features (Simulated Sandbox Data) -->
+    <aside aria-labelledby="demo-analytics-heading">
+        <h2 id="demo-analytics-heading">Demo Analytics Preview (simulated)</h2>
+        <p>Shows the kind of anonymous, aggregate events a deployed version could report to a sponsor. Simulated for this demo; nothing is stored or sent.</p>
+        
+        <div class="debug-status-pill">
+            <span>Active Logic Node:</span> <code>WELCOME_SCREEN</code>
+        </div>
+    </aside>
+
+</body>
+</html>
