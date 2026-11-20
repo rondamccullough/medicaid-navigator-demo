@@ -1,0 +1,8 @@
+[functions]
+  directory = "netlify/functions"
+
+# Serve index.html for clinic slugs like /chase-brexton (real files and functions still win)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

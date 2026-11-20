@@ -2,73 +2,738 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radiant Motive Navigator Demo: Medicaid 2027</title>
-    <link rel="stylesheet" href="style.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="dark">
+    <title>Medicaid 2027 Guide | Radiant Motive Navigator</title>
+    <style>
+        :root { box-sizing: border-box; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); color-scheme: dark; }
+        html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+        .opt { display: block; width: 100%; text-align: left; background-color: #0f172a; color: #f8fafc; border: 1px solid #334155; border-radius: 8px; padding: 14px; margin-bottom: 10px; font-size: 14px; font-family: inherit; cursor: pointer; }
+        .opt:hover, .opt:focus-visible { border-color: #2dd4bf; background-color: #134e4a; outline: none; }
+        #result-panel { margin-bottom: 20px; }
+        .answer { background-color: #022c22; border: 1px solid #10b981; border-radius: 10px; padding: 16px; }
+        .answer h2 { margin: 0 0 8px; font-size: 18px; color: #6ee7b7; }
+        .answer ol { margin: 8px 0 0; padding-left: 20px; font-size: 14px; line-height: 1.6; color: #e2e8f0; }
+        .cta { display: block; text-align: center; background-color: #10b981; color: #022c22 !important; font-weight: bold; text-decoration: none; padding: 14px; border-radius: 8px; margin-top: 14px; font-size: 15px; }
+        .dir-label { font-size: 12px; color: #94a3b8; font-weight: bold; text-transform: uppercase; margin: 16px 0 6px; }
+        select { width: 100%; background-color: #0f172a; color: #f8fafc; border: 1px solid #334155; border-radius: 8px; padding: 12px; font-size: 14px; font-family: inherit; }
+        .card { background-color: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 13px; line-height: 1.6; color: #cbd5e1; }
+        .card strong { color: #fff; font-size: 14px; }
+        .card a { color: #2dd4bf; }
+        .muted { color: #94a3b8; font-size: 12px; }
+        @media print {
+            body * { visibility: hidden; }
+            #result-panel, #result-panel * { visibility: visible; color: #000 !important; background: #fff !important; }
+            #result-panel { position: absolute; left: 0; top: 0; width: 100%; }
+            .no-print { display: none !important; }
+            .answer, .card, .acc { border: 1px solid #999 !important; }
+        }
+        .lang { background: #0f172a; color: #cbd5e1; border: 1px solid #334155; border-radius: 6px; padding: 4px 8px; font-size: 12px; cursor: pointer; margin-left: 0; }
+        .lang[aria-pressed="true"] { background: #10b981; color: #022c22; font-weight: bold; border-color: #10b981; }
+        .acc { background-color: #0f172a; border: 1px solid #334155; border-radius: 8px; margin-bottom: 8px; }
+        .acc summary { cursor: pointer; padding: 12px; font-size: 14px; font-weight: bold; color: #fff; }
+        .accb { padding: 0 12px 12px; font-size: 13px; line-height: 1.6; color: #cbd5e1; }
+        .accb ul { margin: 6px 0 0; padding-left: 18px; }
+        .accb a { color: #2dd4bf; }
+        .chk { display: flex; gap: 10px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid #14532d; font-size: 13px; line-height: 1.5; cursor: pointer; }
+        .chk input { margin-top: 4px; width: 18px; height: 18px; flex: none; }
+    </style>
 </head>
-<body>
+<body style="background-color: #0f172a; color: #f8fafc; font-family: sans-serif; padding: 20px; margin: 0;">
 
-    <!-- Main Navigation Header -->
-    <header>
-        <div class="logo-area">
-            <span class="status-indicator" aria-hidden="true">🟢</span>
-            <strong>RADIANT MOTIVE NAVIGATOR DEMO: MEDICAID 2027</strong>
+    <!-- HEADER AREA -->
+    <div style="background-color: #020617; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #1e293b;">
+        <span style="color: #10b981; font-weight: bold; font-size: 16px;">🟢 RADIANT MOTIVE NAVIGATOR DEMO: MEDICAID 2027</span>
+        <div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px;"><button class="lang" id="lang-en" aria-pressed="true" onclick="setLang('en')">English</button><button class="lang" id="lang-es" aria-pressed="false" onclick="setLang('es')">Español</button><button class="lang" id="lang-zh" aria-pressed="false" onclick="setLang('zh')">中文</button><button class="lang" id="lang-ko" aria-pressed="false" onclick="setLang('ko')">한국어</button><button class="lang" id="lang-vi" aria-pressed="false" onclick="setLang('vi')">Tiếng Việt</button></div>
+        <div id="hdr-sub" style="color: #94a3b8; font-size: 11px; margin-top: 6px; line-height: 1.5;">Maryland Medicaid 2027 guide • General information only, not legal or eligibility advice • Rules last reviewed Nov. 20, 2026. Confirm contact details by phone</div>
+    </div>
+
+    <!-- MAIN APP SCREEN INTERFACE -->
+    <div style="background-color: #1e293b; padding: 20px; border-radius: 12px; border: 1px solid #334155; margin-bottom: 30px;">
+        <button id="back-btn" class="lang" style="display:none;margin:0 0 10px 0" onclick="goBack()">← Back</button>
+        <div id="step-badge" style="color: #2dd4bf; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Step 1 of 4 • Objective Discovery</div>
+
+        <h1 id="app-title" style="font-size: 24px; color: #ffffff; margin-top: 10px; margin-bottom: 10px;">Let’s make navigating your benefits easier.</h1>
+        <p id="app-subtitle" style="color: #cbd5e1; font-size: 14px; line-height: 1.5; margin-bottom: 20px;">Maryland is preparing structural changes to certain Medicaid eligibility and renewal requirements beginning in 2027.</p>
+
+        <div id="app-explanation" style="background-color: #020617; padding: 12px; border-radius: 6px; font-size: 13px; color: #94a3b8; margin-bottom: 20px; border: 1px solid #1e293b;">
+            Select your core objective today to initiate a personalized guidance track. We do not make eligibility decisions or ask for personal documentation.
         </div>
-        <nav aria-label="Language options">
-            <ul>
-                <li><a href="?lang=en" lang="en" aria-current="true">English</a></li>
-                <li><a href="?lang=es" lang="es">Español</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Main Navigator Workspace -->
-    <main>
-        <!-- Application Meta & Progress Banner -->
-        <section class="meta-banner" aria-label="Metadata and Progress">
-            <p class="guide-title">Maryland Medicaid 2027 guide</p>
-            <p class="disclaimer"><em>General information only, not legal or eligibility advice.</em></p>
-            <p class="verification-date"><small>Content last verified Nov. 5, 2026</small></p>
-            
-            <!-- Progress Tracker -->
-            <div class="progress-tracker">
-                <span class="step-indicator">Step 1 of 4</span> • 
-                <span class="step-name">Objective Discovery</span>
-            </div>
-        </section>
+        <div id="result-panel"></div>
+        <div id="buttons-container"></div>
 
-        <!-- Dynamic Content Node (WELCOME_SCREEN) -->
-        <article id="welcome-screen-node" data-logic-node="WELCOME_SCREEN">
-            <h1>Let's make navigating your benefits easier.</h1>
-            
-            <p>Maryland is preparing structural changes to certain Medicaid eligibility and renewal requirements beginning in 2027.</p>
-            <p>Select your core objective today to initiate a personalized guidance track. We do not make eligibility decisions or ask for personal documentation.</p>
+        <!-- CONTEXTUAL ASSISTANCE DRAWER -->
+        <div style="margin-top: 20px; border-top: 1px solid #334155; padding-top: 15px;">
+            <button onclick="toggleHelp()" style="background: none; border: none; color: #2dd4bf; text-decoration: underline; font-size: 13px; cursor: pointer; padding: 0;"><span id="help-label">💡 Why am I being asked this?</span></button>
+            <div id="help-drawer" style="display: none; background-color: #020617; padding: 12px; border-radius: 6px; font-size: 12px; color: #94a3b8; margin-top: 10px; border-left: 3px solid #2dd4bf;"></div>
+        </div>
+    </div>
 
-            <!-- Accessible Disclosure Widget for Contextual Help -->
-            <details class="contextual-help">
-                <summary>💡 Why am I being asked this?</summary>
-                <div class="help-content">
-                    <p>Your objective helps us filter out irrelevant policy tracks so you only see info that applies directly to your situation.</p>
-                </div>
-            </details>
-            
-            <!-- Dynamic Choice Actions (Placeholder UI targets) -->
-            <div class="action-grid" role="group" aria-label="Select your core objective">
-                <!-- Add your navigation target buttons here in your interactive code -->
-            </div>
-        </article>
-    </main>
+    <!-- INVESTOR TELEMETRY PANEL LAYER -->
+    <div class="muted" style="line-height: 1.6; margin-bottom: 12px;">Privacy: this tool does not ask for your name, ID, or health details, and it stores nothing. It gives general information only. Maryland decides eligibility. Rules last reviewed Nov. 20, 2026. Confirm contact details by phone. <button class="lang" style="margin-left: 0;" onclick="toggleDemo()">Show demo analytics (investor view)</button></div>
+    <div id="demo-panel" style="display: none; background-color: #020617; padding: 15px; border-radius: 8px; border: 1px solid #1e293b;">
+        <div style="font-size: 12px; color: #94a3b8; font-weight: bold; text-transform: uppercase;">Demo Analytics Preview (simulated)</div>
+        <div style="font-size: 11px; color: #64748b; margin-top: 4px; margin-bottom: 10px;">Shows the kind of anonymous, aggregate events a deployed version could report to a sponsor. Simulated for this demo; nothing is stored or sent.</div>
 
-    <!-- Auxiliary Demo Features (Simulated Sandbox Data) -->
-    <aside aria-labelledby="demo-analytics-heading">
-        <h2 id="demo-analytics-heading">Demo Analytics Preview (simulated)</h2>
-        <p>Shows the kind of anonymous, aggregate events a deployed version could report to a sponsor. Simulated for this demo; nothing is stored or sent.</p>
+        <div style="font-size: 12px; font-family: monospace; margin-bottom: 6px;">
+            Active Logic Node: <span id="telemetry-node" style="color: #f59e0b;">WELCOME_SCREEN</span>
+        </div>
+        <pre id="telemetry-json" style="background-color: #0f172a; padding: 10px; border-radius: 4px; border: 1px solid #1e293b; color: #2dd4bf; font-family: monospace; font-size: 11px; margin: 0; overflow-x: auto;"></pre>
+    </div>
+
+    <script>
+        const navigationEngine = {
+            "WELCOME_SCREEN": {
+                "step": "", "name": "Start here",
+                "title": "Who are you helping today?",
+                "subtitle": "Maryland Medicaid changes for some adults begin January 1, 2027. Choose the path that fits you.",
+                "explanation": "This tool gives information only. It does not decide eligibility or ask for personal documents.",
+                "help": "Members, providers, and employers each need different information. Choosing a path avoids unnecessary questions.",
+                "options": [
+                    { "text": "I am a Medicaid member or applicant", "next": "MEMBER_START" },
+                    { "text": "I am a healthcare provider or clinic staff", "next": "PROVIDER_HUB" },
+                    { "text": "I am an employer or HR professional", "next": "EMPLOYER_HUB" }
+                ]
+            },
+            "PROVIDER_HUB": {
+                "step": "", "name": "For Healthcare Providers",
+                "title": "Be the trusted messenger your patients need.",
+                "subtitle": "Maryland has asked providers to help raise early awareness of the January 2027 Medicaid work and renewal changes.",
+                "explanation": "The state asks providers to use its toolkits, display flyers, update patient portals, and point patients to official information sites.",
+                "help": "Patients trust their care teams. A short, accurate message from you can prevent a coverage gap.",
+                "options": [
+                    { "text": "See the member path my patients will follow", "next": "MEMBER_START" },
+                    { "text": "Choose a different path", "next": "WELCOME_SCREEN" }
+                ]
+            },
+            "EMPLOYER_HUB": {
+                "step": "", "name": "For Employers",
+                "title": "Help your workers find trusted answers.",
+                "subtitle": "Maryland has asked employers, especially of lower-wage, part-time, or seasonal staff, to guide workers to trusted information.",
+                "explanation": "Employers are not responsible for deciding Medicaid eligibility. You can point workers to official help and provide work records they request.",
+                "help": "Workers may ask you for proof of hours and wages. A quick, accurate response helps them keep coverage.",
+                "options": [
+                    { "text": "See the member path my workers will follow", "next": "MEMBER_START" },
+                    { "text": "Choose a different path", "next": "WELCOME_SCREEN" }
+                ]
+            },
+            "COVERAGE_ENDED": {
+                "step": "x", "name": "Coverage Denied or Ended",
+                "title": "My coverage was denied or ended.",
+                "subtitle": "Act quickly. You generally have 90 days to appeal.",
+                "explanation": "Follow the steps below, then choose your county to see free local help.",
+                "help": "Appeal deadlines are short. A navigator or Maryland Legal Aid can help at no cost.",
+                "options": [
+                    { "text": "Back to start", "next": "WELCOME_SCREEN" }
+                ]
+            },
+            "MEMBER_START": {
+                "step": "1 of 4", "name": "Choose your goal",
+                "title": "Let’s make navigating your benefits easier.",
+                "subtitle": "Maryland is preparing structural changes to certain Medicaid eligibility and renewal requirements beginning in 2027.",
+                "explanation": "Select your core objective today to initiate a personalized guidance track. We do not make eligibility decisions or ask for personal documentation.",
+                "help": "Different objectives require structurally distinct guidance tracks. Selecting a precise option prevents unnecessary questions and isolates the exact state rules that apply to your situation.",
+                "options": [
+                    { "text": "What is changing in 2027, and when?", "next": "RULES_OVERVIEW" },
+                    { "text": "What papers prove my hours or my exemption?", "next": "PROOF_GUIDE" },
+                    { "text": "Understanding a Medicaid notice I received", "next": "UNDERSTAND_NOTICE" },
+                    { "text": "I am not sure whether the new requirements apply to me", "next": "SCREEN_APPLICABILITY" },
+                    { "text": "Preparing for an upcoming eligibility renewal", "next": "PREPARE_RENEWAL" },
+                    { "text": "I think I may be exempt from the new work rules", "next": "EXPLORE_EXEMPTIONS" },
+                    { "text": "My coverage was denied or ended", "next": "COVERAGE_ENDED" }
+                ]
+            },
+            "RULES_OVERVIEW": {
+                "step": "2 of 4", "name": "Know the Rules",
+                "title": "What is changing, and when.",
+                "subtitle": "Federal law H.R. 1 changes Maryland Medicaid for some adults starting in 2027.",
+                "explanation": "Tap a topic to read the short answer, then choose your next step.",
+                "help": "Knowing which rules apply to you first saves time. Most people are affected by only some of these changes.",
+                "options": [
+                    { "text": "Check whether I am exempt", "next": "EXPLORE_EXEMPTIONS" },
+                    { "text": "See what papers prove my hours or exemption", "next": "PROOF_GUIDE" },
+                    { "text": "Get help from a local navigator", "next": "CONNECT_ASSISTANCE" }
+                ]
+            },
+            "PROOF_GUIDE": {
+                "step": "3 of 4", "name": "Proof Guide",
+                "title": "What to have ready, and how to send it.",
+                "subtitle": "Maryland checks its own records first. You are only asked for papers it cannot find.",
+                "explanation": "Open the section that matches how you meet the rule.",
+                "help": "Sending the right proof the first time prevents delays and wrongful coverage loss.",
+                "options": [
+                    { "text": "My papers are ready", "next": "FINAL_CONFIRMATION" },
+                    { "text": "I am missing papers and need help", "next": "CONNECT_ASSISTANCE" },
+                    { "text": "Check whether I am exempt instead", "next": "EXPLORE_EXEMPTIONS" }
+                ]
+            },
+            "UNDERSTAND_NOTICE": {
+                "step": "2 of 4", "name": "Read your notice",
+                "title": "Let’s interpret your state notice.",
+                "subtitle": "Your physical or digital notice is the legal starting point for understanding what the state expects you to verify.",
+                "explanation": "Look at the top of your notice. Which of these is closest to what yours says?",
+                "help": "If you lost your notice or cannot understand it, choose the last option. We will connect you with someone who can help you find your account.",
+                "options": [
+                    { "text": "It says ‘Action Required’ with an explicit renewal date", "next": "PREPARE_RENEWAL" },
+                    { "text": "It mentions new work, volunteering, or training rules", "next": "EXPLORE_EXEMPTIONS" },
+                    { "text": "I cannot understand my notice, or I lost it", "next": "CONNECT_ASSISTANCE" }
+                ]
+            },
+            "SCREEN_APPLICABILITY": {
+                "step": "2 of 4", "name": "Do the rules apply to you?",
+                "title": "Let’s figure out if these updates apply to you.",
+                "subtitle": "Not everyone enrolled in Maryland Medicaid is subject to the new work and twice-a-year renewal rules.",
+                "explanation": "Have you received a letter or message from Maryland Health Connection about these changes?",
+                "help": "Some groups, such as people under 19 or 65 and older, are not subject to the work rules. This question points you to the right path.",
+                "options": [
+                    { "text": "Yes, I received a notice and need to check what it means", "next": "UNDERSTAND_NOTICE" },
+                    { "text": "No, I have not received a notice yet", "next": "VERIFY_TIMELINES" }
+                ]
+            },
+            "EXPLORE_EXEMPTIONS": {
+                "step": "3 of 4", "name": "Check exemptions",
+                "title": "Understanding your work & training exemptions.",
+                "subtitle": "The 2027 rules mandate 80 hours per month of approved activities unless you meet clear state exemption categories.",
+                "explanation": "Check every box that applies. Maryland looks at its records first, so you may already be marked exempt.",
+                "help": "Approved activities include work, job training, school, and volunteering. If you may qualify for an exemption, we show you what proof to gather.",
+                "options": [
+                    { "text": "I think I qualify and need help proving it", "next": "CONNECT_ASSISTANCE" },
+                    { "text": "None apply. Show me what proves my 80 hours", "next": "PROOF_GUIDE" }
+                ]
+            },
+            "PREPARE_RENEWAL": {
+                "step": "3 of 4", "name": "Get your papers ready",
+                "title": "Let’s align your verification documents.",
+                "subtitle": "Missing or incomplete papers can delay or stop your renewal.",
+                "explanation": "Before you upload anything, gather what your notice asks for. This may include recent pay stubs, school or training records, or a provider’s exemption letter.",
+                "help": "Missing papers can delay or stop your renewal. If something is missing, a navigator can help you ask for more time.",
+                "options": [
+                    { "text": "My documents are ready", "next": "FINAL_CONFIRMATION" },
+                    { "text": "I am missing papers and need help", "next": "CONNECT_ASSISTANCE" }
+                ]
+            },
+            "VERIFY_TIMELINES": {
+                "step": "2 of 4", "name": "Check your dates",
+                "title": "You have no active deadline right now.",
+                "subtitle": "You have not received a notice yet. That does not mean the new rules will not apply to you.",
+                "explanation": "The rules start in stages during 2027. Check your account every two months so your information is up to date before a renewal notice arrives.",
+                "help": "Keeping your information current helps you avoid missing a change.",
+                "options": [
+                    { "text": "Restart Demo Engine & Check Alternative Paths", "next": "WELCOME_SCREEN" }
+                ]
+            },
+            "CONNECT_ASSISTANCE": {
+                "step": "4 of 4", "name": "Talk to a person",
+                "title": "Let’s connect you directly with a local navigator.",
+                "subtitle": "A trained community navigator can walk through your notice, exemptions, or missing paperwork with you, at no cost.",
+                "explanation": "Free, in-person and phone help is available in every Maryland county. Choose your area below to see who to call.",
+                "help": "Some situations are better handled by a person than by a screen. A navigator can see details of your case that this tool never collects or stores.",
+                "options": [
+                    { "text": "Restart Demo Engine", "next": "WELCOME_SCREEN" }
+                ]
+            },
+            "FINAL_CONFIRMATION": {
+                "step": "4 of 4", "name": "Submit your documents",
+                "title": "You are ready to move forward.",
+                "subtitle": "Your documentation package is organized, which is the biggest factor in avoiding an unnecessary coverage gap.",
+                "explanation": "Your next move is below. Submit before the date on your notice and keep proof.",
+                "help": "Keeping proof of what you submitted and when protects you if a document is misplaced or a decision needs to be appealed.",
+                "options": [
+                    { "text": "Restart Demo Engine", "next": "WELCOME_SCREEN" }
+                ]
+            }
+        };
+
+        let history = [];
+        let selectedRegion = '';
+
+        const MHC = { name: 'Maryland Health Connection (statewide help line)', phone: '855-642-8572', note: 'Weekdays 8 a.m.–6 p.m. TTY 711. Help in 200+ languages. Can also help you renew by phone.', web: 'https://www.marylandhealthconnection.gov/help', webLabel: 'Find free help near you' };
+        const CE = {
+            HCAM: { name: 'HealthCare Access Maryland (state Connector program)', phone: '410-500-4710', note: 'Toll-free 855-288-3667. Free help with Medicaid, in person and by phone.', web: 'https://www.healthcareaccessmaryland.org/how-we-help/health-insurance/', webLabel: 'healthcareaccessmaryland.org' },
+            AHEC: { name: 'AHEC West Health Insurance Program (state Connector program)', phone: '888-202-0212', note: 'Free help with Medicaid, in person and by phone.', web: 'https://ahecwest.org', webLabel: 'ahecwest.org' },
+            SEEDU: { name: 'Seedco, Upper Eastern Shore (state Connector program)', phone: '866-492-6057', note: 'Free help with Medicaid. Call to schedule an appointment.', web: 'https://www.seedco.org/maryland/', webLabel: 'seedco.org/maryland' },
+            SEEDS: { name: 'Seedco, Southern Maryland (state Connector program)', phone: '855-339-3007', note: 'Free help with Medicaid. Call to schedule an appointment.', web: 'https://seedco.org/marylandhealth/', webLabel: 'seedco.org/marylandhealth' },
+            MONT: { name: 'Montgomery County Health Connection', phone: '240-777-1815', note: 'Weekdays 8 a.m.–4:30 p.m.', web: 'https://www.montgomerycountymd.gov/healthconnect/', webLabel: 'Montgomery County Health Connection' }
+        };
+        const COUNTIES = [
+            ['Allegany', 'AHEC', '1 Frederick St., Cumberland, MD 21502', '(301) 784-7000', '12501 Willowbrook Rd., Cumberland, MD 21502', '(301) 759-5000', 'AHEC West office: 39 Baltimore St., Cumberland, MD 21502'],
+            ['Anne Arundel', 'HCAM', 'Annapolis: 80 West St., 21401, (410) 269-4500. Glen Burnie: 7500 Ritchie Hwy., 21061, (410) 269-4555.', '', '1 Harry S. Truman Pkwy., Suite 200, Annapolis, MD 21401', '(410) 222-7095', 'County Medicaid Eligibility & Enrollment: 443-510-7784 (appointments)'],
+            ['Baltimore City', 'HCAM', 'Harbor View: 18 Reedbird Ave., 21225, (443) 423-4700. Northeast: 2000 N. Broadway, 21213, (443) 423-6400. Northwest: 5818 Reisterstown Rd., 21215, (443) 378-4400. More offices at dhs.maryland.gov.', '', '201 E. Baltimore St., 9th Fl., Baltimore, MD 21202', '(410) 649-0500', ''],
+            ['Baltimore County', 'HCAM', 'Towson: 6401 York Rd., 21212, (410) 853-3340. Catonsville: 746 Frederick Rd., 21228, (410) 853-3450. Dundalk: 1400 Merritt Blvd., Suite C, 21222, (410) 853-3400. Essex: 439 Eastern Ave., 21221, (410) 853-3800. Reisterstown: 130 Chartley Dr., 21136, (410) 853-3010.', '', '6401 York Rd., 3rd Fl., Baltimore, MD 21212', '(410) 887-2243', ''],
+            ['Calvert', 'SEEDS', '200 Duke St., Prince Frederick, MD 20678', '(443) 550-6900', '975 Solomons Island Rd. N., Prince Frederick, MD 20678', '(410) 535-5400', ''],
+            ['Caroline', 'SEEDU', '207 S. Third St., Denton, MD 21629', '(410) 819-4500', '403 S. 7th St., Denton, MD 21629', '(410) 479-8000', ''],
+            ['Carroll', 'AHEC', '1232 Tech Ct., Suite 1, Westminster, MD 21157', '(410) 386-3300', '290 S. Center St., Westminster, MD 21157', '(410) 876-2152', ''],
+            ['Cecil', 'SEEDU', '170 E. Main St., Elkton, MD 21921', '(410) 996-0100', '401 Bow St., Elkton, MD 21921', '(410) 996-5550', ''],
+            ['Charles', 'SEEDS', '200 Kent Ave., La Plata, MD 20646', '(301) 392-6400', '4545 Crain Hwy., White Plains, MD 20695', '(301) 609-6900', 'Seedco storefront: 3 Post Office Rd., Suite 102, Waldorf, MD 20602'],
+            ['Dorchester', 'SEEDU', '627 Race St., Cambridge, MD 21613', '(410) 901-4100', '3 Cedar St., Cambridge, MD 21613', '(410) 228-3223', ''],
+            ['Frederick', 'AHEC', '100 E. All Saints St., Frederick, MD 21701', '(301) 600-4555', '350 Montevue Ln., Frederick, MD 21702', '(301) 600-1029', ''],
+            ['Garrett', 'AHEC', '12578 Garrett Hwy., Oakland, MD 21550', '(301) 533-3000', '1025 Memorial Dr., Oakland, MD 21550', '(301) 334-7720', 'Navigator site: Garrett FQHC, Mt. Laurel Center, 1027 Memorial Dr., Oakland, MD 21550'],
+            ['Harford', 'SEEDU', '2 S. Bond St., Suite 300, Bel Air, MD 21014', '(410) 836-4700', '34 N. Philadelphia Blvd., Suite 216, Aberdeen, MD 21001', '(410) 273-5626', ''],
+            ['Howard', 'HCAM', '7121 Columbia Gateway Dr., Columbia, MD 21046', '(410) 872-8700', '8930 Stanford Blvd., Columbia, MD 21046', '(410) 313-6300', 'County Medicaid help line: 410-313-5845 (medicaid@howardcountymd.gov)'],
+            ['Kent', 'SEEDU', '350 High St., Chestertown, MD 21620', '(410) 810-7600', '125 S. Lynchburg St., Chestertown, MD 21620', '(410) 778-1350', ''],
+            ['Montgomery', 'MONT', 'Rockville: 1301 Piccard Dr., 2nd Fl., 20850, (240) 777-4600. Silver Spring: 8818 Georgia Ave., 20910, (240) 777-3100. Germantown: 12900 Middlebrook Rd., 20874, (240) 777-3420.', '', 'Rockville: 1335 Piccard Dr., 2nd Fl. Silver Spring: 8630 Fenton St., 10th Fl. Germantown: 12900 Middlebrook Rd.', '(240) 777-0311', ''],
+            ['Prince George’s', 'HCAM', 'Hyattsville: 6505 Belcrest Rd., 20782, (301) 209-5000. Landover: 425 Brightseat Rd., 20785, (301) 909-6000. Temple Hills: 4235 28th St., 20748, (301) 316-7700.', '', '425 Brightseat Rd., #101C, Landover, MD 20785', '(301) 883-7879', ''],
+            ['Queen Anne’s', 'SEEDU', '125 Comet Dr., Centreville, MD 21617', '(410) 758-8000', '206 N. Commerce St., #1, Centreville, MD 21617', '(410) 758-0720', ''],
+            ['St. Mary’s', 'SEEDS', '12110 Leonard Hall Dr., Leonardtown, MD 20650', '(240) 895-7000', '21580 Peabody St., Leonardtown, MD 20650', '(301) 475-4330', ''],
+            ['Somerset', 'SEEDS', '30397 Mt. Vernon Rd., Princess Anne, MD 21853', '(410) 677-4200', '7920 Crisfield Hwy., Westover, MD 21871', '(443) 523-1700', 'The state lists Seedco for Somerset. If the number above does not connect you, call 855-642-8572.'],
+            ['Talbot', 'SEEDU', '301 Bay St., Easton, MD 21601', '(410) 770-4848', '100 S. Hanson St., Easton, MD 21601', '(410) 819-5600', ''],
+            ['Washington', 'AHEC', '122 N. Potomac St., Hagerstown, MD 21740', '(240) 420-2100', '1302 Pennsylvania Ave., Hagerstown, MD 21742', '(240) 313-3200', 'AHEC West storefront: 13018 Pennsylvania Ave., Suite 1, Hagerstown, MD 21742'],
+            ['Wicomico', 'AHEC', '201 Baptist St., Suite 27, Salisbury, MD 21801', '(410) 713-3900', '108 E. Main St., Salisbury, MD 21801', '(410) 749-1244', ''],
+            ['Worcester', 'AHEC', '299 Commerce St., Snow Hill, MD 21863', '(410) 677-6800', '9730 Healthway Dr., Berlin, MD 21811', '(410) 632-1100', '']
+        ].map(function (a) { return { n: a[0], ce: a[1], dss: a[2], dp: a[3], lhd: a[4], lp: a[5], ex: a[6] }; });
+        function localCards(name) {
+            const c = COUNTIES.filter(function (x) { return x.n === name; })[0];
+            const es = lang === 'es';
+            const out = [CE[c.ce]];
+            if (c.ex) out.push({ name: es ? 'Más ayuda local' : 'More local help', note: c.ex });
+            out.push({ name: es ? 'Oficina local de Servicios Sociales (DSS)' : 'Local Dept. of Social Services (DSS)', address: c.dss, phone: c.dp, note: es ? 'Renovaciones y ayuda en persona.' : 'Renewals and in-person help.' });
+            out.push({ name: es ? 'Departamento de Salud local' : 'Local Health Department', address: c.lhd, phone: c.lp, note: es ? 'Direcciones según la lista del estado. Confirme antes de ir.' : 'Addresses are from the state’s office list. Confirm before visiting.' });
+            return out;
+        }
+        const ALWAYS = [
+            { name: 'Your local Dept. of Human Services (DHS) office', note: 'Renew or get help in person.', web: 'https://dhs.maryland.gov', webLabel: 'dhs.maryland.gov' },
+            { name: 'Maryland Medicaid Administration', address: '201 W. Preston St., Baltimore, MD 21201', web: 'https://health.maryland.gov/mmcp/pages/workrequirements.aspx', webLabel: 'Work requirement rules' },
+            { name: 'Official Maryland Medicaid Consumer FAQ (PDF)', note: 'The state’s guide to the 80-hour rule and what to expect.', web: 'https://health.maryland.gov/mmcp/Documents/Phase_1_Consumer_FAQ_Flyer_HR.pdf', webLabel: 'Open the FAQ' },
+            { name: 'Maryland Health Connection Check-In site', note: 'Review letters, check enrollment status, and update your information.', web: 'https://www.marylandhealthconnection.gov/checkin/', webLabel: 'Open Check-In' },
+            { name: 'Maryland 2-1-1', phone: '211', note: 'Free referral line for local food, housing, job-training and benefits help.', web: 'https://211md.org', webLabel: '211md.org' }
+        ];
+        let current = 'WELCOME_SCREEN';
+        const BACK = { en: '← Back', es: '← Atrás', zh: '← 返回', ko: '← 뒤로', vi: '← Quay lại' };
+        function goBack() { if (history.length > 1) { history.pop(); render(history[history.length - 1], true); } }
+        function toggleDemo() { const d = document.getElementById('demo-panel'); d.style.display = d.style.display === 'none' ? 'block' : 'none'; }
+        let lang = 'en';
+        function tr(base, id) {
+            const e = lang === 'es' ? ES[id] : (LANGS[lang] && LANGS[lang].N[id]);
+            if (!e) return (lang !== 'en' && lang !== 'es' && LANGS[lang]) ? Object.assign({}, base, { explanation: LANGS[lang].fb + ' ' + base.explanation }) : base;
+            return Object.assign({}, base, e, { options: base.options.map(function (o, i) { return { text: (e.options && e.options[i]) || o.text, next: o.next }; }) });
+        }
+        function setLang(l) {
+            lang = l;
+            document.documentElement.lang = l;
+            ['en', 'es', 'zh', 'ko', 'vi'].forEach(function (k) { document.getElementById('lang-' + k).setAttribute('aria-pressed', l === k); });
+            /* languages: see LANGS */
+            document.getElementById('hdr-sub').textContent = (LANGS[l] && LANGS[l].hdr) ? LANGS[l].hdr : l === 'es' ? 'Guía de Medicaid de Maryland 2027 • Solo información general, no asesoría legal ni de elegibilidad • Reglas revisadas el 20 de nov. de 2026' : 'Maryland Medicaid 2027 guide • General information only, not legal or eligibility advice • Rules last reviewed Nov. 20, 2026. Confirm contact details by phone';
+            render(current, true);
+        }
+        function verdictEs(n) {
+            return n ? '<strong>Es posible que esté exento (' + n + ' seleccionadas).</strong><br>Siguiente paso: entre a Maryland Health Connection para ver si el estado ya lo tiene como exento. Si no, envíe la prueba indicada arriba o llame al <a href="tel:8556428572">855-642-8572</a>. Es posible que aún deba renovar cada 6 meses.' : '<strong>No seleccionó ninguna exención.</strong><br>Prepárese para mostrar 80 horas al mes, o al menos $580 de ingresos. Use la siguiente opción para ver qué lo comprueba.';
+        }
+        const LANGS = {
+            zh: {
+                hdr: '马里兰州 Medicaid 2027 指南 • 仅提供一般信息，不构成法律或资格建议 • 规则最后审核日期：2026年11月20日',
+                help: '💡 为什么要问我这个？', step: '步骤 ', fb: '（此页面暂时只有英文版，完整翻译正在审核中。）',
+                N: {
+                    WELCOME_SCREEN: { name: '从这里开始', title: '您今天要帮助谁？', subtitle: '马里兰州 Medicaid 对部分成年人的新规定将于 2027 年 1 月 1 日开始。请选择适合您的路径。', explanation: '本工具只提供信息，不决定资格，也不要求提供个人文件。', help: '会员、医疗服务提供者和雇主需要的信息不同。选择路径可避免不必要的问题。', options: ['我是 Medicaid 会员或申请人', '我是医疗服务提供者或诊所工作人员', '我是雇主或人力资源人员'] },
+                    MEMBER_START: { name: '确定您的目标', title: '让我们帮您更轻松地了解福利。', subtitle: '马里兰州将从 2027 年起调整部分 Medicaid 资格和续期要求。', explanation: '请选择您的目标，获取个性化指引。我们不做资格决定，也不要求提供个人文件。', help: '不同目标需要不同的指引。准确选择可以避免多余的问题。', options: ['2027 年有哪些变化？何时开始？', '哪些文件可以证明我的工作时数或豁免资格？', '了解我收到的 Medicaid 通知', '我不确定新要求是否适用于我', '准备即将到来的资格续期', '我认为我可能可以豁免工作要求'] },
+                    VERIFY_TIMELINES: { name: '查看时间表', title: '您目前没有需要处理的截止日期。', subtitle: '如果您还没有收到通知，您的账户可能处于一般跟踪状态。', explanation: '新规定将在 2027 年分阶段实施。建议每两个月检查一次账户，在收到续期通知前确保信息是最新的。', help: '保持信息更新可以避免错过自动的行政变更。', options: ['返回开始'] },
+                    CONNECT_ASSISTANCE: { name: '真人协助', title: '让我们为您联系当地的导航员。', subtitle: '经过培训的社区导航员可以免费帮助您了解通知、豁免或补交文件。', explanation: '马里兰州每个县都有免费的现场和电话协助。请在下方选择您所在的县，查看该联系谁。', help: '有些情况由真人处理更好。导航员可以查看本工具不会收集的个案细节。', options: ['返回开始'] },
+                    FINAL_CONFIRMATION: { name: '最终确认', title: '您已准备好继续。', subtitle: '文件准备齐全是避免不必要的保险中断的最重要因素。', explanation: '下一步见下方。请在通知上的日期前提交，并保留凭证。', help: '保留您提交的内容和时间的凭证，可在文件遗失或需要申诉时保护您。', options: ['返回开始'] }
+                },
+                R: {
+                    VERIFY_TIMELINES: { head: '您的答案：目前没有到期事项，但请现在就开始准备。', steps: ['登录 Maryland Health Connection，确认您的电话、电子邮件和邮寄地址正确。', '收入或家庭情况有变化时，请在 10 天内报告。', '打开 Maryland Health Connection 寄来的所有信件。自 2026 年 9 月起，已向需要遵守工作要求的人寄出信件。', '工作要求和每 6 个月续期的规定自 2027 年 1 月 1 日起实施，适用于部分成年人，在其续期时生效。'], cta: { text: '立即更新我的联系信息', href: 'https://www.marylandhealthconnection.gov/CheckIn' } },
+                    CONNECT_ASSISTANCE: { head: '您的答案：本周就与真人谈谈。', steps: ['致电 855-642-8572（周一至周五，上午 8 点至下午 6 点），并要求中文服务。该热线提供 200 多种语言的协助。或在下方选择您所在的县。', '请准备好您的通知，即使不完整也没关系。请携带带照片的身份证件。', '如有证明请带上：近期工资单、在校证明或医生证明信。', '询问是否可以延长提交文件的时间，以及您是否符合豁免条件。', '如果您的保险被拒绝或终止，通常有 90 天可以申诉。Maryland Legal Aid 可以提供帮助。'], cta: { text: '立即致电 855-642-8572', href: 'tel:8556428572' } },
+                    FINAL_CONFIRMATION: { head: '您的答案：提交文件并保留凭证。', steps: ['请在通知上的日期前提交：可在 Maryland Health Connection 在线提交、按通知上的地址邮寄、到当地 DHS 办公室亲自提交，或致电 855-642-8572。', '按通知要求附上收入证明、学习或培训记录，或医疗豁免证明。', '保存您发送的所有内容的截图、收据或复印件。', '留意确认信。如果没有收到，请致电 855-642-8572。'], cta: { text: '前往 Maryland Health Connection', href: 'https://www.marylandhealthconnection.gov' } }
+                }
+            },
+            ko: {
+                hdr: '메릴랜드 메디케이드 2027 안내 • 일반 정보일 뿐이며 법률 또는 자격 조언이 아닙니다 • 규정 최종 검토일: 2026년 11월 20일',
+                help: '💡 왜 이런 질문을 하나요?', step: '단계 ', fb: '(이 화면은 현재 영어로만 제공됩니다. 전체 번역은 검토 중입니다.)',
+                N: {
+                    WELCOME_SCREEN: { name: '시작하기', title: '오늘 누구를 돕고 계신가요?', subtitle: '일부 성인에 대한 메릴랜드 메디케이드 변경이 2027년 1월 1일부터 시작됩니다. 해당하는 경로를 선택하세요.', explanation: '이 도구는 정보만 제공합니다. 자격을 결정하거나 개인 서류를 요구하지 않습니다.', help: '가입자, 의료 제공자, 고용주는 필요한 정보가 다릅니다. 경로를 선택하면 불필요한 질문을 피할 수 있습니다.', options: ['저는 메디케이드 가입자 또는 신청자입니다', '저는 의료 제공자 또는 클리닉 직원입니다', '저는 고용주 또는 인사 담당자입니다'] },
+                    MEMBER_START: { name: '목표 선택', title: '혜택 이용을 더 쉽게 도와드릴게요.', subtitle: '메릴랜드는 2027년부터 일부 메디케이드 자격 및 갱신 요건을 변경합니다.', explanation: '목표를 선택하면 맞춤 안내를 받을 수 있습니다. 자격을 결정하거나 개인 서류를 요구하지 않습니다.', help: '목표마다 필요한 안내가 다릅니다. 정확히 선택하면 불필요한 질문을 줄일 수 있습니다.', options: ['2027년에 무엇이 바뀌고 언제 시작되나요?', '근무 시간이나 면제를 증명하려면 어떤 서류가 필요한가요?', '받은 메디케이드 통지서 이해하기', '새 요건이 저에게 적용되는지 모르겠어요', '다가오는 갱신 준비하기', '근로 요건이 면제될 수 있다고 생각해요'] },
+                    VERIFY_TIMELINES: { name: '일정 확인', title: '현재 처리해야 할 마감일은 없습니다.', subtitle: '알림을 받지 않았다면 계정이 일반 추적 단계에 있을 수 있습니다.', explanation: '새 규정은 2027년에 단계적으로 시행됩니다. 갱신 통지서를 받기 전에 정보를 최신 상태로 유지하도록 두 달에 한 번 계정을 확인하세요.', help: '정보를 최신으로 유지하면 자동 행정 변경으로 인한 누락을 막을 수 있습니다.', options: ['처음으로 돌아가기'] },
+                    CONNECT_ASSISTANCE: { name: '담당자 연결', title: '지역 내비게이터와 연결해 드릴게요.', subtitle: '교육을 받은 지역사회 내비게이터가 통지서, 면제, 부족한 서류에 대해 무료로 도와드립니다.', explanation: '메릴랜드 모든 카운티에서 무료 방문 및 전화 지원을 받을 수 있습니다. 아래에서 거주하는 카운티를 선택해 연락처를 확인하세요.', help: '직접 사람과 상담하는 것이 나은 경우가 있습니다. 내비게이터는 이 도구가 수집하지 않는 사례 정보를 확인할 수 있습니다.', options: ['처음으로 돌아가기'] },
+                    FINAL_CONFIRMATION: { name: '최종 확인', title: '다음 단계로 진행할 준비가 되었습니다.', subtitle: '서류를 잘 갖추는 것이 불필요한 보험 중단을 피하는 가장 중요한 요소입니다.', explanation: '다음 단계는 아래에 있습니다. 통지서에 적힌 날짜까지 제출하고 증빙을 보관하세요.', help: '제출한 내용과 시기에 대한 증빙을 보관하면 서류가 분실되거나 이의 신청이 필요할 때 도움이 됩니다.', options: ['처음으로 돌아가기'] }
+                },
+                R: {
+                    VERIFY_TIMELINES: { head: '답변: 아직 마감일은 없지만 지금부터 준비하세요.', steps: ['Maryland Health Connection에 로그인해 전화번호, 이메일, 우편 주소가 맞는지 확인하세요.', '소득이나 가구 변경은 10일 이내에 신고하세요.', 'Maryland Health Connection에서 온 모든 편지를 열어 보세요. 2026년 9월부터 근로 요건을 충족해야 하는 분들께 편지가 발송되었습니다.', '근로 요건과 6개월마다 갱신하는 규정은 2027년 1월 1일부터 시작되며, 일부 성인에게 갱신 시점에 적용됩니다.'], cta: { text: '지금 연락처 업데이트', href: 'https://www.marylandhealthconnection.gov/CheckIn' } },
+                    CONNECT_ASSISTANCE: { head: '답변: 이번 주에 담당자와 이야기하세요.', steps: ['855-642-8572(월~금 오전 8시~오후 6시)로 전화해 한국어 지원을 요청하세요. 이 상담 전화는 200개 이상의 언어를 지원합니다. 또는 아래에서 거주 지역을 선택하세요.', '통지서를 준비하세요(불완전해도 괜찮습니다). 사진이 있는 신분증을 지참하세요.', '증빙이 있으면 가져가세요: 최근 급여명세서, 재학 증명, 또는 의사 소견서.', '서류 제출 기한 연장이 가능한지, 면제 대상인지 물어보세요.', '보험이 거부되거나 종료되면 보통 90일 이내에 이의 신청할 수 있습니다. Maryland Legal Aid가 도와드릴 수 있습니다.'], cta: { text: '지금 855-642-8572로 전화', href: 'tel:8556428572' } },
+                    FINAL_CONFIRMATION: { head: '답변: 서류를 제출하고 증빙을 보관하세요.', steps: ['통지서에 적힌 날짜까지 제출하세요: Maryland Health Connection 온라인, 통지서 주소로 우편, 지역 DHS 사무실 방문, 또는 855-642-8572 전화.', '통지서가 요구하는 대로 소득 증빙, 학업 또는 훈련 기록, 또는 의료 면제 증명서를 포함하세요.', '보낸 모든 것의 스크린샷, 영수증 또는 사본을 보관하세요.', '확인 편지를 기다리세요. 오지 않으면 855-642-8572로 전화하세요.'], cta: { text: 'Maryland Health Connection으로 이동', href: 'https://www.marylandhealthconnection.gov' } }
+                }
+            },
+            vi: {
+                hdr: 'Hướng dẫn Medicaid Maryland 2027 • Chỉ là thông tin chung, không phải tư vấn pháp lý hay xác định đủ điều kiện • Quy định xem xét lần cuối: 20/11/2026',
+                help: '💡 Tại sao tôi được hỏi điều này?', step: 'Bước ', fb: '(Màn hình này hiện chỉ có tiếng Anh. Bản dịch đầy đủ đang được xem xét.)',
+                N: {
+                    WELCOME_SCREEN: { name: 'Bắt đầu', title: 'Hôm nay bạn đang giúp ai?', subtitle: 'Các thay đổi của Medicaid Maryland đối với một số người lớn bắt đầu từ ngày 1 tháng 1 năm 2027. Hãy chọn lộ trình phù hợp với bạn.', explanation: 'Công cụ này chỉ cung cấp thông tin. Công cụ không quyết định tư cách đủ điều kiện và không yêu cầu giấy tờ cá nhân.', help: 'Hội viên, nhà cung cấp dịch vụ y tế và người sử dụng lao động cần thông tin khác nhau. Chọn đúng lộ trình giúp tránh những câu hỏi không cần thiết.', options: ['Tôi là hội viên hoặc người nộp đơn Medicaid', 'Tôi là nhà cung cấp dịch vụ y tế hoặc nhân viên phòng khám', 'Tôi là người sử dụng lao động hoặc nhân sự'] },
+                    MEMBER_START: { name: 'Chọn mục tiêu', title: 'Hãy giúp bạn dễ dàng hiểu quyền lợi của mình hơn.', subtitle: 'Từ năm 2027, Maryland sẽ thay đổi một số yêu cầu về điều kiện và gia hạn Medicaid.', explanation: 'Hãy chọn mục tiêu để nhận hướng dẫn phù hợp. Chúng tôi không quyết định tư cách đủ điều kiện và không yêu cầu giấy tờ cá nhân.', help: 'Mỗi mục tiêu cần một hướng dẫn khác nhau. Chọn chính xác giúp tránh những câu hỏi không cần thiết.', options: ['Năm 2027 có gì thay đổi và khi nào?', 'Giấy tờ nào chứng minh giờ làm hoặc diện miễn trừ của tôi?', 'Hiểu thông báo Medicaid tôi đã nhận', 'Tôi không chắc yêu cầu mới có áp dụng cho tôi không', 'Chuẩn bị cho đợt gia hạn sắp tới', 'Tôi nghĩ mình có thể được miễn quy định về việc làm'] },
+                    VERIFY_TIMELINES: { name: 'Kiểm tra mốc thời gian', title: 'Hiện tại bạn chưa có hạn chót nào.', subtitle: 'Nếu bạn chưa nhận được thông báo, tài khoản của bạn có thể đang ở diện theo dõi thông thường.', explanation: 'Các quy định sẽ được áp dụng theo từng đợt trong năm 2027. Hãy kiểm tra tài khoản hai tháng một lần để thông tin luôn cập nhật trước khi bạn nhận thông báo gia hạn.', help: 'Giữ thông tin cập nhật giúp bạn không bỏ lỡ các thay đổi hành chính tự động.', options: ['Quay lại đầu'] },
+                    CONNECT_ASSISTANCE: { name: 'Hỗ trợ trực tiếp', title: 'Hãy kết nối bạn với người hướng dẫn tại địa phương.', subtitle: 'Người hướng dẫn cộng đồng được đào tạo có thể giúp bạn hiểu thông báo, diện miễn trừ hoặc giấy tờ còn thiếu, miễn phí.', explanation: 'Mọi quận ở Maryland đều có hỗ trợ miễn phí trực tiếp và qua điện thoại. Hãy chọn quận của bạn bên dưới để biết gọi cho ai.', help: 'Một số trường hợp nên được giải quyết bởi người thật. Người hướng dẫn có thể xem chi tiết hồ sơ mà công cụ này không thu thập.', options: ['Quay lại đầu'] },
+                    FINAL_CONFIRMATION: { name: 'Xác nhận cuối', title: 'Bạn đã sẵn sàng để tiếp tục.', subtitle: 'Chuẩn bị đủ giấy tờ là yếu tố quan trọng nhất để tránh bị gián đoạn bảo hiểm không cần thiết.', explanation: 'Bước tiếp theo ở bên dưới. Hãy nộp trước ngày ghi trên thông báo và giữ lại bằng chứng.', help: 'Giữ bằng chứng về những gì bạn đã nộp và khi nào giúp bảo vệ bạn nếu giấy tờ bị thất lạc hoặc cần khiếu nại.', options: ['Quay lại đầu'] }
+                },
+                R: {
+                    VERIFY_TIMELINES: { head: 'Câu trả lời của bạn: chưa có gì đến hạn, nhưng hãy chuẩn bị ngay bây giờ.', steps: ['Đăng nhập Maryland Health Connection và xác nhận số điện thoại, email và địa chỉ gửi thư của bạn là chính xác.', 'Báo cáo thay đổi về thu nhập hoặc hộ gia đình trong vòng 10 ngày.', 'Mở mọi thư từ Maryland Health Connection. Từ tháng 9 năm 2026, thư đã được gửi cho những người phải đáp ứng quy định về việc làm.', 'Quy định về việc làm và gia hạn mỗi 6 tháng bắt đầu từ ngày 1 tháng 1 năm 2027, áp dụng cho một số người lớn, vào đợt gia hạn của họ.'], cta: { text: 'Cập nhật thông tin liên lạc ngay', href: 'https://www.marylandhealthconnection.gov/CheckIn' } },
+                    CONNECT_ASSISTANCE: { head: 'Câu trả lời của bạn: hãy nói chuyện với một người trong tuần này.', steps: ['Gọi 855-642-8572 (thứ Hai đến thứ Sáu, 8 giờ sáng đến 6 giờ chiều) và yêu cầu hỗ trợ tiếng Việt. Đường dây này hỗ trợ hơn 200 ngôn ngữ. Hoặc chọn khu vực của bạn bên dưới.', 'Chuẩn bị sẵn thông báo của bạn, dù chưa đầy đủ. Mang theo giấy tờ tùy thân có ảnh.', 'Mang theo bằng chứng nếu có: phiếu lương gần đây, giấy xác nhận đang đi học, hoặc thư của bác sĩ.', 'Hỏi xem có thể được thêm thời gian nộp giấy tờ không và bạn có thuộc diện miễn trừ không.', 'Nếu bảo hiểm bị từ chối hoặc chấm dứt, thông thường bạn có 90 ngày để khiếu nại. Maryland Legal Aid có thể giúp.'], cta: { text: 'Gọi 855-642-8572 ngay', href: 'tel:8556428572' } },
+                    FINAL_CONFIRMATION: { head: 'Câu trả lời của bạn: nộp giấy tờ và giữ lại bằng chứng.', steps: ['Nộp trước ngày ghi trên thông báo: trực tuyến tại Maryland Health Connection, gửi thư đến địa chỉ trên thông báo, trực tiếp tại văn phòng DHS địa phương, hoặc gọi 855-642-8572.', 'Đính kèm bằng chứng thu nhập, hồ sơ học tập hoặc đào tạo, hoặc giấy chứng nhận miễn trừ y tế, theo yêu cầu của thông báo.', 'Lưu ảnh chụp màn hình, biên nhận hoặc bản sao mọi thứ bạn gửi.', 'Chờ thư xác nhận. Nếu không nhận được, hãy gọi 855-642-8572.'], cta: { text: 'Đến Maryland Health Connection', href: 'https://www.marylandhealthconnection.gov' } }
+                }
+            }
+        };
         
-        <div class="debug-status-pill">
-            <span>Active Logic Node:</span> <code>WELCOME_SCREEN</code>
-        </div>
-    </aside>
+const ES = {
+            WELCOME_SCREEN: { name: 'Comience aquí', title: '¿A quién está ayudando hoy?', subtitle: 'Los cambios de Medicaid en Maryland para algunos adultos comienzan el 1 de enero de 2027. Elija el camino que le corresponde.', explanation: 'Esta herramienta solo ofrece información. No decide la elegibilidad ni pide documentos personales.', help: 'Miembros, proveedores y empleadores necesitan información distinta. Elegir su camino evita preguntas innecesarias.', options: ['Soy miembro o solicitante de Medicaid', 'Soy proveedor de salud o personal de una clínica', 'Soy empleador o de recursos humanos'] },
+            COVERAGE_ENDED: { name: 'Cobertura negada o terminada', title: 'Mi cobertura fue negada o terminó.', subtitle: 'Actúe rápido. Por lo general tiene 90 días para apelar.', explanation: 'Siga los pasos de abajo y elija su condado para ver ayuda local gratuita.', help: 'Los plazos para apelar son cortos. Un navegador o Maryland Legal Aid puede ayudarle sin costo.', options: ['Volver al inicio'] },
+            MEMBER_START: { name: 'Descubrir su objetivo', title: 'Hagamos más fácil entender sus beneficios.', subtitle: 'Maryland cambiará algunos requisitos de elegibilidad y renovación de Medicaid a partir de 2027.', explanation: 'Elija su objetivo para recibir una guía personalizada. No tomamos decisiones de elegibilidad ni pedimos documentos personales.', help: 'Cada objetivo requiere una guía distinta. Elegir con precisión evita preguntas innecesarias y le muestra las reglas que le corresponden.', options: ['¿Qué cambia en 2027 y cuándo?', '¿Qué documentos prueban mis horas o mi exención?', 'Entender un aviso de Medicaid que recibí', 'No sé si los nuevos requisitos se aplican a mí', 'Prepararme para una renovación próxima', 'Creo que podría estar exento de las reglas de trabajo', 'Mi cobertura fue negada o terminó'] },
+            UNDERSTAND_NOTICE: { name: 'Entender su aviso', title: 'Interpretemos el aviso del estado.', subtitle: 'Su aviso en papel o digital es el punto de partida legal para saber qué debe comprobar.', explanation: 'Mire el encabezado de su aviso o notificación del portal. ¿Cuál se parece al suyo?', help: 'Si perdió el aviso, elija la última opción. Le conectaremos con una persona que le ayude a ubicar su cuenta.', options: ['Dice “Acción requerida” con una fecha de renovación', 'Menciona nuevas reglas de trabajo, voluntariado o capacitación', 'No puedo entender el texto o el formato del aviso'] },
+            SCREEN_APPLICABILITY: { name: 'Revisar si aplica', title: 'Veamos si estos cambios le aplican.', subtitle: 'No todas las personas con Medicaid de Maryland están sujetas a las nuevas reglas de trabajo y renovación cada seis meses.', explanation: 'Primero, ¿ha recibido alguna notificación sobre su ciclo de cumplimiento?', help: 'Algunos grupos de edad y de atención médica están excluidos. Esta pregunta le lleva al camino correcto.', options: ['Sí, recibí un aviso y quiero saber qué significa', 'No, todavía no he recibido ningún aviso'] },
+            EXPLORE_EXEMPTIONS: { name: 'Verificar exenciones', title: 'Conozca sus exenciones de trabajo y capacitación.', subtitle: 'Las reglas de 2027 exigen 80 horas al mes de actividades aprobadas, salvo que usted esté en una categoría exenta.', explanation: 'Marque todo lo que aplique. Maryland revisa primero sus registros, así que quizá ya esté marcado como exento.', help: 'Las actividades aprobadas incluyen empleo, capacitación o estudios, y voluntariado. Si califica para una exención, le ayudamos a reunir la prueba.', options: ['Creo que califico y necesito ayuda para probarlo', 'Ninguna aplica. Muéstreme qué prueba mis 80 horas'] },
+            PREPARE_RENEWAL: { name: 'Preparar documentos', title: 'Organicemos sus documentos.', subtitle: 'Los envíos incompletos son la causa principal de pérdidas repentinas de cobertura.', explanation: 'Antes de subir archivos al sitio oficial, reúna: talones de pago recientes, constancias de estudios o capacitación, o certificados médicos de exención.', help: 'Enviar documentos incompletos puede causar rechazos automáticos. Si le faltan papeles, le conectamos con ayuda local.', options: ['Mis documentos están completos y organizados', 'Me faltan papeles y necesito ayuda directa'] },
+            VERIFY_TIMELINES: { name: 'Revisar fechas', title: 'Por ahora no tiene fechas límite activas.', subtitle: 'Si no ha recibido una alerta, su cuenta puede estar en un nivel de seguimiento estándar.', explanation: 'Las reglas se aplican por etapas durante 2027. Revise su cuenta cada dos meses para que su información esté al día antes de recibir un aviso de renovación.', help: 'Mantener su información al día le protege de cambios administrativos automáticos.', options: ['Volver al inicio'] },
+            CONNECT_ASSISTANCE: { name: 'Ayuda de una persona', title: 'Conectémosle con un navegador local.', subtitle: 'Un navegador comunitario capacitado puede revisar con usted su aviso, exenciones o papeles faltantes, sin costo.', explanation: 'Hay ayuda gratuita, en persona y por teléfono, en todos los condados de Maryland. Elija su zona abajo para ver a quién llamar.', help: 'Algunas situaciones se resuelven mejor con una persona. Un navegador puede ver detalles de su caso que esta herramienta nunca recopila.', options: ['Volver al inicio'] },
+            FINAL_CONFIRMATION: { name: 'Confirmación final', title: 'Está listo para avanzar.', subtitle: 'Tener sus documentos en orden es el factor más importante para evitar una interrupción innecesaria de cobertura.', explanation: 'Su siguiente paso está abajo. Envíe antes de la fecha de su aviso y guarde la prueba.', help: 'Guardar prueba de lo que envió y cuándo le protege si se pierde un documento o si necesita apelar.', options: ['Volver al inicio'] },
+            RULES_OVERVIEW: { name: 'Conozca las reglas', title: 'Qué cambia y cuándo.', subtitle: 'La ley federal H.R. 1 cambia Medicaid de Maryland para algunos adultos a partir de 2027.', explanation: 'Toque un tema para leer la respuesta corta y luego elija su siguiente paso.', help: 'Saber qué reglas le aplican le ahorra tiempo. La mayoría de las personas solo se ven afectadas por algunos de estos cambios.', options: ['Ver si estoy exento', 'Ver qué documentos prueban mis horas o exención', 'Recibir ayuda de un navegador local'] },
+            PROOF_GUIDE: { name: 'Guía de pruebas', title: 'Qué tener listo y cómo enviarlo.', subtitle: 'Maryland revisa primero sus propios registros. Solo le pide los papeles que no encuentra.', explanation: 'Abra la sección que corresponda a cómo cumple la regla.', help: 'Enviar la prueba correcta la primera vez evita demoras y pérdidas de cobertura injustas.', options: ['Mis papeles están listos', 'Me faltan papeles y necesito ayuda', 'Ver mejor si estoy exento'] }
+        };
+        const ES_ACC = {
+            RULES_OVERVIEW: [
+                ['Por qué ocurre esto', 'Una ley federal de julio de 2025 (H.R. 1, la One Big Beautiful Bill Act) cambia las reglas para el grupo de adultos de expansión de la ACA: adultos de 19 a 64 años que califican solo por ingresos, hasta 138% del nivel federal de pobreza. Unos 320,000 miembros de Maryland están afectados.'],
+                ['1. Trabajo y participación comunitaria', '<ul><li><b>80 horas al mes</b> de trabajo pagado, capacitación laboral, estudios (al menos medio tiempo) o voluntariado.</li><li><b>O ganar al menos $580 al mes</b>, equivalente a 80 horas con el salario mínimo federal.</li><li>Por lo general, las horas no se pueden acumular para compensar un mes incompleto.</li><li>No todos deben cumplirlo. <a href="#" onclick="render(\'EXPLORE_EXEMPTIONS\');return false">Revise las exenciones</a>.</li></ul>'],
+                ['2. Renovación cada 6 meses', 'Los adultos que deben cumplir las reglas de trabajo renuevan dos veces al año en lugar de una. Al renovar, quizá deba mostrar ingresos y horas de actividad. Maryland revisa primero registros de impuestos, salarios y otros.'],
+                ['3. Menos cobertura retroactiva (desde el 1 de enero de 2027)', 'Medicaid cubría hasta 3 meses de facturas anteriores a su solicitud. Ahora cubre aproximadamente 1 mes para adultos de expansión y hasta 2 meses para otros grupos.'],
+                ['4. Estatus migratorio (desde el 1 de oct. de 2026)', '<ul><li>Algunos adultos inmigrantes perdieron la elegibilidad estándar, incluidos refugiados, asilados, personas con permiso humanitario y víctimas de trata o violencia doméstica.</li><li>Los residentes permanentes (green card), entrantes cubanos y haitianos y migrantes COFA siguen siendo elegibles.</li><li>Maryland Health Connection indica que los menores de 21 años y las personas embarazadas se tratan de forma distinta. Confirme su caso con un navegador.</li></ul>'],
+                ['5. Si pierde Medicaid por no cumplir la regla de trabajo', 'Podrían negarle los créditos fiscales de prima del mercado de seguros de la ACA. Aún podría comprar un plan en Maryland Health Connection, pero a precio completo. Actúe de inmediato ante cualquier aviso. Por lo general tiene 90 días para apelar y Maryland Legal Aid puede ayudar.'],
+                ['Fechas clave', '<ul><li><b>Sept. 2026:</b> Maryland Health Connection envió cartas a quienes deberán cumplir las reglas de trabajo.</li><li><b>1 de oct. de 2026:</b> cambios de elegibilidad migratoria.</li><li><b>1 de enero de 2027:</b> comienzan las reglas. Los nuevos solicitantes pueden tener que cumplirlas el mes antes de que empiece su cobertura.</li><li><b>Inicios de 2027:</b> los miembros actuales muestran cumplimiento en su renovación regular (el estado indica marzo de 2027; otras fuentes dicen febrero a marzo).</li><li><b>Durante 2027:</b> las renovaciones cada 6 meses se aplican por etapas. Su aviso indicará su fecha exacta.</li></ul>'],
+                ['Novedades (29 de oct. de 2026)', 'Un juez federal en Boston bloqueó una definición federal más estricta de “médicamente frágil” en un caso en el que participó Maryland. Las reglas de trabajo siguen comenzando en 2027. Las reglas pueden seguir cambiando; consulte la <a href="https://health.maryland.gov/mmcp/Pages/workrequirements.aspx" target="_blank" rel="noopener noreferrer">página del estado</a>.']
+            ],
+            PROOF_GUIDE: [
+                ['Primero: verificación electrónica', 'Para facilitar la transición a las reglas de 2027, el Departamento de Salud de Maryland primero revisa bases de datos existentes, como registros de impuestos, salarios y desempleo, para confirmar sus horas o su exención. Si no puede, le enviará una carta o correo pidiéndole que suba pruebas.'],
+                ['Probar horas de trabajo o ingresos', '<ul><li><b>Empleo regular:</b> talones de pago consecutivos recientes, estado de ingresos o una carta firmada del empleador con horas y salarios.</li><li><b>Trabajo por cuenta propia:</b> declaración federal de impuestos más reciente, formularios 1099 o libros contables detallados.</li><li>Cumple la regla con 80 horas, o al menos $580 ganados en un mes.</li></ul>'],
+                ['Probar estudios, capacitación o voluntariado', '<ul><li><b>Estudios o capacitación:</b> horario de clases, expediente o constancia de inscripción de al menos medio tiempo.</li><li><b>Voluntariado:</b> un registro firmado por un supervisor de una organización sin fines de lucro, caridad o entidad pública.</li><li>Puede combinar actividades para llegar a 80 horas.</li></ul>'],
+                ['Probar una exención', '<ul><li><b>Fragilidad médica o condición grave:</b> una carta formal o formulario de certificación médica de su proveedor o clínica que explique cómo la condición limita su capacidad de trabajar. Las reglas federales permiten autodeclarar la fragilidad médica hasta 2027 si el estado no puede verificarla.</li><li><b>Cuidador:</b> acta de nacimiento de su hijo dependiente (13 años o menos), o nota de un médico que indique que su familiar tiene una discapacidad o condición que requiere cuidado completo en casa.</li><li><b>SNAP o TANF:</b> su carta de aprobación o número de caso.</li><li><b>Veterano:</b> carta de calificación de discapacidad total del VA.</li></ul>'],
+                ['¿Quiere ayuda con sus papeles?', 'Dígale a un navegador qué actividad piensa registrar (trabajo, voluntariado o estudios) o si necesita una carta médica. Puede explicarle exactamente qué debe decir. <a href="#" onclick="render(\'CONNECT_ASSISTANCE\');return false">Buscar un navegador</a>'],
+                ['Cómo enviarlo', '<ul><li>En línea o con la aplicación móvil de Maryland Health Connection (tome fotos de sus documentos).</li><li>Por correo a la dirección de su aviso.</li><li>En persona en su oficina local de DHS.</li><li>Por teléfono: 855-642-8572 (TTY 711).</li></ul>']
+            ]
+        };
+        const EX_ES = [
+            ['65 años o más, o menor de 19', 'Estas reglas cubren a adultos de 19 a 64 años con cobertura de expansión.'],
+            ['Embarazada o en el período posparto', 'Prueba: una nota de su proveedor si Maryland no la tiene.'],
+            ['Médicamente frágil, con discapacidad o con una condición de salud grave', 'Incluye ceguera, enfermedad mental grave, trastorno por uso de sustancias, discapacidad física o del desarrollo importante, o una condición grave y compleja. Prueba: carta de su proveedor.'],
+            ['Padre, madre o responsable de un menor de 13 años o menos, o cuidador de un familiar con discapacidad', 'Prueba: acta de nacimiento del menor, o nota médica del familiar.'],
+            ['Joven que estuvo en cuidado de crianza, menor de 26 años', 'Por lo general ya está en los registros del estado.'],
+            ['Veterano con calificación de discapacidad total (100%) del VA', 'Prueba: carta de calificación del VA.'],
+            ['Indígena americano o nativo de Alaska', 'Prueba: inscripción tribal o documentación similar.'],
+            ['En un programa de tratamiento por uso de sustancias', 'Prueba: carta del programa.'],
+            ['Encarcelado, o liberado en los últimos 3 meses', ''],
+            ['Inscrito en Medicare Parte A o B', ''],
+            ['Ya cumple las reglas de trabajo de SNAP o TANF', 'Su carta de aprobación o número de caso puede vincularle automáticamente.'],
+            ['Tiene Medicaid por un grupo que no es de expansión (discapacidad, personas mayores, ciegos o cobertura infantil)', 'Estos grupos no tienen las reglas de trabajo de expansión.'],
+            ['Dificultad temporal, si Maryland la aplica', 'Hospitalización reciente o viaje por atención médica, emergencia o desastre en su condado, o condado con alto desempleo. Pregunte a un navegador o a Maryland Health Connection.']
+        ];
+        function acc(items) {
+            return items.map(function (s, i) { return '<details class="acc"' + (i === 0 ? ' open' : '') + '><summary>' + s[0] + '</summary><div class="accb">' + s[1] + '</div></details>'; }).join('');
+        }
+        const EX = [
+            ['Age 65 or older, or under 19', 'These work rules cover adults 19–64 on expansion coverage.'],
+            ['Pregnant, or within the postpartum period', 'Proof: a note from your provider if Maryland does not have it.'],
+            ['Medically frail, disabled, or managing a serious health condition', 'Includes blindness, serious mental illness, substance use disorder, major physical or developmental disability, or a serious complex condition. Proof: a letter from your provider.'],
+            ['Parent or caretaker of a child 13 or younger, or caregiver of a family member with a disability', 'Proof: child’s birth certificate, or a doctor’s note for the family member.'],
+            ['Former foster youth under 26', 'Usually already in state records.'],
+            ['Veteran with a total (100%) VA disability rating', 'Proof: VA rating letter.'],
+            ['American Indian or Alaska Native', 'Proof: tribal enrollment or similar documentation.'],
+            ['In a substance use disorder treatment program', 'Proof: a letter from the program.'],
+            ['Incarcerated, or released within the last 3 months', ''],
+            ['Enrolled in Medicare Part A or B', ''],
+            ['Already meeting SNAP or TANF work rules', 'Your SNAP or TANF approval letter or case number can link you automatically.'],
+            ['On Medicaid through a non-expansion group (disability, aged, blind, or children’s coverage)', 'These groups do not face the expansion work rules.'],
+            ['Short-term hardship, if Maryland applies it', 'Recent hospital stay or travel for medical care, a county disaster or emergency, or a county with high unemployment. Ask your navigator or Maryland Health Connection.']
+        ];
+        const results = {
+            COVERAGE_ENDED: {
+                head: 'Your answer: act fast. You generally have 90 days to appeal.',
+                steps: ['Find the date on your notice. The appeal clock generally runs from that date.', 'Call Maryland Health Connection at 855-642-8572 to ask why coverage ended and what can be fixed, such as missing documents.', 'Ask for free help with an appeal from Maryland Legal Aid or a local navigator. Choose your county below.', 'Need care now? Your local health department and community health centers can help. Maryland 2-1-1 can refer you.', 'If coverage ended because the work rule was not met, you can still buy a marketplace plan, but not with premium tax credits. A navigator can explain your options.', 'You can usually apply again. Ask a navigator what to bring.'],
+                cta: { text: 'Call 855-642-8572 now', href: 'tel:8556428572' },
+                directory: true,
+                es: { head: 'Su respuesta: actúe rápido. Por lo general tiene 90 días para apelar.', steps: ['Busque la fecha de su aviso. El plazo para apelar generalmente cuenta desde esa fecha.', 'Llame a Maryland Health Connection al 855-642-8572 para preguntar por qué terminó su cobertura y qué se puede corregir, como documentos faltantes.', 'Pida ayuda gratuita para apelar a Maryland Legal Aid o a un navegador local. Elija su condado abajo.', '¿Necesita atención ahora? El departamento de salud local y los centros de salud comunitarios pueden ayudar. Maryland 2-1-1 puede referirle.', 'Si su cobertura terminó por no cumplir la regla de trabajo, aún puede comprar un plan del mercado, pero sin créditos fiscales de prima. Un navegador puede explicarle sus opciones.', 'Por lo general puede volver a solicitar. Pregunte a un navegador qué debe llevar.'], cta: { text: 'Llamar al 855-642-8572 ahora', href: 'tel:8556428572' } }
+            },
+            PROVIDER_HUB: { custom: function (p) {
+                p.innerHTML = acc([
+                    ['What the state is asking of providers', 'Beginning in January 2027, some Medicaid members face new federal work and renewal rules. Maryland asks providers to act as trusted messengers: raise early awareness and direct patients to official resources.'],
+                    ['What you can do now', '<ul><li>Use the state’s toolkits and outreach materials.</li><li>Display flyers in waiting rooms and exam rooms.</li><li>Add a notice to your patient portal, after-visit summaries, and messages.</li><li>Direct patients to the Check-In site and the Consumer FAQ.</li></ul>'],
+                    ['Four simple messages for patients', '<ul><li>Keep your contact information current in Maryland Health Connection.</li><li>Report income or household changes within 10 days.</li><li>Open every letter from Maryland Health Connection. Letters began in September 2026.</li><li>Many adults are exempt. Check, and call 855-642-8572 for free help in 200+ languages.</li></ul>'],
+                    ['If a patient needs a medical exemption letter', 'Patients with a serious health condition may need a letter or certification from their provider explaining how the condition limits their ability to work. On Oct. 29, 2026, a federal judge blocked a stricter federal definition of “medically frail” in a case Maryland joined, so definitions and forms may change. Check the state provider page before using a template. This is general information, not legal advice.'],
+                    ['Official links and examples', '<ul><li><a href="https://health.maryland.gov/mmcp/Pages/workrequirements-providers.aspx" target="_blank" rel="noopener noreferrer">Maryland Dept. of Health: provider page</a></li><li><a href="https://www.marylandhealthconnection.gov/checkin/" target="_blank" rel="noopener noreferrer">Check-In site for patients</a></li><li><a href="https://health.maryland.gov/mmcp/Documents/Phase_1_Consumer_FAQ_Flyer_HR.pdf" target="_blank" rel="noopener noreferrer">Consumer FAQ flyer (PDF)</a></li><li><a href="https://mhaonline.org/advocacy/federal/medicaid/" target="_blank" rel="noopener noreferrer">Maryland Hospital Association outreach toolkit</a></li><li><a href="https://hchmd.org/news/federal-medicaid-rules-are-changing-2027" target="_blank" rel="noopener noreferrer">Example: Health Care for the Homeless benefits help</a></li></ul>']
+                ]) + '<a class="cta" href="https://health.maryland.gov/mmcp/Pages/workrequirements-providers.aspx" target="_blank" rel="noopener noreferrer">Open the state provider page</a>';
+            } },
+            EMPLOYER_HUB: { custom: function (p) {
+                p.innerHTML = acc([
+                    ['What the state is asking of employers', 'Businesses, especially those with lower-wage, part-time, or seasonal staff, may get questions from workers about work verification and paperwork. Employers are not responsible for deciding Medicaid eligibility. Maryland encourages you to guide staff to trusted information and local workforce development tools.'],
+                    ['What your workers may ask you for', '<ul><li>Recent pay stubs or earnings statements.</li><li>A signed letter confirming hours and wages.</li><li>The rule they must meet: 80 hours a month of work, training, school, or volunteering, or at least $580 earned in a month.</li></ul>Responding quickly and accurately helps workers keep coverage.'],
+                    ['What you can do now', '<ul><li>Post or share the state’s flyer.</li><li>Tell staff to keep their contact information current in Maryland Health Connection and to open every letter.</li><li>Point workers to the Check-In site and the free help line, 855-642-8572.</li><li>Share local job training and workforce programs for workers who need more hours. Maryland 2-1-1 can refer.</li></ul>'],
+                    ['What to avoid', 'Do not decide whether a worker is eligible, ask for medical details, or promise outcomes. Send those questions to Maryland Health Connection or a local navigator.'],
+                    ['Official links', '<ul><li><a href="https://health.maryland.gov/mmcp/Pages/workrequirements-employers.aspx" target="_blank" rel="noopener noreferrer">Maryland Dept. of Health: employer page</a></li><li><a href="https://www.marylandhealthconnection.gov/checkin/" target="_blank" rel="noopener noreferrer">Check-In site for workers</a></li><li><a href="https://health.maryland.gov/mmcp/Documents/Phase_1_Consumer_FAQ_Flyer_HR.pdf" target="_blank" rel="noopener noreferrer">Consumer FAQ flyer (PDF)</a></li><li><a href="https://211md.org" target="_blank" rel="noopener noreferrer">Maryland 2-1-1</a></li></ul>']
+                ]) + '<a class="cta" href="https://health.maryland.gov/mmcp/Pages/workrequirements-employers.aspx" target="_blank" rel="noopener noreferrer">Open the state employer page</a>';
+            } },
+            RULES_OVERVIEW: { custom: function (p) {
+                p.innerHTML = acc([
+                    ['Why this is happening', 'A federal law passed in July 2025 (H.R. 1, the One Big Beautiful Bill Act) changes rules for the ACA expansion adult group: adults 19–64 who qualify based on income alone, up to 138% of the federal poverty level. About 320,000 Maryland members are affected.'],
+                    ['1. Work and community engagement', '<ul><li><b>80 hours a month</b> of paid work, job training, school (at least half-time), or volunteering.</li><li><b>Or earn at least $580 a month</b>, which equals 80 hours at the federal minimum wage.</li><li>Hours generally cannot be carried over to make up a missed month.</li><li>Not everyone must do this. <a href="#" onclick="render(\'EXPLORE_EXEMPTIONS\');return false">Check the exemptions</a>.</li></ul>'],
+                    ['2. Renewals every 6 months', 'Adults who must meet the work rules renew twice a year instead of once. At renewal you may need to show income and activity hours. Maryland checks tax, wage, and other records first. Maryland materials say many expansion adults renew every 6 months even if exempt from the work rules.'],
+                    ['3. Less back-billing coverage (from Jan. 1, 2027)', 'Medicaid used to cover up to 3 months of bills before you applied. Now it covers about 1 month for expansion adults and up to 2 months for other groups.'],
+                    ['4. Immigration status (since Oct. 1, 2026)', '<ul><li>Some immigrant adults lost standard Medicaid eligibility, including refugees, asylees, humanitarian parolees, and trafficking or domestic violence victims.</li><li>Green card holders, Cuban and Haitian entrants, and COFA migrants remain eligible.</li><li>Maryland Health Connection says children under 21 and pregnant people are treated differently. Confirm your situation with a navigator.</li></ul>'],
+                    ['5. If you lose Medicaid for not meeting the work rule', 'You can be barred from getting ACA premium tax credits on the marketplace. You could still buy a plan through Maryland Health Connection, but at full price. Act on any notice right away. You generally have 90 days to appeal, and Maryland Legal Aid can help.'],
+                    ['Key dates', '<ul><li><b>Sept. 2026:</b> Maryland Health Connection mailed letters to people who will need to meet work rules.</li><li><b>Oct. 1, 2026:</b> immigration eligibility changes.</li><li><b>Jan. 1, 2027:</b> rules start. New applicants may need to meet them the month before coverage begins.</li><li><b>Early 2027:</b> current members first show compliance at their regular renewal (the state says March 2027; some sources say February–March).</li><li><b>During 2027:</b> 6-month renewals phase in. Your notice will give your exact date.</li></ul>'],
+                    ['Latest news (Oct. 29, 2026)', 'A federal judge in Boston blocked a stricter federal definition of “medically frail” in a case Maryland joined. The work requirements themselves still start in 2027. Rules may keep changing, so check <a href="https://health.maryland.gov/mmcp/Pages/workrequirements.aspx" target="_blank" rel="noopener noreferrer">the state page</a>.']
+                ]);
+            } },
+            PROOF_GUIDE: { custom: function (p) {
+                p.innerHTML = acc([
+                    ['“Electronic Verification First”: Maryland checks before it asks', 'To ease the transition into the 2027 rules, the Maryland Department of Health first scans existing databases, such as state tax records, wage data, and unemployment systems, to confirm your work hours or exemption status automatically. If it cannot, it will send a letter or email asking you to upload proof. <a href="https://health.maryland.gov/mmcp/Pages/workrequirements.aspx" target="_blank" rel="noopener noreferrer">Maryland Dept. of Health page</a>'],
+                    ['Proving work hours or earnings', '<ul><li><b>Regular job:</b> recent consecutive pay stubs, an earnings statement, or a signed employer letter showing hours and wages.</li><li><b>Self-employed:</b> most recent federal tax return, 1099 forms, or detailed business ledgers.</li><li>You meet the rule with 80 hours, or at least $580 earned in a month.</li></ul>'],
+                    ['Proving school, training, or volunteering', '<ul><li><b>School or training:</b> class schedule, transcript, or enrollment verification showing at least half-time.</li><li><b>Volunteering:</b> a log signed by a supervisor at a nonprofit, charity, or public agency.</li><li>You can combine activities to reach 80 hours.</li></ul>'],
+                    ['Proving an exemption', '<ul><li><b>Medical frailty or serious health condition:</b> a formal letter or medical certification form from your provider or clinic explaining how the condition limits your ability to work. Federal rules allow self-attesting medical frailty through 2027 if the state cannot verify it.</li><li><b>Caregiver:</b> birth certificate for your dependent child (13 or under), or a physician’s note saying your family member has a disability or medical condition that requires full-time, in-home care.</li><li><b>SNAP or TANF:</b> your approval letter or case number.</li><li><b>Veteran:</b> VA total disability rating letter.</li></ul>'],
+                    ['Want help with your paperwork?', 'Tell a navigator which activity you plan to log (a job, volunteering, or school) or whether you need a doctor’s letter. They can explain exactly what the paperwork must say. <a href="#" onclick="render(\'CONNECT_ASSISTANCE\');return false">Find a navigator</a>'],
+                    ['How to send it', '<ul><li>Online or on the Maryland Health Connection mobile app (take photos of documents).</li><li>By mail to the address on your notice.</li><li>In person at your local DHS office.</li><li>By phone: 855-642-8572 (TTY 711).</li></ul>']
+                ]);
+                p.innerHTML += '<a class="cta" href="https://www.marylandhealthconnection.gov" target="_blank" rel="noopener noreferrer">Open Maryland Health Connection</a>';
+            } },
+            EXPLORE_EXEMPTIONS: { custom: function (p) {
+                p.innerHTML = '<div class="answer"><h2>' + (lang === 'es' ? '¿Cuáles de estas le describen?' : 'Which of these describe you?') + '</h2>' +
+                    (lang === 'es' ? EX_ES : EX).map(function (e, i) { return '<label class="chk"><input type="checkbox" data-i="' + i + '"><span><b>' + e[0] + '</b>' + (e[1] ? '<br><span class="muted">' + e[1] + '</span>' : '') + '</span></label>'; }).join('') +
+                    '<div id="verdict" class="card"></div></div>';
+                const upd = function () {
+                    const n = p.querySelectorAll('input:checked').length;
+                    document.getElementById('verdict').innerHTML = (lang === 'es') ? verdictEs(n) : n
+                        ? '<strong>You may be exempt (' + n + ' selected).</strong><br>Next: log in to Maryland Health Connection to see whether the state already has you marked exempt. If not, send the proof listed above, or call <a href="tel:8556428572">855-642-8572</a>. You may still need to renew every 6 months.'
+                        : '<strong>No exemption selected.</strong><br>Plan to show 80 hours a month, or at least $580 in earnings. Use the button below to see what proves it.';
+                    try {
+                        const pre = document.getElementById('telemetry-json');
+                        const t = JSON.parse(pre.textContent);
+                        t.exemption_categories_selected = n;
+                        pre.textContent = JSON.stringify(t, null, 2);
+                    } catch (e) {}
+                };
+                p.querySelectorAll('input').forEach(function (c) { c.onchange = upd; });
+                upd();
+            } },
+            VERIFY_TIMELINES: {
+                head: 'Your answer: no action is due yet, but get ready now.',
+                steps: ['Log in to Maryland Health Connection and confirm your phone, email and mailing address are correct.', 'Report income or household changes within 10 days.', 'Open every letter from Maryland Health Connection. Letters went out starting September 2026 to people who must meet work rules.', 'Work and 6-month renewal rules begin January 1, 2027 and apply to some adults, at your renewal.'],
+                cta: { text: 'Update my contact info now', href: 'https://www.marylandhealthconnection.gov/CheckIn' },
+                directory: true,
+                es: { head: 'Su respuesta: todavía no vence nada, pero prepárese ahora.', steps: ['Entre a Maryland Health Connection y confirme que su teléfono, correo electrónico y dirección estén correctos.', 'Informe cambios de ingresos o del hogar dentro de 10 días.', 'Abra todas las cartas de Maryland Health Connection. Desde septiembre de 2026 se enviaron cartas a quienes deben cumplir las reglas de trabajo.', 'Las reglas de trabajo y las renovaciones cada 6 meses comienzan el 1 de enero de 2027 y se aplican a algunos adultos, en su renovación.'], cta: { text: 'Actualizar mis datos ahora', href: 'https://www.marylandhealthconnection.gov/CheckIn' } }
+            },
+            CONNECT_ASSISTANCE: {
+                head: 'Your answer: talk to a person this week.',
+                steps: ['Call 855-642-8572 (weekdays 8–6) or pick your area below.', 'Have your notice ready, even if it is incomplete. Bring photo ID.', 'Bring proof if you have it: recent pay stubs, school enrollment, or a doctor’s letter.', 'Ask about extra time to submit papers and whether you qualify for an exemption.', 'If coverage is denied or ended, you generally have 90 days to appeal. Maryland Legal Aid can help.'],
+                cta: { text: 'Call 855-642-8572 now', href: 'tel:8556428572' },
+                directory: true,
+                es: { head: 'Su respuesta: hable con una persona esta semana.', steps: ['Llame al 855-642-8572 (lunes a viernes, 8 a 6) y pida ayuda en español. La línea ofrece ayuda en más de 200 idiomas. O elija su zona abajo.', 'Tenga a mano su aviso, aunque esté incompleto. Lleve una identificación con foto.', 'Lleve pruebas si las tiene: talones de pago recientes, constancia de estudios o una carta de su médico.', 'Pregunte si puede tener más tiempo para entregar documentos y si califica para una exención.', 'Si le niegan o terminan la cobertura, por lo general tiene 90 días para apelar. Maryland Legal Aid puede ayudarle.'], cta: { text: 'Llamar al 855-642-8572 ahora', href: 'tel:8556428572' } }
+            },
+            FINAL_CONFIRMATION: {
+                head: 'Your answer: submit your documents and keep proof.',
+                steps: ['Submit by the due date on your notice: online at Maryland Health Connection, by mail to the address on the notice, in person at your local DHS, or by phone at 855-642-8572.', 'Include income proof, school or training logs, or a medical exemption certificate, as your notice requests.', 'Save a screenshot, receipt or copy of everything you send.', 'Watch for a confirmation letter. If none arrives, call 855-642-8572.'],
+                cta: { text: 'Go to Maryland Health Connection', href: 'https://www.marylandhealthconnection.gov' },
+                directory: true,
+                es: { head: 'Su respuesta: envíe sus documentos y guarde la prueba.', steps: ['Envíe antes de la fecha de su aviso: en línea en Maryland Health Connection, por correo a la dirección del aviso, en persona en su oficina local de DHS, o por teléfono al 855-642-8572.', 'Incluya comprobantes de ingresos, registros de estudio o capacitación, o un certificado médico de exención, según pida su aviso.', 'Guarde una captura de pantalla, recibo o copia de todo lo que envíe.', 'Espere una carta de confirmación. Si no llega, llame al 855-642-8572.'], cta: { text: 'Ir a Maryland Health Connection', href: 'https://www.marylandhealthconnection.gov' } }
+            }
+        };
+
+        function cardHtml(o) {
+            return '<div class="card"><strong>' + o.name + '</strong>' +
+                (o.address ? '<div>📍 ' + o.address + '</div>' : '') +
+                (o.phone ? '<div>📞 <a href="tel:' + o.phone.replace(/\D/g, '') + '">' + o.phone + '</a></div>' : '') +
+                (o.web ? '<div><a href="' + o.web + '" target="_blank" rel="noopener noreferrer">' + o.webLabel + '</a></div>' : '') +
+                (o.note ? '<div class="muted">' + o.note + '</div>' : '') + '</div>';
+        }
+
+        function drawDirectory() {
+            const out = document.getElementById('dir-out');
+            if (!out) return;
+            const local = selectedRegion ? localCards(selectedRegion) : [];
+            out.innerHTML = (selectedRegion ? '<div class="dir-label">' + (lang === 'es' ? 'Cerca de usted: ' : 'Near you: ') + selectedRegion + '</div>' + local.map(cardHtml).join('') : '') +
+                '<div class="dir-label">' + (lang === 'es' ? 'Disponible en todo el estado' : 'Available statewide') + '</div>' + [MHC].concat(ALWAYS).map(cardHtml).join('') +
+                '<div class="muted" style="margin-top:10px">' + (lang === 'es' ? 'Los datos de contacto cambian. Confirme por teléfono o en el sitio oficial antes de ir.' : 'Contact details change. Please confirm by phone or on the official site before you travel.') + '</div>';
+            try {
+                const pre = document.getElementById('telemetry-json');
+                const t = JSON.parse(pre.textContent);
+                t.selected_region = selectedRegion || null;
+                pre.textContent = JSON.stringify(t, null, 2);
+            } catch (e) {}
+        }
+
+        function renderResult(nodeId) {
+            const panel = document.getElementById('result-panel');
+            const r0 = results[nodeId];
+            const tx = lang === 'es' ? (r0 && r0.es) : (LANGS[lang] && LANGS[lang].R[nodeId]);
+            const r = r0 && tx ? Object.assign({}, r0, tx) : r0;
+            if (!r) { panel.innerHTML = ''; return; }
+            if (lang === 'es' && ES_ACC[nodeId]) { panel.innerHTML = acc(ES_ACC[nodeId]) + (nodeId === 'PROOF_GUIDE' ? '<a class="cta" href="https://www.marylandhealthconnection.gov" target="_blank" rel="noopener noreferrer">Abrir Maryland Health Connection</a>' : ''); return; }
+            if (r.custom) { r.custom(panel); return; }
+            let html = '<div class="answer"><h2>' + r.head + '</h2><ol>' + r.steps.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol>' +
+                '<a class="cta" href="' + r.cta.href + '"' + (r.cta.href.indexOf('http') === 0 ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' + r.cta.text + '</a></div>';
+            if (r.directory) {
+                html += '<div class="dir-label">' + (lang === 'es' ? '¿Dónde vive?' : 'Where do you live?') + '</div><select id="region-select" aria-label="Select your area"><option value="">' + (lang === 'es' ? 'Elija su condado…' : 'Choose your county…') + '</option>' +
+                    COUNTIES.map(function (c) { var k = c.n; return '<option' + (k === selectedRegion ? ' selected' : '') + '>' + k + '</option>'; }).join('') + '</select>';
+            }
+            html += '<button class="cta no-print" style="width:100%;border:0;cursor:pointer" onclick="window.print()">' + (lang === 'es' ? 'Imprimir o guardar mi lista' : 'Print or save my checklist') + '</button>';
+            html += '<div id="dir-out"></div>';
+            panel.innerHTML = html;
+            const sel = document.getElementById('region-select');
+            if (sel) sel.onchange = function () { selectedRegion = sel.value; drawDirectory(); };
+            if (r.directory) drawDirectory();
+            else document.getElementById('dir-out').innerHTML = '';
+        }
+
+        function toggleHelp() {
+            const d = document.getElementById('help-drawer');
+            d.style.display = d.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function render(nodeId, redraw) {
+            const node = tr(navigationEngine[nodeId], nodeId);
+            document.getElementById('help-label').textContent = (LANGS[lang] && LANGS[lang].help) ? LANGS[lang].help : lang === 'es' ? '💡 ¿Por qué me preguntan esto?' : '💡 Why am I being asked this?';
+            if (!node) return;
+            if (!redraw) { if (nodeId === 'WELCOME_SCREEN') history = []; history.push(nodeId); }
+            current = nodeId;
+            document.getElementById('back-btn').style.display = history.length > 1 ? 'inline-block' : 'none';
+            document.getElementById('back-btn').textContent = BACK[lang] || BACK.en;
+            if (!redraw && history.length > 1) { const t = document.getElementById('app-title'); t.setAttribute('tabindex', '-1'); if (t.focus) t.focus({ preventScroll: true }); }
+
+            document.getElementById('step-badge').textContent = (node.step ? (lang === 'es' ? 'Paso ' : (LANGS[lang] ? LANGS[lang].step : 'Step ')) + Math.max(1, history.length - 1) + ' • ' : '') + node.name;
+            document.getElementById('app-title').textContent = node.title;
+            document.getElementById('app-subtitle').textContent = node.subtitle;
+            document.getElementById('app-explanation').textContent = node.explanation;
+            document.getElementById('help-drawer').textContent = node.help;
+            document.getElementById('help-drawer').style.display = 'none';
+
+            const box = document.getElementById('buttons-container');
+            box.innerHTML = '';
+            node.options.forEach(function (opt) {
+                const b = document.createElement('button');
+                b.className = 'opt';
+                b.textContent = opt.text;
+                b.onclick = function () { render(opt.next); };
+                box.appendChild(b);
+            });
+
+            renderResult(nodeId);
+            document.getElementById('telemetry-node').textContent = nodeId + ' · ' + navigationEngine[nodeId].name;
+            document.getElementById('telemetry-json').textContent = JSON.stringify({
+                node: nodeId,
+                previous_node: history.length > 1 ? history[history.length - 2] : null,
+                session_step: history.length,
+                step: node.step,
+                phase: node.name,
+                available_transitions: node.options.map(function (o) { return o.next; }),
+                path_history: history,
+                selected_region: selectedRegion || null,
+                data_stored: 'none (demo only)',
+                timestamp: new Date().toISOString()
+            }, null, 2);
+        }
+
+        history = [];
+        render('WELCOME_SCREEN');
+    </script>
+
+<!-- PRODUCTION TENANT, POLICY & ZERO-PHI TELEMETRY PATCH -->
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var pathSlug = window.location.pathname.replace(/^\/|\/$/g, '').toLowerCase();
+  var rawSlug = (pathSlug && pathSlug !== 'index.html') ? pathSlug : (params.get('clinic') || '').toLowerCase();
+  var clinicSlug = /^[a-z0-9-]{2,40}$/.test(rawSlug) ? rawSlug : '';   // strict allow-list pattern
+  var isDebug = params.get('debug') === 'true';
+
+  var CLINIC_DIRECTORY = {
+    'chase-brexton': 'Chase Brexton Health Care',
+    'cci-health': 'CCI Health Services',
+    'total-health-care': 'Total Health Care',
+    'choptank-health': 'Choptank Community Health',
+    'bmsi': 'Baltimore Medical System'
+  };
+  var clinicName = '';
+  if (clinicSlug) {
+    clinicName = CLINIC_DIRECTORY[clinicSlug] || (params.get('name') || '').slice(0, 60) ||
+      clinicSlug.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+  }
+
+  var BANNER = {
+    en: '<strong>2027 transition update (CMS SMD #26-006):</strong> Work and 6-month renewal requirements begin <strong>Jan. 1, 2027</strong>. CMS lets states elect an optional hold-harmless period through <strong>June 30, 2027</strong> (states were asked to notify CMS by <strong>Dec. 11, 2026</strong>). Check with Maryland Health Connection for the latest. Completing your readiness check now helps prevent coverage gaps.',
+    es: '<strong>Actualización de transición 2027 (CMS SMD #26-006):</strong> Los requisitos de trabajo y de renovación cada 6 meses comienzan el <strong>1 de enero de 2027</strong>. CMS permite que los estados elijan un período opcional de protección hasta el <strong>30 de junio de 2027</strong> (se pidió a los estados avisar a CMS antes del <strong>11 de dic. de 2026</strong>). Consulte Maryland Health Connection para la información más reciente.'
+  };
+  var PRIVACY_CLINIC = 'Privacy: this tool does not ask for your name, ID, or health details. It records only anonymous counts (which screen was viewed, language, date) for ' + clinicName + '. It gives general information only. Maryland decides eligibility.';
+
+  function lang() { return document.documentElement.lang || 'en'; }
+
+  function showBanner() {
+    var b = document.getElementById('cms-smd-notice');
+    if (!b) {
+      b = document.createElement('div');
+      b.id = 'cms-smd-notice';
+      b.setAttribute('role', 'note');
+      b.style.cssText = 'background:#102A43;border:1px solid #334E68;color:#D9E2EC;padding:10px 14px;border-radius:8px;font-size:13px;line-height:1.5;margin:0 0 20px 0;';
+      document.body.insertBefore(b, document.body.children[1] || null); // just below the header card
+    }
+    b.innerHTML = BANNER[lang()] || BANNER.en;
+  }
+
+  function applyClinic() {
+    if (!clinicSlug) return;
+    var hdr = Array.prototype.find.call(document.querySelectorAll('span'), function (el) {
+      return el.children.length === 0 && el.textContent.indexOf('RADIANT MOTIVE NAVIGATOR DEMO') !== -1;
+    });
+    if (hdr) hdr.textContent = '\uD83D\uDFE2 ' + clinicName.toUpperCase() + ' \u2022 MEDICAID 2027 GUIDE';
+    document.title = clinicName + ' | Medicaid 2027 Guide';
+    // hide investor/demo analytics toggle
+    document.querySelectorAll('button[onclick="toggleDemo()"]').forEach(function (b) { b.style.display = 'none'; });
+    // replace the "stores nothing" privacy sentence with an accurate one
+    document.querySelectorAll('.muted').forEach(function (el) {
+      if (el.textContent.indexOf('Privacy:') === 0) el.textContent = PRIVACY_CLINIC;
+    });
+  }
+
+  // Zero-PHI analytics: only clinic id, screen id, event name, language, date. No free text, no IDs.
+  var SENT = {};
+  window.trackClinicEvent = function (eventName, pathway) {
+    if (!clinicSlug) return;
+    try {
+      fetch('/.netlify/functions/log-event', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        keepalive: true,
+        body: JSON.stringify({
+          clinicId: clinicSlug,
+          eventName: eventName,
+          pathway: String(pathway || 'general').slice(0, 40),
+          lang: lang(),
+          date: new Date().toISOString().slice(0, 10)
+        })
+      }).catch(function () {});
+    } catch (e) {}
+  };
+
+  // Hook the app's own render() so we log screen ids (e.g. MEMBER_START), not button text
+  if (typeof render === 'function') {
+    var _render = render;
+    render = function (nodeId, redraw) {
+      var r = _render.apply(this, arguments);
+      if (!redraw) {
+        window.trackClinicEvent('screen_view', nodeId);
+        // milestone counters used in the monthly clinic summary
+        if (nodeId === 'EXPLORE_EXEMPTIONS') window.trackClinicEvent('exemptions_viewed', nodeId);
+        if (nodeId === 'FINAL_CONFIRMATION') window.trackClinicEvent('path_completed', nodeId);
+      }
+      return r;
+    };
+  }
+  // Keep banner (and header) in the right language when the visitor switches language
+  if (typeof setLang === 'function') {
+    var _setLang = setLang;
+    setLang = function (l) {
+      var r = _setLang.apply(this, arguments);
+      showBanner();
+      window.trackClinicEvent('language_change', l);
+      return r;
+    };
+  }
+
+  if (!isDebug) { var n = document.getElementById('telemetry-node'); if (n && n.parentElement) n.parentElement.style.display = 'none'; }
+  showBanner();
+  applyClinic();
+  window.trackClinicEvent('session_started', 'WELCOME_SCREEN');
+})();
+</script>
 
 </body>
 </html>
