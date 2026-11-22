@@ -799,7 +799,7 @@ const ES = {
 <script>
 (function () {
   var params = new URLSearchParams(window.location.search);
-  var path = window.location.pathname.replace(/\\/+$/, '').toLowerCase();
+  var path = window.location.pathname.replace(/\/+$/, '').toLowerCase();
   var isSC = path === '/sc' || path.indexOf('/sc/') === 0 || params.get('state') === 'sc';
   var header = document.querySelector('body > div');
   var headerTitle = Array.prototype.find.call(document.querySelectorAll('span'), function (el) {
