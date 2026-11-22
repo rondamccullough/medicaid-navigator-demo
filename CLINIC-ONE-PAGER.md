@@ -8,7 +8,7 @@ Radiant Motive Navigator is a non-clinical, browser-based guide that organizes c
 ### How a clinic can use it
 
 1. **Share one link** through an existing patient text, portal message, email or QR code.
-2. **Patients self-navigate** through a guided path in the language they select.
+2. **Patients self-navigate** through a guided path using the available language controls; some detailed content remains in English and is flagged in the interface.
 3. **The guide explains next steps** and directs patients to Maryland Health Connection, their official notice or local enrollment assistance.
 4. **Staff have a common reference** for routine questions and referral handoffs.
 
