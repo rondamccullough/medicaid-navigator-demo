@@ -6,7 +6,7 @@ Content review date: 2026-11-22. This is a source register for the South Carolin
 
 - SCDHHS Medicaid Advisory Council packet, Nov. 10, 2026, pages 8–11: current policy described as up to three months before the application month; Section 71112 change described as up to two months; effective date Jan. 1, 2027.  
   https://www.scdhhs.gov/sites/dhhs/files/11.2026%20MAC%20Packet.pdf
-- CMS CMCS Informational Bulletin, Nov. 18, 2026: applications made on or after Jan. 1, 2027; one-month limit for the Medicaid adult group and two months for most other eligibility groups; eligibility must have existed when services were furnished.  
+- CMS CMCS Informational Bulletin, Nov. 18, 2026: for applications made on or after Jan. 1, 2027, a one-month retroactive period applies to the Medicaid expansion adult group and two months to most other Medicaid eligibility groups. Applicable waiver authority and exceptions may affect the rule; eligibility must have existed when covered services were furnished.  
   https://www.medicaid.gov/sites/default/files/2026-11/CIB111826-Summary-medicaid-CHIP-enrollment-related-CIB-slides.pdf
 - The application experience therefore does not promise a universal two-month look-back. It instructs users to confirm their eligibility category and case with SCDHHS.
 
@@ -16,7 +16,8 @@ Content review date: 2026-11-22. This is a source register for the South Carolin
   https://www.scdhhs.gov/partners/managed-care/managed-care-initiatives/phase-ii-progress
 - SCDHHS public notice, Nov. 2, 2026: proposed HC-LTC waiver effective date July 1, 2027; the three waiver programs are proposed to be consolidated; current participants are not expected to be adversely impacted.  
   https://www.scdhhs.gov/communications/waiver-application-healthy-connections-long-term-care-waiver
-- SCDHHS Nov. 2026 Medicaid Advisory Council packet: July 2027 is a preliminary target contingent on CMS approvals, overall MCO and system readiness, and coordinated outreach.
+- SCDHHS Nov. 2026 Medicaid Advisory Council packet: July 2027 is a preliminary target contingent on CMS approvals, overall MCO and system readiness, and coordinated outreach. Phase II would transition specified HCBS waiver, nursing-facility and hospice services into managed care.
+- SCDHHS public notice, Nov. 2, 2026: the proposed Healthy Connections–Long Term Care waiver has a proposed effective date of July 1, 2027 and would consolidate the Community Choices, HIV/AIDS and Mechanical Ventilator Dependent waivers.
   https://www.scdhhs.gov/sites/dhhs/files/11.2026%20MAC%20Packet.pdf
 - The module describes July 2027 as a target, not a guaranteed go-live date.
 
