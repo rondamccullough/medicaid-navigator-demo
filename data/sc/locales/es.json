@@ -1,7 +1,7 @@
 {
   "title": "RADIANT MOTIVE NAVIGATOR • GUÍA DE HEALTHY CONNECTIONS DE SC",
   "subtitle": "Guía de South Carolina Healthy Connections 2027 • Información general, no asesoría legal ni de elegibilidad • Orientación revisada el 22 de nov. de 2026. Confirme los detalles con SCDHHS.",
-  "alert": "<strong>Actualización de South Carolina Healthy Connections (nov. de 2026):</strong> Los materiales de SCDHHS indican que, a partir del 1 de enero de 2027, la cobertura retroactiva de Medicaid generalmente estará disponible hasta por dos meses antes del mes de la solicitud, en comparación con hasta tres meses según la política actual. La guía federal establece un límite de un mes para el grupo de adultos de Medicaid y de dos meses para la mayoría de los demás grupos. Los cambios de la Fase II de atención administrada tienen como fecha objetivo julio de 2027 y dependen de aprobaciones y preparación. En 2027 también comienzan reglas federales separadas de inscripción D-SNP para ciertos planes afiliados a MCO de Medicaid; no exigen que todas las personas con doble elegibilidad cambien de plan de inmediato. Use la ruta de Medicare + Medicaid para saber qué preguntar. Lea todos los avisos oficiales y confirme su situación con SCDHHS.",
+  "alert": "<strong>Actualización de South Carolina Healthy Connections (nov. de 2026):</strong> Para las solicitudes presentadas a partir del 1 de enero de 2027, la guía de CMS describe un límite de cobertura retroactiva de un mes para el grupo de adultos de Medicaid de expansión y de dos meses para la mayoría de los demás grupos de elegibilidad de Medicaid. Los materiales de SCDHHS describen la política actual como hasta tres meses antes del mes de la solicitud. La cobertura retroactiva no es automática; la persona debe haber sido elegible cuando recibió el servicio cubierto. SCDHHS tiene como objetivo julio de 2027 para la Fase II, que trasladaría determinados servicios de exenciones de atención domiciliaria y comunitaria (HCBS), centros de enfermería y hospicio a la atención administrada. SCDHHS ha propuesto el 1 de julio de 2027 como fecha de entrada en vigor de la exención consolidada Healthy Connections–Long Term Care; la implementación sigue sujeta a la aprobación de CMS y a la preparación operativa. Las reglas federales D-SNP que comienzan en 2027 restringen las nuevas inscripciones en ciertos planes afiliados a MCO de Medicaid; no exigen que todas las personas con doble elegibilidad cambien de plan de inmediato. Use la ruta Medicare + Medicaid para identificar preguntas que debe hacer a su plan o a un asesor calificado. Revise los avisos oficiales y confirme su situación con SCDHHS.",
   "privacy": "Privacidad: Esta guía no solicita nombres, números de Medicaid, diagnósticos, datos de salud ni contenido de documentos. No ingrese información de pacientes. El proveedor de alojamiento del sitio puede procesar información técnica habitual, como direcciones IP, datos del navegador/dispositivo y horas de solicitudes. No están habilitados los análisis a nivel de paciente ni los informes de clínicas. SCDHHS determina la elegibilidad y los plazos.",
   "languageNote": "Es posible que parte del contenido detallado aún no esté traducido. Para recibir ayuda en su idioma, comuníquese con SCDHHS al 888-549-0820 o pregunte por la asistencia de SC Thrive al 800-726-8774.",
   "switcher": {
@@ -16,8 +16,8 @@
       "explanation": "Seleccione un objetivo para ver algunas preguntas de orientación. No ingrese nombres, números de Medicaid, diagnósticos, facturas ni otros datos personales.",
       "help": "Este módulo de South Carolina está separado de la guía de Maryland. Incluye una ruta específica de Medicare + Medicaid / D-SNP para 2027 y un flujo separado para clínicas y CHW. La regla federal D-SNP es condicional; no todas las personas con doble elegibilidad deben cambiar de plan en 2027.",
       "options": [
-        "Tengo facturas médicas recientes o necesito cobertura pronto",
-        "Mi plan de Medicare + Medicaid / D-SNP o mi exención está cambiando",
+        "Tengo facturas médicas recientes o necesito ayuda para entender la cobertura de Medicaid.",
+        "Tengo preguntas sobre mi cobertura de Medicare + Medicaid, mi plan D-SNP o una exención.",
         "Soy miembro del personal de una clínica o trabajador/a de salud comunitaria (CHW)",
         "Necesito ayuda con SNAP, vivienda o beneficios para veteranos"
       ]
@@ -39,7 +39,7 @@
       "title": "¿Cuándo presentará su solicitud de Healthy Connections?",
       "subtitle": "La fecha de la solicitud importa para el cambio de cobertura retroactiva de Medicaid programado para el 1 de enero de 2027.",
       "explanation": "Elija la opción que mejor describa su situación. Esta herramienta no presenta solicitudes ni conserva un período de cobertura retroactiva.",
-      "help": "Los materiales del Consejo Asesor de Medicaid de SCDHHS de noviembre de 2026 describen la política actual como hasta tres meses antes del mes de la solicitud y la nueva política como hasta dos meses a partir del 1 de enero de 2027. Aún debe cumplir los requisitos para cada mes.",
+      "help": "Para las solicitudes presentadas a partir del 1 de enero de 2027, la guía de CMS describe un período retroactivo de un mes para el grupo de adultos de Medicaid de expansión y de dos meses para la mayoría de los demás grupos de elegibilidad de Medicaid. La autoridad de exención o las excepciones aplicables pueden afectar la regla. La cobertura retroactiva no es automática; la persona debe haber sido elegible cuando recibió el servicio cubierto. Pida a SCDHHS que confirme la categoría y el período que corresponden a su situación.",
       "options": [
         "Puedo presentar la solicitud antes del 1 de enero de 2027",
         "Presentaré la solicitud el 1 de enero de 2027 o después",
@@ -306,9 +306,9 @@
     "SC_RETRO_POST_RESULT": {
       "head": "Las solicitudes presentadas a partir del 1 de enero de 2027 están sujetas a los nuevos límites de cobertura retroactiva.",
       "steps": [
-        "Los materiales del Consejo Asesor de Medicaid de SCDHHS de noviembre de 2026 indican que la elegibilidad retroactiva estará disponible hasta por dos meses antes del mes de la solicitud, en comparación con hasta tres meses según la política actual.",
-        "La guía de CMS establece un límite de un mes para el grupo de adultos de Medicaid y de dos meses para la mayoría de los demás grupos. El límite real depende de la categoría de elegibilidad y de la implementación estatal vigente.",
-        "La cobertura de meses anteriores no es automática: debe haber cumplido los requisitos aplicables cuando recibió el servicio médico. Pregunte a SCDHHS cómo se aplica la regla a su categoría.",
+        "Los materiales de asesoría de SCDHHS de noviembre de 2026 describen la política actual de Medicaid como hasta tres meses antes del mes de la solicitud. Los nuevos límites se aplican a las solicitudes presentadas a partir del 1 de enero de 2027.",
+        "La guía de CMS del 18 de noviembre de 2026 describe un período retroactivo de un mes para el grupo de adultos de Medicaid de expansión y de dos meses para la mayoría de los demás grupos de elegibilidad de Medicaid. La autoridad de exención o las excepciones aplicables pueden afectar la regla.",
+        "La cobertura retroactiva no es automática. Debe haber sido elegible para Medicaid cuando recibió el servicio cubierto. Pida a SCDHHS que confirme qué categoría de elegibilidad y período retroactivo corresponden a su situación.",
         "Reúna información de identidad, residencia en South Carolina e ingresos, y facturas detalladas solo si es necesario. Envíe documentos únicamente por un canal oficial de SCDHHS cuando se los soliciten."
       ],
       "cta": {
@@ -319,8 +319,8 @@
     "SC_RETRO_UNSURE_RESULT": {
       "head": "Confirme la fecha de solicitud y la regla de cobertura retroactiva antes de depender de un período de cobertura anterior.",
       "steps": [
-        "Los materiales actuales de SCDHHS describen hasta tres meses de elegibilidad retroactiva antes del mes de la solicitud. Para solicitudes presentadas a partir del 1 de enero de 2027, SCDHHS describe un cambio a hasta dos meses.",
-        "La guía de CMS identifica un límite de un mes para el grupo de adultos de Medicaid y de dos meses para la mayoría de los demás grupos. Pregunte a SCDHHS qué regla corresponde a su categoría de elegibilidad.",
+        "Los materiales actuales de SCDHHS describen hasta tres meses de elegibilidad retroactiva de Medicaid antes del mes de la solicitud. Para las solicitudes presentadas a partir del 1 de enero de 2027, la guía de CMS describe un mes para el grupo de adultos de Medicaid de expansión y dos meses para la mayoría de los demás grupos de elegibilidad de Medicaid.",
+        "La autoridad de exención o las excepciones aplicables pueden afectar la regla. La cobertura retroactiva no es automática; la persona debe haber sido elegible cuando recibió el servicio cubierto. Pregunte a SCDHHS qué categoría y período corresponden a su situación.",
         "Llame a Healthy Connections al 888-549-0820 o solicite ayuda con la solicitud a SC Thrive al 800-726-8774. Guarde la confirmación de envío y siga las instrucciones de los avisos oficiales."
       ],
       "cta": {
@@ -349,7 +349,7 @@
       "head": "Referencia rápida para clínicas y trabajadores comunitarios (CHW)",
       "steps": [
         "Identifique la necesidad inmediata de orientación: factura médica sin seguro, solicitud o revisión anual de Medicaid, transición de atención administrada/exención u otro programa de beneficios. Use el proceso de admisión y referencia aprobado por su clínica.",
-        "Si puede necesitar cobertura retroactiva de Medicaid, pida a la persona que se comunique pronto con Healthy Connections. Los materiales de SCDHHS describen un cambio de hasta tres meses a hasta dos meses para solicitudes a partir del 1 de enero de 2027; siguen aplicándose los requisitos de elegibilidad y categoría.",
+        "Si la persona puede necesitar cobertura retroactiva de Medicaid, pídale que se comunique pronto con Healthy Connections. Para las solicitudes presentadas a partir del 1 de enero de 2027, la guía de CMS describe un mes para el grupo de adultos de Medicaid de expansión y dos meses para la mayoría de los demás grupos de elegibilidad de Medicaid; la autoridad de exención o las excepciones aplicables pueden afectar la regla. La persona debe haber sido elegible cuando recibió el servicio cubierto.",
         "Recuerde a los miembros que mantengan actualizados su dirección postal y datos de contacto en el portal oficial de Healthy Connections. Pídales que revisen los avisos y completen la revisión anual antes de la fecha indicada.",
         "Para transiciones de planes, dirija a quienes reciben servicios de exención, centros de enfermería u hospicio a la información de la Fase II de SCDHHS y a su administrador de casos. Para cobertura dual de Medicare y Medicaid, verifique la coordinación con ambos planes.",
         "Límite de privacidad: esta orientación no solicita ni registra datos de pacientes. No escriba información médica protegida en Navigator, no tome capturas con información de pacientes ni envíe detalles de casos identificables mediante esta demostración."
