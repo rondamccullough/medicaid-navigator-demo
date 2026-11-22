@@ -24,7 +24,7 @@ Radiant Motive Navigator is a non-clinical, browser-based guide that organizes c
 
 - Determine Medicaid eligibility or guarantee coverage.
 - Diagnose medical frailty, certify an exception or make clinical decisions.
-- Collect or store patient names, Medicaid IDs, diagnoses, medical records or document uploads.
+- Ask for or submit patient names, Medicaid IDs, diagnoses, medical records or documents through the guide.
 - Submit forms or documents to Maryland.
 - Replace Maryland Health Connection, a provider, a caseworker or a legal adviser.
 - Provide automated SMS delivery, patient-level tracking, analytics dashboards or EHR integration in the current preview.
