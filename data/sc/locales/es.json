@@ -76,7 +76,7 @@
       "title": "¿Cuál es el motivo principal de la consulta de hoy?",
       "subtitle": "Elija el motivo principal para identificar el próximo paso más útil.",
       "explanation": "Esta pregunta es para el flujo de trabajo de personal y CHW. No ingrese el nombre, fecha de nacimiento, número de Medicaid, diagnóstico, detalles de facturas ni otra información médica protegida.",
-      "help": "Esta pregunta es para el flujo de trabajo de personal y CHW. No ingrese el nombre, fecha de nacimiento, número de Medicaid, diagnóstico, detalles de facturas ni otra información médica protegida.",
+      "help": "Navigator es una guía de información pública. No realiza evaluaciones clínicas, determinaciones de elegibilidad ni evaluaciones de fragilidad médica. Siga los procedimientos aprobados de su organización.",
       "options": [
         "Factura de hospital, sala de emergencias o clínica sin seguro",
         "Aviso de revisión anual o renovación",
