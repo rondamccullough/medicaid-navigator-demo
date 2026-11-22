@@ -52,7 +52,7 @@
     <!-- HEADER AREA -->
     <div style="background-color: #020617; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #1e293b;">
         <span style="color: #10b981; font-weight: bold; font-size: 16px;">🟢 RADIANT MOTIVE NAVIGATOR • MARYLAND MEDICAID GUIDE</span>
-        <div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px;"><button class="lang" id="lang-en" aria-pressed="true" onclick="setLang('en')">English</button><button class="lang" id="lang-es" aria-pressed="false" onclick="setLang('es')">Español</button><button class="lang" id="lang-zh" aria-pressed="false" onclick="setLang('zh')">中文</button><button class="lang" id="lang-ko" aria-pressed="false" onclick="setLang('ko')">한국어</button><button class="lang" id="lang-vi" aria-pressed="false" onclick="setLang('vi')">Tiếng Việt</button></div>
+        <div role="group" aria-label="Choose language" style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px;"><button class="lang" id="lang-en" aria-pressed="true" onclick="setLang('en')">English</button><button class="lang" id="lang-es" aria-pressed="false" onclick="setLang('es')">Español</button><button class="lang" id="lang-zh" aria-pressed="false" onclick="setLang('zh')">中文</button><button class="lang" id="lang-ko" aria-pressed="false" onclick="setLang('ko')">한국어</button><button class="lang" id="lang-vi" aria-pressed="false" onclick="setLang('vi')">Tiếng Việt</button></div>
         <div id="hdr-sub" style="color: #94a3b8; font-size: 11px; margin-top: 6px; line-height: 1.5;">Maryland Medicaid 2027 guide • General information only, not legal or eligibility advice • Guidance reviewed Nov. 22, 2026. Confirm details with the state</div>
     </div>
 
@@ -69,7 +69,7 @@
         </div>
 
         <div id="language-coverage-note" class="language-note" role="note" hidden></div>
-        <div id="result-panel"></div>
+        <div id="result-panel" role="region" aria-label="Navigation guidance" aria-live="polite"></div>
         <div id="buttons-container"></div>
 
         <!-- CONTEXTUAL ASSISTANCE DRAWER -->
