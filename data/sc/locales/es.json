@@ -14,10 +14,10 @@
       "title": "South Carolina Healthy Connections: ¿qué necesita ayuda para navegar?",
       "subtitle": "Elija la opción que mejor describa su situación. Esta guía explica información pública y próximos pasos; no determina la elegibilidad ni presenta solicitudes.",
       "explanation": "Seleccione un objetivo para ver algunas preguntas de orientación. No ingrese nombres, números de Medicaid, diagnósticos, facturas ni otros datos personales.",
-      "help": "Este módulo de South Carolina está separado de la guía de Maryland. Sus selecciones solo muestran la siguiente pantalla en esta sesión del navegador; no se habilitan informes a nivel de paciente.",
+      "help": "Este módulo de South Carolina está separado de la guía de Maryland. Incluye una ruta específica de Medicare + Medicaid / D-SNP para 2027 y un flujo separado para clínicas y CHW. La regla federal D-SNP es condicional; no todas las personas con doble elegibilidad deben cambiar de plan en 2027.",
       "options": [
         "Tengo facturas médicas recientes o necesito cobertura pronto",
-        "Mi Medicare, plan de atención administrada o exención está cambiando",
+        "Mi plan de Medicare + Medicaid / D-SNP o mi exención está cambiando",
         "Soy miembro del personal de una clínica o trabajador/a de salud comunitaria (CHW)",
         "Necesito ayuda con SNAP, vivienda o beneficios para veteranos"
       ]
