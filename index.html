@@ -750,7 +750,7 @@ const ES = {
     var hdr = Array.prototype.find.call(document.querySelectorAll('span'), function (el) {
       return el.children.length === 0 && el.textContent.indexOf('RADIANT MOTIVE NAVIGATOR') !== -1;
     });
-    if (hdr) hdr.textContent = '\\uD83D\\uDFE2 RADIANT MOTIVE NAVIGATOR • PREVIEW FOR ' + clinicName.toUpperCase();
+    if (hdr) hdr.textContent = '🟢 RADIANT MOTIVE NAVIGATOR • PREVIEW FOR ' + clinicName.toUpperCase();
     document.title = 'Preview for ' + clinicName + ' | Radiant Motive Navigator';
     var note = document.getElementById('clinic-preview-note');
     if (!note) {
