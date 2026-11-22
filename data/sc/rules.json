@@ -7,8 +7,8 @@
   "state_route": "/sc",
   "notes": [
     "General information only; SCDHHS makes Medicaid eligibility decisions.",
-    "Retroactive eligibility change effective for applications made on or after 2027-01-01; SCDHHS Nov. 10 2026 advisory materials describe up to two months, while CMS guidance distinguishes one month for the Medicaid adult group and two months for most other groups.",
-    "Phase II managed-care target July 2027 is subject to CMS approvals and readiness.",
+    "Retroactive eligibility changes apply to applications made on or after 2027-01-01. CMS's Nov. 18, 2026 guidance describes a one-month retroactive period for the Medicaid expansion adult group and two months for most other Medicaid eligibility groups; applicable waiver authority and exceptions may affect the rule. Eligibility must have existed when the covered service was furnished.",
+    "Phase II is targeted for July 2027 and would transition specified HCBS waiver, nursing-facility and hospice services into managed care. SCDHHS proposed July 1, 2027 as the effective date for the consolidated Healthy Connections–Long Term Care waiver. Timing remains subject to CMS approval and operational readiness.",
     "The 2027 D-SNP enrollment limitations under 42 CFR 422.514(h) do not apply to every person with Medicare and Medicaid. They apply where the MA organization, parent, or shared-parent entity offers a D-SNP and contracts as a Medicaid MCO serving full-benefit dual eligible individuals in the same or overlapping service area; exceptions apply.",
     "Beginning in 2027, affected D-SNPs may newly enroll full-benefit dual eligible individuals only if they are enrolled in or in the process of enrolling in the affiliated Medicaid MCO. Existing unaligned enrollees may remain through 2029; affected plans generally must align enrollment beginning in 2030, subject to exceptions.",
     "South Carolina distinguishes HIDE D-SNPs from Coordination Only D-SNPs. SCDHHS says HIDE D-SNP enrollment aligns with a Medicaid MCO where available; CO D-SNPs coordinate with the member's chosen Medicaid MCO. CMS states the federal 2027 limitations can also apply to affiliated CO D-SNPs."
@@ -23,11 +23,11 @@
       "help": "This South Carolina module is separate from the Maryland guide. It includes a dedicated 2027 Medicare + Medicaid / D-SNP pathway for members and a separate clinic/CHW workflow. The federal D-SNP rule is conditional; not every dual-eligible member must change plans in 2027.",
       "options": [
         {
-          "text": "I have recent medical bills or need coverage fast",
+          "text": "I have recent medical bills or need help understanding Medicaid coverage.",
           "next": "SC_RETRO_Q1"
         },
         {
-          "text": "My Medicare + Medicaid / D-SNP plan or waiver is changing",
+          "text": "I have questions about my Medicare + Medicaid coverage, D-SNP plan, or waiver.",
           "next": "SC_MANAGED_Q1"
         },
         {
@@ -68,7 +68,7 @@
       "title": "When will you submit your Healthy Connections application?",
       "subtitle": "The application date matters for the change to Medicaid retroactive eligibility scheduled for Jan. 1, 2027.",
       "explanation": "Choose the timing that best describes your situation. This tool cannot file an application or preserve a retroactive coverage period.",
-      "help": "SCDHHS' November 2026 Medicaid Advisory Council materials describe current policy as up to three months before the application month and the new policy as up to two months beginning Jan. 1, 2027. Eligibility for each month of care is still required.",
+      "help": "For applications made on or after Jan. 1, 2027, CMS guidance describes a one-month retroactive period for the Medicaid expansion adult group and two months for most other Medicaid eligibility groups. Applicable waiver authority or exceptions may affect the rule. Retroactive coverage is not automatic; eligibility must have existed when the covered service was provided. Ask SCDHHS to confirm the category and period that apply to you.",
       "options": [
         {
           "text": "I can submit before Jan. 1, 2027",
@@ -511,9 +511,9 @@
     "SC_RETRO_POST_RESULT": {
       "head": "Applications made on or after Jan. 1, 2027 are subject to the new retroactive-coverage limits.",
       "steps": [
-        "SCDHHS' November 2026 Medicaid Advisory Council materials state that retroactive eligibility will be available for up to two months before the month of application, compared with up to three months under current policy.",
-        "CMS guidance describes a one-month limit for the Medicaid adult group and two months for most other Medicaid eligibility groups. The actual limit depends on the eligibility group and current state implementation.",
-        "Coverage for a past month is not automatic: you must have met the applicable eligibility requirements when the medical service was provided. Ask SCDHHS how the rule applies to your category.",
+        "SCDHHS' November 2026 advisory materials describe the current Medicaid look-back as up to three months before the month of application. The new limits apply to applications made on or after Jan. 1, 2027.",
+        "CMS' Nov. 18, 2026 guidance describes a one-month retroactive period for the Medicaid expansion adult group and two months for most other Medicaid eligibility groups. Applicable waiver authority or exceptions may affect the rule.",
+        "Retroactive coverage is not automatic. You must have been eligible for Medicaid when the covered service was provided. Ask SCDHHS to confirm which eligibility category and look-back period apply to you.",
         "Gather identity, South Carolina residency, income information and itemized bills only as needed. Submit documents only through an official SCDHHS channel when requested."
       ],
       "cta": {
@@ -523,9 +523,9 @@
       "es": {
         "head": "Las solicitudes presentadas a partir del 1 de enero de 2027 están sujetas a los nuevos límites de cobertura retroactiva.",
         "steps": [
-          "Los materiales del Consejo Asesor de Medicaid de SCDHHS de noviembre de 2026 indican que la elegibilidad retroactiva estará disponible hasta por dos meses antes del mes de la solicitud, en comparación con hasta tres meses según la política actual.",
-          "La guía de CMS establece un límite de un mes para el grupo de adultos de Medicaid y de dos meses para la mayoría de los demás grupos. El límite real depende de la categoría de elegibilidad y de la implementación estatal vigente.",
-          "La cobertura de meses anteriores no es automática: debe haber cumplido los requisitos aplicables cuando recibió el servicio médico. Pregunte a SCDHHS cómo se aplica la regla a su categoría.",
+          "Los materiales de asesoría de SCDHHS de noviembre de 2026 describen la política actual de Medicaid como hasta tres meses antes del mes de la solicitud. Los nuevos límites se aplican a las solicitudes presentadas a partir del 1 de enero de 2027.",
+          "La guía de CMS del 18 de noviembre de 2026 describe un período retroactivo de un mes para el grupo de adultos de Medicaid de expansión y de dos meses para la mayoría de los demás grupos de elegibilidad de Medicaid. La autoridad de exención o las excepciones aplicables pueden afectar la regla.",
+          "La cobertura retroactiva no es automática. Debe haber sido elegible para Medicaid cuando recibió el servicio cubierto. Pida a SCDHHS que confirme qué categoría de elegibilidad y período retroactivo corresponden a su situación.",
           "Reúna información de identidad, residencia en South Carolina e ingresos, y facturas detalladas solo si es necesario. Envíe documentos únicamente por un canal oficial de SCDHHS cuando se los soliciten."
         ],
         "cta": {
@@ -537,8 +537,8 @@
     "SC_RETRO_UNSURE_RESULT": {
       "head": "Confirm the application date and retroactive-coverage rule before relying on a look-back period.",
       "steps": [
-        "The current SCDHHS materials describe up to three months of retroactive eligibility before the month of application. For applications made on or after Jan. 1, 2027, SCDHHS describes a change to up to two months.",
-        "CMS guidance identifies a one-month limit for the Medicaid adult group and two months for most other groups. Ask SCDHHS which rule applies to your eligibility category.",
+        "SCDHHS' current materials describe up to three months of retroactive Medicaid eligibility before the month of application. For applications made on or after Jan. 1, 2027, CMS guidance describes one month for the Medicaid expansion adult group and two months for most other Medicaid eligibility groups.",
+        "Applicable waiver authority or exceptions may affect the rule. Retroactive coverage is not automatic; eligibility must have existed when the covered service was provided. Ask SCDHHS which category and period apply to your situation.",
         "Call Healthy Connections at 888-549-0820 or ask SC Thrive at 800-726-8774 for application assistance. Keep any submission confirmation and follow the instructions in official notices."
       ],
       "cta": {
@@ -548,8 +548,8 @@
       "es": {
         "head": "Confirme la fecha de solicitud y la regla de cobertura retroactiva antes de depender de un período de cobertura anterior.",
         "steps": [
-          "Los materiales actuales de SCDHHS describen hasta tres meses de elegibilidad retroactiva antes del mes de la solicitud. Para solicitudes presentadas a partir del 1 de enero de 2027, SCDHHS describe un cambio a hasta dos meses.",
-          "La guía de CMS identifica un límite de un mes para el grupo de adultos de Medicaid y de dos meses para la mayoría de los demás grupos. Pregunte a SCDHHS qué regla corresponde a su categoría de elegibilidad.",
+          "Los materiales actuales de SCDHHS describen hasta tres meses de elegibilidad retroactiva de Medicaid antes del mes de la solicitud. Para las solicitudes presentadas a partir del 1 de enero de 2027, la guía de CMS describe un mes para el grupo de adultos de Medicaid de expansión y dos meses para la mayoría de los demás grupos de elegibilidad de Medicaid.",
+          "La autoridad de exención o las excepciones aplicables pueden afectar la regla. La cobertura retroactiva no es automática; la persona debe haber sido elegible cuando recibió el servicio cubierto. Pregunte a SCDHHS qué categoría y período corresponden a su situación.",
           "Llame a Healthy Connections al 888-549-0820 o solicite ayuda con la solicitud a SC Thrive al 800-726-8774. Guarde la confirmación de envío y siga las instrucciones de los avisos oficiales."
         ],
         "cta": {
@@ -596,7 +596,7 @@
       "head": "Clinic and CHW quick-reference workflow",
       "steps": [
         "Identify the member's immediate navigation need: unpaid medical bill, Medicaid application or annual review, managed-care/waiver transition, or another benefit program. Use your clinic's approved intake and referral process.",
-        "For possible retroactive Medicaid coverage, ask the member to contact Healthy Connections promptly. SCDHHS materials describe a change from up to three months to up to two months for applications beginning Jan. 1, 2027; eligibility and category rules still apply.",
+        "For possible retroactive Medicaid coverage, ask the member to contact Healthy Connections promptly. For applications made on or after Jan. 1, 2027, CMS guidance describes one month for the Medicaid expansion adult group and two months for most other Medicaid eligibility groups; applicable waiver authority or exceptions may affect the rule. Eligibility must have existed when the covered service was provided.",
         "Remind members to keep their mailing address and contact information current in the official Healthy Connections portal. Ask them to review notices and complete annual reviews by the stated deadline.",
         "For Medicare/Medicaid dual coverage or a D-SNP notice, use the dedicated clinic/CHW D-SNP workflow in this guide and verify plan coordination with both plans.",
         "Privacy boundary: this triage session does not ask for or record patient details. Do not type PHI into the Navigator, take screenshots containing patient information, or send identifiable case details through this demo."
@@ -613,7 +613,7 @@
         "head": "Referencia rápida para clínicas y trabajadores comunitarios (CHW)",
         "steps": [
           "Identifique la necesidad inmediata de orientación: factura médica sin seguro, solicitud o revisión anual de Medicaid, transición de atención administrada/exención u otro programa de beneficios. Use el proceso de admisión y referencia aprobado por su clínica.",
-          "Si puede necesitar cobertura retroactiva de Medicaid, pida a la persona que se comunique pronto con Healthy Connections. Los materiales de SCDHHS describen un cambio de hasta tres meses a hasta dos meses para solicitudes a partir del 1 de enero de 2027; siguen aplicándose los requisitos de elegibilidad y categoría.",
+          "Si la persona puede necesitar cobertura retroactiva de Medicaid, pídale que se comunique pronto con Healthy Connections. Para las solicitudes presentadas a partir del 1 de enero de 2027, la guía de CMS describe un mes para el grupo de adultos de Medicaid de expansión y dos meses para la mayoría de los demás grupos de elegibilidad de Medicaid; la autoridad de exención o las excepciones aplicables pueden afectar la regla. La persona debe haber sido elegible cuando recibió el servicio cubierto.",
           "Recuerde a los miembros que mantengan actualizados su dirección postal y datos de contacto en el portal oficial de Healthy Connections. Pídales que revisen los avisos y completen la revisión anual antes de la fecha indicada.",
           "Para la cobertura dual de Medicare y Medicaid o un aviso de D-SNP, use el flujo específico de D-SNP para clínicas y CHW de esta guía y verifique la coordinación con ambos planes.",
           "Límite de privacidad: esta orientación no solicita ni registra datos de pacientes. No escriba información médica protegida en Navigator, no tome capturas con información de pacientes ni envíe detalles de casos identificables mediante esta demostración."
