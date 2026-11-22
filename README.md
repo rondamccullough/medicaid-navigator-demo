@@ -35,7 +35,10 @@ Configured clinic aliases can be used as a query parameter:
 An optional `clinic_name` parameter changes the display label only when a configured clinic ID is present. Example:
 `?clinic=bmsi&clinic_name=Sample%20Clinic`
 
-The `?debug=true` parameter displays the simulated developer panel. It does not enable patient-level analytics.
+For a prospect name that is not one of the configured demo organizations, use the display-only preview:
+`?clinic=preview&clinic_name=Prospective%20Clinic`
+
+The generic preview does not create a tenant, private workspace or endorsement. The `?debug=true` parameter displays the simulated developer panel. It does not enable patient-level analytics.
 
 ## Privacy and use boundaries
 
