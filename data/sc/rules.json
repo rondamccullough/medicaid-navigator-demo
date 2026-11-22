@@ -20,14 +20,14 @@
       "title": "South Carolina Healthy Connections: what do you need help navigating?",
       "subtitle": "Choose the path closest to your situation. This guide explains public program information and next steps; it does not determine eligibility or submit an application.",
       "explanation": "Select one objective to open a short set of navigation questions. Do not enter names, Medicaid IDs, diagnoses, bills or other personal details.",
-      "help": "This South Carolina module is separate from the Maryland guide. Your selections are used only to display the next screen in this browser session; no patient-level reporting is enabled.",
+      "help": "This South Carolina module is separate from the Maryland guide. It includes a dedicated 2027 Medicare + Medicaid / D-SNP pathway for members and a separate clinic/CHW workflow. The federal D-SNP rule is conditional; not every dual-eligible member must change plans in 2027.",
       "options": [
         {
           "text": "I have recent medical bills or need coverage fast",
           "next": "SC_RETRO_Q1"
         },
         {
-          "text": "My Medicare, managed care, or waiver plan is changing",
+          "text": "My Medicare + Medicaid / D-SNP plan or waiver is changing",
           "next": "SC_MANAGED_Q1"
         },
         {
