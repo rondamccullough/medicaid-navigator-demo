@@ -45,7 +45,7 @@
     <div style="background-color: #020617; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #1e293b;">
         <span style="color: #10b981; font-weight: bold; font-size: 16px;">🟢 RADIANT MOTIVE NAVIGATOR DEMO: MEDICAID 2027</span>
         <div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px;"><button class="lang" id="lang-en" aria-pressed="true" onclick="setLang('en')">English</button><button class="lang" id="lang-es" aria-pressed="false" onclick="setLang('es')">Español</button><button class="lang" id="lang-zh" aria-pressed="false" onclick="setLang('zh')">中文</button><button class="lang" id="lang-ko" aria-pressed="false" onclick="setLang('ko')">한국어</button><button class="lang" id="lang-vi" aria-pressed="false" onclick="setLang('vi')">Tiếng Việt</button></div>
-        <div id="hdr-sub" style="color: #94a3b8; font-size: 11px; margin-top: 6px; line-height: 1.5;">Maryland Medicaid 2027 guide • General information only, not legal or eligibility advice • Rules last reviewed Nov. 20, 2026. Confirm contact details by phone</div>
+        <div id="hdr-sub" style="color: #94a3b8; font-size: 11px; margin-top: 6px; line-height: 1.5;">Maryland Medicaid 2027 guide • General information only, not legal or eligibility advice • Guidance reviewed Nov. 22, 2026. Confirm details with the state</div>
     </div>
 
     <!-- MAIN APP SCREEN INTERFACE -->
@@ -314,13 +314,13 @@
             document.documentElement.lang = l;
             ['en', 'es', 'zh', 'ko', 'vi'].forEach(function (k) { document.getElementById('lang-' + k).setAttribute('aria-pressed', l === k); });
             /* languages: see LANGS */
-            document.getElementById('hdr-sub').textContent = (LANGS[l] && LANGS[l].hdr) ? LANGS[l].hdr : l === 'es' ? 'Guía de Medicaid de Maryland 2027 • Solo información general, no asesoría legal ni de elegibilidad • Reglas revisadas el 20 de nov. de 2026' : 'Maryland Medicaid 2027 guide • General information only, not legal or eligibility advice • Rules last reviewed Nov. 20, 2026. Confirm contact details by phone';
+            document.getElementById('hdr-sub').textContent = (LANGS[l] && LANGS[l].hdr) ? LANGS[l].hdr : l === 'es' ? 'Guía de Medicaid de Maryland 2027 • Información general, no asesoría legal ni de elegibilidad • Orientación revisada el 22 de nov. de 2026' : 'Maryland Medicaid 2027 guide • General information only, not legal or eligibility advice • Guidance reviewed Nov. 22, 2026. Confirm details with the state';
             const privacyCopy = {
-                en: 'Privacy: This tool does not ask for your name, ID number, or health details. Clinic-specific versions may send limited, non-identifying usage events (such as the screen viewed, language, and date) to a configured reporting service. No personal documents are requested. Maryland decides eligibility.',
-                es: 'Privacidad: Esta herramienta no solicita su nombre, número de identificación ni datos de salud. Las versiones para clínicas pueden enviar a un servicio de informes configurado datos de uso limitados y no identificables (por ejemplo, la pantalla vista, el idioma y la fecha). No se solicitan documentos personales. Maryland determina la elegibilidad.',
-                zh: '隐私：本工具不会询问您的姓名、身份证号码或健康信息。诊所专用版本可能会向已配置的报告服务发送有限的非识别性使用事件（例如查看的页面、语言和日期）。本工具不要求提供个人文件。资格由马里兰州决定。',
-                ko: '개인정보 보호: 이 도구는 이름, 신분증 번호 또는 건강 정보를 묻지 않습니다. 클리닉 전용 버전은 조회한 화면, 언어, 날짜와 같은 제한된 비식별 사용 이벤트를 설정된 보고 서비스로 전송할 수 있습니다. 개인 서류를 요청하지 않습니다. 자격 여부는 메릴랜드주가 결정합니다.',
-                vi: 'Quyền riêng tư: Công cụ này không yêu cầu tên, số ID hoặc thông tin sức khỏe của bạn. Các phiên bản dành cho phòng khám có thể gửi một số sự kiện sử dụng giới hạn, không nhận dạng cá nhân (chẳng hạn màn hình đã xem, ngôn ngữ và ngày) đến dịch vụ báo cáo được cấu hình. Công cụ không yêu cầu giấy tờ cá nhân. Maryland quyết định điều kiện đủ tiêu chuẩn.'
+                en: 'Privacy: The root demo shows simulated analytics and does not send events. A clinic-specific route can send a clinic ID, event type, screen/pathway ID, language and date to the configured reporting endpoint; the endpoint forwards events only if a reporting webhook is configured. This tool does not request names, member IDs, health details or document contents. The receiving reporting service controls its own retention. Maryland decides eligibility.',
+                es: 'Privacidad: La demostración principal muestra análisis simulados y no envía eventos. Una ruta para clínicas puede enviar un identificador de clínica, tipo de evento, pantalla o ruta, idioma y fecha al punto de informes configurado; solo se reenvían eventos si hay un webhook configurado. La herramienta no solicita nombres, números de miembro, datos de salud ni contenido de documentos. El servicio receptor controla su propia retención. Maryland determina la elegibilidad.',
+                zh: '隐私：主演示使用模拟分析，不发送事件。诊所专用路径可能向已配置的报告端点发送诊所编号、事件类型、页面或路径编号、语言和日期；只有配置了报告 webhook 时才会转发事件。本工具不要求姓名、会员编号、健康信息或文件内容。接收报告服务自行决定数据保留方式。资格由马里兰州决定。',
+                ko: '개인정보 보호: 기본 데모는 시뮬레이션 분석을 표시하며 이벤트를 전송하지 않습니다. 클리닉 전용 경로는 클리닉 ID, 이벤트 유형, 화면/경로 ID, 언어 및 날짜를 설정된 보고 엔드포인트로 보낼 수 있으며, 보고 webhook이 설정된 경우에만 전달됩니다. 이 도구는 이름, 회원 ID, 건강 정보 또는 문서 내용을 요청하지 않습니다. 수신 보고 서비스가 자체 보존 기간을 관리합니다. 자격 여부는 메릴랜드주가 결정합니다.',
+                vi: 'Quyền riêng tư: Bản demo chính hiển thị số liệu mô phỏng và không gửi sự kiện. Phiên bản dành cho phòng khám có thể gửi mã phòng khám, loại sự kiện, mã màn hình/lộ trình, ngôn ngữ và ngày đến điểm cuối báo cáo đã cấu hình; sự kiện chỉ được chuyển tiếp nếu webhook báo cáo được thiết lập. Công cụ không yêu cầu tên, mã hội viên, thông tin sức khỏe hoặc nội dung tài liệu. Dịch vụ báo cáo nhận dữ liệu tự quản lý thời gian lưu giữ. Maryland quyết định điều kiện đủ tiêu chuẩn.'
             };
             const analyticsLabels = {
                 en: 'View Demonstration Analytics',
@@ -340,52 +340,40 @@
         }
         const LANGS = {
             zh: {
-                hdr: '马里兰州 Medicaid 2027 指南 • 仅提供一般信息，不构成法律或资格建议 • 规则最后审核日期：2026年11月20日',
+                hdr: '马里兰州 Medicaid 2027 指南 • 仅提供一般信息，不构成法律或资格建议 • 指引审核日期：2026年11月22日',
                 help: '💡 为什么要问我这个？', step: '步骤 ', fb: '（此页面暂时只有英文版，完整翻译正在审核中。）',
                 N: {
-                    WELCOME_SCREEN: { name: '从这里开始', title: '您今天要帮助谁？', subtitle: '从2027年1月1日起，部分19至64岁的马里兰州Medicaid成年人可能需要满足每月工作或活动要求，并每6个月续保一次。可通过每月收入至少580美元、至少半日制就学，或完成80小时获批活动来满足要求。部分人可获豁免。', explanation: '本工具只提供信息，不决定资格，也不要求提供个人文件。', help: '会员、医疗服务提供者和雇主需要的信息不同。选择路径可避免不必要的问题。', options: ['我是 Medicaid 会员或申请人', '我是医疗服务提供者或诊所工作人员', '我是雇主或人力资源人员'] },
+                    WELCOME_SCREEN: { name: '从这里开始', title: '您今天要帮助谁？', subtitle: '部分马里兰州 Medicaid 成年人可能受到 2027 年 1 月 1 日开始的新联邦规定影响。马里兰州将把工作要求的执行推迟到 2027 年 6 月 30 日。州政府仍可能要求核实情况；其他资格和续保变化仍将继续。', explanation: '本工具只提供信息，不决定资格，也不要求提供个人文件。', help: '会员、医疗服务提供者和雇主需要的信息不同。选择路径可避免不必要的问题。', options: ['我是 Medicaid 会员或申请人', '我是医疗服务提供者或诊所工作人员', '我是雇主或人力资源人员'] },
                     MEMBER_START: { name: '确定您的目标', title: '让我们帮您更轻松地了解福利。', subtitle: '马里兰州将从 2027 年起调整部分 Medicaid 资格和续期要求。', explanation: '请选择您的目标，获取个性化指引。我们不做资格决定，也不要求提供个人文件。', help: '不同目标需要不同的指引。准确选择可以避免多余的问题。', options: ['2027 年有哪些变化？何时开始？', '哪些文件可以证明我的工作时数或豁免资格？', '了解我收到的 Medicaid 通知', '我不确定新要求是否适用于我', '准备即将到来的资格续期', '我认为我可能可以豁免工作要求'] },
-                    VERIFY_TIMELINES: { name: '查看时间表', title: '您目前没有需要处理的截止日期。', subtitle: '如果您还没有收到通知，您的账户可能处于一般跟踪状态。', explanation: '新规定将在 2027 年分阶段实施。建议每两个月检查一次账户，在收到续期通知前确保信息是最新的。', help: '保持信息更新可以避免错过自动的行政变更。', options: ['返回开始'] },
+                    VERIFY_TIMELINES: { name: '查看时间表', title: '此工具无法确认您是否有正在生效的截止日期。', subtitle: '没有收到通知并不能证明您没有截止日期，也不能证明这些变化不适用于您。', explanation: '此工具无法访问您的 Medicaid 账户或通知。请登录 Maryland Health Connection，查看账户、续保信息、信件和电子邮件，并遵守州政府通知中的日期。保持联系信息最新。', help: '请勿使用此工具确认您没有待办事项。只有您的官方账户和通知才能显示个案截止日期。', options: ['返回开始'] },
                     CONNECT_ASSISTANCE: { name: '真人协助', title: '让我们为您联系当地的导航员。', subtitle: '经过培训的社区导航员可以免费帮助您了解通知、豁免或补交文件。', explanation: '马里兰州每个县都有免费的现场和电话协助。请在下方选择您所在的县，查看该联系谁。', help: '有些情况由真人处理更好。导航员可以查看本工具不会收集的个案细节。', options: ['返回开始'] },
                     FINAL_CONFIRMATION: { name: '最终确认', title: '您已准备好继续。', subtitle: '文件准备齐全是避免不必要的保险中断的最重要因素。', explanation: '下一步见下方。请在通知上的日期前提交，并保留凭证。', help: '保留您提交的内容和时间的凭证，可在文件遗失或需要申诉时保护您。', options: ['返回开始'] }
                 },
-                R: {
-                    VERIFY_TIMELINES: { head: '您的答案：目前没有到期事项，但请现在就开始准备。', steps: ['登录 Maryland Health Connection，确认您的电话、电子邮件和邮寄地址正确。', '收入或家庭情况有变化时，请在 10 天内报告。', '打开 Maryland Health Connection 寄来的所有信件。自 2026 年 9 月起，已向需要遵守工作要求的人寄出信件。', '工作要求和每 6 个月续期的规定自 2027 年 1 月 1 日起实施，适用于部分成年人，在其续期时生效。'], cta: { text: '立即更新我的联系信息', href: 'https://www.marylandhealthconnection.gov/CheckIn' } },
-                    CONNECT_ASSISTANCE: { head: '您的答案：本周就与真人谈谈。', steps: ['致电 855-642-8572（周一至周五，上午 8 点至下午 6 点），并要求中文服务。该热线提供 200 多种语言的协助。或在下方选择您所在的县。', '请准备好您的通知，即使不完整也没关系。请携带带照片的身份证件。', '如有证明请带上：近期工资单、在校证明或医生证明信。', '询问是否可以延长提交文件的时间，以及您是否符合豁免条件。', '如果您的保险被拒绝或终止，通常有 90 天可以申诉。Maryland Legal Aid 可以提供帮助。'], cta: { text: '立即致电 855-642-8572', href: 'tel:8556428572' } },
-                    FINAL_CONFIRMATION: { head: '您的答案：提交文件并保留凭证。', steps: ['请在通知上的日期前提交：可在 Maryland Health Connection 在线提交、按通知上的地址邮寄、到当地 DHS 办公室亲自提交，或致电 855-642-8572。', '按通知要求附上收入证明、学习或培训记录，或医疗豁免证明。', '保存您发送的所有内容的截图、收据或复印件。', '留意确认信。如果没有收到，请致电 855-642-8572。'], cta: { text: '前往 Maryland Health Connection', href: 'https://www.marylandhealthconnection.gov' } }
-                }
+                R: {}
             },
             ko: {
-                hdr: '메릴랜드 메디케이드 2027 안내 • 일반 정보일 뿐이며 법률 또는 자격 조언이 아닙니다 • 규정 최종 검토일: 2026년 11월 20일',
+                hdr: '메릴랜드 메디케이드 2027 안내 • 일반 정보이며 법률 또는 자격 조언이 아닙니다 • 안내 검토일: 2026년 11월 22일',
                 help: '💡 왜 이런 질문을 하나요?', step: '단계 ', fb: '(이 화면은 현재 영어로만 제공됩니다. 전체 번역은 검토 중입니다.)',
                 N: {
-                    WELCOME_SCREEN: { name: '시작하기', title: '오늘 누구를 돕고 계신가요?', subtitle: '2027년 1월 1일부터 메릴랜드 메디케이드 가입자 중 19~64세 일부 성인은 매월 근로 또는 활동 요건을 충족하고 6개월마다 보장을 갱신해야 할 수 있습니다. 월 580달러 이상 소득, 최소 반일제 학교 등록 또는 승인된 활동 80시간 이수로 요건을 충족할 수 있습니다. 면제 대상도 있습니다.', explanation: '이 도구는 정보만 제공합니다. 자격을 결정하거나 개인 서류를 요구하지 않습니다.', help: '가입자, 의료 제공자, 고용주는 필요한 정보가 다릅니다. 경로를 선택하면 불필요한 질문을 피할 수 있습니다.', options: ['저는 메디케이드 가입자 또는 신청자입니다', '저는 의료 제공자 또는 클리닉 직원입니다', '저는 고용주 또는 인사 담당자입니다'] },
+                    WELCOME_SCREEN: { name: '시작하기', title: '오늘 누구를 돕고 계신가요?', subtitle: '메릴랜드 Medicaid 성인 중 일부는 2027년 1월 1일부터 시작되는 새로운 연방 규정의 영향을 받을 수 있습니다. 메릴랜드주는 근로 요건의 집행을 2027년 6월 30일까지 연기합니다. 주정부가 여전히 확인을 요청할 수 있으며, 다른 자격 및 갱신 변경은 계속 진행됩니다.', explanation: '이 도구는 정보만 제공합니다. 자격을 결정하거나 개인 서류를 요구하지 않습니다.', help: '가입자, 의료 제공자, 고용주는 필요한 정보가 다릅니다. 경로를 선택하면 불필요한 질문을 피할 수 있습니다.', options: ['저는 메디케이드 가입자 또는 신청자입니다', '저는 의료 제공자 또는 클리닉 직원입니다', '저는 고용주 또는 인사 담당자입니다'] },
                     MEMBER_START: { name: '목표 선택', title: '혜택 이용을 더 쉽게 도와드릴게요.', subtitle: '메릴랜드는 2027년부터 일부 메디케이드 자격 및 갱신 요건을 변경합니다.', explanation: '목표를 선택하면 맞춤 안내를 받을 수 있습니다. 자격을 결정하거나 개인 서류를 요구하지 않습니다.', help: '목표마다 필요한 안내가 다릅니다. 정확히 선택하면 불필요한 질문을 줄일 수 있습니다.', options: ['2027년에 무엇이 바뀌고 언제 시작되나요?', '근무 시간이나 면제를 증명하려면 어떤 서류가 필요한가요?', '받은 메디케이드 통지서 이해하기', '새 요건이 저에게 적용되는지 모르겠어요', '다가오는 갱신 준비하기', '근로 요건이 면제될 수 있다고 생각해요'] },
-                    VERIFY_TIMELINES: { name: '일정 확인', title: '현재 처리해야 할 마감일은 없습니다.', subtitle: '알림을 받지 않았다면 계정이 일반 추적 단계에 있을 수 있습니다.', explanation: '새 규정은 2027년에 단계적으로 시행됩니다. 갱신 통지서를 받기 전에 정보를 최신 상태로 유지하도록 두 달에 한 번 계정을 확인하세요.', help: '정보를 최신으로 유지하면 자동 행정 변경으로 인한 누락을 막을 수 있습니다.', options: ['처음으로 돌아가기'] },
+                    VERIFY_TIMELINES: { name: '일정 확인', title: '이 도구는 현재 마감일이 있는지 확인할 수 없습니다.', subtitle: '통지서를 받지 못했다고 해서 마감일이 없거나 변경 사항이 적용되지 않는다는 뜻은 아닙니다.', explanation: '이 도구는 Medicaid 계정이나 통지서에 접근할 수 없습니다. Maryland Health Connection에 로그인하여 계정, 갱신 정보, 편지와 이메일을 확인하고 주정부 통지서의 날짜를 따르세요. 연락처 정보를 최신 상태로 유지하세요.', help: '이 도구를 사용해 처리할 일이 없다고 판단하지 마세요. 개인별 마감일은 공식 계정과 통지서에서 확인해야 합니다.', options: ['처음으로 돌아가기'] },
                     CONNECT_ASSISTANCE: { name: '담당자 연결', title: '지역 내비게이터와 연결해 드릴게요.', subtitle: '교육을 받은 지역사회 내비게이터가 통지서, 면제, 부족한 서류에 대해 무료로 도와드립니다.', explanation: '메릴랜드 모든 카운티에서 무료 방문 및 전화 지원을 받을 수 있습니다. 아래에서 거주하는 카운티를 선택해 연락처를 확인하세요.', help: '직접 사람과 상담하는 것이 나은 경우가 있습니다. 내비게이터는 이 도구가 수집하지 않는 사례 정보를 확인할 수 있습니다.', options: ['처음으로 돌아가기'] },
                     FINAL_CONFIRMATION: { name: '최종 확인', title: '다음 단계로 진행할 준비가 되었습니다.', subtitle: '서류를 잘 갖추는 것이 불필요한 보험 중단을 피하는 가장 중요한 요소입니다.', explanation: '다음 단계는 아래에 있습니다. 통지서에 적힌 날짜까지 제출하고 증빙을 보관하세요.', help: '제출한 내용과 시기에 대한 증빙을 보관하면 서류가 분실되거나 이의 신청이 필요할 때 도움이 됩니다.', options: ['처음으로 돌아가기'] }
                 },
-                R: {
-                    VERIFY_TIMELINES: { head: '답변: 아직 마감일은 없지만 지금부터 준비하세요.', steps: ['Maryland Health Connection에 로그인해 전화번호, 이메일, 우편 주소가 맞는지 확인하세요.', '소득이나 가구 변경은 10일 이내에 신고하세요.', 'Maryland Health Connection에서 온 모든 편지를 열어 보세요. 2026년 9월부터 근로 요건을 충족해야 하는 분들께 편지가 발송되었습니다.', '근로 요건과 6개월마다 갱신하는 규정은 2027년 1월 1일부터 시작되며, 일부 성인에게 갱신 시점에 적용됩니다.'], cta: { text: '지금 연락처 업데이트', href: 'https://www.marylandhealthconnection.gov/CheckIn' } },
-                    CONNECT_ASSISTANCE: { head: '답변: 이번 주에 담당자와 이야기하세요.', steps: ['855-642-8572(월~금 오전 8시~오후 6시)로 전화해 한국어 지원을 요청하세요. 이 상담 전화는 200개 이상의 언어를 지원합니다. 또는 아래에서 거주 지역을 선택하세요.', '통지서를 준비하세요(불완전해도 괜찮습니다). 사진이 있는 신분증을 지참하세요.', '증빙이 있으면 가져가세요: 최근 급여명세서, 재학 증명, 또는 의사 소견서.', '서류 제출 기한 연장이 가능한지, 면제 대상인지 물어보세요.', '보험이 거부되거나 종료되면 보통 90일 이내에 이의 신청할 수 있습니다. Maryland Legal Aid가 도와드릴 수 있습니다.'], cta: { text: '지금 855-642-8572로 전화', href: 'tel:8556428572' } },
-                    FINAL_CONFIRMATION: { head: '답변: 서류를 제출하고 증빙을 보관하세요.', steps: ['통지서에 적힌 날짜까지 제출하세요: Maryland Health Connection 온라인, 통지서 주소로 우편, 지역 DHS 사무실 방문, 또는 855-642-8572 전화.', '통지서가 요구하는 대로 소득 증빙, 학업 또는 훈련 기록, 또는 의료 면제 증명서를 포함하세요.', '보낸 모든 것의 스크린샷, 영수증 또는 사본을 보관하세요.', '확인 편지를 기다리세요. 오지 않으면 855-642-8572로 전화하세요.'], cta: { text: 'Maryland Health Connection으로 이동', href: 'https://www.marylandhealthconnection.gov' } }
-                }
+                R: {}
             },
             vi: {
-                hdr: 'Hướng dẫn Medicaid Maryland 2027 • Chỉ là thông tin chung, không phải tư vấn pháp lý hay xác định đủ điều kiện • Quy định xem xét lần cuối: 20/11/2026',
+                hdr: 'Hướng dẫn Medicaid Maryland 2027 • Chỉ là thông tin chung, không phải tư vấn pháp lý hay xác định đủ điều kiện • Hướng dẫn được xem xét ngày 22/11/2026',
                 help: '💡 Tại sao tôi được hỏi điều này?', step: 'Bước ', fb: '(Màn hình này hiện chỉ có tiếng Anh. Bản dịch đầy đủ đang được xem xét.)',
                 N: {
-                    WELCOME_SCREEN: { name: 'Bắt đầu', title: 'Hôm nay bạn đang giúp ai?', subtitle: 'Từ ngày 1/1/2027, một số người lớn từ 19 đến 64 tuổi tham gia Medicaid Maryland có thể phải đáp ứng yêu cầu làm việc hoặc hoạt động hằng tháng và gia hạn bảo hiểm mỗi 6 tháng. Có thể đáp ứng yêu cầu bằng cách kiếm ít nhất 580 USD mỗi tháng, đi học ít nhất bán thời gian hoặc hoàn thành 80 giờ hoạt động được chấp thuận. Có các trường hợp được miễn.', explanation: 'Công cụ này chỉ cung cấp thông tin. Công cụ không quyết định tư cách đủ điều kiện và không yêu cầu giấy tờ cá nhân.', help: 'Hội viên, nhà cung cấp dịch vụ y tế và người sử dụng lao động cần thông tin khác nhau. Chọn đúng lộ trình giúp tránh những câu hỏi không cần thiết.', options: ['Tôi là hội viên hoặc người nộp đơn Medicaid', 'Tôi là nhà cung cấp dịch vụ y tế hoặc nhân viên phòng khám', 'Tôi là người sử dụng lao động hoặc nhân sự'] },
+                    WELCOME_SCREEN: { name: 'Bắt đầu', title: 'Hôm nay bạn đang giúp ai?', subtitle: 'Một số người lớn tham gia Medicaid Maryland có thể chịu ảnh hưởng bởi các quy định liên bang mới bắt đầu từ ngày 1/1/2027. Maryland sẽ trì hoãn việc thực thi yêu cầu làm việc đến ngày 30/6/2027. Tiểu bang vẫn có thể yêu cầu xác minh; các thay đổi khác về điều kiện và gia hạn vẫn tiếp tục.', explanation: 'Công cụ này chỉ cung cấp thông tin. Công cụ không quyết định tư cách đủ điều kiện và không yêu cầu giấy tờ cá nhân.', help: 'Hội viên, nhà cung cấp dịch vụ y tế và người sử dụng lao động cần thông tin khác nhau. Chọn đúng lộ trình giúp tránh những câu hỏi không cần thiết.', options: ['Tôi là hội viên hoặc người nộp đơn Medicaid', 'Tôi là nhà cung cấp dịch vụ y tế hoặc nhân viên phòng khám', 'Tôi là người sử dụng lao động hoặc nhân sự'] },
                     MEMBER_START: { name: 'Chọn mục tiêu', title: 'Hãy giúp bạn dễ dàng hiểu quyền lợi của mình hơn.', subtitle: 'Từ năm 2027, Maryland sẽ thay đổi một số yêu cầu về điều kiện và gia hạn Medicaid.', explanation: 'Hãy chọn mục tiêu để nhận hướng dẫn phù hợp. Chúng tôi không quyết định tư cách đủ điều kiện và không yêu cầu giấy tờ cá nhân.', help: 'Mỗi mục tiêu cần một hướng dẫn khác nhau. Chọn chính xác giúp tránh những câu hỏi không cần thiết.', options: ['Năm 2027 có gì thay đổi và khi nào?', 'Giấy tờ nào chứng minh giờ làm hoặc diện miễn trừ của tôi?', 'Hiểu thông báo Medicaid tôi đã nhận', 'Tôi không chắc yêu cầu mới có áp dụng cho tôi không', 'Chuẩn bị cho đợt gia hạn sắp tới', 'Tôi nghĩ mình có thể được miễn quy định về việc làm'] },
-                    VERIFY_TIMELINES: { name: 'Kiểm tra mốc thời gian', title: 'Hiện tại bạn chưa có hạn chót nào.', subtitle: 'Nếu bạn chưa nhận được thông báo, tài khoản của bạn có thể đang ở diện theo dõi thông thường.', explanation: 'Các quy định sẽ được áp dụng theo từng đợt trong năm 2027. Hãy kiểm tra tài khoản hai tháng một lần để thông tin luôn cập nhật trước khi bạn nhận thông báo gia hạn.', help: 'Giữ thông tin cập nhật giúp bạn không bỏ lỡ các thay đổi hành chính tự động.', options: ['Quay lại đầu'] },
+                    VERIFY_TIMELINES: { name: 'Kiểm tra mốc thời gian', title: 'Công cụ này không thể xác nhận bạn có hạn chót đang áp dụng hay không.', subtitle: 'Chưa nhận được thông báo không có nghĩa là bạn không có hạn chót hoặc các thay đổi không áp dụng cho bạn.', explanation: 'Công cụ này không thể truy cập tài khoản Medicaid hoặc thông báo của bạn. Hãy đăng nhập Maryland Health Connection, xem tài khoản, thông tin gia hạn, thư và email, đồng thời làm theo ngày ghi trong thông báo của tiểu bang. Cập nhật thông tin liên hệ.', help: 'Không dùng công cụ này để kết luận rằng bạn không có việc gì cần làm. Chỉ tài khoản và thông báo chính thức mới cho biết hạn chót của hồ sơ bạn.', options: ['Quay lại đầu'] },
                     CONNECT_ASSISTANCE: { name: 'Hỗ trợ trực tiếp', title: 'Hãy kết nối bạn với người hướng dẫn tại địa phương.', subtitle: 'Người hướng dẫn cộng đồng được đào tạo có thể giúp bạn hiểu thông báo, diện miễn trừ hoặc giấy tờ còn thiếu, miễn phí.', explanation: 'Mọi quận ở Maryland đều có hỗ trợ miễn phí trực tiếp và qua điện thoại. Hãy chọn quận của bạn bên dưới để biết gọi cho ai.', help: 'Một số trường hợp nên được giải quyết bởi người thật. Người hướng dẫn có thể xem chi tiết hồ sơ mà công cụ này không thu thập.', options: ['Quay lại đầu'] },
                     FINAL_CONFIRMATION: { name: 'Xác nhận cuối', title: 'Bạn đã sẵn sàng để tiếp tục.', subtitle: 'Chuẩn bị đủ giấy tờ là yếu tố quan trọng nhất để tránh bị gián đoạn bảo hiểm không cần thiết.', explanation: 'Bước tiếp theo ở bên dưới. Hãy nộp trước ngày ghi trên thông báo và giữ lại bằng chứng.', help: 'Giữ bằng chứng về những gì bạn đã nộp và khi nào giúp bảo vệ bạn nếu giấy tờ bị thất lạc hoặc cần khiếu nại.', options: ['Quay lại đầu'] }
                 },
-                R: {
-                    VERIFY_TIMELINES: { head: 'Câu trả lời của bạn: chưa có gì đến hạn, nhưng hãy chuẩn bị ngay bây giờ.', steps: ['Đăng nhập Maryland Health Connection và xác nhận số điện thoại, email và địa chỉ gửi thư của bạn là chính xác.', 'Báo cáo thay đổi về thu nhập hoặc hộ gia đình trong vòng 10 ngày.', 'Mở mọi thư từ Maryland Health Connection. Từ tháng 9 năm 2026, thư đã được gửi cho những người phải đáp ứng quy định về việc làm.', 'Quy định về việc làm và gia hạn mỗi 6 tháng bắt đầu từ ngày 1 tháng 1 năm 2027, áp dụng cho một số người lớn, vào đợt gia hạn của họ.'], cta: { text: 'Cập nhật thông tin liên lạc ngay', href: 'https://www.marylandhealthconnection.gov/CheckIn' } },
-                    CONNECT_ASSISTANCE: { head: 'Câu trả lời của bạn: hãy nói chuyện với một người trong tuần này.', steps: ['Gọi 855-642-8572 (thứ Hai đến thứ Sáu, 8 giờ sáng đến 6 giờ chiều) và yêu cầu hỗ trợ tiếng Việt. Đường dây này hỗ trợ hơn 200 ngôn ngữ. Hoặc chọn khu vực của bạn bên dưới.', 'Chuẩn bị sẵn thông báo của bạn, dù chưa đầy đủ. Mang theo giấy tờ tùy thân có ảnh.', 'Mang theo bằng chứng nếu có: phiếu lương gần đây, giấy xác nhận đang đi học, hoặc thư của bác sĩ.', 'Hỏi xem có thể được thêm thời gian nộp giấy tờ không và bạn có thuộc diện miễn trừ không.', 'Nếu bảo hiểm bị từ chối hoặc chấm dứt, thông thường bạn có 90 ngày để khiếu nại. Maryland Legal Aid có thể giúp.'], cta: { text: 'Gọi 855-642-8572 ngay', href: 'tel:8556428572' } },
-                    FINAL_CONFIRMATION: { head: 'Câu trả lời của bạn: nộp giấy tờ và giữ lại bằng chứng.', steps: ['Nộp trước ngày ghi trên thông báo: trực tuyến tại Maryland Health Connection, gửi thư đến địa chỉ trên thông báo, trực tiếp tại văn phòng DHS địa phương, hoặc gọi 855-642-8572.', 'Đính kèm bằng chứng thu nhập, hồ sơ học tập hoặc đào tạo, hoặc giấy chứng nhận miễn trừ y tế, theo yêu cầu của thông báo.', 'Lưu ảnh chụp màn hình, biên nhận hoặc bản sao mọi thứ bạn gửi.', 'Chờ thư xác nhận. Nếu không nhận được, hãy gọi 855-642-8572.'], cta: { text: 'Đến Maryland Health Connection', href: 'https://www.marylandhealthconnection.gov' } }
-                }
+                R: {}
             }
         };
         
@@ -673,11 +661,8 @@ const ES = {
 <script>
 (function () {
   var params = new URLSearchParams(window.location.search);
-  var pathSlug = window.location.pathname.replace(/^\/|\/$/g, '').toLowerCase();
+  var pathSlug = window.location.pathname.split('/').filter(Boolean).join('/').toLowerCase();
   var rawSlug = (pathSlug && pathSlug !== 'index.html') ? pathSlug : (params.get('clinic') || '').toLowerCase();
-  var clinicSlug = /^[a-z0-9-]{2,40}$/.test(rawSlug) ? rawSlug : '';   // strict allow-list pattern
-  var isDebug = params.get('debug') === 'true';
-
   var CLINIC_DIRECTORY = {
     'chase-brexton': 'Chase Brexton Health Care',
     'cci-health': 'CCI Health Services',
@@ -685,17 +670,19 @@ const ES = {
     'choptank-health': 'Choptank Community Health',
     'bmsi': 'Baltimore Medical System'
   };
-  var clinicName = '';
-  if (clinicSlug) {
-    clinicName = CLINIC_DIRECTORY[clinicSlug] || (params.get('name') || '').slice(0, 60) ||
-      clinicSlug.replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
-  }
+  // Only explicitly configured clinic tenants are recognized; unknown slugs are not tenants.
+  var clinicSlug = Object.prototype.hasOwnProperty.call(CLINIC_DIRECTORY, rawSlug) ? rawSlug : '';
+  var isDebug = params.get('debug') === 'true';
+  var clinicName = clinicSlug ? CLINIC_DIRECTORY[clinicSlug] : '';
 
   var BANNER = {
-    en: '<strong>2027 transition update (CMS SMD #26-006):</strong> Work and 6-month renewal requirements begin <strong>Jan. 1, 2027</strong>. CMS lets states elect an optional hold-harmless period through <strong>June 30, 2027</strong> (states were asked to notify CMS by <strong>Dec. 11, 2026</strong>). Check with Maryland Health Connection for the latest. Completing your readiness check now helps prevent coverage gaps.',
-    es: '<strong>Actualización de transición 2027 (CMS SMD #26-006):</strong> Los requisitos de trabajo y de renovación cada 6 meses comienzan el <strong>1 de enero de 2027</strong>. CMS permite que los estados elijan un período opcional de protección hasta el <strong>30 de junio de 2027</strong> (se pidió a los estados avisar a CMS antes del <strong>11 de dic. de 2026</strong>). Consulte Maryland Health Connection para la información más reciente.'
+    en: '<strong>Maryland Medicaid update (Nov. 20, 2026):</strong> Maryland will delay enforcement of the new federal work requirements through <strong>June 30, 2027</strong>. Members may still be asked to verify whether they meet the rule or qualify for an exception, but they will not be denied or disenrolled through that date solely for failing to meet the new work-reporting requirements. <strong>Other eligibility and enrollment changes are not delayed.</strong> Read every official notice and complete renewals by the stated deadline.',
+    es: '<strong>Actualización de Medicaid de Maryland (20 de nov. de 2026):</strong> Maryland retrasará la aplicación de los nuevos requisitos federales de trabajo hasta el <strong>30 de junio de 2027</strong>. El estado aún puede pedir que los miembros verifiquen si cumplen el requisito o tienen una excepción, pero no se les negará ni terminará la cobertura hasta esa fecha únicamente por no cumplir los nuevos requisitos de información laboral. <strong>Otros cambios de elegibilidad e inscripción no se retrasan.</strong> Lea todos los avisos oficiales y complete las renovaciones antes de la fecha indicada.',
+    zh: '<strong>马里兰州 Medicaid 更新（2026年11月20日）：</strong>马里兰州将把新的联邦工作要求的执行推迟至<strong>2027年6月30日</strong>。州政府仍可能要求会员核实是否符合要求或例外情况，但在该日期之前，不会仅因未满足新的工作报告要求而拒绝或终止其 Medicaid 保障。<strong>其他资格和参保变更不会延期。</strong>请阅读所有官方通知，并在规定日期前完成续保。',
+    ko: '<strong>메릴랜드 Medicaid 업데이트(2026년 11월 20일):</strong> 메릴랜드주는 새로운 연방 근로 요건의 집행을 <strong>2027년 6월 30일까지</strong> 연기합니다. 주정부는 요건 충족 또는 예외 여부를 확인하도록 요청할 수 있지만, 해당 날짜까지 새로운 근로 보고 요건을 충족하지 못했다는 이유만으로 Medicaid 보장을 거부하거나 종료하지 않습니다. <strong>다른 자격 및 등록 변경은 연기되지 않습니다.</strong> 모든 공식 통지서를 읽고 안내된 기한까지 갱신을 완료하세요.',
+    vi: '<strong>Cập nhật Medicaid Maryland (20/11/2026):</strong> Maryland sẽ trì hoãn việc thực thi các yêu cầu làm việc liên bang mới đến hết ngày <strong>30/6/2027</strong>. Tiểu bang vẫn có thể yêu cầu hội viên xác minh việc đáp ứng yêu cầu hoặc thuộc diện ngoại lệ, nhưng sẽ không từ chối hoặc chấm dứt bảo hiểm đến ngày đó chỉ vì không đáp ứng yêu cầu báo cáo công việc mới. <strong>Các thay đổi khác về điều kiện và đăng ký không bị trì hoãn.</strong> Hãy đọc mọi thông báo chính thức và hoàn tất gia hạn trước thời hạn được ghi.'
   };
-  var PRIVACY_CLINIC = 'Privacy: this tool does not ask for your name, ID, or health details. It records only anonymous counts (which screen was viewed, language, date) for ' + clinicName + '. It gives general information only. Maryland decides eligibility.';
+  var PRIVACY_CLINIC = 'Privacy: this clinic route may send a clinic ID, event type, screen/pathway ID, language and date to the configured reporting endpoint. Events are forwarded only if a reporting webhook is configured. No names, member IDs, health details or document contents are requested by this tool. The receiving service controls its own retention. Maryland decides eligibility.';
 
   function lang() { return document.documentElement.lang || 'en'; }
 
