@@ -119,6 +119,66 @@
         "No",
         "No estoy seguro/a"
       ]
+    },
+    "SC_RETRO_PRE_RESULT": {
+      "name": "Lista de acciones y enlace oficial",
+      "title": "Si puede presentar la solicitud antes del 1 de enero de 2027",
+      "subtitle": "Revise la lista a continuación y luego use el enlace oficial de la agencia. Navigator no envía información ni determina la elegibilidad.",
+      "explanation": "Use únicamente los portales oficiales de las agencias para solicitudes, avisos y envío de documentos. No ingrese información personal en esta guía.",
+      "help": "La lista ofrece información general de orientación. La agencia responsable toma la decisión de elegibilidad e informa los plazos específicos del caso.",
+      "options": [
+        "Volver al inicio"
+      ]
+    },
+    "SC_RETRO_POST_RESULT": {
+      "name": "Lista de acciones y enlace oficial",
+      "title": "Si presenta la solicitud el 1 de enero de 2027 o después",
+      "subtitle": "Revise la lista a continuación y luego use el enlace oficial de la agencia. Navigator no envía información ni determina la elegibilidad.",
+      "explanation": "Use únicamente los portales oficiales de las agencias para solicitudes, avisos y envío de documentos. No ingrese información personal en esta guía.",
+      "help": "La lista ofrece información general de orientación. La agencia responsable toma la decisión de elegibilidad e informa los plazos específicos del caso.",
+      "options": [
+        "Volver al inicio"
+      ]
+    },
+    "SC_RETRO_UNSURE_RESULT": {
+      "name": "Lista de acciones y enlace oficial",
+      "title": "Si no está seguro/a de la fecha de solicitud",
+      "subtitle": "Revise la lista a continuación y luego use el enlace oficial de la agencia. Navigator no envía información ni determina la elegibilidad.",
+      "explanation": "Use únicamente los portales oficiales de las agencias para solicitudes, avisos y envío de documentos. No ingrese información personal en esta guía.",
+      "help": "La lista ofrece información general de orientación. La agencia responsable toma la decisión de elegibilidad e informa los plazos específicos del caso.",
+      "options": [
+        "Volver al inicio"
+      ]
+    },
+    "SC_MANAGED_RESULT": {
+      "name": "Lista de acciones y enlace oficial",
+      "title": "Lista de verificación de atención administrada y atención a largo plazo",
+      "subtitle": "Revise la lista a continuación y luego use el enlace oficial de la agencia. Navigator no envía información ni determina la elegibilidad.",
+      "explanation": "Use únicamente los portales oficiales de las agencias para solicitudes, avisos y envío de documentos. No ingrese información personal en esta guía.",
+      "help": "La lista ofrece información general de orientación. La agencia responsable toma la decisión de elegibilidad e informa los plazos específicos del caso.",
+      "options": [
+        "Volver al inicio"
+      ]
+    },
+    "SC_STAFF_RESULT": {
+      "name": "Lista de acciones y enlace oficial",
+      "title": "Lista de referencia rápida para clínicas y CHW",
+      "subtitle": "Revise la lista a continuación y luego use el enlace oficial de la agencia. Navigator no envía información ni determina la elegibilidad.",
+      "explanation": "Use únicamente los portales oficiales de las agencias para solicitudes, avisos y envío de documentos. No ingrese información personal en esta guía.",
+      "help": "La lista ofrece información general de orientación. La agencia responsable toma la decisión de elegibilidad e informa los plazos específicos del caso.",
+      "options": [
+        "Volver al inicio"
+      ]
+    },
+    "SC_BENEFITS_RESULT": {
+      "name": "Lista de acciones y enlace oficial",
+      "title": "Próximos pasos para SNAP, vivienda y beneficios para veteranos",
+      "subtitle": "Revise la lista a continuación y luego use el enlace oficial de la agencia. Navigator no envía información ni determina la elegibilidad.",
+      "explanation": "Use únicamente los portales oficiales de las agencias para solicitudes, avisos y envío de documentos. No ingrese información personal en esta guía.",
+      "help": "La lista ofrece información general de orientación. La agencia responsable toma la decisión de elegibilidad e informa los plazos específicos del caso.",
+      "options": [
+        "Volver al inicio"
+      ]
     }
   },
   "results": {
