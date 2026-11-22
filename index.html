@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="color-scheme" content="dark">
-    <title>Medicaid 2027 Guide | Radiant Motive Navigator</title>
+    <title>Maryland Medicaid Navigation Guide | Radiant Motive Navigator</title>
+    <meta name="description" content="A guided Maryland Medicaid navigation resource for members, applicants, clinics and community helpers. General information only; Maryland determines eligibility and deadlines.">
     <style>
         :root { box-sizing: border-box; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); color-scheme: dark; }
         html { scroll-padding-top: env(safe-area-inset-top, 0px); }
@@ -37,13 +38,20 @@
         .accb a { color: #2dd4bf; }
         .chk { display: flex; gap: 10px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid #14532d; font-size: 13px; line-height: 1.5; cursor: pointer; }
         .chk input { margin-top: 4px; width: 18px; height: 18px; flex: none; }
+        .language-note { background:#172554; border:1px solid #475569; color:#e2e8f0; border-radius:8px; padding:10px 12px; margin:0 0 14px; font-size:12px; line-height:1.5; }
+        .clinic-preview-note { background:#1e293b; border:1px solid #64748b; color:#e2e8f0; border-radius:8px; padding:10px 12px; margin:0 0 14px; font-size:12px; line-height:1.5; }
+        .clinic-sales { background:#0b2239; border:1px solid #2dd4bf; border-radius:10px; padding:14px; margin-top:14px; }
+        .clinic-sales h3 { color:#99f6e4; margin:0 0 8px; font-size:17px; }
+        .clinic-sales p, .clinic-sales li { color:#e2e8f0; font-size:13px; line-height:1.6; }
+        .clinic-sales ul, .clinic-sales ol { padding-left:20px; }
+        .clinic-sales .cta { margin-top:12px; }
     </style>
 </head>
 <body style="background-color: #0f172a; color: #f8fafc; font-family: sans-serif; padding: 20px; margin: 0;">
 
     <!-- HEADER AREA -->
     <div style="background-color: #020617; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #1e293b;">
-        <span style="color: #10b981; font-weight: bold; font-size: 16px;">🟢 RADIANT MOTIVE NAVIGATOR DEMO: MEDICAID 2027</span>
+        <span style="color: #10b981; font-weight: bold; font-size: 16px;">🟢 RADIANT MOTIVE NAVIGATOR • MARYLAND MEDICAID GUIDE</span>
         <div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px;"><button class="lang" id="lang-en" aria-pressed="true" onclick="setLang('en')">English</button><button class="lang" id="lang-es" aria-pressed="false" onclick="setLang('es')">Español</button><button class="lang" id="lang-zh" aria-pressed="false" onclick="setLang('zh')">中文</button><button class="lang" id="lang-ko" aria-pressed="false" onclick="setLang('ko')">한국어</button><button class="lang" id="lang-vi" aria-pressed="false" onclick="setLang('vi')">Tiếng Việt</button></div>
         <div id="hdr-sub" style="color: #94a3b8; font-size: 11px; margin-top: 6px; line-height: 1.5;">Maryland Medicaid 2027 guide • General information only, not legal or eligibility advice • Guidance reviewed Nov. 22, 2026. Confirm details with the state</div>
     </div>
@@ -60,6 +68,7 @@
             Select your core objective today to initiate a personalized guidance track. We do not make eligibility decisions or ask for personal documentation.
         </div>
 
+        <div id="language-coverage-note" class="language-note" role="note" hidden></div>
         <div id="result-panel"></div>
         <div id="buttons-container"></div>
 
@@ -71,7 +80,7 @@
     </div>
 
     <!-- INVESTOR TELEMETRY PANEL LAYER -->
-    <div class="muted" style="line-height: 1.6; margin-bottom: 12px;"><span id="privacy-copy">Privacy: The root demo shows simulated analytics and does not send events. A clinic-specific route can send a clinic ID, event type, screen/pathway ID, language and date to the configured reporting endpoint; events are forwarded only if a reporting webhook is configured. This tool does not request names, member IDs, health details or document contents. The receiving reporting service controls its own retention. Maryland decides eligibility.</span> <button id="analytics-toggle" class="lang" style="margin-left: 0;" onclick="toggleDemo()">View Demonstration Analytics</button></div>
+    <div class="muted" style="line-height: 1.6; margin-bottom: 12px;"><span id="privacy-copy">Privacy: This preview does not ask for your name, Medicaid ID, health details or documents and has no document-upload feature. The website host may process standard technical information such as IP address, browser/device details and request timestamps. Patient-level analytics and clinic reporting are disabled in this preview. Do not enter personal information. Maryland determines eligibility and deadlines.</span> <button id="analytics-toggle" class="lang" style="margin-left: 0;" onclick="toggleDemo()">View Demonstration Analytics</button></div>
     <div id="demo-panel" style="display: none; background-color: #020617; padding: 15px; border-radius: 8px; border: 1px solid #1e293b;">
         <div style="font-size: 12px; color: #94a3b8; font-weight: bold; text-transform: uppercase;">Demo Analytics Preview (simulated)</div>
         <div style="font-size: 11px; color: #64748b; margin-top: 4px; margin-bottom: 10px;">Shows example event fields a configured clinic version could report. Simulated for this root demo; nothing is stored or sent.</div>
@@ -247,6 +256,7 @@
 
         let history = [];
         let selectedRegion = '';
+        let selectedExemptionIndices = [];
 
         const MHC = { name: 'Maryland Health Connection (statewide help line)', phone: '855-642-8572', note: 'Weekdays 8 a.m.–6 p.m. TTY 711. Help in 200+ languages. Can also help you renew by phone.', web: 'https://www.marylandhealthconnection.gov/help', webLabel: 'Find free help near you' };
         const CE = {
@@ -304,10 +314,20 @@
         function goBack() { if (history.length > 1) { history.pop(); render(history[history.length - 1], true); } }
         function toggleDemo() { const d = document.getElementById('demo-panel'); d.style.display = d.style.display === 'none' ? 'block' : 'none'; }
         let lang = 'en';
+        const LANGUAGE_NOTES = {
+            es: 'Nota de idioma: Algunas explicaciones detalladas pueden aparecer en inglés. Para recibir ayuda en su idioma, llame al 855-642-8572 (TTY 711).',
+            zh: '语言提示：部分详细说明可能以英文显示。如需语言协助，请拨打 855-642-8572（TTY 711）。',
+            ko: '언어 안내: 일부 자세한 설명은 영어로 표시될 수 있습니다. 언어 지원은 855-642-8572(TTY 711)로 문의하세요.',
+            vi: 'Lưu ý ngôn ngữ: Một số hướng dẫn chi tiết có thể hiển thị bằng tiếng Anh. Để được hỗ trợ ngôn ngữ, hãy gọi 855-642-8572 (TTY 711).'
+        };
         function tr(base, id) {
             const e = lang === 'es' ? ES[id] : (LANGS[lang] && LANGS[lang].N[id]);
-            if (!e) return (lang !== 'en' && lang !== 'es' && LANGS[lang]) ? Object.assign({}, base, { explanation: LANGS[lang].fb + ' ' + base.explanation }) : base;
-            return Object.assign({}, base, e, { options: base.options.map(function (o, i) { return { text: (e.options && e.options[i]) || o.text, next: o.next }; }) });
+            const translated = e ? Object.assign({}, base, e, {
+                options: base.options.map(function (o, i) { return { text: (e.options && e.options[i]) || o.text, next: o.next }; })
+            }) : Object.assign({}, base);
+            const incomplete = lang !== 'en' && (!e || (e.options && e.options.length < base.options.length));
+            if (incomplete && LANGUAGE_NOTES[lang]) translated.explanation = (translated.explanation || base.explanation) + ' ' + LANGUAGE_NOTES[lang];
+            return translated;
         }
         function setLang(l) {
             lang = l;
@@ -316,11 +336,11 @@
             /* languages: see LANGS */
             document.getElementById('hdr-sub').textContent = (LANGS[l] && LANGS[l].hdr) ? LANGS[l].hdr : l === 'es' ? 'Guía de Medicaid de Maryland 2027 • Información general, no asesoría legal ni de elegibilidad • Orientación revisada el 22 de nov. de 2026' : 'Maryland Medicaid 2027 guide • General information only, not legal or eligibility advice • Guidance reviewed Nov. 22, 2026. Confirm details with the state';
             const privacyCopy = {
-                en: 'Privacy: The root demo shows simulated analytics and does not send events. A clinic-specific route can send a clinic ID, event type, screen/pathway ID, language and date to the configured reporting endpoint; the endpoint forwards events only if a reporting webhook is configured. This tool does not request names, member IDs, health details or document contents. The receiving reporting service controls its own retention. Maryland decides eligibility.',
-                es: 'Privacidad: La demostración principal muestra análisis simulados y no envía eventos. Una ruta para clínicas puede enviar un identificador de clínica, tipo de evento, pantalla o ruta, idioma y fecha al punto de informes configurado; solo se reenvían eventos si hay un webhook configurado. La herramienta no solicita nombres, números de miembro, datos de salud ni contenido de documentos. El servicio receptor controla su propia retención. Maryland determina la elegibilidad.',
-                zh: '隐私：主演示使用模拟分析，不发送事件。诊所专用路径可能向已配置的报告端点发送诊所编号、事件类型、页面或路径编号、语言和日期；只有配置了报告 webhook 时才会转发事件。本工具不要求姓名、会员编号、健康信息或文件内容。接收报告服务自行决定数据保留方式。资格由马里兰州决定。',
-                ko: '개인정보 보호: 기본 데모는 시뮬레이션 분석을 표시하며 이벤트를 전송하지 않습니다. 클리닉 전용 경로는 클리닉 ID, 이벤트 유형, 화면/경로 ID, 언어 및 날짜를 설정된 보고 엔드포인트로 보낼 수 있으며, 보고 webhook이 설정된 경우에만 전달됩니다. 이 도구는 이름, 회원 ID, 건강 정보 또는 문서 내용을 요청하지 않습니다. 수신 보고 서비스가 자체 보존 기간을 관리합니다. 자격 여부는 메릴랜드주가 결정합니다.',
-                vi: 'Quyền riêng tư: Bản demo chính hiển thị số liệu mô phỏng và không gửi sự kiện. Phiên bản dành cho phòng khám có thể gửi mã phòng khám, loại sự kiện, mã màn hình/lộ trình, ngôn ngữ và ngày đến điểm cuối báo cáo đã cấu hình; sự kiện chỉ được chuyển tiếp nếu webhook báo cáo được thiết lập. Công cụ không yêu cầu tên, mã hội viên, thông tin sức khỏe hoặc nội dung tài liệu. Dịch vụ báo cáo nhận dữ liệu tự quản lý thời gian lưu giữ. Maryland quyết định điều kiện đủ tiêu chuẩn.'
+                en: 'Privacy: This preview does not ask for your name, Medicaid ID, health details or documents and has no document-upload feature. The website host may process standard technical information such as IP address, browser/device details and request timestamps. Patient-level analytics and clinic reporting are disabled in this preview. Do not enter personal information. Maryland determines eligibility and deadlines.',
+                es: 'Privacidad: Esta vista previa no solicita su nombre, número de Medicaid, datos de salud ni documentos, y no permite cargar documentos. El proveedor del sitio web puede procesar información técnica habitual, como la dirección IP, datos del navegador/dispositivo y la hora de las solicitudes. Los análisis a nivel de paciente y los informes de clínicas están desactivados en esta vista previa. No ingrese información personal. Maryland determina la elegibilidad y los plazos.',
+                zh: '隐私：此预览不会要求您提供姓名、Medicaid 号码、健康信息或文件，也不提供文件上传功能。网站托管服务商可能会处理 IP 地址、浏览器/设备信息和请求时间等常规技术信息。此预览已停用患者级分析和诊所报告。请勿输入个人信息。资格和截止日期由马里兰州决定。',
+                ko: '개인정보 보호: 이 미리보기는 이름, Medicaid ID, 건강 정보 또는 문서를 요청하지 않으며 문서 업로드 기능도 없습니다. 웹사이트 호스팅 제공업체는 IP 주소, 브라우저/기기 정보, 요청 시간 등 일반적인 기술 정보를 처리할 수 있습니다. 이 미리보기에서는 환자 수준 분석과 클리닉 보고 기능이 비활성화되어 있습니다. 개인 정보를 입력하지 마세요. 자격과 마감일은 메릴랜드주가 결정합니다.',
+                vi: 'Quyền riêng tư: Bản xem trước này không yêu cầu tên, mã Medicaid, thông tin sức khỏe hoặc tài liệu và không có chức năng tải tài liệu lên. Nhà cung cấp dịch vụ lưu trữ trang web có thể xử lý thông tin kỹ thuật thông thường như địa chỉ IP, thông tin trình duyệt/thiết bị và thời điểm gửi yêu cầu. Phân tích ở cấp bệnh nhân và báo cáo phòng khám đã bị tắt trong bản xem trước này. Không nhập thông tin cá nhân. Maryland quyết định điều kiện và thời hạn.'
             };
             const analyticsLabels = {
                 en: 'View Demonstration Analytics',
@@ -334,6 +354,7 @@
             if (privacyElement) privacyElement.textContent = privacyCopy[l] || privacyCopy.en;
             if (analyticsButton) analyticsButton.textContent = analyticsLabels[l] || analyticsLabels.en;
             render(current, true);
+            if (window.refreshPolicyBanner) window.refreshPolicyBanner();
         }
         function verdictEs(n) {
             return n ? '<strong>Puede que una o más excepciones estatales se apliquen (' + n + ' seleccionadas).</strong><br>Esto no es una decisión de elegibilidad. Consulte su cuenta de Maryland Health Connection o llame al <a href="tel:8556428572">855-642-8572</a> para confirmarlo. Es posible que aún deba renovar su cobertura.' : '<strong>No seleccionó ninguna excepción.</strong><br>Esto no demuestra que el requisito de trabajo se aplique a usted. Use la herramienta oficial de Maryland Health Connection o hable con un asistente. Si el requisito se aplica, el estado enumera ingresos laborales de $580 al mes, estudios de al menos medio tiempo o 80 horas de actividades aprobadas.';
@@ -344,7 +365,7 @@
                 help: '💡 为什么要问我这个？', step: '步骤 ', fb: '（此页面暂时只有英文版，完整翻译正在审核中。）',
                 N: {
                     WELCOME_SCREEN: { name: '从这里开始', title: '您今天要帮助谁？', subtitle: '部分马里兰州 Medicaid 成年人可能受到 2027 年 1 月 1 日开始的新联邦规定影响。马里兰州将把工作要求的执行推迟到 2027 年 6 月 30 日。州政府仍可能要求核实情况；其他资格和续保变化仍将继续。', explanation: '本工具只提供信息，不决定资格，也不要求提供个人文件。', help: '会员、医疗服务提供者和雇主需要的信息不同。选择路径可避免不必要的问题。', options: ['我是 Medicaid 会员或申请人', '我是医疗服务提供者或诊所工作人员', '我是雇主或人力资源人员'] },
-                    MEMBER_START: { name: '确定您的目标', title: '让我们帮您更轻松地了解福利。', subtitle: '马里兰州将从 2027 年起调整部分 Medicaid 资格和续期要求。', explanation: '请选择您的目标，获取个性化指引。我们不做资格决定，也不要求提供个人文件。', help: '不同目标需要不同的指引。准确选择可以避免多余的问题。', options: ['2027 年有哪些变化？何时开始？', '哪些文件可以证明我的工作时数或豁免资格？', '了解我收到的 Medicaid 通知', '我不确定新要求是否适用于我', '准备即将到来的资格续期', '我认为我可能可以豁免工作要求'] },
+                    MEMBER_START: { name: '确定您的目标', title: '让我们帮您更轻松地了解福利。', subtitle: '马里兰州将从 2027 年起调整部分 Medicaid 资格和续期要求。', explanation: '请选择您的目标，获取个性化指引。我们不做资格决定，也不要求提供个人文件。', help: '不同目标需要不同的指引。准确选择可以避免多余的问题。', options: ['2027 年有哪些变化？何时开始？', '哪些文件可以证明我的工作时数或豁免资格？', '了解我收到的 Medicaid 通知', '我不确定新要求是否适用于我', '准备即将到来的资格续期', '我认为我可能可以豁免工作要求', '我的 Medicaid 保障被拒绝或终止'] },
                     VERIFY_TIMELINES: { name: '查看时间表', title: '此工具无法确认您是否有正在生效的截止日期。', subtitle: '没有收到通知并不能证明您没有截止日期，也不能证明这些变化不适用于您。', explanation: '此工具无法访问您的 Medicaid 账户或通知。请登录 Maryland Health Connection，查看账户、续保信息、信件和电子邮件，并遵守州政府通知中的日期。保持联系信息最新。', help: '请勿使用此工具确认您没有待办事项。只有您的官方账户和通知才能显示个案截止日期。', options: ['返回开始'] },
                     CONNECT_ASSISTANCE: { name: '真人协助', title: '让我们为您联系当地的导航员。', subtitle: '经过培训的社区导航员可以免费帮助您了解通知、豁免或补交文件。', explanation: '马里兰州每个县都有免费的现场和电话协助。请在下方选择您所在的县，查看该联系谁。', help: '有些情况由真人处理更好。导航员可以查看本工具不会收集的个案细节。', options: ['返回开始'] },
                     FINAL_CONFIRMATION: { name: '最终确认', title: '您已查看准备步骤。', subtitle: '此工具无法确认您的文件是否齐全，也无法确认续保是否获批。', explanation: '请遵循官方通知中的说明和截止日期。仅提交州政府要求的信息，并保留提交凭证。', help: '此演示不会提交文件，也不会与 Maryland Health Connection 通信。', options: ['返回开始'] }
@@ -356,7 +377,7 @@
                 help: '💡 왜 이런 질문을 하나요?', step: '단계 ', fb: '(이 화면은 현재 영어로만 제공됩니다. 전체 번역은 검토 중입니다.)',
                 N: {
                     WELCOME_SCREEN: { name: '시작하기', title: '오늘 누구를 돕고 계신가요?', subtitle: '메릴랜드 Medicaid 성인 중 일부는 2027년 1월 1일부터 시작되는 새로운 연방 규정의 영향을 받을 수 있습니다. 메릴랜드주는 근로 요건의 집행을 2027년 6월 30일까지 연기합니다. 주정부가 여전히 확인을 요청할 수 있으며, 다른 자격 및 갱신 변경은 계속 진행됩니다.', explanation: '이 도구는 정보만 제공합니다. 자격을 결정하거나 개인 서류를 요구하지 않습니다.', help: '가입자, 의료 제공자, 고용주는 필요한 정보가 다릅니다. 경로를 선택하면 불필요한 질문을 피할 수 있습니다.', options: ['저는 메디케이드 가입자 또는 신청자입니다', '저는 의료 제공자 또는 클리닉 직원입니다', '저는 고용주 또는 인사 담당자입니다'] },
-                    MEMBER_START: { name: '목표 선택', title: '혜택 이용을 더 쉽게 도와드릴게요.', subtitle: '메릴랜드는 2027년부터 일부 메디케이드 자격 및 갱신 요건을 변경합니다.', explanation: '목표를 선택하면 맞춤 안내를 받을 수 있습니다. 자격을 결정하거나 개인 서류를 요구하지 않습니다.', help: '목표마다 필요한 안내가 다릅니다. 정확히 선택하면 불필요한 질문을 줄일 수 있습니다.', options: ['2027년에 무엇이 바뀌고 언제 시작되나요?', '근무 시간이나 면제를 증명하려면 어떤 서류가 필요한가요?', '받은 메디케이드 통지서 이해하기', '새 요건이 저에게 적용되는지 모르겠어요', '다가오는 갱신 준비하기', '근로 요건이 면제될 수 있다고 생각해요'] },
+                    MEMBER_START: { name: '목표 선택', title: '혜택 이용을 더 쉽게 도와드릴게요.', subtitle: '메릴랜드는 2027년부터 일부 메디케이드 자격 및 갱신 요건을 변경합니다.', explanation: '목표를 선택하면 맞춤 안내를 받을 수 있습니다. 자격을 결정하거나 개인 서류를 요구하지 않습니다.', help: '목표마다 필요한 안내가 다릅니다. 정확히 선택하면 불필요한 질문을 줄일 수 있습니다.', options: ['2027년에 무엇이 바뀌고 언제 시작되나요?', '근무 시간이나 면제를 증명하려면 어떤 서류가 필요한가요?', '받은 메디케이드 통지서 이해하기', '새 요건이 저에게 적용되는지 모르겠어요', '다가오는 갱신 준비하기', '근로 요건이 면제될 수 있다고 생각해요', 'Medicaid 보장이 거부되었거나 종료되었습니다'] },
                     VERIFY_TIMELINES: { name: '일정 확인', title: '이 도구는 현재 마감일이 있는지 확인할 수 없습니다.', subtitle: '통지서를 받지 못했다고 해서 마감일이 없거나 변경 사항이 적용되지 않는다는 뜻은 아닙니다.', explanation: '이 도구는 Medicaid 계정이나 통지서에 접근할 수 없습니다. Maryland Health Connection에 로그인하여 계정, 갱신 정보, 편지와 이메일을 확인하고 주정부 통지서의 날짜를 따르세요. 연락처 정보를 최신 상태로 유지하세요.', help: '이 도구를 사용해 처리할 일이 없다고 판단하지 마세요. 개인별 마감일은 공식 계정과 통지서에서 확인해야 합니다.', options: ['처음으로 돌아가기'] },
                     CONNECT_ASSISTANCE: { name: '담당자 연결', title: '지역 내비게이터와 연결해 드릴게요.', subtitle: '교육을 받은 지역사회 내비게이터가 통지서, 면제, 부족한 서류에 대해 무료로 도와드립니다.', explanation: '메릴랜드 모든 카운티에서 무료 방문 및 전화 지원을 받을 수 있습니다. 아래에서 거주하는 카운티를 선택해 연락처를 확인하세요.', help: '직접 사람과 상담하는 것이 나은 경우가 있습니다. 내비게이터는 이 도구가 수집하지 않는 사례 정보를 확인할 수 있습니다.', options: ['처음으로 돌아가기'] },
                     FINAL_CONFIRMATION: { name: '최종 확인', title: '준비 안내를 확인했습니다.', subtitle: '이 도구는 서류가 완전한지 또는 갱신이 승인되었는지 확인할 수 없습니다.', explanation: '공식 통지서의 안내와 마감일을 따르세요. 주정부가 요청한 정보만 제출하고 제출 확인을 보관하세요.', help: '이 데모는 서류를 제출하거나 Maryland Health Connection과 통신하지 않습니다.', options: ['처음으로 돌아가기'] }
@@ -368,7 +389,7 @@
                 help: '💡 Tại sao tôi được hỏi điều này?', step: 'Bước ', fb: '(Màn hình này hiện chỉ có tiếng Anh. Bản dịch đầy đủ đang được xem xét.)',
                 N: {
                     WELCOME_SCREEN: { name: 'Bắt đầu', title: 'Hôm nay bạn đang giúp ai?', subtitle: 'Một số người lớn tham gia Medicaid Maryland có thể chịu ảnh hưởng bởi các quy định liên bang mới bắt đầu từ ngày 1/1/2027. Maryland sẽ trì hoãn việc thực thi yêu cầu làm việc đến ngày 30/6/2027. Tiểu bang vẫn có thể yêu cầu xác minh; các thay đổi khác về điều kiện và gia hạn vẫn tiếp tục.', explanation: 'Công cụ này chỉ cung cấp thông tin. Công cụ không quyết định tư cách đủ điều kiện và không yêu cầu giấy tờ cá nhân.', help: 'Hội viên, nhà cung cấp dịch vụ y tế và người sử dụng lao động cần thông tin khác nhau. Chọn đúng lộ trình giúp tránh những câu hỏi không cần thiết.', options: ['Tôi là hội viên hoặc người nộp đơn Medicaid', 'Tôi là nhà cung cấp dịch vụ y tế hoặc nhân viên phòng khám', 'Tôi là người sử dụng lao động hoặc nhân sự'] },
-                    MEMBER_START: { name: 'Chọn mục tiêu', title: 'Hãy giúp bạn dễ dàng hiểu quyền lợi của mình hơn.', subtitle: 'Từ năm 2027, Maryland sẽ thay đổi một số yêu cầu về điều kiện và gia hạn Medicaid.', explanation: 'Hãy chọn mục tiêu để nhận hướng dẫn phù hợp. Chúng tôi không quyết định tư cách đủ điều kiện và không yêu cầu giấy tờ cá nhân.', help: 'Mỗi mục tiêu cần một hướng dẫn khác nhau. Chọn chính xác giúp tránh những câu hỏi không cần thiết.', options: ['Năm 2027 có gì thay đổi và khi nào?', 'Giấy tờ nào chứng minh giờ làm hoặc diện miễn trừ của tôi?', 'Hiểu thông báo Medicaid tôi đã nhận', 'Tôi không chắc yêu cầu mới có áp dụng cho tôi không', 'Chuẩn bị cho đợt gia hạn sắp tới', 'Tôi nghĩ mình có thể được miễn quy định về việc làm'] },
+                    MEMBER_START: { name: 'Chọn mục tiêu', title: 'Hãy giúp bạn dễ dàng hiểu quyền lợi của mình hơn.', subtitle: 'Từ năm 2027, Maryland sẽ thay đổi một số yêu cầu về điều kiện và gia hạn Medicaid.', explanation: 'Hãy chọn mục tiêu để nhận hướng dẫn phù hợp. Chúng tôi không quyết định tư cách đủ điều kiện và không yêu cầu giấy tờ cá nhân.', help: 'Mỗi mục tiêu cần một hướng dẫn khác nhau. Chọn chính xác giúp tránh những câu hỏi không cần thiết.', options: ['Năm 2027 có gì thay đổi và khi nào?', 'Giấy tờ nào chứng minh giờ làm hoặc diện miễn trừ của tôi?', 'Hiểu thông báo Medicaid tôi đã nhận', 'Tôi không chắc yêu cầu mới có áp dụng cho tôi không', 'Chuẩn bị cho đợt gia hạn sắp tới', 'Tôi nghĩ mình có thể được miễn quy định về việc làm', 'Medicaid của tôi bị từ chối hoặc chấm dứt'] },
                     VERIFY_TIMELINES: { name: 'Kiểm tra mốc thời gian', title: 'Công cụ này không thể xác nhận bạn có hạn chót đang áp dụng hay không.', subtitle: 'Chưa nhận được thông báo không có nghĩa là bạn không có hạn chót hoặc các thay đổi không áp dụng cho bạn.', explanation: 'Công cụ này không thể truy cập tài khoản Medicaid hoặc thông báo của bạn. Hãy đăng nhập Maryland Health Connection, xem tài khoản, thông tin gia hạn, thư và email, đồng thời làm theo ngày ghi trong thông báo của tiểu bang. Cập nhật thông tin liên hệ.', help: 'Không dùng công cụ này để kết luận rằng bạn không có việc gì cần làm. Chỉ tài khoản và thông báo chính thức mới cho biết hạn chót của hồ sơ bạn.', options: ['Quay lại đầu'] },
                     CONNECT_ASSISTANCE: { name: 'Hỗ trợ trực tiếp', title: 'Hãy kết nối bạn với người hướng dẫn tại địa phương.', subtitle: 'Người hướng dẫn cộng đồng được đào tạo có thể giúp bạn hiểu thông báo, diện miễn trừ hoặc giấy tờ còn thiếu, miễn phí.', explanation: 'Mọi quận ở Maryland đều có hỗ trợ miễn phí trực tiếp và qua điện thoại. Hãy chọn quận của bạn bên dưới để biết gọi cho ai.', help: 'Một số trường hợp nên được giải quyết bởi người thật. Người hướng dẫn có thể xem chi tiết hồ sơ mà công cụ này không thu thập.', options: ['Quay lại đầu'] },
                     FINAL_CONFIRMATION: { name: 'Xác nhận cuối', title: 'Bạn đã xem hướng dẫn chuẩn bị.', subtitle: 'Công cụ này không thể xác nhận giấy tờ của bạn đã đầy đủ hoặc việc gia hạn đã được chấp thuận.', explanation: 'Hãy làm theo hướng dẫn và thời hạn trong thông báo chính thức. Chỉ gửi thông tin tiểu bang yêu cầu và giữ lại xác nhận đã nộp.', help: 'Bản demo này không gửi tài liệu và không liên lạc với Maryland Health Connection.', options: ['Quay lại đầu'] }
@@ -397,7 +418,7 @@ const ES = {
                 ['1. Trabajo y participación comunitaria', '<ul><li>Si el requisito se aplica a usted, Maryland enumera estas opciones mensuales: ganar al menos <b>$580 en un empleo</b>; asistir a la escuela al menos <b>medio tiempo</b>; o completar <b>80 horas</b> combinando trabajo pagado, estudios, capacitación laboral y voluntariado.</li><li>Consulte la herramienta oficial y su aviso para saber cómo se aplica a su situación.</li><li><a href="#" onclick="render(\'EXPLORE_EXEMPTIONS\');return false">Revise las excepciones que enumera Maryland</a>.</li></ul>'],
                 ['2. Renovaciones cada 6 meses', 'Algunos adultos podrían tener que renovar Medicaid cada 6 meses en lugar de una vez al año. El estado indicará las instrucciones y la fecha límite en la cuenta o el aviso de la persona. La renovación semestral es independiente del retraso en la aplicación de los requisitos de trabajo.'],
                 ['3. Retraso de Maryland en la aplicación de los requisitos de trabajo', 'El 20 de noviembre de 2026, Maryland anunció que los adultos no perderán ni se les negará la cobertura hasta el 30 de junio de 2027 únicamente por no cumplir los nuevos requisitos federales de información sobre trabajo. Durante este período, el estado aún puede pedir que verifiquen si cumplen el requisito o si tienen una excepción. Si no lo cumplen durante el retraso, tendrán otra oportunidad en su próxima renovación.'],
-                ['4. No todos los demás cambios se retrasan', 'Maryland indica que el retraso solo se aplica a los requisitos federales de trabajo de Medicaid. Otros cambios federales de elegibilidad e inscripción programados para el 1 de enero de 2027 seguirán adelante. Los cambios relacionados con el estatus migratorio comenzaron el 1 de octubre de 2026. Maryland Health Connection indica que los niños y las personas embarazadas reciben un trato distinto y enumera a residentes permanentes legales, entrantes cubanos/haitianos y migrantes COFA entre las categorías que siguen siendo elegibles. Obtenga ayuda individual antes de tomar decisiones basadas en su estatus migratorio.'],
+                ['4. No todos los demás cambios se retrasan', 'Maryland indica que el retraso solo se aplica a los requisitos federales de trabajo de Medicaid. Otros cambios federales de elegibilidad e inscripción programados para el 1 de enero de 2027 seguirán adelante. Los cambios relacionados con el estatus migratorio comenzaron el 1 de octubre de 2026. Desde el 1 de octubre de 2026, Maryland Health Connection enumera como categorías elegibles para Medicaid completo a los ciudadanos estadounidenses; residentes permanentes legales que cumplen o están exentos de la regla de cinco años; entrantes cubanos/haitianos; y migrantes del COFA. Los niños menores de 21 años no están sujetos al período de espera de cinco años, y las personas embarazadas de cualquier estatus migratorio pueden calificar mediante Healthy Babies. Medicaid de emergencia puede seguir disponible para personas que de otro modo cumplen los requisitos y necesitan atención de emergencia. Las reglas migratorias son complejas; obtenga ayuda individual antes de tomar decisiones.'],
                 ['Fechas clave', '<ul><li><b>Sept. de 2026:</b> Maryland Health Connection indica que envió avisos a miembros que podrían tener que cumplir las reglas de trabajo.</li><li><b>1 de oct. de 2026:</b> comenzaron ciertos cambios de elegibilidad relacionados con inmigración.</li><li><b>1 de ene. de 2027:</b> está previsto que comiencen los requisitos federales de trabajo y renovación cada 6 meses; también entran en vigor otros cambios de elegibilidad e inscripción.</li><li><b>Hasta el 30 de jun. de 2027:</b> Maryland retrasa la aplicación de los nuevos requisitos de trabajo. El estado aún puede pedir que se verifique la situación, pero no se perderá ni se negará la cobertura únicamente por no cumplir el requisito de trabajo durante este período.</li></ul>'],
                 ['Información oficial', 'Lea la <a href="https://www.marylandhealthconnection.gov/CheckIn/" target="_blank" rel="noopener noreferrer">página Check-In de Maryland Health Connection</a> y el <a href="https://health.maryland.gov/newsroom/Pages/Maryland%20to%20delay%20enforcement%20of%20new%20Medicaid%20work%20requirements%20through%20June%2030%2C%202027%2C%20helping%20Marylanders%20maintain%20coverage.aspx" target="_blank" rel="noopener noreferrer">anuncio del Departamento de Salud de Maryland del 20 de noviembre de 2026</a>. Las reglas pueden cambiar; siga su aviso oficial.']
             ],
@@ -466,13 +487,20 @@ const ES = {
                 }
             },
             PROVIDER_HUB: { custom: function (p) {
-                p.innerHTML = acc([
-                    ['What the state is asking of providers', 'Some Medicaid changes begin January 1, 2027. Maryland has delayed enforcement of the new federal work requirements through June 30, 2027. Members may still be asked to verify their status, but they will not lose or be denied coverage through that date solely for failing to meet the new work-reporting requirements. Other federal eligibility and enrollment changes are proceeding.'],
-                    ['What you can do now', '<ul><li>Use the state’s toolkits and outreach materials.</li><li>Display flyers in waiting rooms and exam rooms.</li><li>Add a notice to your patient portal, after-visit summaries, and messages.</li><li>Direct patients to the Check-In site and the Consumer FAQ.</li></ul>'],
-                    ['Four simple messages for patients', '<ul><li>Keep contact information current in Maryland Health Connection.</li><li>Read every letter or email and follow the dates in the notice.</li><li>Use the state Check-In tool to see whether the new rules may apply.</li><li>Call 855-642-8572 for free assistance in more than 200 languages.</li><li>Explain the June 30, 2027 work-requirement enforcement delay accurately; do not imply that other Medicaid changes are delayed.</li></ul>'],
-                    ['If a patient asks about a health-condition exception', 'Maryland lists several health-condition exceptions, including blindness or a physical disability, a mental health condition, substance use disorder or treatment, and a complex medical condition. The state will explain what information, if any, is needed. Do not assume a generic letter is sufficient or collect more medical information than necessary. Check the current state guidance before advising a patient.'],
-                    ['Official links and examples', '<ul><li><a href="https://health.maryland.gov/mmcp/Pages/workrequirements-providers.aspx" target="_blank" rel="noopener noreferrer">Maryland Dept. of Health: provider page</a></li><li><a href="https://www.marylandhealthconnection.gov/checkin/" target="_blank" rel="noopener noreferrer">Check-In site for patients</a></li><li><a href="https://health.maryland.gov/mmcp/Documents/Phase_1_Consumer_FAQ_Flyer_HR.pdf" target="_blank" rel="noopener noreferrer">Consumer FAQ flyer (PDF)</a></li><li><a href="https://mhaonline.org/advocacy/federal/medicaid/" target="_blank" rel="noopener noreferrer">Maryland Hospital Association outreach toolkit</a></li><li><a href="https://hchmd.org/news/federal-medicaid-rules-are-changing-2027" target="_blank" rel="noopener noreferrer">Example: Health Care for the Homeless benefits help</a></li></ul>']
-                ]) + '<a class="cta" href="https://health.maryland.gov/mmcp/Pages/workrequirements-providers.aspx" target="_blank" rel="noopener noreferrer">Open the state provider page</a>';
+                p.innerHTML = '<div class="clinic-sales">' +
+                    '<h3>A repeatable Medicaid navigation path for your clinic</h3>' +
+                    '<p>Radiant Motive Navigator is a link-based, non-clinical guide that helps patients understand changing Medicaid requirements, review possible state-listed exception pathways, prepare for official follow-up, and find the right assistance.</p>' +
+                    '<p><strong>How a clinic can use it</strong></p><ol><li>Share the clinic-branded web link through an existing text, portal, email or QR workflow.</li><li>The patient follows a guided path in the language selected on the welcome screen.</li><li>The guide points the patient to Maryland Health Connection, the relevant notice, or local enrollment assistance.</li><li>Clinic staff can use the same pathway as a consistent reference when questions come in.</li></ol>' +
+                    '<p><strong>What the current preview includes</strong></p><ul><li>Guided member pathways for notices, possible exceptions, work/activity information, renewals, proof instructions and appeals.</li><li>Maryland official-resource handoffs and a 24-county assistance directory.</li><li>A clinic-branded preview route; no EHR integration is required for this link-based preview.</li></ul>' +
+                    '<p><strong>Important boundaries</strong></p><ul><li>It does not determine eligibility, diagnose medical frailty, certify an exception, submit forms, or replace Maryland Health Connection.</li><li>It does not collect names, Medicaid IDs, diagnoses or document uploads. Do not enter patient information.</li><li>Automated SMS delivery, patient-level tracking, reporting dashboards and EHR integrations are not included in this preview.</li></ul>' +
+                    '<p><strong>Proposed pilot</strong></p><p>30 days with up to three agreed clinic sites. The pilot is designed to test patient comprehension, staff usability, referral handoffs and operational fit. No patient-level data is needed for the pilot evaluation.</p>' +
+                    '<a class="cta" href="mailto:Contact@radiantmotivenavigator.com?subject=Maryland%20clinic%20pilot%20inquiry">Request a clinic pilot discussion</a></div>' +
+                    acc([
+                        ['Maryland policy update for clinic teams', 'Maryland delayed enforcement of the new federal Medicaid work requirements through June 30, 2027. Members may still be asked to verify whether they meet the rule or qualify for an exception. Other eligibility and enrollment changes scheduled for January 1, 2027 are not delayed. Clinics should direct patients to their own official notices and Maryland Health Connection.'],
+                        ['What clinics can do now', '<ul><li>Share the state’s official Check-In resources.</li><li>Place the Navigator link in existing patient communications if approved by your organization.</li><li>Use the guide as a consistent education and referral aid—not as a clinical or eligibility decision tool.</li><li>Ask your compliance team to review the data-flow and privacy fact sheet before a live deployment.</li></ul>'],
+                        ['If a patient asks about a health-condition exception', 'Maryland lists health conditions that may limit a person’s ability to work, including blindness or physical disability, a mental health condition, substance use disorder or treatment, and a complex medical condition. The state determines whether an exception applies and what information is required. The Navigator does not assess medical frailty or collect clinical documentation.'],
+                        ['Official links', '<ul><li><a href="https://health.maryland.gov/mmcp/Pages/workrequirements-providers.aspx" target="_blank" rel="noopener noreferrer">Maryland Department of Health: provider guidance</a></li><li><a href="https://www.marylandhealthconnection.gov/CheckIn/" target="_blank" rel="noopener noreferrer">Maryland Health Connection Check-In</a></li><li><a href="https://health.maryland.gov/mmcp/Pages/medicaid-appeal.aspx" target="_blank" rel="noopener noreferrer">Maryland Medicaid appeal instructions</a></li></ul>']
+                    ]);
             } },
             EMPLOYER_HUB: { custom: function (p) {
                 p.innerHTML = acc([
@@ -489,7 +517,7 @@ const ES = {
                     ['1. Work and community engagement', '<ul><li>If the rule applies to you, Maryland lists these monthly ways to meet it: earn at least <b>$580 from a job</b>; attend school at least <b>half-time</b>; or complete <b>80 hours</b> of any mix of paid work, school, job training and volunteering.</li><li>Check the official state tool and your notice for how the rule applies to your situation.</li><li><a href="#" onclick="render(\'EXPLORE_EXEMPTIONS\');return false">Review the exceptions Maryland lists</a>.</li></ul>'],
                     ['2. Renewals every 6 months', 'Some adults may need to renew Medicaid every 6 months instead of once a year. The state will provide instructions and a due date in the person’s account or notice. A six-month renewal is separate from the work-requirement enforcement delay.'],
                     ['3. Maryland’s work-requirement enforcement delay', 'Maryland announced on Nov. 20, 2026, that adults will not be denied or disenrolled through June 30, 2027, solely for failing to meet the new federal work-reporting requirements. During this period, members may still be asked to verify whether they meet the rule or qualify for an exception. If they do not meet it during the delay, they will have another opportunity at their next renewal.'],
-                    ['4. Other changes are not all delayed', 'Maryland says its delay applies only to the federal Medicaid work requirements. Other federal eligibility and enrollment changes scheduled for Jan. 1, 2027, will still be implemented. Immigration-related eligibility changes began Oct. 1, 2026. Maryland Health Connection says children and pregnant people are treated differently and lists lawful permanent residents, Cuban/Haitian entrants and COFA migrants among categories that remain eligible. Get individual help before making decisions based on immigration status.'],
+                    ['4. Other changes are not all delayed', 'Maryland says its delay applies only to the federal Medicaid work requirements. Other federal eligibility and enrollment changes scheduled for Jan. 1, 2027, will still be implemented. Immigration-related eligibility changes began Oct. 1, 2026. Effective Oct. 1, 2026, Maryland Health Connection lists U.S. citizens; lawful permanent residents who meet or are exempt from the five-year rule; Cuban/Haitian entrants; and COFA migrants as categories eligible for full Medicaid. Children under 21 are not subject to the five-year waiting period, and pregnant people of any immigration status may qualify through Healthy Babies. Emergency Medicaid may remain available for otherwise eligible people who need emergency care. Immigration rules are complex; get individual help before making decisions.'],
                     ['Key dates', '<ul><li><b>Sept. 2026:</b> Maryland Health Connection says it sent notices to members who may need to meet the work rules.</li><li><b>Oct. 1, 2026:</b> certain immigration-related eligibility changes began.</li><li><b>Jan. 1, 2027:</b> federal work and six-month renewal requirements are scheduled to begin; other eligibility and enrollment changes also take effect.</li><li><b>Through June 30, 2027:</b> Maryland delays enforcement of the new work requirements. Members may still be asked to verify status, but will not lose or be denied coverage solely for failing the work-reporting rule during this period.</li></ul>'],
                     ['Official information', 'Read the <a href="https://www.marylandhealthconnection.gov/CheckIn/" target="_blank" rel="noopener noreferrer">Maryland Health Connection Check-In page</a> and the <a href="https://health.maryland.gov/newsroom/Pages/Maryland%20to%20delay%20enforcement%20of%20new%20Medicaid%20work%20requirements%20through%20June%2030%2C%202027%2C%20helping%20Marylanders%20maintain%20coverage.aspx" target="_blank" rel="noopener noreferrer">Maryland Department of Health announcement dated Nov. 20, 2026</a>. Rules can change; follow your own official notice.']
                 ]);
@@ -505,7 +533,7 @@ const ES = {
             } },
             EXPLORE_EXEMPTIONS: { custom: function (p) {
                 p.innerHTML = '<div class="answer"><h2>' + (lang === 'es' ? '¿Cuáles de estas situaciones le describen?' : 'Which of these situations describe you?') + '</h2><p class="muted">' + (lang === 'es' ? 'Esta lista no confirma una excepción. Maryland debe verificar su situación.' : 'This checklist does not confirm an exception. Maryland must verify your situation.') + '</p>' +
-                    (lang === 'es' ? EX_ES : EX).map(function (e, i) { return '<label class="chk"><input type="checkbox" data-i="' + i + '"><span><b>' + e[0] + '</b>' + (e[1] ? '<br><span class="muted">' + e[1] + '</span>' : '') + '</span></label>'; }).join('') +
+                    (lang === 'es' ? EX_ES : EX).map(function (e, i) { return '<label class="chk"><input type="checkbox" data-i="' + i + '"' + (selectedExemptionIndices.indexOf(i) !== -1 ? ' checked' : '') + '><span><b>' + e[0] + '</b>' + (e[1] ? '<br><span class="muted">' + e[1] + '</span>' : '') + '</span></label>'; }).join('') +
                     '<div id="verdict" class="card"></div></div>';
                 const upd = function () {
                     const n = p.querySelectorAll('input:checked').length;
@@ -519,7 +547,14 @@ const ES = {
                         pre.textContent = JSON.stringify(t, null, 2);
                     } catch (e) {}
                 };
-                p.querySelectorAll('input').forEach(function (c) { c.onchange = upd; });
+                p.querySelectorAll('input').forEach(function (c) {
+                    c.onchange = function () {
+                        const i = Number(c.getAttribute('data-i'));
+                        if (c.checked && selectedExemptionIndices.indexOf(i) === -1) selectedExemptionIndices.push(i);
+                        if (!c.checked) selectedExemptionIndices = selectedExemptionIndices.filter(function (x) { return x !== i; });
+                        upd();
+                    };
+                });
                 upd();
             } },
             VERIFY_TIMELINES: {
@@ -624,6 +659,8 @@ const ES = {
             document.getElementById('app-title').textContent = node.title;
             document.getElementById('app-subtitle').textContent = node.subtitle;
             document.getElementById('app-explanation').textContent = node.explanation;
+            const languageNote = document.getElementById('language-coverage-note');
+            if (languageNote) { languageNote.hidden = lang === 'en'; languageNote.textContent = LANGUAGE_NOTES[lang] || ''; }
             document.getElementById('help-drawer').textContent = node.help;
             document.getElementById('help-drawer').style.display = 'none';
 
@@ -662,7 +699,8 @@ const ES = {
 (function () {
   var params = new URLSearchParams(window.location.search);
   var pathSlug = window.location.pathname.split('/').filter(Boolean).join('/').toLowerCase();
-  var rawSlug = (pathSlug && pathSlug !== 'index.html') ? pathSlug : (params.get('clinic') || '').toLowerCase();
+  var requestedClinic = (pathSlug && pathSlug !== 'index.html') ? pathSlug : (params.get('clinic') || '');
+  var normalizedClinic = requestedClinic.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   var CLINIC_DIRECTORY = {
     'chase-brexton': 'Chase Brexton Health Care',
     'cci-health': 'CCI Health Services',
@@ -670,10 +708,20 @@ const ES = {
     'choptank-health': 'Choptank Community Health',
     'bmsi': 'Baltimore Medical System'
   };
-  // Only explicitly configured clinic tenants are recognized; unknown slugs are not tenants.
+  var CLINIC_ALIASES = {
+    'baltimore-medical-system': 'bmsi',
+    'baltimore-medical-system-inc': 'bmsi',
+    'chase-brexton-health-care': 'chase-brexton',
+    'cci-health-services': 'cci-health',
+    'total-health-care-inc': 'total-health-care',
+    'choptank-community-health': 'choptank-health'
+  };
+  var rawSlug = CLINIC_ALIASES[normalizedClinic] || normalizedClinic;
+  // Only configured preview tenants are recognized. A custom display label never creates a tenant.
   var clinicSlug = Object.prototype.hasOwnProperty.call(CLINIC_DIRECTORY, rawSlug) ? rawSlug : '';
   var isDebug = params.get('debug') === 'true';
-  var clinicName = clinicSlug ? CLINIC_DIRECTORY[clinicSlug] : '';
+  var requestedDisplayName = (params.get('clinic_name') || '').trim().slice(0, 80);
+  var clinicName = clinicSlug ? (requestedDisplayName || CLINIC_DIRECTORY[clinicSlug]) : '';
 
   var BANNER = {
     en: '<strong>Maryland Medicaid update (Nov. 20, 2026):</strong> Maryland will delay enforcement of the new federal work requirements through <strong>June 30, 2027</strong>. Members may still be asked to verify whether they meet the rule or qualify for an exception, but they will not be denied or disenrolled through that date solely for failing to meet the new work-reporting requirements. <strong>Other eligibility and enrollment changes are not delayed.</strong> Read every official notice and complete renewals by the stated deadline.',
@@ -682,8 +730,6 @@ const ES = {
     ko: '<strong>메릴랜드 Medicaid 업데이트(2026년 11월 20일):</strong> 메릴랜드주는 새로운 연방 근로 요건의 집행을 <strong>2027년 6월 30일까지</strong> 연기합니다. 주정부는 요건 충족 또는 예외 여부를 확인하도록 요청할 수 있지만, 해당 날짜까지 새로운 근로 보고 요건을 충족하지 못했다는 이유만으로 Medicaid 보장을 거부하거나 종료하지 않습니다. <strong>다른 자격 및 등록 변경은 연기되지 않습니다.</strong> 모든 공식 통지서를 읽고 안내된 기한까지 갱신을 완료하세요.',
     vi: '<strong>Cập nhật Medicaid Maryland (20/11/2026):</strong> Maryland sẽ trì hoãn việc thực thi các yêu cầu làm việc liên bang mới đến hết ngày <strong>30/6/2027</strong>. Tiểu bang vẫn có thể yêu cầu hội viên xác minh việc đáp ứng yêu cầu hoặc thuộc diện ngoại lệ, nhưng sẽ không từ chối hoặc chấm dứt bảo hiểm đến ngày đó chỉ vì không đáp ứng yêu cầu báo cáo công việc mới. <strong>Các thay đổi khác về điều kiện và đăng ký không bị trì hoãn.</strong> Hãy đọc mọi thông báo chính thức và hoàn tất gia hạn trước thời hạn được ghi.'
   };
-  var PRIVACY_CLINIC = 'Privacy: this clinic route may send a clinic ID, event type, screen/pathway ID, language and date to the configured reporting endpoint. Events are forwarded only if a reporting webhook is configured. No names, member IDs, health details or document contents are requested by this tool. The receiving service controls its own retention. Maryland decides eligibility.';
-
   function lang() { return document.documentElement.lang || 'en'; }
 
   function showBanner() {
@@ -701,68 +747,36 @@ const ES = {
   function applyClinic() {
     if (!clinicSlug) return;
     var hdr = Array.prototype.find.call(document.querySelectorAll('span'), function (el) {
-      return el.children.length === 0 && el.textContent.indexOf('RADIANT MOTIVE NAVIGATOR DEMO') !== -1;
+      return el.children.length === 0 && el.textContent.indexOf('RADIANT MOTIVE NAVIGATOR') !== -1;
     });
-    if (hdr) hdr.textContent = '\uD83D\uDFE2 ' + clinicName.toUpperCase() + ' \u2022 MEDICAID 2027 GUIDE';
-    document.title = clinicName + ' | Medicaid 2027 Guide';
-    // hide investor/demo analytics toggle
-    document.querySelectorAll('button[onclick="toggleDemo()"]').forEach(function (b) { b.style.display = 'none'; });
-    // replace the "stores nothing" privacy sentence with an accurate one
-    document.querySelectorAll('.muted').forEach(function (el) {
-      if (el.textContent.indexOf('Privacy:') === 0) el.textContent = PRIVACY_CLINIC;
-    });
+    if (hdr) hdr.textContent = '\\uD83D\\uDFE2 RADIANT MOTIVE NAVIGATOR • PREVIEW FOR ' + clinicName.toUpperCase();
+    document.title = 'Preview for ' + clinicName + ' | Radiant Motive Navigator';
+    var note = document.getElementById('clinic-preview-note');
+    if (!note) {
+      note = document.createElement('div');
+      note.id = 'clinic-preview-note';
+      note.className = 'clinic-preview-note';
+      var banner = document.getElementById('cms-smd-notice');
+      if (banner && banner.parentNode) banner.parentNode.insertBefore(note, banner.nextSibling);
+      else document.body.insertBefore(note, document.body.children[2] || null);
+    }
+    note.textContent = 'Independent product preview for ' + clinicName + '. This is not an official service of, or an endorsement by, ' + clinicName;
   }
 
-  // Zero-PHI analytics: only clinic id, screen id, event name, language, date. No free text, no IDs.
-  var SENT = {};
-  window.trackClinicEvent = function (eventName, pathway) {
-    if (!clinicSlug) return;
-    try {
-      fetch('/.netlify/functions/log-event', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        keepalive: true,
-        body: JSON.stringify({
-          clinicId: clinicSlug,
-          eventName: eventName,
-          pathway: String(pathway || 'general').slice(0, 40),
-          lang: lang(),
-          date: new Date().toISOString().slice(0, 10)
-        })
-      }).catch(function () {});
-    } catch (e) {}
-  };
+  // Patient-level and clinic event reporting are intentionally disabled in this public preview.
+  // Do not enable reporting until authenticated access, rate limits, retention controls and a clinic-approved data flow exist.
+  window.trackClinicEvent = function () {};
+  window.refreshPolicyBanner = showBanner;
 
-  // Hook the app's own render() so we log screen ids (e.g. MEMBER_START), not button text
-  if (typeof render === 'function') {
-    var _render = render;
-    render = function (nodeId, redraw) {
-      var r = _render.apply(this, arguments);
-      if (!redraw) {
-        window.trackClinicEvent('screen_view', nodeId);
-        // milestone counters used in the monthly clinic summary
-        if (nodeId === 'EXPLORE_EXEMPTIONS') window.trackClinicEvent('exemptions_viewed', nodeId);
-        if (nodeId === 'FINAL_CONFIRMATION') window.trackClinicEvent('path_completed', nodeId);
-      }
-      return r;
-    };
+  if (!isDebug) {
+    var toggle = document.getElementById('analytics-toggle');
+    var panel = document.getElementById('demo-panel');
+    if (toggle) toggle.style.display = 'none';
+    if (panel) panel.style.display = 'none';
   }
-  // Keep banner (and header) in the right language when the visitor switches language
-  if (typeof setLang === 'function') {
-    var _setLang = setLang;
-    setLang = function (l) {
-      var r = _setLang.apply(this, arguments);
-      showBanner();
-      window.trackClinicEvent('language_change', l);
-      return r;
-    };
-  }
-
-  if (!isDebug) { var n = document.getElementById('telemetry-node'); if (n && n.parentElement) n.parentElement.style.display = 'none'; }
   showBanner();
   applyClinic();
-  window.trackClinicEvent('session_started', 'WELCOME_SCREEN');
-})();
+})();;
 </script>
 
 </body>
