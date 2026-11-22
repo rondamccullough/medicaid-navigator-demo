@@ -71,7 +71,7 @@
     </div>
 
     <!-- INVESTOR TELEMETRY PANEL LAYER -->
-    <div class="muted" style="line-height: 1.6; margin-bottom: 12px;"><span id="privacy-copy">Privacy: This tool does not ask for your name, ID number, or health details. Clinic-specific versions may send limited, non-identifying usage events (such as the screen viewed, language, and date) to a configured reporting service. No personal documents are requested. Maryland decides eligibility.</span> <button id="analytics-toggle" class="lang" style="margin-left: 0;" onclick="toggleDemo()">View Demonstration Analytics</button></div>
+    <div class="muted" style="line-height: 1.6; margin-bottom: 12px;"><span id="privacy-copy">Privacy: The root demo shows simulated analytics and does not send events. A clinic-specific route can send a clinic ID, event type, screen/pathway ID, language and date to the configured reporting endpoint; events are forwarded only if a reporting webhook is configured. This tool does not request names, member IDs, health details or document contents. The receiving reporting service controls its own retention. Maryland decides eligibility.</span> <button id="analytics-toggle" class="lang" style="margin-left: 0;" onclick="toggleDemo()">View Demonstration Analytics</button></div>
     <div id="demo-panel" style="display: none; background-color: #020617; padding: 15px; border-radius: 8px; border: 1px solid #1e293b;">
         <div style="font-size: 12px; color: #94a3b8; font-weight: bold; text-transform: uppercase;">Demo Analytics Preview (simulated)</div>
         <div style="font-size: 11px; color: #64748b; margin-top: 4px; margin-bottom: 10px;">Shows example event fields a configured clinic version could report. Simulated for this root demo; nothing is stored or sent.</div>
