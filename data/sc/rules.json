@@ -8,7 +8,10 @@
   "notes": [
     "General information only; SCDHHS makes Medicaid eligibility decisions.",
     "Retroactive eligibility change effective for applications made on or after 2027-01-01; SCDHHS Nov. 10 2026 advisory materials describe up to two months, while CMS guidance distinguishes one month for the Medicaid adult group and two months for most other groups.",
-    "Phase II managed-care target July 2027 is subject to CMS approvals and readiness."
+    "Phase II managed-care target July 2027 is subject to CMS approvals and readiness.",
+    "The 2027 D-SNP enrollment limitations under 42 CFR 422.514(h) do not apply to every person with Medicare and Medicaid. They apply where the MA organization, parent, or shared-parent entity offers a D-SNP and contracts as a Medicaid MCO serving full-benefit dual eligible individuals in the same or overlapping service area; exceptions apply.",
+    "Beginning in 2027, affected D-SNPs may newly enroll full-benefit dual eligible individuals only if they are enrolled in or in the process of enrolling in the affiliated Medicaid MCO. Existing unaligned enrollees may remain through 2029; affected plans generally must align enrollment beginning in 2030, subject to exceptions.",
+    "South Carolina distinguishes HIDE D-SNPs from Coordination Only D-SNPs. SCDHHS says HIDE D-SNP enrollment aligns with a Medicaid MCO where available; CO D-SNPs coordinate with the member's chosen Medicaid MCO. CMS states the federal 2027 limitations can also apply to affiliated CO D-SNPs."
   ],
   "nodes": {
     "WELCOME_SCREEN": {
@@ -17,14 +20,14 @@
       "title": "South Carolina Healthy Connections: what do you need help navigating?",
       "subtitle": "Choose the path closest to your situation. This guide explains public program information and next steps; it does not determine eligibility or submit an application.",
       "explanation": "Select one objective to open a short set of navigation questions. Do not enter names, Medicaid IDs, diagnoses, bills or other personal details.",
-      "help": "This South Carolina module is separate from the Maryland guide. Your selections are used only to display the next screen in this browser session; no patient-level reporting is enabled.",
+      "help": "This South Carolina module is separate from the Maryland guide. It includes a dedicated 2027 Medicare + Medicaid / D-SNP pathway for members and a separate clinic/CHW workflow. The federal D-SNP rule is conditional; not every dual-eligible member must change plans in 2027.",
       "options": [
         {
           "text": "I have recent medical bills or need coverage fast",
           "next": "SC_RETRO_Q1"
         },
         {
-          "text": "My Medicare, managed care, or waiver plan is changing",
+          "text": "My Medicare + Medicaid / D-SNP plan or waiver is changing",
           "next": "SC_MANAGED_Q1"
         },
         {
@@ -87,19 +90,23 @@
       "title": "Do you have both Medicare and South Carolina Healthy Connections Medicaid?",
       "subtitle": "This is often called being dual eligible. South Carolina's managed-care changes affect different services in phases.",
       "explanation": "Choose the closest answer. Do not enter a Medicare number, Medicaid ID or plan member number.",
-      "help": "Healthy Connections Prime ended Jan. 1, 2026. Eligible members may enroll in a Medicaid managed-care plan and a Medicare D-SNP; rules and exceptions apply.",
+      "help": "Healthy Connections Prime ended Jan. 1, 2026. South Carolina has HIDE D-SNPs that align with a Medicaid MCO where available and Coordination Only D-SNPs that work with a member's chosen MCO. A separate federal rule begins in 2027 for certain D-SNPs affiliated with Medicaid MCOs. It does not mean every person with Medicare and Medicaid must immediately change plans.",
       "options": [
         {
-          "text": "Yes, I have both Medicare and Medicaid",
-          "next": "SC_MANAGED_Q2"
+          "text": "Yes, I have both Medicare and Healthy Connections Medicaid",
+          "next": "SC_DUAL_Q1"
         },
         {
           "text": "No, I have Medicaid only",
           "next": "SC_MANAGED_Q2"
         },
         {
-          "text": "Not sure",
-          "next": "SC_MANAGED_Q2"
+          "text": "No, I have Medicare only",
+          "next": "SC_MEDICARE_ONLY_RESULT"
+        },
+        {
+          "text": "I am not sure",
+          "next": "SC_DUAL_UNSURE_RESULT"
         }
       ]
     },
@@ -142,7 +149,11 @@
           "next": "SC_STAFF_Q2"
         },
         {
-          "text": "Waiver, nursing-facility or D-SNP transition",
+          "text": "Medicare + Medicaid or D-SNP plan question",
+          "next": "SC_DUAL_STAFF_RESULT"
+        },
+        {
+          "text": "Waiver, nursing-facility or hospice transition",
           "next": "SC_STAFF_Q2"
         },
         {
@@ -283,7 +294,7 @@
       "title": "Clinic and CHW quick-reference checklist",
       "subtitle": "Review the checklist below, then use the official agency link. The Navigator does not submit information or determine eligibility.",
       "explanation": "Use only official agency portals for applications, notices and document submission. Do not enter personal information in this guide.",
-      "help": "The checklist is general navigation information. The responsible agency makes the eligibility decision and provides case-specific deadlines.",
+      "help": "The 2027 D-SNP enrollment rule is separate from the Phase II long-term-care transition. For a Medicare and Medicaid question, use the dedicated clinic/CHW D-SNP workflow. Do not enter patient information in Navigator.",
       "options": [
         {
           "text": "Return to the beginning",
@@ -298,6 +309,170 @@
       "subtitle": "Review the checklist below, then use the official agency link. The Navigator does not submit information or determine eligibility.",
       "explanation": "Use only official agency portals for applications, notices and document submission. Do not enter personal information in this guide.",
       "help": "The checklist is general navigation information. The responsible agency makes the eligibility decision and provides case-specific deadlines.",
+      "options": [
+        {
+          "text": "Return to the beginning",
+          "next": "WELCOME_SCREEN"
+        }
+      ]
+    },
+    "SC_DUAL_Q1": {
+      "step": "2 of 4",
+      "name": "Full Medicaid or Medicare cost assistance",
+      "title": "Do you receive full Healthy Connections Medicaid benefits?",
+      "subtitle": "The 2027 federal D-SNP enrollment rule is specifically about full-benefit dual eligible members. Some people receive only help with Medicare premiums or cost-sharing.",
+      "explanation": "Choose the closest answer. Do not enter a Medicaid ID, Medicare number, plan number or other personal information.",
+      "help": "Examples of partial-benefit categories can include QMB-only, SLMB-only, QI or QDWI. Some categories, such as QMB Plus or SLMB Plus, may include full Medicaid. If you are unsure, choose the last option.",
+      "options": [
+        {
+          "text": "Yes, I receive full Medicaid benefits as well as Medicare",
+          "next": "SC_DUAL_Q2"
+        },
+        {
+          "text": "I only receive help paying Medicare premiums or cost-sharing",
+          "next": "SC_DUAL_PARTIAL_RESULT"
+        },
+        {
+          "text": "I am not sure what type of Medicaid assistance I receive",
+          "next": "SC_DUAL_UNSURE_RESULT"
+        }
+      ]
+    },
+    "SC_DUAL_Q2": {
+      "step": "2 of 4",
+      "name": "Identify your Medicare plan",
+      "title": "Is your Medicare health plan called a D-SNP or Dual Eligible Special Needs Plan?",
+      "subtitle": "A D-SNP is a Medicare Advantage plan designed for people who qualify for both Medicare and Medicaid.",
+      "explanation": "Check the name on your Medicare plan card or plan materials. Do not upload or enter the card or any member number.",
+      "help": "If you have Original Medicare and a separate drug plan, you may not have a D-SNP. If you cannot tell, choose 'I am not sure' and use the official contacts.",
+      "options": [
+        {
+          "text": "Yes, my plan is identified as a D-SNP",
+          "next": "SC_DUAL_Q3"
+        },
+        {
+          "text": "No, my Medicare coverage is not a D-SNP",
+          "next": "SC_DUAL_NOT_DSNP_RESULT"
+        },
+        {
+          "text": "I am not sure",
+          "next": "SC_DUAL_UNSURE_RESULT"
+        }
+      ]
+    },
+    "SC_DUAL_Q3": {
+      "step": "3 of 4",
+      "name": "Identify the D-SNP type",
+      "title": "Do you know which type of South Carolina D-SNP you have?",
+      "subtitle": "South Carolina lists two types: Highly Integrated (HIDE) and Coordination Only (CO). You do not need to know this to get help.",
+      "explanation": "Choose the type only if it appears in your plan materials or was confirmed by your plan. Otherwise choose 'I am not sure.'",
+      "help": "The type alone does not determine whether the federal 2027 enrollment limitation applies. The plan's corporate affiliation, Medicaid MCO contract and service area also matter.",
+      "options": [
+        {
+          "text": "HIDE D-SNP (Highly Integrated)",
+          "next": "SC_DUAL_HIDE_RESULT"
+        },
+        {
+          "text": "Coordination Only (CO) D-SNP",
+          "next": "SC_DUAL_CO_RESULT"
+        },
+        {
+          "text": "I am not sure",
+          "next": "SC_DUAL_UNSURE_RESULT"
+        }
+      ]
+    },
+    "SC_DUAL_PARTIAL_RESULT": {
+      "step": "3 of 4",
+      "name": "Medicare Savings Program and D-SNP guidance",
+      "title": "If you receive help with Medicare costs but not full Medicaid benefits",
+      "subtitle": "The federal 2027 D-SNP enrollment limitation discussed here is focused on full-benefit dual eligible enrollment. Your exact category and plan rules still matter.",
+      "explanation": "Use the checklist and contact an official counselor if you are unsure whether you have full Medicaid benefits.",
+      "help": "SCDHHS lists several Medicaid eligibility categories, including QMB-only, QMB Plus, SLMB-only, SLMB Plus, QI and QDWI. The label on a notice or account can help a trained counselor identify your category.",
+      "options": [
+        {
+          "text": "Return to the beginning",
+          "next": "WELCOME_SCREEN"
+        }
+      ]
+    },
+    "SC_DUAL_NOT_DSNP_RESULT": {
+      "step": "3 of 4",
+      "name": "Other Medicare coverage",
+      "title": "If your Medicare plan is not a D-SNP",
+      "subtitle": "The federal 2027 rule covered in this pathway is a D-SNP enrollment rule. It does not automatically require every person with Medicare and Medicaid to change their Medicare coverage.",
+      "explanation": "Continue to follow your Healthy Connections notices and any separate South Carolina managed-care transition instructions.",
+      "help": "A plan that is not called a D-SNP may still have other Medicare or Medicaid rules. Confirm your plan type with Medicare or the plan before making a change.",
+      "options": [
+        {
+          "text": "Return to the beginning",
+          "next": "WELCOME_SCREEN"
+        }
+      ]
+    },
+    "SC_DUAL_UNSURE_RESULT": {
+      "step": "3 of 4",
+      "name": "Confirm your coverage before making a change",
+      "title": "You do not need to guess which D-SNP rule applies.",
+      "subtitle": "A plan representative or a free, independent Medicare counselor can help identify your Medicare plan type and Medicaid category.",
+      "explanation": "Do not enter plan numbers, member IDs or personal health information in Navigator.",
+      "help": "The official plan and agency records—not this guide—determine your plan type, Medicaid category, county service area and any enrollment action you may need to take.",
+      "options": [
+        {
+          "text": "Return to the beginning",
+          "next": "WELCOME_SCREEN"
+        }
+      ]
+    },
+    "SC_DUAL_HIDE_RESULT": {
+      "step": "4 of 4",
+      "name": "HIDE D-SNP action checklist",
+      "title": "If you have a South Carolina HIDE D-SNP",
+      "subtitle": "South Carolina says HIDE D-SNP enrollment aligns with a Medicaid MCO where available. Check the specific plan and county before assuming how your coverage is arranged.",
+      "explanation": "Review the checklist, then contact your Medicare plan and Healthy Connections Medicaid MCO. Do not change plans solely because of this general guide.",
+      "help": "SCDHHS currently lists First Choice VIP Care, Humana Dual Integrated, Molina Medicare Complete Care Plus and Wellcare Absolute Total Care Dual Align as HIDE D-SNP options. Plan availability and service areas can change.",
+      "options": [
+        {
+          "text": "Return to the beginning",
+          "next": "WELCOME_SCREEN"
+        }
+      ]
+    },
+    "SC_DUAL_CO_RESULT": {
+      "step": "4 of 4",
+      "name": "Coordination Only D-SNP action checklist",
+      "title": "If you have a Coordination Only (CO) D-SNP",
+      "subtitle": "South Carolina says a CO D-SNP coordinates with the member's chosen Healthy Connections Medicaid MCO. Do not assume that 'coordination only' means the federal 2027 rule cannot apply.",
+      "explanation": "CMS says the 2027 limitations can apply to any D-SNP type, including a CO D-SNP, when the parent-company and service-area conditions are met.",
+      "help": "SCDHHS currently lists Aetna Better Health Medicare Full Dual, HumanaChoice Special Needs Plan – Dual Eligible, and UnitedHealthcare Dual Complete SC plans as CO D-SNP options. Confirm current plan and county details.",
+      "options": [
+        {
+          "text": "Return to the beginning",
+          "next": "WELCOME_SCREEN"
+        }
+      ]
+    },
+    "SC_DUAL_STAFF_RESULT": {
+      "step": "3 of 4",
+      "name": "Clinic and CHW D-SNP triage workflow",
+      "title": "A repeatable Medicare–Medicaid navigation workflow for clinic teams",
+      "subtitle": "Use this sequence to help a member understand a coverage notice and reach the correct plan or counselor. Do not make a plan-selection or eligibility decision.",
+      "explanation": "Do not enter a patient's name, date of birth, Medicare number, Medicaid ID, plan member number, diagnosis or case details in Navigator. Use only your clinic's approved systems for any case documentation.",
+      "help": "The 2027 rule is conditional. It is not a universal requirement for every dual-eligible member, and the tool cannot identify plan-parent affiliations or county service areas.",
+      "options": [
+        {
+          "text": "Return to the beginning",
+          "next": "WELCOME_SCREEN"
+        }
+      ]
+    },
+    "SC_MEDICARE_ONLY_RESULT": {
+      "step": "3 of 4",
+      "name": "Medicare-only coverage",
+      "title": "If you have Medicare but not Healthy Connections Medicaid",
+      "subtitle": "The 2027 alignment rule covered here concerns certain D-SNPs and affiliated Medicaid MCOs for full-benefit dual eligible members.",
+      "explanation": "If you do not currently have Healthy Connections Medicaid, this rule does not instruct you to change your Medicare coverage. If you are unsure about your Medicaid status, contact SCDHHS.",
+      "help": "This guide cannot determine Medicaid eligibility or review your Medicare account. Follow your official notices and use the contacts below for individual help.",
       "options": [
         {
           "text": "Return to the beginning",
@@ -388,7 +563,7 @@
       "steps": [
         "Phase I began Jan. 1, 2026. Certain dual-eligible members, members in the HIV/AIDS, Mechanical Ventilator Dependent and Community Choices waivers, and nursing-facility residents were enrolled in an MCO for Medicaid State Plan services. Waiver and nursing-facility services remained fee-for-service during Phase I.",
         "Phase II is currently targeted for July 2027. SCDHHS plans to transition HCBS waiver, nursing-facility and hospice services into managed care and consolidate the Community Choices, HIV/AIDS and Mechanical Ventilator Dependent waivers into the Healthy Connections–Long Term Care waiver. The timing is subject to CMS approvals, system/MCO readiness and member/provider outreach.",
-        "If you have Medicare and Medicaid, contact both your Medicare D-SNP and Medicaid MCO. Confirm provider networks, prescriptions, care coordination, existing authorizations and continuity-of-care instructions. Do not assume the plans must have the same carrier; ask how your specific coverage is coordinated.",
+        "The federal 2027 D-SNP enrollment rule is separate from the South Carolina Phase II service transition. It affects certain D-SNPs affiliated with Medicaid MCOs—not every person with Medicare and Medicaid. Use the dedicated Medicare + Medicaid pathway in this guide to review the questions to ask.",
         "Read every plan and SCDHHS notice. If you receive waiver or long-term-care services, contact your case manager before changing plans or providers."
       ],
       "cta": {
@@ -404,7 +579,7 @@
         "steps": [
           "La Fase I comenzó el 1 de enero de 2026. Ciertos miembros con doble elegibilidad, miembros de las exenciones HIV/AIDS, Mechanical Ventilator Dependent y Community Choices, y residentes de centros de enfermería se inscribieron en una MCO para servicios del plan estatal de Medicaid. Durante la Fase I, los servicios de exención y de centros de enfermería permanecieron en el modelo de pago por servicio.",
           "La Fase II tiene como fecha objetivo actual julio de 2027. SCDHHS planea trasladar los servicios de exenciones HCBS, centros de enfermería y hospicio a la atención administrada y consolidar las exenciones Community Choices, HIV/AIDS y Mechanical Ventilator Dependent en la exención Healthy Connections–Long Term Care. El calendario depende de aprobaciones de CMS, preparación del sistema y las MCO, y avisos a miembros y proveedores.",
-          "Si tiene Medicare y Medicaid, comuníquese tanto con su plan D-SNP de Medicare como con su MCO de Medicaid. Confirme las redes de proveedores, medicamentos, coordinación de atención, autorizaciones existentes e instrucciones de continuidad de atención. No suponga que los planes deben tener la misma compañía; pregunte cómo se coordina su cobertura específica.",
+          "La regla federal de inscripción en D-SNP de 2027 es independiente de la transición de servicios de la Fase II de South Carolina. Afecta a ciertos planes D-SNP afiliados a MCO de Medicaid, no a todas las personas con Medicare y Medicaid. Use la ruta específica de Medicare + Medicaid de esta guía para revisar las preguntas que debe hacer.",
           "Lea todos los avisos del plan y de SCDHHS. Si recibe servicios de exención o de atención a largo plazo, comuníquese con su administrador de casos antes de cambiar de plan o proveedor."
         ],
         "cta": {
@@ -423,7 +598,7 @@
         "Identify the member's immediate navigation need: unpaid medical bill, Medicaid application or annual review, managed-care/waiver transition, or another benefit program. Use your clinic's approved intake and referral process.",
         "For possible retroactive Medicaid coverage, ask the member to contact Healthy Connections promptly. SCDHHS materials describe a change from up to three months to up to two months for applications beginning Jan. 1, 2027; eligibility and category rules still apply.",
         "Remind members to keep their mailing address and contact information current in the official Healthy Connections portal. Ask them to review notices and complete annual reviews by the stated deadline.",
-        "For plan transitions, direct members receiving waiver, nursing-facility or hospice services to SCDHHS Phase II information and their case manager. For Medicare/Medicaid dual coverage, verify plan coordination with both plans.",
+        "For Medicare/Medicaid dual coverage or a D-SNP notice, use the dedicated clinic/CHW D-SNP workflow in this guide and verify plan coordination with both plans.",
         "Privacy boundary: this triage session does not ask for or record patient details. Do not type PHI into the Navigator, take screenshots containing patient information, or send identifiable case details through this demo."
       ],
       "cta": {
@@ -440,7 +615,7 @@
           "Identifique la necesidad inmediata de orientación: factura médica sin seguro, solicitud o revisión anual de Medicaid, transición de atención administrada/exención u otro programa de beneficios. Use el proceso de admisión y referencia aprobado por su clínica.",
           "Si puede necesitar cobertura retroactiva de Medicaid, pida a la persona que se comunique pronto con Healthy Connections. Los materiales de SCDHHS describen un cambio de hasta tres meses a hasta dos meses para solicitudes a partir del 1 de enero de 2027; siguen aplicándose los requisitos de elegibilidad y categoría.",
           "Recuerde a los miembros que mantengan actualizados su dirección postal y datos de contacto en el portal oficial de Healthy Connections. Pídales que revisen los avisos y completen la revisión anual antes de la fecha indicada.",
-          "Para transiciones de planes, dirija a quienes reciben servicios de exención, centros de enfermería u hospicio a la información de la Fase II de SCDHHS y a su administrador de casos. Para cobertura dual de Medicare y Medicaid, verifique la coordinación con ambos planes.",
+          "Para la cobertura dual de Medicare y Medicaid o un aviso de D-SNP, use el flujo específico de D-SNP para clínicas y CHW de esta guía y verifique la coordinación con ambos planes.",
           "Límite de privacidad: esta orientación no solicita ni registra datos de pacientes. No escriba información médica protegida en Navigator, no tome capturas con información de pacientes ni envíe detalles de casos identificables mediante esta demostración."
         ],
         "cta": {
@@ -486,6 +661,260 @@
         "extraCta": {
           "href": "https://schousing.com/",
           "text": "Visitar la Autoridad de Financiamiento y Desarrollo de Vivienda de South Carolina"
+        }
+      }
+    },
+    "SC_DUAL_PARTIAL_RESULT": {
+      "head": "This pathway is for people who receive Medicare cost assistance but may not have full Medicaid benefits.",
+      "steps": [
+        "CMS's 2027 rule at 42 CFR 422.514(h) focuses on enrollment of full-benefit dual eligible individuals in D-SNPs. It does not mean every person in a Medicare Savings Program must change plans.",
+        "SCDHHS lists categories including QMB-only, QMB Plus, SLMB-only, SLMB Plus, QI and QDWI. Some categories provide Medicare premium or cost-sharing help only; others may include full Medicaid benefits. Do not rely on the category name alone if you are unsure.",
+        "Ask Healthy Connections whether your category includes full Medicaid benefits and ask your Medicare plan whether it is a D-SNP. You can also get free, unbiased Medicare counseling through South Carolina SHIP/I-CARE at 800-868-9095.",
+        "Keep following your official Medicare and Healthy Connections notices. Do not switch plans based only on this general information."
+      ],
+      "cta": {
+        "href": "https://www.scdhhs.gov/members/managed-care-plan-information/dual-special-needs-plans",
+        "text": "Review SCDHHS D-SNP eligibility and plan information"
+      },
+      "extraCta": {
+        "href": "https://aging.sc.gov/programs-initiatives/medicare-and-medicare-fraud",
+        "text": "Get free South Carolina SHIP / I-CARE counseling"
+      },
+      "es": {
+        "head": "Esta ruta es para personas que reciben ayuda con los costos de Medicare, pero que quizá no tienen todos los beneficios de Medicaid.",
+        "steps": [
+          "La regla de CMS de 2027 en 42 CFR 422.514(h) se centra en la inscripción de personas con doble elegibilidad y beneficios completos en planes D-SNP. No significa que toda persona inscrita en un Programa de Ahorros de Medicare deba cambiar de plan.",
+          "SCDHHS enumera categorías como QMB-only, QMB Plus, SLMB-only, SLMB Plus, QI y QDWI. Algunas categorías solo ayudan con las primas o los gastos compartidos de Medicare; otras pueden incluir todos los beneficios de Medicaid. Si no está seguro, no se base únicamente en el nombre de la categoría.",
+          "Pregunte a Healthy Connections si su categoría incluye todos los beneficios de Medicaid y pregunte a su plan de Medicare si es un D-SNP. También puede recibir asesoría gratuita e imparcial de Medicare a través de SHIP/I-CARE de South Carolina al 800-868-9095.",
+          "Siga leyendo los avisos oficiales de Medicare y Healthy Connections. No cambie de plan basándose únicamente en esta información general."
+        ],
+        "cta": {
+          "href": "https://www.scdhhs.gov/members/managed-care-plan-information/dual-special-needs-plans",
+          "text": "Consultar la información de elegibilidad y planes D-SNP de SCDHHS"
+        },
+        "extraCta": {
+          "href": "https://aging.sc.gov/programs-initiatives/medicare-and-medicare-fraud",
+          "text": "Obtener asesoría gratuita de SHIP / I-CARE de South Carolina"
+        }
+      }
+    },
+    "SC_DUAL_NOT_DSNP_RESULT": {
+      "head": "This specific 2027 federal enrollment rule is about D-SNPs, not every Medicare coverage arrangement.",
+      "steps": [
+        "If your Medicare coverage is not a D-SNP, the D-SNP enrollment limitation in 42 CFR 422.514(h) is not a reason by itself to change your current Medicare coverage.",
+        "This does not remove the need to follow Healthy Connections Medicaid notices or separate South Carolina managed-care and long-term-care transition instructions.",
+        "If you are uncertain about your plan type, call 1-800-MEDICARE at 1-800-633-4227 or ask a free South Carolina SHIP/I-CARE counselor at 800-868-9095.",
+        "Do not change Medicare or Medicaid coverage solely because of this guide. Confirm your options and any deadlines with the official plan or agency."
+      ],
+      "cta": {
+        "href": "https://www.medicare.gov/",
+        "text": "Visit official Medicare information"
+      },
+      "extraCta": {
+        "href": "https://aging.sc.gov/programs-initiatives/medicare-and-medicare-fraud",
+        "text": "Get free South Carolina SHIP / I-CARE counseling"
+      },
+      "es": {
+        "head": "Esta regla federal específica de inscripción de 2027 se refiere a los planes D-SNP, no a todas las formas de cobertura de Medicare.",
+        "steps": [
+          "Si su cobertura de Medicare no es un D-SNP, la limitación de inscripción de 42 CFR 422.514(h) no es, por sí sola, una razón para cambiar su cobertura actual de Medicare.",
+          "Esto no elimina la obligación de seguir los avisos de Healthy Connections Medicaid ni las instrucciones separadas de South Carolina sobre atención administrada y transiciones de atención a largo plazo.",
+          "Si no está seguro del tipo de plan, llame a 1-800-MEDICARE al 1-800-633-4227 o consulte gratuitamente a un consejero de SHIP/I-CARE de South Carolina al 800-868-9095.",
+          "No cambie la cobertura de Medicare o Medicaid únicamente por esta guía. Confirme sus opciones y cualquier fecha límite con el plan o la agencia oficial."
+        ],
+        "cta": {
+          "href": "https://www.medicare.gov/",
+          "text": "Visitar la información oficial de Medicare"
+        },
+        "extraCta": {
+          "href": "https://aging.sc.gov/programs-initiatives/medicare-and-medicare-fraud",
+          "text": "Obtener asesoría gratuita de SHIP / I-CARE de South Carolina"
+        }
+      }
+    },
+    "SC_DUAL_UNSURE_RESULT": {
+      "head": "You do not need to guess which 2027 rule applies. Confirm your plan and Medicaid category first.",
+      "steps": [
+        "Look for the words 'D-SNP' or 'Dual Eligible Special Needs Plan' on your Medicare Advantage plan card, plan materials or enrollment notice. Do not upload the card or enter its member number here.",
+        "Call the number on your Medicare plan card and ask: 'Is this a D-SNP? Is it a HIDE D-SNP or a Coordination Only D-SNP? Does the organization or its parent company also operate a Healthy Connections Medicaid MCO in my county? Does the 2027 rule at 42 CFR 422.514(h) affect new enrollment in my plan?'",
+        "Call Healthy Connections at 888-549-0820 to confirm whether you have full Medicaid benefits or a Medicare Savings Program category, and to identify your current Medicaid MCO.",
+        "For free, unbiased Medicare counseling, contact South Carolina SHIP/I-CARE at 800-868-9095 (Monday–Friday, 8:30 a.m.–5 p.m.). You may also call 1-800-MEDICARE at 1-800-633-4227.",
+        "Keep all plan and agency notices. Do not change plans solely because of a general guide; ask the plan or counselor to explain your personal options and deadlines."
+      ],
+      "cta": {
+        "href": "https://www.scdhhs.gov/members/managed-care-plan-information/dual-special-needs-plans",
+        "text": "Open SCDHHS D-SNP information and current plan contacts"
+      },
+      "extraCta": {
+        "href": "https://aging.sc.gov/programs-initiatives/medicare-and-medicare-fraud",
+        "text": "Contact South Carolina SHIP / I-CARE"
+      },
+      "es": {
+        "head": "No necesita adivinar qué regla de 2027 se aplica. Primero confirme su plan y su categoría de Medicaid.",
+        "steps": [
+          "Busque las palabras 'D-SNP' o 'Dual Eligible Special Needs Plan' en su tarjeta del plan Medicare Advantage, los materiales del plan o el aviso de inscripción. No cargue la tarjeta ni ingrese aquí su número de miembro.",
+          "Llame al número de su tarjeta del plan de Medicare y pregunte: '¿Es este un D-SNP? ¿Es un HIDE D-SNP o un D-SNP de Coordinación Solamente? ¿La organización o su empresa matriz también opera una MCO de Healthy Connections Medicaid en mi condado? ¿La regla de 2027 de 42 CFR 422.514(h) afecta las nuevas inscripciones en mi plan?'",
+          "Llame a Healthy Connections al 888-549-0820 para confirmar si tiene todos los beneficios de Medicaid o una categoría del Programa de Ahorros de Medicare, e identificar su MCO actual de Medicaid.",
+          "Para recibir asesoría gratuita e imparcial sobre Medicare, comuníquese con SHIP/I-CARE de South Carolina al 800-868-9095 (lunes a viernes, de 8:30 a. m. a 5 p. m.). También puede llamar al 1-800-MEDICARE al 1-800-633-4227.",
+          "Guarde todos los avisos del plan y de la agencia. No cambie de plan únicamente por una guía general; pida al plan o al consejero que explique sus opciones y fechas límite personales."
+        ],
+        "cta": {
+          "href": "https://www.scdhhs.gov/members/managed-care-plan-information/dual-special-needs-plans",
+          "text": "Abrir la información D-SNP y los contactos actuales de SCDHHS"
+        },
+        "extraCta": {
+          "href": "https://aging.sc.gov/programs-initiatives/medicare-and-medicare-fraud",
+          "text": "Contactar a SHIP / I-CARE de South Carolina"
+        }
+      }
+    },
+    "SC_DUAL_HIDE_RESULT": {
+      "head": "South Carolina says HIDE D-SNP enrollment aligns with a Medicaid MCO where available. Verify your plan and county.",
+      "steps": [
+        "SCDHHS explains that when a Healthy Connections Medicaid member enrolls in a HIDE D-SNP to manage Medicare, the member will be enrolled in an aligned Medicaid MCO where available. The same parent organization provides the Medicare and Medicaid management services. Additional enrollment requirements may apply.",
+        "Beginning in 2027, under 42 CFR 422.514(h), when the D-SNP organization, its parent, or a shared-parent entity also contracts as a Medicaid MCO serving full-benefit dual eligible individuals in the same or an overlapping service area, the D-SNP may newly enroll only people already enrolled in or in the process of enrolling in that affiliated MCO. The rule also limits the number of full-benefit D-SNPs the parent organization may offer in that service area, subject to exceptions.",
+        "This is not a universal requirement for every person with Medicare and Medicaid to change plans on Jan. 1, 2027. CMS says existing unaligned members in affected D-SNPs may remain through 2029; beginning in 2030, affected plans generally must align enrollment, subject to exceptions and deemed continued eligibility rules.",
+        "Ask your D-SNP and Medicaid MCO to confirm: (a) whether your Medicaid category is full-benefit; (b) whether the parent organization operates the affiliated MCO in your county; (c) whether any action or deadline applies to you; and (d) whether your doctors, hospitals, prescriptions, authorizations, transportation and long-term services remain covered.",
+        "SCDHHS currently lists these HIDE D-SNP options: First Choice VIP Care (888-996-0499); Humana Dual Integrated (866-432-0001); Molina Medicare Complete Care Plus (855-735-5831); and Wellcare Absolute Total Care Dual Align (833-998-5063). Confirm current plan availability and contacts on the state page.",
+        "For independent help comparing Medicare options, South Carolina SHIP/I-CARE offers free counseling at 800-868-9095. Do not switch plans solely because of this general guide."
+      ],
+      "cta": {
+        "href": "https://www.scdhhs.gov/members/managed-care-plan-information/dual-special-needs-plans",
+        "text": "Review SCDHHS HIDE D-SNP details and plan contacts"
+      },
+      "extraCta": {
+        "href": "https://www.cms.gov/files/document/cy-2027-updates-514hfaqs.pdf",
+        "text": "Read the CMS 2027 D-SNP enrollment FAQ"
+      },
+      "es": {
+        "head": "South Carolina indica que la inscripción en HIDE D-SNP se alinea con una MCO de Medicaid cuando está disponible. Confirme su plan y condado.",
+        "steps": [
+          "SCDHHS explica que cuando un miembro de Healthy Connections Medicaid se inscribe en un HIDE D-SNP para administrar Medicare, también se inscribe en una MCO de Medicaid alineada cuando está disponible. La misma organización matriz proporciona los servicios de administración de Medicare y Medicaid. Pueden aplicarse requisitos de inscripción adicionales.",
+          "A partir de 2027, según 42 CFR 422.514(h), cuando la organización del D-SNP, su empresa matriz o una entidad con la misma empresa matriz también tiene un contrato como MCO de Medicaid que atiende a personas con doble elegibilidad y beneficios completos en la misma área de servicio o en un área parcialmente superpuesta, el D-SNP solo puede inscribir a personas que ya estén inscritas o en proceso de inscripción en esa MCO afiliada. La regla también limita la cantidad de D-SNP para personas con beneficios completos que la empresa matriz puede ofrecer en esa área, sujeto a excepciones.",
+          "Esto no es un requisito universal para que todas las personas con Medicare y Medicaid cambien de plan el 1 de enero de 2027. CMS indica que los miembros actuales no alineados de los D-SNP afectados pueden permanecer hasta 2029; a partir de 2030, los planes afectados generalmente deben alinear la inscripción, sujeto a excepciones y reglas de continuidad de elegibilidad considerada.",
+          "Pregunte a su D-SNP y a su MCO de Medicaid que confirmen: (a) si su categoría de Medicaid incluye beneficios completos; (b) si la empresa matriz opera la MCO afiliada en su condado; (c) si usted tiene que tomar alguna medida o cumplir una fecha límite; y (d) si sus médicos, hospitales, medicamentos, autorizaciones, transporte y servicios a largo plazo seguirán cubiertos.",
+          "SCDHHS actualmente enumera estas opciones HIDE D-SNP: First Choice VIP Care (888-996-0499); Humana Dual Integrated (866-432-0001); Molina Medicare Complete Care Plus (855-735-5831); y Wellcare Absolute Total Care Dual Align (833-998-5063). Confirme la disponibilidad y los contactos actuales en la página estatal.",
+          "Para recibir ayuda independiente al comparar opciones de Medicare, SHIP/I-CARE de South Carolina ofrece asesoría gratuita al 800-868-9095. No cambie de plan únicamente por esta guía general."
+        ],
+        "cta": {
+          "href": "https://www.scdhhs.gov/members/managed-care-plan-information/dual-special-needs-plans",
+          "text": "Consultar los detalles y contactos de planes HIDE D-SNP de SCDHHS"
+        },
+        "extraCta": {
+          "href": "https://www.cms.gov/files/document/cy-2027-updates-514hfaqs.pdf",
+          "text": "Leer las preguntas frecuentes de CMS sobre inscripción D-SNP en 2027"
+        }
+      }
+    },
+    "SC_DUAL_CO_RESULT": {
+      "head": "A Coordination Only label does not automatically exempt a D-SNP from the 2027 federal rule.",
+      "steps": [
+        "SCDHHS says a Coordination Only (CO) D-SNP may not offer a Medicaid MCO itself; it coordinates with the member's chosen Healthy Connections Medicaid MCO and/or Medicaid where applicable.",
+        "CMS states that 42 CFR 422.514(h) applies to all D-SNP types, including a CO D-SNP, when the D-SNP organization, its parent, or a shared-parent entity also operates an affiliated Medicaid MCO serving full-benefit dual eligible individuals in the same or an overlapping service area.",
+        "If those conditions are met, beginning in 2027 the D-SNP may newly enroll full-benefit dual eligible individuals only if they are enrolled in or in the process of enrolling in the affiliated Medicaid MCO. Existing unaligned enrollees may remain through 2029; affected plans generally must align enrollment beginning in 2030, subject to exceptions.",
+        "Ask the D-SNP and your Medicaid MCO whether the D-SNP's parent organization operates an MCO in your county, whether the 2027 restriction applies to your plan, and whether any action or deadline applies to you. Confirm providers, hospitals, prescriptions, authorizations and care coordination with both plans.",
+        "SCDHHS currently lists these CO D-SNP options: Aetna Better Health Medicare Full Dual / Aetna Medicare Full Dual Care (866-409-1221); HumanaChoice Special Needs Plan – Dual Eligible (866-432-0001); and UnitedHealthcare Dual Complete SC-S001 / SC-S2 (866-480-1086). Confirm current details with SCDHHS.",
+        "South Carolina SHIP/I-CARE provides free, independent Medicare counseling at 800-868-9095. Do not change plans solely because of this general guide."
+      ],
+      "cta": {
+        "href": "https://www.scdhhs.gov/members/managed-care-plan-information/dual-special-needs-plans",
+        "text": "Review SCDHHS Coordination Only D-SNP details and plan contacts"
+      },
+      "extraCta": {
+        "href": "https://www.cms.gov/files/document/cy-2027-updates-514hfaqs.pdf",
+        "text": "Read the CMS 2027 D-SNP enrollment FAQ"
+      },
+      "es": {
+        "head": "La etiqueta de Coordinación Solamente no exime automáticamente a un D-SNP de la regla federal de 2027.",
+        "steps": [
+          "SCDHHS indica que un D-SNP de Coordinación Solamente (CO) puede no ofrecer una MCO de Medicaid propia; coordina con la MCO de Healthy Connections Medicaid que el miembro haya elegido y/o con Medicaid, cuando corresponda.",
+          "CMS establece que 42 CFR 422.514(h) se aplica a todos los tipos de D-SNP, incluido un D-SNP CO, cuando la organización del D-SNP, su empresa matriz o una entidad con la misma empresa matriz también opera una MCO de Medicaid afiliada que atiende a personas con doble elegibilidad y beneficios completos en la misma área de servicio o en un área parcialmente superpuesta.",
+          "Si se cumplen esas condiciones, a partir de 2027 el D-SNP solo puede inscribir a nuevas personas con doble elegibilidad y beneficios completos si ya están inscritas o en proceso de inscripción en la MCO de Medicaid afiliada. Los miembros actuales no alineados pueden permanecer hasta 2029; los planes afectados generalmente deben alinear la inscripción a partir de 2030, sujeto a excepciones.",
+          "Pregunte al D-SNP y a su MCO de Medicaid si la empresa matriz del D-SNP opera una MCO en su condado, si la restricción de 2027 se aplica a su plan y si usted debe tomar alguna medida o cumplir una fecha límite. Confirme los médicos, hospitales, medicamentos, autorizaciones y la coordinación de atención con ambos planes.",
+          "SCDHHS actualmente enumera estas opciones CO D-SNP: Aetna Better Health Medicare Full Dual / Aetna Medicare Full Dual Care (866-409-1221); HumanaChoice Special Needs Plan – Dual Eligible (866-432-0001); y UnitedHealthcare Dual Complete SC-S001 / SC-S2 (866-480-1086). Confirme los detalles actuales con SCDHHS.",
+          "SHIP/I-CARE de South Carolina ofrece asesoría gratuita e independiente sobre Medicare al 800-868-9095. No cambie de plan únicamente por esta guía general."
+        ],
+        "cta": {
+          "href": "https://www.scdhhs.gov/members/managed-care-plan-information/dual-special-needs-plans",
+          "text": "Consultar los detalles y contactos de D-SNP de Coordinación Solamente de SCDHHS"
+        },
+        "extraCta": {
+          "href": "https://www.cms.gov/files/document/cy-2027-updates-514hfaqs.pdf",
+          "text": "Leer las preguntas frecuentes de CMS sobre inscripción D-SNP en 2027"
+        }
+      }
+    },
+    "SC_DUAL_STAFF_RESULT": {
+      "head": "Use this sequence as a clinic reference—not as a coverage or eligibility decision.",
+      "steps": [
+        "Start with the member's question or notice. With the member's permission, identify whether they have Medicare and Healthy Connections Medicaid and whether their Medicaid category includes full Medicaid benefits or only Medicare premium/cost-sharing assistance. Use your clinic's approved system for case notes; do not record patient details in Navigator.",
+        "Check the Medicare plan card or notice for 'D-SNP' / 'Dual Eligible Special Needs Plan.' If it is a D-SNP, ask the member or plan whether it is HIDE or Coordination Only. Do not infer plan type from the insurer's brand name.",
+        "Identify the member's current Healthy Connections Medicaid MCO from the Medicaid card or official account. Contact both plans using the numbers on the member's cards or the current SCDHHS D-SNP directory.",
+        "Ask the plans to confirm whether the D-SNP organization, its parent or a shared-parent entity operates a Medicaid MCO for full-benefit duals in the member's county; whether 42 CFR 422.514(h) applies; whether the member is already aligned or in the process of enrolling; and whether a notice, action or deadline applies.",
+        "Explain the timeline accurately: for affected plans, the 2027 restriction concerns new enrollment; existing unaligned members may remain through 2029. Beginning in 2030, affected plans generally must align enrollment, subject to exceptions. Do not tell every dual-eligible patient that they must switch in 2027.",
+        "Confirm continuity issues with the member and both plans: primary and specialty providers, hospitals, prescriptions, referrals, prior authorizations, transportation, care coordinators, and waiver/nursing-facility/hospice services. Refer Medicare plan comparisons and enrollment decisions to South Carolina SHIP/I-CARE (800-868-9095).",
+        "Privacy boundary: do not enter or paste PHI, identifiers, screenshots, plan IDs or identifiable case details into Navigator. This public preview has no patient-level reporting or clinic dashboard."
+      ],
+      "cta": {
+        "href": "https://www.scdhhs.gov/members/managed-care-plan-information/dual-special-needs-plans",
+        "text": "Open the SCDHHS D-SNP directory for members and clinics"
+      },
+      "extraCta": {
+        "href": "https://aging.sc.gov/programs-initiatives/medicare-and-medicare-fraud",
+        "text": "Refer members to South Carolina SHIP / I-CARE"
+      },
+      "es": {
+        "head": "Use esta secuencia como referencia para la clínica, no como una decisión de cobertura o elegibilidad.",
+        "steps": [
+          "Comience con la pregunta o el aviso del miembro. Con su permiso, identifique si tiene Medicare y Healthy Connections Medicaid y si su categoría de Medicaid incluye todos los beneficios de Medicaid o solo ayuda con las primas o los gastos compartidos de Medicare. Use el sistema aprobado de su clínica para las notas del caso; no registre datos de pacientes en Navigator.",
+          "Revise la tarjeta o el aviso del plan de Medicare para buscar 'D-SNP' / 'Dual Eligible Special Needs Plan'. Si es un D-SNP, pregunte al miembro o al plan si es HIDE o de Coordinación Solamente. No deduzca el tipo de plan por el nombre comercial de la aseguradora.",
+          "Identifique la MCO actual de Healthy Connections Medicaid del miembro en su tarjeta de Medicaid o cuenta oficial. Comuníquese con ambos planes usando los números de las tarjetas del miembro o el directorio D-SNP vigente de SCDHHS.",
+          "Pida a los planes que confirmen si la organización del D-SNP, su empresa matriz o una entidad con la misma empresa matriz opera una MCO de Medicaid para personas con beneficios completos en el condado del miembro; si se aplica 42 CFR 422.514(h); si el miembro ya está alineado o en proceso de inscripción; y si hay algún aviso, medida o fecha límite.",
+          "Explique el calendario con precisión: para los planes afectados, la restricción de 2027 se refiere a nuevas inscripciones; los miembros actuales no alineados pueden permanecer hasta 2029. A partir de 2030, los planes afectados generalmente deben alinear la inscripción, sujeto a excepciones. No diga a todas las personas con doble elegibilidad que deben cambiar de plan en 2027.",
+          "Confirme con el miembro y ambos planes los asuntos de continuidad: proveedores de atención primaria y especialistas, hospitales, medicamentos, referencias, autorizaciones previas, transporte, coordinadores de atención y servicios de exención, centros de enfermería u hospicio. Remita las comparaciones y decisiones de inscripción de Medicare a SHIP/I-CARE de South Carolina (800-868-9095).",
+          "Límite de privacidad: no ingrese ni pegue información médica protegida, identificadores, capturas de pantalla, números de plan ni detalles de casos identificables en Navigator. Esta vista previa pública no tiene informes a nivel de paciente ni panel de control de clínicas."
+        ],
+        "cta": {
+          "href": "https://www.scdhhs.gov/members/managed-care-plan-information/dual-special-needs-plans",
+          "text": "Abrir el directorio D-SNP de SCDHHS para miembros y clínicas"
+        },
+        "extraCta": {
+          "href": "https://aging.sc.gov/programs-initiatives/medicare-and-medicare-fraud",
+          "text": "Remitir a los miembros a SHIP / I-CARE de South Carolina"
+        }
+      }
+    },
+    "SC_MEDICARE_ONLY_RESULT": {
+      "head": "Based on the option you selected, you do not currently have both Medicare and Healthy Connections Medicaid.",
+      "steps": [
+        "The 2027 federal D-SNP/Medicaid MCO enrollment rule described in this guide concerns certain D-SNPs serving full-benefit dual eligible members. It does not tell someone with Medicare only to change their Medicare plan.",
+        "If you think you may qualify for Healthy Connections Medicaid, or you are unsure whether you are enrolled, contact SCDHHS at 888-549-0820 to ask about your status and available assistance.",
+        "For Medicare plan questions, call 1-800-MEDICARE at 1-800-633-4227. South Carolina SHIP/I-CARE also provides free, independent Medicare counseling at 800-868-9095.",
+        "Continue to follow your official Medicare notices and any application instructions. Do not change plans solely because of this general guide."
+      ],
+      "cta": {
+        "href": "https://www.scdhhs.gov/members/where-go-help",
+        "text": "Contact Healthy Connections / SCDHHS"
+      },
+      "extraCta": {
+        "href": "https://aging.sc.gov/programs-initiatives/medicare-and-medicare-fraud",
+        "text": "Get free South Carolina SHIP / I-CARE counseling"
+      },
+      "es": {
+        "head": "Según la opción que seleccionó, actualmente no tiene Medicare y Healthy Connections Medicaid al mismo tiempo.",
+        "steps": [
+          "La regla federal de inscripción D-SNP/MCO de Medicaid de 2027 que se describe en esta guía se refiere a ciertos D-SNP que atienden a personas con doble elegibilidad y beneficios completos. No indica que una persona que solo tiene Medicare deba cambiar su plan de Medicare.",
+          "Si cree que puede calificar para Healthy Connections Medicaid, o no está seguro de estar inscrito, comuníquese con SCDHHS al 888-549-0820 para preguntar sobre su situación y la ayuda disponible.",
+          "Para preguntas sobre planes de Medicare, llame al 1-800-MEDICARE al 1-800-633-4227. SHIP/I-CARE de South Carolina también ofrece asesoría gratuita e independiente sobre Medicare al 800-868-9095.",
+          "Siga leyendo los avisos oficiales de Medicare y cualquier instrucción de solicitud. No cambie de plan únicamente por esta guía general."
+        ],
+        "cta": {
+          "href": "https://www.scdhhs.gov/members/where-go-help",
+          "text": "Comunicarse con Healthy Connections / SCDHHS"
+        },
+        "extraCta": {
+          "href": "https://aging.sc.gov/programs-initiatives/medicare-and-medicare-fraud",
+          "text": "Obtener asesoría gratuita de SHIP / I-CARE de South Carolina"
         }
       }
     }

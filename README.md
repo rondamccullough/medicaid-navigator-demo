@@ -39,6 +39,7 @@ For a prospect name that is not one of the configured demo organizations, use th
 `?clinic=preview&clinic_name=Prospective%20Clinic`
 
 The generic preview does not create a tenant, private workspace or endorsement. The `?debug=true` parameter displays the simulated developer panel. It does not enable patient-level analytics.
+For a South Carolina clinic-branded, display-only preview, append the same parameters to the state route: `/sc?clinic=preview&clinic_name=Prospective%20Rural%20Clinic`. This changes the display label only; it does not create a tenant, private workspace, endorsement or integration.
 
 ## Privacy and use boundaries
 
@@ -71,6 +72,7 @@ The project is configured for Netlify static hosting. The production branch is `
 - The repository did not contain a `data/md/` JSON module before this work; the existing Maryland rules and localization are embedded in the root `index.html`. They were not copied, moved, or rewritten as part of the SC module.
 - Netlify's existing catch-all rewrite serves `index.html` for `/sc`; no redirect or rewrite change was needed.
 - South Carolina's debug preview is simulated only. It displays `site_id=sc-hertc-orangeburg-01`, `state_module=SC_HEALTHY_CONNECTIONS_2027`, the active logic node and `phi_collected=false`; public reporting remains disabled.
+- The South Carolina module includes a dedicated Medicare + Medicaid / D-SNP pathway for members and a separate clinic/CHW workflow. It distinguishes full-benefit from partial-benefit dual eligibility, HIDE from Coordination Only D-SNPs, and the conditional 2027 new-enrollment rule from the 2030 alignment requirement. It does not determine whether a specific member's plan is affected; see [data/sc/SOURCES.md](data/sc/SOURCES.md) for the official CMS and SCDHHS source basis.
 
 ## South Carolina policy references
 

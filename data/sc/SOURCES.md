@@ -44,3 +44,18 @@ Content review date: 2026-11-22. This is a source register for the South Carolin
 - Do not enter PHI or identifying information. The website host may process ordinary technical logs.
 - The demo analytics panel is simulated in-browser only. Public reporting remains disabled.
 - Review official sources before each production content release.
+
+
+## 2027 D-SNP alignment and enrollment rules
+
+- CMS FAQ for 42 CFR §422.514(h), updated April 2026. The rule applies beginning in 2027 when a D-SNP organization, its parent, or a shared-parent entity also contracts as a Medicaid MCO serving full-benefit dual eligible individuals in the same or overlapping service area. Affected organizations may offer only one D-SNP for full-benefit duals in that service area, subject to exceptions, and may newly enroll only individuals enrolled in or in the process of enrolling in the affiliated MCO. Existing unaligned enrollees may remain through 2029; beginning in 2030, affected plans generally must align enrollment, subject to exceptions and deemed continued eligibility rules. CMS states the rule can apply to all D-SNP types, including affiliated Coordination Only D-SNPs.  
+  https://www.cms.gov/files/document/cy-2027-updates-514hfaqs.pdf
+- CMS D-SNP integration page, including the §422.514(h) FAQ and CY 2027 D-SNP materials.  
+  https://www.cms.gov/medicare/medicaid-coordination/about/dsnps
+- SCDHHS member-facing D-SNP page. South Carolina identifies HIDE D-SNPs and Coordination Only D-SNPs; it says HIDE D-SNP enrollment aligns with a Medicaid MCO where available, while CO D-SNPs coordinate with the member's chosen Medicaid MCO. The page lists current plan names and member-services numbers.  
+  https://www.scdhhs.gov/members/managed-care-plan-information/dual-special-needs-plans
+- South Carolina SHIP / I-CARE offers free, independent Medicare counseling.  
+  https://aging.sc.gov/programs-initiatives/medicare-and-medicare-fraud
+- Healthy Connections member assistance: 888-549-0820.  
+  https://www.scdhhs.gov/members/where-go-help
+- The guide does not identify a member's Medicaid eligibility category, plan-parent affiliation, county service area, D-SNP applicability, or enrollment deadline. Members and clinic staff must confirm those details with the plan, SCDHHS, Medicare or SHIP/I-CARE.

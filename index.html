@@ -699,7 +699,8 @@ const ES = {
 (function () {
   var params = new URLSearchParams(window.location.search);
   var pathSlug = window.location.pathname.split('/').filter(Boolean).join('/').toLowerCase();
-  var requestedClinic = (pathSlug && pathSlug !== 'index.html') ? pathSlug : (params.get('clinic') || '');
+  var isStateRoute = pathSlug === 'sc' || pathSlug.indexOf('sc/') === 0;
+  var requestedClinic = (!isStateRoute && pathSlug && pathSlug !== 'index.html') ? pathSlug : (params.get('clinic') || '');
   var normalizedClinic = requestedClinic.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   var CLINIC_DIRECTORY = {
     'chase-brexton': 'Chase Brexton Health Care',
@@ -723,6 +724,7 @@ const ES = {
   var isDebug = params.get('debug') === 'true';
   var requestedDisplayName = (params.get('clinic_name') || '').trim().slice(0, 80);
   var clinicName = clinicSlug ? (requestedDisplayName || CLINIC_DIRECTORY[clinicSlug]) : (isGenericPreview ? requestedDisplayName : '');
+  window.__rmClinicName = clinicName;
 
   var BANNER = {
     en: '<strong>Maryland Medicaid update (Nov. 20, 2026):</strong> Maryland will delay enforcement of the new federal work requirements through <strong>June 30, 2027</strong>. Members may still be asked to verify whether they meet the rule or qualify for an exception, but they will not be denied or disenrolled through that date solely for failing to meet the new work-reporting requirements. <strong>Other eligibility and enrollment changes are not delayed.</strong> Read every official notice and complete renewals by the stated deadline.',
@@ -781,6 +783,7 @@ const ES = {
   // Patient-level and clinic event reporting are intentionally disabled in this public preview.
   // Do not enable reporting until authenticated access, rate limits, retention controls and a clinic-approved data flow exist.
   window.trackClinicEvent = function () {};
+  window.refreshClinicPreviewNote = showClinicPreviewNote;
   window.refreshPolicyBanner = function () { showBanner(); showClinicPreviewNote(); };
 
   if (!isDebug) {
@@ -818,6 +821,11 @@ const ES = {
   document.body.style.visibility = 'hidden';
   document.documentElement.setAttribute('data-state-module', 'SC');
   document.title = 'South Carolina Healthy Connections Guide | Radiant Motive Navigator';
+  var scClinicName = window.__rmClinicName || '';
+  if (scClinicName) {
+    if (headerTitle) headerTitle.textContent = '🟢 RADIANT MOTIVE NAVIGATOR • PREVIEW FOR ' + scClinicName.toUpperCase();
+    document.title = 'South Carolina Navigator Preview for ' + scClinicName + ' | Radiant Motive Navigator';
+  }
   var desc = document.querySelector('meta[name="description"]');
   if (desc) desc.setAttribute('content', 'South Carolina Healthy Connections 2027 navigation guide. General information only; SCDHHS determines eligibility and deadlines.');
 
@@ -844,10 +852,11 @@ const ES = {
     var enButton=document.getElementById('lang-en');if(enButton)enButton.textContent='English';
     var esButton=document.getElementById('lang-es');if(esButton)esButton.textContent='Español';
     if (headerTitle) headerTitle.textContent='🟢 '+en.title;
+    if (scClinicName && headerTitle) headerTitle.textContent='🟢 RADIANT MOTIVE NAVIGATOR • PREVIEW FOR '+scClinicName.toUpperCase();
     var banner=document.getElementById('cms-smd-notice');
     if(!banner){banner=document.createElement('div');banner.id='cms-smd-notice';banner.setAttribute('role','note');banner.style.cssText='background:#102A43;border:1px solid #334E68;color:#D9E2EC;padding:12px 14px;border-radius:8px;font-size:13px;line-height:1.55;margin:0 0 20px 0;';document.body.insertBefore(banner,document.body.children[1]||null);}
     var originalSetLang=setLang;
-    window.refreshPolicyBanner=function(){banner.innerHTML=(document.documentElement.lang==='es'?es.alert:en.alert);};
+    window.refreshPolicyBanner=function(){banner.innerHTML=(document.documentElement.lang==='es'?es.alert:en.alert);if(window.refreshClinicPreviewNote)window.refreshClinicPreviewNote();};
     setLang=function(l){if(l!=='es')l='en';originalSetLang(l);document.getElementById('hdr-sub').textContent=l==='es'?es.subtitle:en.subtitle;var p=document.getElementById('privacy-copy');if(p)p.textContent=l==='es'?es.privacy:en.privacy;var n=document.getElementById('language-coverage-note');if(n){n.hidden=l==='en';n.textContent=l==='es'?es.languageNote:en.languageNote;}window.refreshPolicyBanner();};
     var originalRender=render;
     render=function(nodeId,redraw){originalRender(nodeId,redraw);var node=navigationEngine[nodeId];if(node){var prefix=document.documentElement.lang==='es'?'Paso ':'Step ';var badge=document.getElementById('step-badge');if(badge)badge.textContent=node.step?prefix+node.step+' • '+node.name:node.name;var t=document.getElementById('telemetry-json');if(t){try{var j=JSON.parse(t.textContent||'{}');j.site_id='sc-hertc-orangeburg-01';j.state_module='SC_HEALTHY_CONNECTIONS_2027';j.active_logic_node=nodeId;j.phi_collected=false;j.reporting_enabled=false;t.textContent=JSON.stringify(j,null,2);}catch(e){}}}};
