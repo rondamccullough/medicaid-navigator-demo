@@ -220,6 +220,90 @@
           "next": "SC_BENEFITS_RESULT"
         }
       ]
+    },
+    "SC_RETRO_PRE_RESULT": {
+      "step": "3 of 4",
+      "name": "Action checklist and official handoff",
+      "title": "If you can apply before Jan. 1, 2027",
+      "subtitle": "Review the checklist below, then use the official agency link. The Navigator does not submit information or determine eligibility.",
+      "explanation": "Use only official agency portals for applications, notices and document submission. Do not enter personal information in this guide.",
+      "help": "The checklist is general navigation information. The responsible agency makes the eligibility decision and provides case-specific deadlines.",
+      "options": [
+        {
+          "text": "Return to the beginning",
+          "next": "WELCOME_SCREEN"
+        }
+      ]
+    },
+    "SC_RETRO_POST_RESULT": {
+      "step": "3 of 4",
+      "name": "Action checklist and official handoff",
+      "title": "If you apply on or after Jan. 1, 2027",
+      "subtitle": "Review the checklist below, then use the official agency link. The Navigator does not submit information or determine eligibility.",
+      "explanation": "Use only official agency portals for applications, notices and document submission. Do not enter personal information in this guide.",
+      "help": "The checklist is general navigation information. The responsible agency makes the eligibility decision and provides case-specific deadlines.",
+      "options": [
+        {
+          "text": "Return to the beginning",
+          "next": "WELCOME_SCREEN"
+        }
+      ]
+    },
+    "SC_RETRO_UNSURE_RESULT": {
+      "step": "3 of 4",
+      "name": "Action checklist and official handoff",
+      "title": "If you are unsure about the application date",
+      "subtitle": "Review the checklist below, then use the official agency link. The Navigator does not submit information or determine eligibility.",
+      "explanation": "Use only official agency portals for applications, notices and document submission. Do not enter personal information in this guide.",
+      "help": "The checklist is general navigation information. The responsible agency makes the eligibility decision and provides case-specific deadlines.",
+      "options": [
+        {
+          "text": "Return to the beginning",
+          "next": "WELCOME_SCREEN"
+        }
+      ]
+    },
+    "SC_MANAGED_RESULT": {
+      "step": "3 of 4",
+      "name": "Action checklist and official handoff",
+      "title": "Your managed-care and long-term-care checklist",
+      "subtitle": "Review the checklist below, then use the official agency link. The Navigator does not submit information or determine eligibility.",
+      "explanation": "Use only official agency portals for applications, notices and document submission. Do not enter personal information in this guide.",
+      "help": "The checklist is general navigation information. The responsible agency makes the eligibility decision and provides case-specific deadlines.",
+      "options": [
+        {
+          "text": "Return to the beginning",
+          "next": "WELCOME_SCREEN"
+        }
+      ]
+    },
+    "SC_STAFF_RESULT": {
+      "step": "3 of 4",
+      "name": "Action checklist and official handoff",
+      "title": "Clinic and CHW quick-reference checklist",
+      "subtitle": "Review the checklist below, then use the official agency link. The Navigator does not submit information or determine eligibility.",
+      "explanation": "Use only official agency portals for applications, notices and document submission. Do not enter personal information in this guide.",
+      "help": "The checklist is general navigation information. The responsible agency makes the eligibility decision and provides case-specific deadlines.",
+      "options": [
+        {
+          "text": "Return to the beginning",
+          "next": "WELCOME_SCREEN"
+        }
+      ]
+    },
+    "SC_BENEFITS_RESULT": {
+      "step": "3 of 4",
+      "name": "Action checklist and official handoff",
+      "title": "Your SNAP, housing and Veterans next steps",
+      "subtitle": "Review the checklist below, then use the official agency link. The Navigator does not submit information or determine eligibility.",
+      "explanation": "Use only official agency portals for applications, notices and document submission. Do not enter personal information in this guide.",
+      "help": "The checklist is general navigation information. The responsible agency makes the eligibility decision and provides case-specific deadlines.",
+      "options": [
+        {
+          "text": "Return to the beginning",
+          "next": "WELCOME_SCREEN"
+        }
+      ]
     }
   },
   "results": {
