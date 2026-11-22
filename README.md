@@ -39,6 +39,7 @@ For a prospect name that is not one of the configured demo organizations, use th
 `?clinic=preview&clinic_name=Prospective%20Clinic`
 
 The generic preview does not create a tenant, private workspace or endorsement. The `?debug=true` parameter displays the simulated developer panel. It does not enable patient-level analytics.
+For a South Carolina clinic-branded, display-only preview, append the same parameters to the state route: `/sc?clinic=preview&clinic_name=Prospective%20Rural%20Clinic`. This changes the display label only; it does not create a tenant, private workspace, endorsement or integration.
 
 ## Privacy and use boundaries
 
