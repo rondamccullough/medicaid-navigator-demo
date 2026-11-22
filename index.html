@@ -717,11 +717,12 @@ const ES = {
     'choptank-community-health': 'choptank-health'
   };
   var rawSlug = CLINIC_ALIASES[normalizedClinic] || normalizedClinic;
-  // Only configured preview tenants are recognized. A custom display label never creates a tenant.
+  // Configured clinic IDs are recognized; "preview" permits a display-only prospect label without creating a tenant.
   var clinicSlug = Object.prototype.hasOwnProperty.call(CLINIC_DIRECTORY, rawSlug) ? rawSlug : '';
+  var isGenericPreview = rawSlug === 'preview';
   var isDebug = params.get('debug') === 'true';
   var requestedDisplayName = (params.get('clinic_name') || '').trim().slice(0, 80);
-  var clinicName = clinicSlug ? (requestedDisplayName || CLINIC_DIRECTORY[clinicSlug]) : '';
+  var clinicName = clinicSlug ? (requestedDisplayName || CLINIC_DIRECTORY[clinicSlug]) : (isGenericPreview ? requestedDisplayName : '');
 
   var BANNER = {
     en: '<strong>Maryland Medicaid update (Nov. 20, 2026):</strong> Maryland will delay enforcement of the new federal work requirements through <strong>June 30, 2027</strong>. Members may still be asked to verify whether they meet the rule or qualify for an exception, but they will not be denied or disenrolled through that date solely for failing to meet the new work-reporting requirements. <strong>Other eligibility and enrollment changes are not delayed.</strong> Read every official notice and complete renewals by the stated deadline.',
@@ -745,7 +746,7 @@ const ES = {
   }
 
   function applyClinic() {
-    if (!clinicSlug) return;
+    if (!clinicName) return;
     var hdr = Array.prototype.find.call(document.querySelectorAll('span'), function (el) {
       return el.children.length === 0 && el.textContent.indexOf('RADIANT MOTIVE NAVIGATOR') !== -1;
     });
@@ -760,13 +761,27 @@ const ES = {
       if (banner && banner.parentNode) banner.parentNode.insertBefore(note, banner.nextSibling);
       else document.body.insertBefore(note, document.body.children[2] || null);
     }
-    note.textContent = 'Independent product preview for ' + clinicName + '. This is not an official service of, or an endorsement by, ' + clinicName;
+    showClinicPreviewNote();
+  }
+
+  function showClinicPreviewNote() {
+    if (!clinicName) return;
+    var note = document.getElementById('clinic-preview-note');
+    if (!note) return;
+    var messages = {
+      en: 'Independent product preview for ' + clinicName + '. This is not an official service of, or an endorsement by, ' + clinicName + '.',
+      es: 'Vista previa independiente del producto para ' + clinicName + '. No es un servicio oficial ni cuenta con el respaldo de ' + clinicName + '.',
+      zh: '这是为 ' + clinicName + ' 制作的独立产品预览，并非该机构的官方服务，也不代表该机构认可本产品。',
+      ko: clinicName + '을(를) 위한 독립 제품 미리보기입니다. 해당 기관의 공식 서비스가 아니며 기관의 보증을 의미하지 않습니다.',
+      vi: 'Đây là bản xem trước sản phẩm độc lập dành cho ' + clinicName + '. Đây không phải dịch vụ chính thức hoặc sự chứng thực của ' + clinicName + '.'
+    };
+    note.textContent = messages[lang()] || messages.en;
   }
 
   // Patient-level and clinic event reporting are intentionally disabled in this public preview.
   // Do not enable reporting until authenticated access, rate limits, retention controls and a clinic-approved data flow exist.
   window.trackClinicEvent = function () {};
-  window.refreshPolicyBanner = showBanner;
+  window.refreshPolicyBanner = function () { showBanner(); showClinicPreviewNote(); };
 
   if (!isDebug) {
     var toggle = document.getElementById('analytics-toggle');
