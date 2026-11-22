@@ -1,0 +1,277 @@
+{
+  "title": "RADIANT MOTIVE NAVIGATOR • GUÍA DE HEALTHY CONNECTIONS DE SC",
+  "subtitle": "Guía de South Carolina Healthy Connections 2027 • Información general, no asesoría legal ni de elegibilidad • Orientación revisada el 22 de nov. de 2026. Confirme los detalles con SCDHHS.",
+  "alert": "<strong>Actualización de South Carolina Healthy Connections (nov. de 2026):</strong> Los materiales de SCDHHS indican que, a partir del 1 de enero de 2027, la cobertura retroactiva de Medicaid generalmente estará disponible hasta por dos meses antes del mes de la solicitud, en comparación con hasta tres meses según la política actual. La guía federal establece un límite de un mes para el grupo de adultos de Medicaid y de dos meses para la mayoría de los demás grupos. Los cambios de la Fase II de atención administrada tienen como fecha objetivo julio de 2027 y dependen de aprobaciones y preparación. Lea todos los avisos oficiales y confirme su situación con SCDHHS.",
+  "privacy": "Privacidad: Esta guía no solicita nombres, números de Medicaid, diagnósticos, datos de salud ni contenido de documentos. No ingrese información de pacientes. El proveedor de alojamiento del sitio puede procesar información técnica habitual, como direcciones IP, datos del navegador/dispositivo y horas de solicitudes. No están habilitados los análisis a nivel de paciente ni los informes de clínicas. SCDHHS determina la elegibilidad y los plazos.",
+  "languageNote": "Es posible que parte del contenido detallado aún no esté traducido. Para recibir ayuda en su idioma, comuníquese con SCDHHS al 888-549-0820 o pregunte por la asistencia de SC Thrive al 800-726-8774.",
+  "switcher": {
+    "md": "Demostración de MD",
+    "sc": "Demostración de SC"
+  },
+  "nodes": {
+    "WELCOME_SCREEN": {
+      "name": "Descubrimiento del objetivo",
+      "title": "South Carolina Healthy Connections: ¿qué necesita ayuda para navegar?",
+      "subtitle": "Elija la opción que mejor describa su situación. Esta guía explica información pública y próximos pasos; no determina la elegibilidad ni presenta solicitudes.",
+      "explanation": "Seleccione un objetivo para ver algunas preguntas de orientación. No ingrese nombres, números de Medicaid, diagnósticos, facturas ni otros datos personales.",
+      "help": "Este módulo de South Carolina está separado de la guía de Maryland. Sus selecciones solo muestran la siguiente pantalla en esta sesión del navegador; no se habilitan informes a nivel de paciente.",
+      "options": [
+        "Tengo facturas médicas recientes o necesito cobertura pronto",
+        "Mi Medicare, plan de atención administrada o exención está cambiando",
+        "Soy miembro del personal de una clínica o trabajador/a de salud comunitaria (CHW)",
+        "Necesito ayuda con SNAP, vivienda o beneficios para veteranos"
+      ]
+    },
+    "SC_RETRO_Q1": {
+      "name": "Atención reciente y facturas sin pagar",
+      "title": "¿Recibió atención médica sin seguro activo?",
+      "subtitle": "Piense en atención en un hospital, sala de emergencias o clínica durante los últimos tres meses.",
+      "explanation": "Elija la respuesta más cercana. Esta guía no solicita fechas, nombres de proveedores, diagnósticos ni montos de facturas.",
+      "help": "La elegibilidad retroactiva no es automática. La persona solicitante debe cumplir los requisitos aplicables de Medicaid durante el mes en que recibió la atención.",
+      "options": [
+        "Sí",
+        "No",
+        "No estoy seguro/a"
+      ]
+    },
+    "SC_RETRO_Q2": {
+      "name": "Fecha de la solicitud",
+      "title": "¿Cuándo presentará su solicitud de Healthy Connections?",
+      "subtitle": "La fecha de la solicitud importa para el cambio de cobertura retroactiva de Medicaid programado para el 1 de enero de 2027.",
+      "explanation": "Elija la opción que mejor describa su situación. Esta herramienta no presenta solicitudes ni conserva un período de cobertura retroactiva.",
+      "help": "Los materiales del Consejo Asesor de Medicaid de SCDHHS de noviembre de 2026 describen la política actual como hasta tres meses antes del mes de la solicitud y la nueva política como hasta dos meses a partir del 1 de enero de 2027. Aún debe cumplir los requisitos para cada mes.",
+      "options": [
+        "Puedo presentar la solicitud antes del 1 de enero de 2027",
+        "Presentaré la solicitud el 1 de enero de 2027 o después",
+        "No estoy seguro/a"
+      ]
+    },
+    "SC_MANAGED_Q1": {
+      "name": "Cobertura de Medicare y Medicaid",
+      "title": "¿Tiene Medicare y South Carolina Healthy Connections Medicaid?",
+      "subtitle": "A menudo se denomina doble elegibilidad. Los cambios de atención administrada de South Carolina afectan distintos servicios en varias fases.",
+      "explanation": "Elija la respuesta más cercana. No ingrese un número de Medicare, Medicaid ni de miembro del plan.",
+      "help": "Healthy Connections Prime terminó el 1 de enero de 2026. Los miembros elegibles pueden inscribirse en un plan Medicaid de atención administrada y en un plan D-SNP de Medicare; se aplican reglas y excepciones.",
+      "options": [
+        "Sí, tengo Medicare y Medicaid",
+        "No, solo tengo Medicaid",
+        "No estoy seguro/a"
+      ]
+    },
+    "SC_MANAGED_Q2": {
+      "name": "Servicios y apoyos a largo plazo",
+      "title": "¿Recibe alguno de estos servicios?",
+      "subtitle": "Servicios de las exenciones Community Choices, HIV/AIDS o Mechanical Ventilator Dependent; atención en un centro de enfermería; u hospicio.",
+      "explanation": "Elija la respuesta más cercana. No necesita indicar un diagnóstico ni el nombre de un centro.",
+      "help": "La Fase I incorporó a ciertos miembros a las MCO para servicios del plan estatal de Medicaid desde el 1 de enero de 2026. La Fase II busca trasladar servicios de exenciones HCBS, centros de enfermería y hospicio a la atención administrada, sujeto a aprobaciones y preparación.",
+      "options": [
+        "Sí",
+        "No",
+        "No estoy seguro/a"
+      ]
+    },
+    "SC_STAFF_Q1": {
+      "name": "Orientación en clínicas y comunidad",
+      "title": "¿Cuál es el motivo principal de la consulta de hoy?",
+      "subtitle": "Elija el motivo principal para identificar el próximo paso más útil.",
+      "explanation": "Esta pregunta es para el flujo de trabajo de personal y CHW. No ingrese el nombre, fecha de nacimiento, número de Medicaid, diagnóstico, detalles de facturas ni otra información médica protegida.",
+      "help": "Navigator es una guía de información pública. No realiza evaluaciones clínicas, determinaciones de elegibilidad ni evaluaciones de fragilidad médica.",
+      "options": [
+        "Factura de hospital, sala de emergencias o clínica sin seguro",
+        "Aviso de revisión anual o renovación",
+        "Cambio de exención, centro de enfermería o D-SNP",
+        "Necesidad de alimentos, vivienda o beneficios para veteranos"
+      ]
+    },
+    "SC_STAFF_Q2": {
+      "name": "Idioma y necesidades de acceso",
+      "title": "¿La persona necesita ayuda con el idioma o apoyo para acceder a servicios en zonas rurales?",
+      "subtitle": "Considere apoyo de intérprete, formatos accesibles, asistencia telefónica o ayuda para comunicarse con una oficina local.",
+      "explanation": "No registre el idioma, discapacidad ni otros datos personales de la persona en esta herramienta. Siga los procedimientos aprobados de su organización.",
+      "help": "La vista previa actual de South Carolina ofrece contenido en inglés y español. Para otros idiomas, use un intérprete calificado o la asistencia oficial de la agencia.",
+      "options": [
+        "Sí",
+        "No",
+        "No estoy seguro/a"
+      ]
+    },
+    "SC_BENEFITS_Q1": {
+      "name": "Otros programas de beneficios",
+      "title": "¿Con qué programa necesita comenzar?",
+      "subtitle": "Elija la categoría más cercana. Esta guía no determina la elegibilidad para ningún programa.",
+      "explanation": "Puede usar los portales oficiales de las agencias para revisar los requisitos y presentar solicitudes.",
+      "help": "Medicaid, SNAP, asistencia de vivienda y beneficios para veteranos tienen reglas, agencias y plazos diferentes. La inscripción en un programa no determina la elegibilidad para otro.",
+      "options": [
+        "SNAP de South Carolina / DSS",
+        "Sección 8 / vivienda pública",
+        "Asistencia de vivienda rural del USDA",
+        "Atención médica de VA o beneficios para veteranos"
+      ]
+    },
+    "SC_BENEFITS_Q2": {
+      "name": "Renovación y verificación",
+      "title": "¿Recibió un aviso de renovación, revisión o verificación en los últimos 30 días?",
+      "subtitle": "Use la fecha límite que aparece en el aviso oficial. Cada agencia tiene su propio calendario de revisión.",
+      "explanation": "Elija la respuesta más cercana. No cargue ni ingrese el aviso en esta guía.",
+      "help": "Si recibió un aviso, léalo completo y comuníquese con la agencia indicada si algo no está claro. Guarde comprobantes de todo lo que envíe.",
+      "options": [
+        "Sí",
+        "No",
+        "No estoy seguro/a"
+      ]
+    },
+    "SC_RETRO_PRE_RESULT": {
+      "name": "Lista de acciones y enlace oficial",
+      "title": "Si puede presentar la solicitud antes del 1 de enero de 2027",
+      "subtitle": "Revise la lista a continuación y luego use el enlace oficial de la agencia. Navigator no envía información ni determina la elegibilidad.",
+      "explanation": "Use únicamente los portales oficiales de las agencias para solicitudes, avisos y envío de documentos. No ingrese información personal en esta guía.",
+      "help": "La lista ofrece información general de orientación. La agencia responsable toma la decisión de elegibilidad e informa los plazos específicos del caso.",
+      "options": [
+        "Volver al inicio"
+      ]
+    },
+    "SC_RETRO_POST_RESULT": {
+      "name": "Lista de acciones y enlace oficial",
+      "title": "Si presenta la solicitud el 1 de enero de 2027 o después",
+      "subtitle": "Revise la lista a continuación y luego use el enlace oficial de la agencia. Navigator no envía información ni determina la elegibilidad.",
+      "explanation": "Use únicamente los portales oficiales de las agencias para solicitudes, avisos y envío de documentos. No ingrese información personal en esta guía.",
+      "help": "La lista ofrece información general de orientación. La agencia responsable toma la decisión de elegibilidad e informa los plazos específicos del caso.",
+      "options": [
+        "Volver al inicio"
+      ]
+    },
+    "SC_RETRO_UNSURE_RESULT": {
+      "name": "Lista de acciones y enlace oficial",
+      "title": "Si no está seguro/a de la fecha de solicitud",
+      "subtitle": "Revise la lista a continuación y luego use el enlace oficial de la agencia. Navigator no envía información ni determina la elegibilidad.",
+      "explanation": "Use únicamente los portales oficiales de las agencias para solicitudes, avisos y envío de documentos. No ingrese información personal en esta guía.",
+      "help": "La lista ofrece información general de orientación. La agencia responsable toma la decisión de elegibilidad e informa los plazos específicos del caso.",
+      "options": [
+        "Volver al inicio"
+      ]
+    },
+    "SC_MANAGED_RESULT": {
+      "name": "Lista de acciones y enlace oficial",
+      "title": "Lista de verificación de atención administrada y atención a largo plazo",
+      "subtitle": "Revise la lista a continuación y luego use el enlace oficial de la agencia. Navigator no envía información ni determina la elegibilidad.",
+      "explanation": "Use únicamente los portales oficiales de las agencias para solicitudes, avisos y envío de documentos. No ingrese información personal en esta guía.",
+      "help": "La lista ofrece información general de orientación. La agencia responsable toma la decisión de elegibilidad e informa los plazos específicos del caso.",
+      "options": [
+        "Volver al inicio"
+      ]
+    },
+    "SC_STAFF_RESULT": {
+      "name": "Lista de acciones y enlace oficial",
+      "title": "Lista de referencia rápida para clínicas y CHW",
+      "subtitle": "Revise la lista a continuación y luego use el enlace oficial de la agencia. Navigator no envía información ni determina la elegibilidad.",
+      "explanation": "Use únicamente los portales oficiales de las agencias para solicitudes, avisos y envío de documentos. No ingrese información personal en esta guía.",
+      "help": "La lista ofrece información general de orientación. La agencia responsable toma la decisión de elegibilidad e informa los plazos específicos del caso.",
+      "options": [
+        "Volver al inicio"
+      ]
+    },
+    "SC_BENEFITS_RESULT": {
+      "name": "Lista de acciones y enlace oficial",
+      "title": "Próximos pasos para SNAP, vivienda y beneficios para veteranos",
+      "subtitle": "Revise la lista a continuación y luego use el enlace oficial de la agencia. Navigator no envía información ni determina la elegibilidad.",
+      "explanation": "Use únicamente los portales oficiales de las agencias para solicitudes, avisos y envío de documentos. No ingrese información personal en esta guía.",
+      "help": "La lista ofrece información general de orientación. La agencia responsable toma la decisión de elegibilidad e informa los plazos específicos del caso.",
+      "options": [
+        "Volver al inicio"
+      ]
+    }
+  },
+  "results": {
+    "SC_RETRO_PRE_RESULT": {
+      "head": "Si necesita cobertura para atención reciente, comuníquese pronto con Healthy Connections.",
+      "steps": [
+        "Los materiales del Consejo Asesor de Medicaid de SCDHHS de noviembre de 2026 describen la elegibilidad retroactiva actual como hasta tres meses antes del mes de la solicitud. El nuevo cambio federal se aplica a solicitudes presentadas a partir del 1 de enero de 2027. Presentarla antes del 1 de enero puede mantener vigente la política actual, pero no garantiza cobertura retroactiva.",
+        "La cobertura retroactiva solo está disponible si cumple los requisitos aplicables de Medicaid durante el mes en que recibió el servicio cubierto. Pregunte a SCDHHS o a un asistente calificado cómo afectan la fecha de solicitud y su categoría de elegibilidad.",
+        "Tenga disponible la información si se la solicitan: identidad y residencia en South Carolina, información de ingresos del hogar y facturas detalladas con el proveedor y las fechas de servicio. Siga la solicitud específica de SCDHHS; Navigator no recopila ni carga documentos.",
+        "No retrase la atención médica urgente para intentar cumplir una fecha de cobertura retroactiva. Comuníquese también con el hospital para preguntar por asistencia financiera o inscripción en Medicaid."
+      ],
+      "cta": {
+        "text": "Abrir el portal oficial de solicitudes de Healthy Connections",
+        "href": "https://apply.scdhhs.gov"
+      }
+    },
+    "SC_RETRO_POST_RESULT": {
+      "head": "Las solicitudes presentadas a partir del 1 de enero de 2027 están sujetas a los nuevos límites de cobertura retroactiva.",
+      "steps": [
+        "Los materiales del Consejo Asesor de Medicaid de SCDHHS de noviembre de 2026 indican que la elegibilidad retroactiva estará disponible hasta por dos meses antes del mes de la solicitud, en comparación con hasta tres meses según la política actual.",
+        "La guía de CMS establece un límite de un mes para el grupo de adultos de Medicaid y de dos meses para la mayoría de los demás grupos. El límite real depende de la categoría de elegibilidad y de la implementación estatal vigente.",
+        "La cobertura de meses anteriores no es automática: debe haber cumplido los requisitos aplicables cuando recibió el servicio médico. Pregunte a SCDHHS cómo se aplica la regla a su categoría.",
+        "Reúna información de identidad, residencia en South Carolina e ingresos, y facturas detalladas solo si es necesario. Envíe documentos únicamente por un canal oficial de SCDHHS cuando se los soliciten."
+      ],
+      "cta": {
+        "text": "Abrir el portal oficial de Healthy Connections",
+        "href": "https://apply.scdhhs.gov"
+      }
+    },
+    "SC_RETRO_UNSURE_RESULT": {
+      "head": "Confirme la fecha de solicitud y la regla de cobertura retroactiva antes de depender de un período de cobertura anterior.",
+      "steps": [
+        "Los materiales actuales de SCDHHS describen hasta tres meses de elegibilidad retroactiva antes del mes de la solicitud. Para solicitudes presentadas a partir del 1 de enero de 2027, SCDHHS describe un cambio a hasta dos meses.",
+        "La guía de CMS identifica un límite de un mes para el grupo de adultos de Medicaid y de dos meses para la mayoría de los demás grupos. Pregunte a SCDHHS qué regla corresponde a su categoría de elegibilidad.",
+        "Llame a Healthy Connections al 888-549-0820 o solicite ayuda con la solicitud a SC Thrive al 800-726-8774. Guarde la confirmación de envío y siga las instrucciones de los avisos oficiales."
+      ],
+      "cta": {
+        "text": "Visitar Healthy Connections",
+        "href": "https://apply.scdhhs.gov"
+      }
+    },
+    "SC_MANAGED_RESULT": {
+      "head": "Revise ambos lados de su cobertura antes de un cambio de plan o servicio.",
+      "steps": [
+        "La Fase I comenzó el 1 de enero de 2026. Ciertos miembros con doble elegibilidad, miembros de las exenciones HIV/AIDS, Mechanical Ventilator Dependent y Community Choices, y residentes de centros de enfermería se inscribieron en una MCO para servicios del plan estatal de Medicaid. Durante la Fase I, los servicios de exención y de centros de enfermería permanecieron en el modelo de pago por servicio.",
+        "La Fase II tiene como fecha objetivo actual julio de 2027. SCDHHS planea trasladar los servicios de exenciones HCBS, centros de enfermería y hospicio a la atención administrada y consolidar las exenciones Community Choices, HIV/AIDS y Mechanical Ventilator Dependent en la exención Healthy Connections–Long Term Care. El calendario depende de aprobaciones de CMS, preparación del sistema y las MCO, y avisos a miembros y proveedores.",
+        "Si tiene Medicare y Medicaid, comuníquese tanto con su plan D-SNP de Medicare como con su MCO de Medicaid. Confirme las redes de proveedores, medicamentos, coordinación de atención, autorizaciones existentes e instrucciones de continuidad de atención. No suponga que los planes deben tener la misma compañía; pregunte cómo se coordina su cobertura específica.",
+        "Lea todos los avisos del plan y de SCDHHS. Si recibe servicios de exención o de atención a largo plazo, comuníquese con su administrador de casos antes de cambiar de plan o proveedor."
+      ],
+      "cta": {
+        "text": "Leer la información de SCDHHS sobre la Fase II",
+        "href": "https://www.scdhhs.gov/partners/managed-care/managed-care-initiatives/phase-ii-progress"
+      },
+      "extraCta": {
+        "href": "https://www.scdhhs.gov/partners/managed-care/dual-special-needs-plans-d-snp",
+        "text": "Revisar la información de D-SNP de South Carolina"
+      }
+    },
+    "SC_STAFF_RESULT": {
+      "head": "Referencia rápida para clínicas y trabajadores comunitarios (CHW)",
+      "steps": [
+        "Identifique la necesidad inmediata de orientación: factura médica sin seguro, solicitud o revisión anual de Medicaid, transición de atención administrada/exención u otro programa de beneficios. Use el proceso de admisión y referencia aprobado por su clínica.",
+        "Si puede necesitar cobertura retroactiva de Medicaid, pida a la persona que se comunique pronto con Healthy Connections. Los materiales de SCDHHS describen un cambio de hasta tres meses a hasta dos meses para solicitudes a partir del 1 de enero de 2027; siguen aplicándose los requisitos de elegibilidad y categoría.",
+        "Recuerde a los miembros que mantengan actualizados su dirección postal y datos de contacto en el portal oficial de Healthy Connections. Pídales que revisen los avisos y completen la revisión anual antes de la fecha indicada.",
+        "Para transiciones de planes, dirija a quienes reciben servicios de exención, centros de enfermería u hospicio a la información de la Fase II de SCDHHS y a su administrador de casos. Para cobertura dual de Medicare y Medicaid, verifique la coordinación con ambos planes.",
+        "Límite de privacidad: esta orientación no solicita ni registra datos de pacientes. No escriba información médica protegida en Navigator, no tome capturas con información de pacientes ni envíe detalles de casos identificables mediante esta demostración."
+      ],
+      "cta": {
+        "text": "Abrir Healthy Connections para miembros",
+        "href": "https://apply.scdhhs.gov"
+      },
+      "extraCta": {
+        "href": "https://www.scdhhs.gov/partners/managed-care/managed-care-initiatives/phase-ii-progress",
+        "text": "Abrir información de la Fase II de SCDHHS para proveedores"
+      }
+    },
+    "SC_BENEFITS_RESULT": {
+      "head": "Use la agencia responsable del beneficio que necesita.",
+      "steps": [
+        "SNAP: Presente o administre su caso a través del Portal de Beneficios de DSS de South Carolina. DSS puede solicitar comprobantes de identidad, ingresos, residencia y gastos del hogar. Envíe solo la información que DSS solicite.",
+        "Vivienda: Las solicitudes de Sección 8 / Vales de Elección de Vivienda y vivienda pública son administradas por autoridades locales de vivienda y administradores del programa. Consulte la Autoridad de Financiamiento y Desarrollo de Vivienda de South Carolina y la autoridad local de su condado para conocer las listas de espera vigentes.",
+        "Vivienda rural: USDA Rural Development ofrece programas separados de vivienda rural. Revise los requisitos y comuníquese con la oficina de South Carolina para conocer la vía de solicitud adecuada.",
+        "Veteranos: La inscripción en atención médica de VA y los pagos monetarios para veteranos son diferentes. La inscripción en atención médica de VA por sí sola no determina la elegibilidad para SNAP; informe los ingresos y beneficios del hogar cuando se lo soliciten y permita que DSS tome la decisión.",
+        "Si recibió un aviso de renovación o verificación, siga la fecha límite y las instrucciones de envío que aparecen en ese aviso. Guarde la confirmación de los formularios o documentos que presente."
+      ],
+      "cta": {
+        "text": "Abrir el Portal de Beneficios de DSS de South Carolina",
+        "href": "https://benefitsportal.dss.sc.gov/#/login"
+      },
+      "extraCta": {
+        "href": "https://schousing.com/",
+        "text": "Visitar la Autoridad de Financiamiento y Desarrollo de Vivienda de South Carolina"
+      }
+    }
+  }
+}

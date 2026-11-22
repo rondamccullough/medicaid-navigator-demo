@@ -62,3 +62,16 @@ Policy content is general information, not legal advice or an eligibility determ
 ## Deployment
 
 The project is configured for Netlify static hosting. The production branch is `main`; feature branches should be reviewed and tested before merging. A published Netlify deployment confirms publication, not end-to-end browser QA or procurement readiness.
+
+## State routing
+
+- Maryland remains the default experience at `/`; its existing policy/navigation content remains in the root application.
+- South Carolina loads as a parallel module at `/sc` or `/?state=sc`.
+- South Carolina content is stored separately in `data/sc/rules.json`, `data/sc/locales/en.json`, and `data/sc/locales/es.json`.
+- The repository did not contain a `data/md/` JSON module before this work; the existing Maryland rules and localization are embedded in the root `index.html`. They were not copied, moved, or rewritten as part of the SC module.
+- Netlify's existing catch-all rewrite serves `index.html` for `/sc`; no redirect or rewrite change was needed.
+- South Carolina's debug preview is simulated only. It displays `site_id=sc-hertc-orangeburg-01`, `state_module=SC_HEALTHY_CONNECTIONS_2027`, the active logic node and `phi_collected=false`; public reporting remains disabled.
+
+## South Carolina policy references
+
+See [data/sc/SOURCES.md](data/sc/SOURCES.md) for the official SCDHHS, CMS and DSS source basis and important policy qualifications.
