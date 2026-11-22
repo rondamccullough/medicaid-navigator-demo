@@ -852,6 +852,7 @@ const ES = {
     var enButton=document.getElementById('lang-en');if(enButton)enButton.textContent='English';
     var esButton=document.getElementById('lang-es');if(esButton)esButton.textContent='Español';
     if (headerTitle) headerTitle.textContent='🟢 '+en.title;
+    if (scClinicName && headerTitle) headerTitle.textContent='🟢 RADIANT MOTIVE NAVIGATOR • PREVIEW FOR '+scClinicName.toUpperCase();
     var banner=document.getElementById('cms-smd-notice');
     if(!banner){banner=document.createElement('div');banner.id='cms-smd-notice';banner.setAttribute('role','note');banner.style.cssText='background:#102A43;border:1px solid #334E68;color:#D9E2EC;padding:12px 14px;border-radius:8px;font-size:13px;line-height:1.55;margin:0 0 20px 0;';document.body.insertBefore(banner,document.body.children[1]||null);}
     var originalSetLang=setLang;
