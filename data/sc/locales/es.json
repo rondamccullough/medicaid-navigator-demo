@@ -55,6 +55,7 @@
       "options": [
         "Sí, tengo Medicare y Healthy Connections Medicaid",
         "No, solo tengo Medicaid",
+        "No, solo tengo Medicare",
         "No estoy seguro/a"
       ]
     },
@@ -276,6 +277,16 @@
       "options": [
         "Volver al inicio"
       ]
+    },
+    "SC_MEDICARE_ONLY_RESULT": {
+      "name": "Cobertura solo de Medicare",
+      "title": "Si tiene Medicare, pero no Healthy Connections Medicaid",
+      "subtitle": "La regla de alineación de 2027 que se explica aquí se refiere a ciertos D-SNP y MCO de Medicaid afiliadas para personas con doble elegibilidad y beneficios completos.",
+      "explanation": "Si actualmente no tiene Healthy Connections Medicaid, esta regla no le indica que cambie su cobertura de Medicare. Si no está seguro de su situación de Medicaid, comuníquese con SCDHHS.",
+      "help": "Esta guía no puede determinar la elegibilidad para Medicaid ni revisar su cuenta de Medicare. Siga sus avisos oficiales y use los contactos que aparecen a continuación para recibir ayuda individual.",
+      "options": [
+        "Volver al inicio"
+      ]
     }
   },
   "results": {
@@ -478,6 +489,23 @@
       "extraCta": {
         "href": "https://aging.sc.gov/programs-initiatives/medicare-and-medicare-fraud",
         "text": "Remitir a los miembros a SHIP / I-CARE de South Carolina"
+      }
+    },
+    "SC_MEDICARE_ONLY_RESULT": {
+      "head": "Según la opción que seleccionó, actualmente no tiene Medicare y Healthy Connections Medicaid al mismo tiempo.",
+      "steps": [
+        "La regla federal de inscripción D-SNP/MCO de Medicaid de 2027 que se describe en esta guía se refiere a ciertos D-SNP que atienden a personas con doble elegibilidad y beneficios completos. No indica que una persona que solo tiene Medicare deba cambiar su plan de Medicare.",
+        "Si cree que puede calificar para Healthy Connections Medicaid, o no está seguro de estar inscrito, comuníquese con SCDHHS al 888-549-0820 para preguntar sobre su situación y la ayuda disponible.",
+        "Para preguntas sobre planes de Medicare, llame al 1-800-MEDICARE al 1-800-633-4227. SHIP/I-CARE de South Carolina también ofrece asesoría gratuita e independiente sobre Medicare al 800-868-9095.",
+        "Siga leyendo los avisos oficiales de Medicare y cualquier instrucción de solicitud. No cambie de plan únicamente por esta guía general."
+      ],
+      "cta": {
+        "href": "https://www.scdhhs.gov/members/where-go-help",
+        "text": "Comunicarse con Healthy Connections / SCDHHS"
+      },
+      "extraCta": {
+        "href": "https://aging.sc.gov/programs-initiatives/medicare-and-medicare-fraud",
+        "text": "Obtener asesoría gratuita de SHIP / I-CARE de South Carolina"
       }
     }
   }
