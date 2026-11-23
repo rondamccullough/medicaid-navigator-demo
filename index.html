@@ -856,7 +856,7 @@ const ES = {
     var banner=document.getElementById('cms-smd-notice');
     if(!banner){banner=document.createElement('div');banner.id='cms-smd-notice';banner.setAttribute('role','note');banner.style.cssText='background:#102A43;border:1px solid #334E68;color:#D9E2EC;padding:12px 14px;border-radius:8px;font-size:13px;line-height:1.55;margin:0 0 20px 0;';document.body.insertBefore(banner,document.body.children[1]||null);}
     var originalSetLang=setLang;
-    window.refreshPolicyBanner=function(){banner.innerHTML=(document.documentElement.lang==='es'?es.alert:en.alert);if(window.refreshClinicPreviewNote)window.refreshClinicPreviewNote();};
+    window.refreshPolicyBanner=function(){var isEs=document.documentElement.lang==='es';var summary=isEs?'Cambios de 2027: cobertura retroactiva, servicios de atención a largo plazo y ciertas reglas de inscripción D-SNP. Amplíe para ver los detalles.':'2027 changes: retroactive coverage, long-term services and certain D-SNP enrollment rules. Expand for details.';var fullAlert=isEs?es.alert:en.alert;banner.innerHTML='<details><summary style="cursor:pointer;font-weight:700">'+summary+'</summary><div style="margin-top:10px">'+fullAlert+'</div></details>';if(window.refreshClinicPreviewNote)window.refreshClinicPreviewNote();};
     setLang=function(l){if(l!=='es')l='en';originalSetLang(l);document.getElementById('hdr-sub').textContent=l==='es'?es.subtitle:en.subtitle;var p=document.getElementById('privacy-copy');if(p)p.textContent=l==='es'?es.privacy:en.privacy;var n=document.getElementById('language-coverage-note');if(n){n.hidden=l==='en';n.textContent=l==='es'?es.languageNote:en.languageNote;}window.refreshPolicyBanner();};
     var originalRender=render;
     render=function(nodeId,redraw){originalRender(nodeId,redraw);var node=navigationEngine[nodeId];if(node){var prefix=document.documentElement.lang==='es'?'Paso ':'Step ';var badge=document.getElementById('step-badge');if(badge)badge.textContent=node.step?prefix+node.step+' • '+node.name:node.name;var t=document.getElementById('telemetry-json');if(t){try{var j=JSON.parse(t.textContent||'{}');j.site_id='sc-hertc-orangeburg-01';j.state_module='SC_HEALTHY_CONNECTIONS_2027';j.active_logic_node=nodeId;j.phi_collected=false;j.reporting_enabled=false;t.textContent=JSON.stringify(j,null,2);}catch(e){}}}};
@@ -864,6 +864,10 @@ const ES = {
     var originalRenderResult=renderResult;
     renderResult=function(nodeId){originalRenderResult(nodeId);var r=results[nodeId];if(r&&r.extraCta){var a=document.createElement('a');a.className='cta';a.href=r.extraCta.href;a.target='_blank';a.rel='noopener noreferrer';a.textContent=(document.documentElement.lang==='es'&&r.es&&r.es.extraCta?r.es.extraCta.text:r.extraCta.text);var panel=document.getElementById('result-panel');if(panel)panel.appendChild(a);}};
     setLang('en');
+    // The page initially renders the embedded Maryland fallback before the SC JSON loads.
+    // Re-render the welcome screen now that the SC navigation graph is installed so no stale
+    // fallback buttons can route users into unrelated language/access questions.
+    render('WELCOME_SCREEN');
     document.body.style.visibility='visible';
   }).catch(function(){fail('The South Carolina guide could not load. Please refresh or return to the Maryland demo.');});
 })();
