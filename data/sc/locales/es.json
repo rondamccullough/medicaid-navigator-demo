@@ -23,15 +23,15 @@
       ]
     },
     "SC_RETRO_Q1": {
-      "name": "Atención reciente y facturas sin pagar",
-      "title": "¿Recibió atención médica sin seguro activo?",
-      "subtitle": "Piense en atención en un hospital, sala de emergencias o clínica durante los últimos tres meses.",
-      "explanation": "Elija la respuesta más cercana. Esta guía no solicita fechas, nombres de proveedores, diagnósticos ni montos de facturas.",
-      "help": "La elegibilidad retroactiva no es automática. La persona solicitante debe cumplir los requisitos aplicables de Medicaid durante el mes en que recibió la atención.",
+      "name": "Atención reciente o factura médica",
+      "title": "¿Qué describe mejor su atención reciente o su factura médica?",
+      "subtitle": "Elija la situación más cercana para que la guía muestre un próximo paso pertinente.",
+      "explanation": "No necesita compartir fechas, nombres de proveedores, diagnósticos, facturas ni otros datos personales.",
+      "help": "Si es posible que no tuviera cobertura activa cuando recibió la atención, la fecha de solicitud y su categoría de elegibilidad pueden afectar la disponibilidad de cobertura retroactiva. Una factura por sí sola no demuestra si la cobertura estaba activa o si se procesó una reclamación.",
       "options": [
-        "Sí",
-        "No",
-        "No estoy seguro/a"
+        "Recibí atención durante un mes en el que quizá no tenía cobertura activa de Healthy Connections.",
+        "Tenía cobertura, pero recibí una factura o necesito entender una reclamación.",
+        "No estoy seguro/a de si mi cobertura de Healthy Connections estaba activa."
       ]
     },
     "SC_RETRO_Q2": {
@@ -73,28 +73,17 @@
     },
     "SC_STAFF_Q1": {
       "name": "Orientación en clínicas y comunidad",
-      "title": "¿Cuál es el motivo principal de la consulta de hoy?",
-      "subtitle": "Elija el motivo principal para identificar el próximo paso más útil.",
-      "explanation": "Esta pregunta es para el flujo de trabajo de personal y CHW. No ingrese el nombre, fecha de nacimiento, número de Medicaid, diagnóstico, detalles de facturas ni otra información médica protegida.",
-      "help": "Navigator es una guía de información pública. No realiza evaluaciones clínicas, determinaciones de elegibilidad ni evaluaciones de fragilidad médica. Siga los procedimientos aprobados de su organización.",
+      "title": "¿Qué problema motiva la referencia de orientación de hoy?",
+      "subtitle": "Elija el problema principal para abrir una lista de verificación específica para el personal/CHW.",
+      "explanation": "Esta pregunta es para el flujo de trabajo del personal y CHW. No ingrese el nombre, fecha de nacimiento, número de Medicaid, diagnóstico, detalles de facturas ni otra información médica protegida.",
+      "help": "Cada selección abre una lista de verificación diferente. Navigator no realiza evaluaciones clínicas, determinaciones de elegibilidad ni evaluaciones de fragilidad médica.",
       "options": [
         "Factura de hospital, sala de emergencias o clínica sin seguro",
-        "Aviso de revisión anual o renovación",
+        "Aviso de renovación o verificación de Medicaid",
         "Pregunta sobre Medicare + Medicaid o un plan D-SNP",
         "Transición de exención, centro de enfermería u hospicio",
-        "Necesidad de alimentos, vivienda o beneficios para veteranos"
-      ]
-    },
-    "SC_STAFF_Q2": {
-      "name": "Idioma y necesidades de acceso",
-      "title": "¿La persona necesita ayuda con el idioma o apoyo para acceder a servicios en zonas rurales?",
-      "subtitle": "Considere apoyo de intérprete, formatos accesibles, asistencia telefónica o ayuda para comunicarse con una oficina local.",
-      "explanation": "No registre el idioma, discapacidad ni otros datos personales de la persona en esta herramienta. Siga los procedimientos aprobados de su organización.",
-      "help": "La vista previa actual de South Carolina ofrece contenido en inglés y español. Para otros idiomas, use un intérprete calificado o la asistencia oficial de la agencia.",
-      "options": [
-        "Sí",
-        "No",
-        "No estoy seguro/a"
+        "Necesidad de alimentos, vivienda o beneficios para veteranos",
+        "Barrera de idioma, accesibilidad, acceso digital o acceso rural"
       ]
     },
     "SC_BENEFITS_Q1": {
@@ -155,16 +144,6 @@
     "SC_MANAGED_RESULT": {
       "name": "Lista de acciones y enlace oficial",
       "title": "Lista de verificación de atención administrada y atención a largo plazo",
-      "subtitle": "Revise la lista a continuación y luego use el enlace oficial de la agencia. Navigator no envía información ni determina la elegibilidad.",
-      "explanation": "Use únicamente los portales oficiales de las agencias para solicitudes, avisos y envío de documentos. No ingrese información personal en esta guía.",
-      "help": "La lista ofrece información general de orientación. La agencia responsable toma la decisión de elegibilidad e informa los plazos específicos del caso.",
-      "options": [
-        "Volver al inicio"
-      ]
-    },
-    "SC_STAFF_RESULT": {
-      "name": "Lista de acciones y enlace oficial",
-      "title": "Lista de referencia rápida para clínicas y CHW",
       "subtitle": "Revise la lista a continuación y luego use el enlace oficial de la agencia. Navigator no envía información ni determina la elegibilidad.",
       "explanation": "Use únicamente los portales oficiales de las agencias para solicitudes, avisos y envío de documentos. No ingrese información personal en esta guía.",
       "help": "La lista ofrece información general de orientación. La agencia responsable toma la decisión de elegibilidad e informa los plazos específicos del caso.",
@@ -287,6 +266,76 @@
       "options": [
         "Volver al inicio"
       ]
+    },
+    "SC_COVERAGE_BILL_RESULT": {
+      "name": "Revisión de cobertura y facturación",
+      "title": "Si tenía cobertura, pero recibió una factura médica",
+      "subtitle": "Verifique las fechas de cobertura y el estado de la reclamación antes de suponer que la factura significa que no tenía seguro.",
+      "explanation": "Esta guía no puede ver reclamaciones ni confirmar cobertura. Use los canales oficiales del plan, proveedor y SCDHHS.",
+      "help": "Una factura del proveedor, una explicación del plan o un aviso de elegibilidad pueden requerir pasos diferentes. Pida a la organización responsable que confirme las fechas de cobertura y el estado de la reclamación.",
+      "options": [
+        "Volver al inicio"
+      ]
+    },
+    "SC_COVERAGE_UNSURE_RESULT": {
+      "name": "Confirmación de fechas de cobertura",
+      "title": "Si no está seguro/a de si Healthy Connections estaba activo",
+      "subtitle": "Verifique las fechas de cobertura antes de decidir si necesita solicitar cobertura retroactiva o resolver una reclamación.",
+      "explanation": "Esta guía no puede acceder a su cuenta de Medicaid, avisos ni reclamaciones. No ingrese información personal.",
+      "help": "SCDHHS y el proveedor o plan pueden confirmar distintas partes de la pregunta: las fechas de elegibilidad/cobertura y el procesamiento de reclamaciones.",
+      "options": [
+        "Volver al inicio"
+      ]
+    },
+    "SC_STAFF_BILL_RESULT": {
+      "name": "Orientación sobre facturas de la clínica",
+      "title": "Flujo de trabajo para clínicas/CHW: atención sin seguro o factura médica",
+      "subtitle": "Distinga una posible interrupción de cobertura de una pregunta de facturación o reclamación con cobertura activa.",
+      "explanation": "Use el proceso aprobado de admisión y notas de su organización. No ingrese datos de pacientes en Navigator.",
+      "help": "Una posible pregunta de cobertura retroactiva y una pregunta sobre el procesamiento de una reclamación requieren referencias diferentes. El proveedor, el plan y SCDHHS confirman sus propios registros.",
+      "options": [
+        "Volver al inicio"
+      ]
+    },
+    "SC_STAFF_RENEWAL_RESULT": {
+      "name": "Orientación sobre renovaciones y verificaciones",
+      "title": "Flujo de trabajo para clínicas/CHW: aviso de renovación o verificación de Medicaid",
+      "subtitle": "Ayude a la persona a identificar la acción solicitada y la fecha límite sin ingresar aquí los detalles del aviso.",
+      "explanation": "Esta guía no accede a expedientes ni presenta renovaciones. Siga las instrucciones del aviso oficial.",
+      "help": "La agencia que emite el aviso y su fecha límite son las que controlan. Cada programa tiene su propio calendario de renovación y canal de envío.",
+      "options": [
+        "Volver al inicio"
+      ]
+    },
+    "SC_STAFF_WAIVER_RESULT": {
+      "name": "Orientación sobre transiciones de servicios a largo plazo",
+      "title": "Flujo de trabajo para clínicas/CHW: transición de exención, centro de enfermería u hospicio",
+      "subtitle": "Use al administrador de casos actual y las actualizaciones oficiales de SCDHHS para aclarar el próximo paso.",
+      "explanation": "Esta guía no determina el estado de una exención, la autorización de servicios ni las fechas individuales de transición. No ingrese datos de pacientes.",
+      "help": "El calendario de la Fase II es una meta sujeta a la aprobación de CMS y a la preparación operativa. Los miembros deben seguir sus propios avisos oficiales.",
+      "options": [
+        "Volver al inicio"
+      ]
+    },
+    "SC_STAFF_BENEFITS_RESULT": {
+      "name": "Orientación de referencias a otros programas",
+      "title": "Flujo de trabajo para clínicas/CHW: SNAP, vivienda o beneficios para veteranos",
+      "subtitle": "Identifique el programa y la agencia responsable antes de hacer una referencia.",
+      "explanation": "Esta guía no determina la elegibilidad ni presenta solicitudes de SNAP, vivienda o beneficios para veteranos. No ingrese datos de pacientes.",
+      "help": "Cada beneficio tiene reglas, agencias y fechas límite diferentes. Una referencia de Medicaid no sustituye la solicitud o referencia específica del programa.",
+      "options": [
+        "Volver al inicio"
+      ]
+    },
+    "SC_STAFF_ACCESS_RESULT": {
+      "name": "Apoyo de idioma y acceso",
+      "title": "Flujo de trabajo para clínicas/CHW: barrera de idioma, accesibilidad o acceso rural",
+      "subtitle": "Use los procedimientos aprobados de asistencia para eliminar barreras sin registrar datos personales en Navigator.",
+      "explanation": "Esta guía ofrece contenido en inglés y español. No evalúa discapacidades, necesidades lingüísticas ni la capacidad de una persona para acceder a servicios.",
+      "help": "Use un intérprete calificado y la asistencia oficial de la agencia para necesidades que excedan el contenido disponible en esta vista previa.",
+      "options": [
+        "Volver al inicio"
+      ]
     }
   },
   "results": {
@@ -343,24 +392,6 @@
       "extraCta": {
         "href": "https://www.scdhhs.gov/partners/managed-care/dual-special-needs-plans-d-snp",
         "text": "Revisar la información de D-SNP de South Carolina"
-      }
-    },
-    "SC_STAFF_RESULT": {
-      "head": "Referencia rápida para clínicas y trabajadores comunitarios (CHW)",
-      "steps": [
-        "Identifique la necesidad inmediata de orientación: factura médica sin seguro, solicitud o revisión anual de Medicaid, transición de atención administrada/exención u otro programa de beneficios. Use el proceso de admisión y referencia aprobado por su clínica.",
-        "Si la persona puede necesitar cobertura retroactiva de Medicaid, pídale que se comunique pronto con Healthy Connections. Para las solicitudes presentadas a partir del 1 de enero de 2027, la guía de CMS describe un mes para el grupo de adultos de Medicaid de expansión y dos meses para la mayoría de los demás grupos de elegibilidad de Medicaid; la autoridad de exención o las excepciones aplicables pueden afectar la regla. La persona debe haber sido elegible cuando recibió el servicio cubierto.",
-        "Recuerde a los miembros que mantengan actualizados su dirección postal y datos de contacto en el portal oficial de Healthy Connections. Pídales que revisen los avisos y completen la revisión anual antes de la fecha indicada.",
-        "Para transiciones de planes, dirija a quienes reciben servicios de exención, centros de enfermería u hospicio a la información de la Fase II de SCDHHS y a su administrador de casos. Para cobertura dual de Medicare y Medicaid, verifique la coordinación con ambos planes.",
-        "Límite de privacidad: esta orientación no solicita ni registra datos de pacientes. No escriba información médica protegida en Navigator, no tome capturas con información de pacientes ni envíe detalles de casos identificables mediante esta demostración."
-      ],
-      "cta": {
-        "text": "Abrir Healthy Connections para miembros",
-        "href": "https://apply.scdhhs.gov"
-      },
-      "extraCta": {
-        "href": "https://www.scdhhs.gov/partners/managed-care/managed-care-initiatives/phase-ii-progress",
-        "text": "Abrir información de la Fase II de SCDHHS para proveedores"
       }
     },
     "SC_BENEFITS_RESULT": {
@@ -506,6 +537,126 @@
       "extraCta": {
         "href": "https://aging.sc.gov/programs-initiatives/medicare-and-medicare-fraud",
         "text": "Obtener asesoría gratuita de SHIP / I-CARE de South Carolina"
+      }
+    },
+    "SC_COVERAGE_BILL_RESULT": {
+      "head": "Una factura no demuestra por sí sola si su cobertura de Medicaid estaba activa o si una reclamación se procesó correctamente.",
+      "steps": [
+        "Compare la fecha del servicio con las fechas de cobertura que aparecen en su aviso, tarjeta o cuenta oficial de Healthy Connections.",
+        "Comuníquese con la oficina de facturación del proveedor y pregunte si presentó la reclamación a Healthy Connections o a su plan MCO de Medicaid. Si tiene un plan MCO, llame al número de su tarjeta y pregunte si recibió o rechazó la reclamación y qué debe hacer después.",
+        "Si no están claras las fechas de cobertura o el estado de la reclamación, llame a Healthy Connections al 888-549-0820. Guarde la factura y los avisos; envíe documentos solo por un canal oficial cuando se los soliciten.",
+        "No ingrese nombres, números de Medicaid, datos de salud, facturas ni detalles identificables en Navigator."
+      ],
+      "cta": {
+        "href": "https://www.scdhhs.gov/members/where-go-help",
+        "text": "Consultar dónde obtener ayuda de Healthy Connections"
+      },
+      "extraCta": {
+        "href": "https://apply.scdhhs.gov",
+        "text": "Abrir el portal oficial de Healthy Connections"
+      }
+    },
+    "SC_COVERAGE_UNSURE_RESULT": {
+      "head": "Si no sabe si Healthy Connections estaba activo en la fecha de atención, confirme primero las fechas de cobertura.",
+      "steps": [
+        "Revise su tarjeta, aviso o cuenta oficial para encontrar las fechas de cobertura. No comparta esos documentos ni sus números personales en esta guía.",
+        "Llame a Healthy Connections al 888-549-0820 y pregunte cómo confirmar si su cobertura estaba activa en la fecha del servicio.",
+        "También puede pedir a la oficina de facturación del proveedor que confirme si envió una reclamación a Medicaid o a su plan MCO.",
+        "Si descubre que no tenía cobertura activa durante el mes de atención, pregunte a SCDHHS o a un asistente calificado si puede solicitar cobertura y qué reglas de cobertura retroactiva se aplican."
+      ],
+      "cta": {
+        "href": "https://www.scdhhs.gov/members/where-go-help",
+        "text": "Consultar dónde obtener ayuda de Healthy Connections"
+      },
+      "extraCta": {
+        "href": "https://apply.scdhhs.gov",
+        "text": "Abrir el portal oficial de Healthy Connections"
+      }
+    },
+    "SC_STAFF_BILL_RESULT": {
+      "head": "Use a two-way triage: possible coverage gap versus a bill or claim under existing coverage.",
+      "steps": [
+        "Ask whether the bill relates to care during a month when the member may not have had active Healthy Connections coverage, or whether the member had coverage but received a bill. Do not record case details in Navigator.",
+        "For a possible coverage gap, help the member reach Healthy Connections promptly and review the application-date guidance in the member pathway. Do not promise retroactive coverage.",
+        "For a bill under existing coverage, direct the member to the provider's billing office and, when applicable, the Medicaid MCO on the member's card to confirm whether the claim was submitted, received or denied.",
+        "Use the clinic's approved system for any case notes. Do not enter PHI, identifiers, screenshots or bill details in Navigator."
+      ],
+      "cta": {
+        "href": "https://www.scdhhs.gov/members/where-go-help",
+        "text": "Open SCDHHS member help information"
+      },
+      "extraCta": {
+        "href": "https://apply.scdhhs.gov",
+        "text": "Open the Healthy Connections portal"
+      }
+    },
+    "SC_STAFF_RENEWAL_RESULT": {
+      "head": "Help the member identify the issuing agency, required action and deadline in the official notice.",
+      "steps": [
+        "Ask the member to read the entire notice and identify the agency, the action requested and the response deadline. Do not upload or copy the notice into Navigator.",
+        "For Healthy Connections Medicaid, direct the member to the official portal or call 888-549-0820 if the instructions or coverage status are unclear.",
+        "Encourage the member to submit only the information requested, through the channel stated in the notice, and to keep the submission confirmation.",
+        "If the notice concerns SNAP, housing or Veterans benefits rather than Medicaid, use the agency named on the notice; do not assume Medicaid renewal rules apply."
+      ],
+      "cta": {
+        "href": "https://apply.scdhhs.gov",
+        "text": "Open the official Healthy Connections portal"
+      },
+      "extraCta": {
+        "href": "https://www.scdhhs.gov/members/where-go-help",
+        "text": "Find SCDHHS member help"
+      }
+    },
+    "SC_STAFF_WAIVER_RESULT": {
+      "head": "Use the member's current case manager and official SCDHHS updates for long-term-services transitions.",
+      "steps": [
+        "Confirm, through your organization's approved workflow, whether the question concerns a home- and community-based services waiver, nursing-facility care or hospice. Do not enter the member's name, diagnosis or service details in Navigator.",
+        "SCDHHS is targeting July 2027 for Phase II, which would transition specified waiver, nursing-facility and hospice services into managed care. The proposed July 1, 2027 consolidated Healthy Connections–Long Term Care waiver date remains subject to CMS approval and operational readiness.",
+        "Ask the member to review official notices and contact their case manager and current provider before making a plan or service change. Confirm continuity of services directly with SCDHHS and the relevant plan.",
+        "Do not tell members that a transition date is final or that they must change providers or plans based on this general guide."
+      ],
+      "cta": {
+        "href": "https://www.scdhhs.gov/partners/managed-care/managed-care-initiatives/phase-ii-progress",
+        "text": "Review SCDHHS Phase II updates"
+      },
+      "extraCta": {
+        "href": "https://www.scdhhs.gov/members/where-go-help",
+        "text": "Find SCDHHS member help"
+      }
+    },
+    "SC_STAFF_BENEFITS_RESULT": {
+      "head": "Route the referral to the agency responsible for the specific benefit.",
+      "steps": [
+        "SNAP: Use the South Carolina DSS Benefits Portal for applications and case management. DSS determines SNAP eligibility and may request household information through its official process.",
+        "Housing: Section 8 / Housing Choice Voucher and public-housing questions should go to the local housing authority or program administrator. Check South Carolina State Housing Finance and Development Authority information for current programs and waitlists.",
+        "Rural housing: USDA Rural Development operates separate rural-housing programs. Confirm the correct program and application route with the South Carolina office.",
+        "Veterans: Distinguish VA health-care enrollment from other Veterans benefits. Refer the member to the relevant VA program and do not infer eligibility for one benefit from enrollment in another.",
+        "Use your organization's approved referral process. Do not enter personal details or documents in Navigator."
+      ],
+      "cta": {
+        "href": "https://benefitsportal.dss.sc.gov/#/login",
+        "text": "Open the South Carolina DSS Benefits Portal"
+      },
+      "extraCta": {
+        "href": "https://schousing.com/",
+        "text": "Visit South Carolina State Housing"
+      }
+    },
+    "SC_STAFF_ACCESS_RESULT": {
+      "head": "Address the access barrier through the clinic's approved language, accessibility and referral procedures.",
+      "steps": [
+        "Ask the member how they prefer to receive information and what assistance would help. Record any necessary information only in the clinic's approved system, not in Navigator.",
+        "Use a qualified interpreter for languages not supported by this preview. The South Carolina guide currently provides English and Spanish content.",
+        "For rural or digital-access barriers, consider the official agency's phone and in-person assistance options and help the member identify the correct local contact.",
+        "Do not ask for or enter disability details, immigration details, contact information or other personal data in Navigator."
+      ],
+      "cta": {
+        "href": "https://www.scdhhs.gov/members/where-go-help",
+        "text": "Find official SCDHHS member assistance"
+      },
+      "extraCta": {
+        "href": "https://www.scdhhs.gov/",
+        "text": "Visit South Carolina DHHS"
       }
     }
   }
