@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "state": "SC",
   "program": "South Carolina Healthy Connections Medicaid",
-  "reviewed_on": "2026-11-22",
+  "reviewed_on": "2026-11-23",
   "default_route": "/",
   "state_route": "/sc",
   "notes": [
@@ -11,7 +11,8 @@
     "Phase II is targeted for July 2027 and would transition specified HCBS waiver, nursing-facility and hospice services into managed care. SCDHHS proposed July 1, 2027 as the effective date for the consolidated Healthy Connections–Long Term Care waiver. Timing remains subject to CMS approval and operational readiness.",
     "The 2027 D-SNP enrollment limitations under 42 CFR 422.514(h) do not apply to every person with Medicare and Medicaid. They apply where the MA organization, parent, or shared-parent entity offers a D-SNP and contracts as a Medicaid MCO serving full-benefit dual eligible individuals in the same or overlapping service area; exceptions apply.",
     "Beginning in 2027, affected D-SNPs may newly enroll full-benefit dual eligible individuals only if they are enrolled in or in the process of enrolling in the affiliated Medicaid MCO. Existing unaligned enrollees may remain through 2029; affected plans generally must align enrollment beginning in 2030, subject to exceptions.",
-    "South Carolina distinguishes HIDE D-SNPs from Coordination Only D-SNPs. SCDHHS says HIDE D-SNP enrollment aligns with a Medicaid MCO where available; CO D-SNPs coordinate with the member's chosen Medicaid MCO. CMS states the federal 2027 limitations can also apply to affiliated CO D-SNPs."
+    "South Carolina distinguishes HIDE D-SNPs from Coordination Only D-SNPs. SCDHHS says HIDE D-SNP enrollment aligns with a Medicaid MCO where available; CO D-SNPs coordinate with the member's chosen Medicaid MCO. CMS states the federal 2027 limitations can also apply to affiliated CO D-SNPs.",
+    "CMS's South Carolina-specific Medicaid community-engagement page, checked Nov. 23, 2026, states that the new federal 80-hour requirement does not apply to South Carolina Healthy Connections. Members should continue following existing official renewal and reporting instructions and report life changes to SCDHHS."
   ],
   "nodes": {
     "WELCOME_SCREEN": {
@@ -37,6 +38,10 @@
         {
           "text": "I need help with SNAP, housing, or Veterans benefits",
           "next": "SC_BENEFITS_Q1"
+        },
+        {
+          "text": "I heard about the new 80-hour Medicaid work requirement. Does it apply in South Carolina?",
+          "next": "SC_WORK_REQUIREMENT_Q1"
         }
       ]
     },
@@ -543,6 +548,28 @@
         {
           "text": "Return to the beginning",
           "next": "WELCOME_SCREEN"
+        }
+      ]
+    },
+    "SC_WORK_REQUIREMENT_Q1": {
+      "step": "2 of 4",
+      "name": "2027 80-hour Medicaid rule",
+      "title": "Does the new 80-hour Medicaid requirement apply to South Carolina Healthy Connections?",
+      "subtitle": "CMS's South Carolina-specific guidance currently says no: the new federal community-engagement requirement does not apply to South Carolina Healthy Connections.",
+      "explanation": "Choose the situation closest to yours. This guide provides general information; it does not determine eligibility or interpret an individual notice.",
+      "help": "The federal rule applies only to defined groups in states and Medicaid coverage programs subject to the requirement. CMS's South Carolina-specific page says the new requirement does not affect South Carolina Healthy Connections benefits. Other programs, states, and existing renewal requirements may have different rules.",
+      "options": [
+        {
+          "text": "I am enrolled in South Carolina Healthy Connections",
+          "next": "SC_WORK_REQUIREMENT_SC_RESULT"
+        },
+        {
+          "text": "I received a notice mentioning 80 hours",
+          "next": "SC_WORK_REQUIREMENT_NOTICE_RESULT"
+        },
+        {
+          "text": "I live in South Carolina, but my Medicaid coverage is from another state",
+          "next": "SC_WORK_REQUIREMENT_OTHER_STATE_RESULT"
         }
       ]
     }
@@ -1185,6 +1212,110 @@
         "extraCta": {
           "href": "https://www.scdhhs.gov/",
           "text": "Visit South Carolina DHHS"
+        }
+      }
+    },
+    "SC_WORK_REQUIREMENT_SC_RESULT": {
+      "head": "The new federal 80-hour Medicaid community-engagement requirement does not apply to South Carolina Healthy Connections, according to CMS's South Carolina-specific guidance checked Nov. 23, 2026.",
+      "steps": [
+        "You do not need to complete or report 80 hours each month as a new condition of South Carolina Healthy Connections coverage under this federal requirement.",
+        "CMS advises South Carolina Healthy Connections members to stay enrolled and continue using their benefits as usual. Report changes in income, household circumstances, or contact information to SCDHHS.",
+        "The 80-hour rule is being discussed nationally because some states must apply it to certain adults ages 19 through 64 who are not pregnant or enrolled in Medicare and who are covered through the Medicaid adult group or certain qualifying Section 1115 demonstrations.",
+        "In states and coverage groups where it applies, qualifying ways to meet the rule can include 80 hours per month of work, community service, or a work program; a combination of those activities; qualifying half-time education; or the specified monthly income threshold. It is not a requirement for every Medicaid member nationwide.",
+        "This federal community-engagement rule is separate from other Medicaid renewal instructions and from rules for SNAP or other benefit programs. Continue to read and respond to official notices by their stated deadlines."
+      ],
+      "cta": {
+        "href": "https://www.medicaid.gov/renew-info/sc",
+        "text": "Read CMS's South Carolina-specific Medicaid update"
+      },
+      "extraCta": {
+        "href": "https://www.scdhhs.gov/members/where-go-help",
+        "text": "Find official South Carolina Healthy Connections help"
+      },
+      "es": {
+        "head": "Según la guía específica de CMS para South Carolina, el nuevo requisito federal de participación comunitaria de 80 horas no se aplica a South Carolina Healthy Connections. Información verificada el 23 de noviembre de 2026.",
+        "steps": [
+          "No necesita completar ni informar 80 horas cada mes como una nueva condición para mantener la cobertura de South Carolina Healthy Connections bajo este requisito federal.",
+          "CMS recomienda a los miembros de South Carolina Healthy Connections que permanezcan inscritos y sigan usando sus beneficios como de costumbre. Informe a SCDHHS los cambios en ingresos, composición del hogar o información de contacto.",
+          "El requisito de 80 horas se está discutiendo a nivel nacional porque algunos estados deben aplicarlo a ciertos adultos de 19 a 64 años que no estén embarazadas ni inscritos en Medicare y que tengan cobertura a través del grupo de adultos de Medicaid o de ciertas demostraciones calificadas de la Sección 1115.",
+          "En los estados y grupos de cobertura donde se aplica, las formas de cumplirlo pueden incluir 80 horas al mes de trabajo, servicio comunitario o un programa laboral; una combinación de esas actividades; educación calificada de al menos medio tiempo; o el umbral de ingresos mensuales especificado. No es un requisito para todas las personas inscritas en Medicaid en todo el país.",
+          "Este requisito federal de participación comunitaria es independiente de otras instrucciones de renovación de Medicaid y de las reglas de SNAP u otros programas de beneficios. Siga leyendo y respondiendo a los avisos oficiales antes de las fechas límite indicadas."
+        ],
+        "cta": {
+          "href": "https://www.medicaid.gov/renew-info/sc",
+          "text": "Leer la actualización de CMS específica para South Carolina"
+        },
+        "extraCta": {
+          "href": "https://www.scdhhs.gov/members/where-go-help",
+          "text": "Encontrar ayuda oficial de South Carolina Healthy Connections"
+        }
+      }
+    },
+    "SC_WORK_REQUIREMENT_NOTICE_RESULT": {
+      "head": "If you received a notice mentioning 80 hours, verify which agency, program, and state issued it before taking action.",
+      "steps": [
+        "CMS's South Carolina-specific Medicaid page currently says the new federal 80-hour community-engagement requirement does not apply to South Carolina Healthy Connections.",
+        "Read the notice heading and identify the issuing agency and program. A notice about SNAP, another state’s Medicaid program, employment services, or a different benefit may involve separate rules.",
+        "If the notice claims that 80 hours are required to keep South Carolina Healthy Connections, call Healthy Connections at 888-549-0820 or use the official SCDHHS help page to confirm what the notice means.",
+        "Do not ignore the notice. Follow any other renewal, verification, or response deadline it contains. Do not enter notice details, Medicaid IDs, or personal information in Navigator."
+      ],
+      "cta": {
+        "href": "https://www.scdhhs.gov/members/where-go-help",
+        "text": "Contact South Carolina Healthy Connections"
+      },
+      "extraCta": {
+        "href": "https://www.medicaid.gov/renew-info/sc",
+        "text": "Review CMS's South Carolina-specific 80-hour guidance"
+      },
+      "es": {
+        "head": "Si recibió un aviso que menciona 80 horas, verifique qué agencia, programa y estado lo emitió antes de actuar.",
+        "steps": [
+          "La página de Medicaid de CMS específica para South Carolina indica actualmente que el nuevo requisito federal de participación comunitaria de 80 horas no se aplica a South Carolina Healthy Connections.",
+          "Lea el encabezado del aviso e identifique la agencia y el programa que lo emitieron. Un aviso sobre SNAP, el programa Medicaid de otro estado, servicios de empleo u otro beneficio puede tener reglas diferentes.",
+          "Si el aviso afirma que se requieren 80 horas para mantener South Carolina Healthy Connections, llame a Healthy Connections al 888-549-0820 o use la página oficial de ayuda de SCDHHS para confirmar qué significa el aviso.",
+          "No ignore el aviso. Cumpla cualquier otra fecha límite de renovación, verificación o respuesta que incluya. No ingrese detalles del aviso, números de Medicaid ni información personal en Navigator."
+        ],
+        "cta": {
+          "href": "https://www.scdhhs.gov/members/where-go-help",
+          "text": "Comunicarse con South Carolina Healthy Connections"
+        },
+        "extraCta": {
+          "href": "https://www.medicaid.gov/renew-info/sc",
+          "text": "Consultar la guía de CMS sobre las 80 horas para South Carolina"
+        }
+      }
+    },
+    "SC_WORK_REQUIREMENT_OTHER_STATE_RESULT": {
+      "head": "The South Carolina answer applies to South Carolina Healthy Connections coverage—not automatically to Medicaid coverage issued by another state.",
+      "steps": [
+        "If your Medicaid enrollment is in another state, contact the Medicaid agency in the state that administers your coverage. Ask whether your eligibility group is subject to the federal community-engagement requirement.",
+        "The federal rule applies only to defined populations, not to every Medicaid member. CMS describes qualifying activities and exclusions in its national guidance.",
+        "If you have moved, ask both state agencies how to report the move and avoid a gap or duplicate enrollment. Do not assume that living in South Carolina changes the rules for coverage issued by another state.",
+        "Do not enter Medicaid IDs, notices, or personal information in Navigator."
+      ],
+      "cta": {
+        "href": "https://www.medicaid.gov/renew-info/sc",
+        "text": "Read the South Carolina-specific CMS guidance"
+      },
+      "extraCta": {
+        "href": "https://www.cms.gov/newsroom/fact-sheets/medicaid-community-engagement-requirement-certain-individuals-interim-final-rule-comment-period-cms",
+        "text": "Read CMS's national community-engagement overview"
+      },
+      "es": {
+        "head": "La respuesta para South Carolina se aplica a la cobertura de South Carolina Healthy Connections, no automáticamente a la cobertura de Medicaid emitida por otro estado.",
+        "steps": [
+          "Si está inscrito/a en Medicaid de otro estado, comuníquese con la agencia de Medicaid del estado que administra su cobertura. Pregunte si su grupo de elegibilidad está sujeto al requisito federal de participación comunitaria.",
+          "La regla federal se aplica solo a poblaciones definidas, no a todas las personas inscritas en Medicaid. CMS describe las actividades calificadas y las exclusiones en su guía nacional.",
+          "Si se mudó, pregunte a ambas agencias estatales cómo informar el cambio de residencia y evitar una interrupción o una inscripción duplicada. No suponga que vivir en South Carolina cambia las reglas de la cobertura emitida por otro estado.",
+          "No ingrese números de Medicaid, avisos ni información personal en Navigator."
+        ],
+        "cta": {
+          "href": "https://www.medicaid.gov/renew-info/sc",
+          "text": "Leer la guía de CMS específica para South Carolina"
+        },
+        "extraCta": {
+          "href": "https://www.cms.gov/newsroom/fact-sheets/medicaid-community-engagement-requirement-certain-individuals-interim-final-rule-comment-period-cms",
+          "text": "Leer la descripción nacional de CMS sobre participación comunitaria"
         }
       }
     }
