@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "state": "SC",
   "program": "South Carolina Healthy Connections Medicaid",
-  "reviewed_on": "2026-11-22",
+  "reviewed_on": "2026-11-23",
   "default_route": "/",
   "state_route": "/sc",
   "notes": [
@@ -11,7 +11,9 @@
     "Phase II is targeted for July 2027 and would transition specified HCBS waiver, nursing-facility and hospice services into managed care. SCDHHS proposed July 1, 2027 as the effective date for the consolidated Healthy Connections–Long Term Care waiver. Timing remains subject to CMS approval and operational readiness.",
     "The 2027 D-SNP enrollment limitations under 42 CFR 422.514(h) do not apply to every person with Medicare and Medicaid. They apply where the MA organization, parent, or shared-parent entity offers a D-SNP and contracts as a Medicaid MCO serving full-benefit dual eligible individuals in the same or overlapping service area; exceptions apply.",
     "Beginning in 2027, affected D-SNPs may newly enroll full-benefit dual eligible individuals only if they are enrolled in or in the process of enrolling in the affiliated Medicaid MCO. Existing unaligned enrollees may remain through 2029; affected plans generally must align enrollment beginning in 2030, subject to exceptions.",
-    "South Carolina distinguishes HIDE D-SNPs from Coordination Only D-SNPs. SCDHHS says HIDE D-SNP enrollment aligns with a Medicaid MCO where available; CO D-SNPs coordinate with the member's chosen Medicaid MCO. CMS states the federal 2027 limitations can also apply to affiliated CO D-SNPs."
+    "South Carolina distinguishes HIDE D-SNPs from Coordination Only D-SNPs. SCDHHS says HIDE D-SNP enrollment aligns with a Medicaid MCO where available; CO D-SNPs coordinate with the member's chosen Medicaid MCO. CMS states the federal 2027 limitations can also apply to affiliated CO D-SNPs.",
+    "CMS's South Carolina-specific Medicaid community-engagement page, checked Nov. 23, 2026, states that the new federal 80-hour requirement does not apply to South Carolina Healthy Connections. Members should continue following existing official renewal and reporting instructions and report life changes to SCDHHS.",
+    "Separate from the federal 2027 community-engagement requirement, South Carolina submitted the Palmetto Pathways to Independence Section 1115 demonstration application on June 23, 2025. As of Nov. 23, 2026, CMS lists the application as Pending with no approval or effective date. The proposal would create a new coverage pathway for certain adults ages 19–64 who meet the parent/caretaker relative criteria and income limits; it proposes at least 80 hours per month of qualifying community engagement. The proposal does not currently change other components of the current Medicaid and CHIP programs."
   ],
   "nodes": {
     "WELCOME_SCREEN": {
@@ -37,6 +39,10 @@
         {
           "text": "I need help with SNAP, housing, or Veterans benefits",
           "next": "SC_BENEFITS_Q1"
+        },
+        {
+          "text": "I heard about an 80-hour Medicaid requirement or Palmetto Pathways. What applies in South Carolina?",
+          "next": "SC_WORK_REQUIREMENT_Q1"
         }
       ]
     },
@@ -539,6 +545,88 @@
       "subtitle": "Use approved assistance procedures to remove barriers without recording personal details in Navigator.",
       "explanation": "This guide offers English and Spanish content. It does not assess disability, language needs or a person's ability to access services.",
       "help": "Use a qualified interpreter and official agency assistance for needs beyond the content available in this preview.",
+      "options": [
+        {
+          "text": "Return to the beginning",
+          "next": "WELCOME_SCREEN"
+        }
+      ]
+    },
+    "SC_WORK_REQUIREMENT_Q1": {
+      "step": "2 of 4",
+      "name": "2027 80-hour Medicaid rule",
+      "title": "South Carolina's 80-hour rules: federal requirement or Palmetto Pathways proposal?",
+      "subtitle": "There are two separate issues. CMS says the new federal requirement does not apply to current South Carolina Healthy Connections coverage. South Carolina has a separate, pending waiver proposal called Palmetto Pathways to Independence.",
+      "explanation": "Choose the situation closest to yours. The Palmetto Pathways proposal is not an approved or active coverage rule as of Nov. 23, 2026.",
+      "help": "Do not confuse the federal 2027 requirement with South Carolina's separate Section 1115 proposal. The federal CMS state page says the new federal requirement does not affect South Carolina Healthy Connections benefits. CMS's waiver tracker lists Palmetto Pathways as Pending, with no approval or effective date.",
+      "options": [
+        {
+          "text": "I have or am applying for regular South Carolina Healthy Connections coverage",
+          "next": "SC_WORK_REQUIREMENT_SC_RESULT"
+        },
+        {
+          "text": "I am a parent or caretaker and want to understand Palmetto Pathways to Independence",
+          "next": "SC_WORK_REQUIREMENT_PALMETTO_RESULT"
+        },
+        {
+          "text": "I received a notice mentioning 80 hours",
+          "next": "SC_WORK_REQUIREMENT_NOTICE_RESULT"
+        },
+        {
+          "text": "I live in South Carolina, but my Medicaid coverage is from another state",
+          "next": "SC_WORK_REQUIREMENT_OTHER_STATE_RESULT"
+        }
+      ]
+    },
+    "SC_WORK_REQUIREMENT_SC_RESULT": {
+      "step": "3 of 4",
+      "name": "South Carolina coverage answer",
+      "title": "What this means for your South Carolina Healthy Connections coverage",
+      "subtitle": "CMS says the new federal 80-hour requirement does not apply to South Carolina Healthy Connections.",
+      "explanation": "Review the guidance and continue following existing official notices.",
+      "help": "This federal rule is separate from other program rules and existing Medicaid renewal instructions.",
+      "options": [
+        {
+          "text": "Return to the beginning",
+          "next": "WELCOME_SCREEN"
+        }
+      ]
+    },
+    "SC_WORK_REQUIREMENT_NOTICE_RESULT": {
+      "step": "3 of 4",
+      "name": "Notice review",
+      "title": "I received a notice mentioning 80 hours",
+      "subtitle": "Check the agency and program named on the notice. CMS says the new federal requirement does not apply to South Carolina Healthy Connections.",
+      "explanation": "Do not ignore other deadlines or verification instructions in an official notice.",
+      "help": "If the notice says 80 hours are required for South Carolina Healthy Connections, confirm it with SCDHHS before taking action.",
+      "options": [
+        {
+          "text": "Return to the beginning",
+          "next": "WELCOME_SCREEN"
+        }
+      ]
+    },
+    "SC_WORK_REQUIREMENT_OTHER_STATE_RESULT": {
+      "step": "3 of 4",
+      "name": "Medicaid coverage from another state",
+      "title": "My Medicaid coverage is from another state",
+      "subtitle": "The South Carolina guidance applies to South Carolina Healthy Connections coverage, not automatically to another state's Medicaid program.",
+      "explanation": "Contact the Medicaid agency in the state that administers your coverage to ask whether your eligibility group is subject to the federal rule.",
+      "help": "Do not assume your place of residence changes the rules for coverage issued by another state.",
+      "options": [
+        {
+          "text": "Return to the beginning",
+          "next": "WELCOME_SCREEN"
+        }
+      ]
+    },
+    "SC_WORK_REQUIREMENT_PALMETTO_RESULT": {
+      "step": "3 of 4",
+      "name": "Palmetto Pathways proposal",
+      "title": "What is Palmetto Pathways to Independence?",
+      "subtitle": "It is South Carolina's separate proposed Section 1115 Medicaid demonstration—not the federal 2027 work requirement.",
+      "explanation": "The proposal is pending federal review. It is not currently an approved or effective Medicaid coverage rule.",
+      "help": "The proposal would create a new coverage pathway for a defined group of parents and caretaker relatives. It does not impose a new 80-hour condition on every current Healthy Connections member.",
       "options": [
         {
           "text": "Return to the beginning",
@@ -1185,6 +1273,148 @@
         "extraCta": {
           "href": "https://www.scdhhs.gov/",
           "text": "Visit South Carolina DHHS"
+        }
+      }
+    },
+    "SC_WORK_REQUIREMENT_SC_RESULT": {
+      "head": "CMS says the new federal 80-hour Medicaid requirement does not apply to regular South Carolina Healthy Connections coverage.",
+      "steps": [
+        "The federal 2027 community-engagement requirement does not create a new 80-hour condition for current South Carolina Healthy Connections benefits, according to CMS's South Carolina-specific guidance.",
+        "This is separate from Palmetto Pathways to Independence, a South Carolina Section 1115 proposal that would create a new coverage pathway for certain parents and caretaker relatives and would include its own proposed 80-hour condition. CMS lists that waiver as Pending, with no approval or effective date.",
+        "If you are enrolled in regular Healthy Connections, continue using your benefits and follow existing renewal, verification, and reporting instructions. Report changes in income, household circumstances, or contact information to SCDHHS.",
+        "If you think you may be part of the proposed Palmetto Pathways group, review the separate proposal information. Do not assume it is active or that its proposed rules currently apply to you."
+      ],
+      "cta": {
+        "href": "https://www.medicaid.gov/renew-info/sc",
+        "text": "Read CMS's South Carolina Healthy Connections update"
+      },
+      "extraCta": {
+        "href": "https://www.scdhhs.gov/CEwaiver",
+        "text": "Read about the separate Palmetto Pathways proposal"
+      },
+      "es": {
+        "head": "CMS indica que el nuevo requisito federal de Medicaid de 80 horas no se aplica a la cobertura regular de South Carolina Healthy Connections.",
+        "steps": [
+          "Según la guía específica de CMS para South Carolina, el requisito federal de participación comunitaria de 2027 no crea una nueva condición de 80 horas para los beneficios actuales de South Carolina Healthy Connections.",
+          "Esto es independiente de Palmetto Pathways to Independence, una propuesta de exención de la Sección 1115 de South Carolina que crearía una nueva vía de cobertura para ciertos padres y familiares cuidadores e incluiría su propia condición propuesta de 80 horas. CMS clasifica la exención como Pendiente, sin fecha de aprobación ni de entrada en vigor.",
+          "Si está inscrito/a en Healthy Connections regular, continúe usando sus beneficios y siga las instrucciones vigentes de renovación, verificación y notificación de cambios. Informe a SCDHHS los cambios en ingresos, circunstancias del hogar o información de contacto.",
+          "Si cree que podría pertenecer al grupo propuesto para Palmetto Pathways, revise la información de esa propuesta por separado. No suponga que está vigente ni que sus reglas propuestas se aplican actualmente a usted."
+        ],
+        "cta": {
+          "href": "https://www.medicaid.gov/renew-info/sc",
+          "text": "Leer la actualización de CMS sobre South Carolina Healthy Connections"
+        },
+        "extraCta": {
+          "href": "https://www.scdhhs.gov/CEwaiver",
+          "text": "Leer sobre la propuesta separada de Palmetto Pathways"
+        }
+      }
+    },
+    "SC_WORK_REQUIREMENT_NOTICE_RESULT": {
+      "head": "If you received a notice mentioning 80 hours, verify which agency, program, and state issued it before taking action.",
+      "steps": [
+        "CMS's South Carolina-specific Medicaid page currently says the new federal 80-hour community-engagement requirement does not apply to South Carolina Healthy Connections.",
+        "Read the notice heading and identify the issuing agency and program. A notice about SNAP, another state’s Medicaid program, employment services, or a different benefit may involve separate rules.",
+        "If the notice claims that 80 hours are required to keep South Carolina Healthy Connections, call Healthy Connections at 888-549-0820 or use the official SCDHHS help page to confirm what the notice means.",
+        "Do not ignore the notice. Follow any other renewal, verification, or response deadline it contains. Do not enter notice details, Medicaid IDs, or personal information in Navigator.",
+        "There are two different South Carolina issues: CMS says the federal 2027 requirement does not apply to regular Healthy Connections; separately, Palmetto Pathways is a pending state waiver proposal with a proposed 80-hour condition for a limited new coverage group. Check which program the notice names."
+      ],
+      "cta": {
+        "href": "https://www.scdhhs.gov/members/where-go-help",
+        "text": "Contact South Carolina Healthy Connections"
+      },
+      "extraCta": {
+        "href": "https://www.scdhhs.gov/CEwaiver",
+        "text": "Review the Palmetto Pathways proposal"
+      },
+      "es": {
+        "head": "Si recibió un aviso que menciona 80 horas, verifique qué agencia, programa y estado lo emitió antes de actuar.",
+        "steps": [
+          "La página de Medicaid de CMS específica para South Carolina indica actualmente que el nuevo requisito federal de participación comunitaria de 80 horas no se aplica a South Carolina Healthy Connections.",
+          "Lea el encabezado del aviso e identifique la agencia y el programa que lo emitieron. Un aviso sobre SNAP, el programa Medicaid de otro estado, servicios de empleo u otro beneficio puede tener reglas diferentes.",
+          "Si el aviso afirma que se requieren 80 horas para mantener South Carolina Healthy Connections, llame a Healthy Connections al 888-549-0820 o use la página oficial de ayuda de SCDHHS para confirmar qué significa el aviso.",
+          "No ignore el aviso. Cumpla cualquier otra fecha límite de renovación, verificación o respuesta que incluya. No ingrese detalles del aviso, números de Medicaid ni información personal en Navigator.",
+          "Hay dos asuntos distintos en South Carolina: CMS indica que el requisito federal de 2027 no se aplica a Healthy Connections regular; por separado, Palmetto Pathways es una propuesta estatal de exención pendiente con una condición propuesta de 80 horas para un grupo nuevo y limitado. Verifique qué programa menciona el aviso."
+        ],
+        "cta": {
+          "href": "https://www.scdhhs.gov/members/where-go-help",
+          "text": "Comunicarse con South Carolina Healthy Connections"
+        },
+        "extraCta": {
+          "href": "https://www.scdhhs.gov/CEwaiver",
+          "text": "Consultar la propuesta de Palmetto Pathways"
+        }
+      }
+    },
+    "SC_WORK_REQUIREMENT_OTHER_STATE_RESULT": {
+      "head": "The South Carolina answer applies to South Carolina Healthy Connections coverage—not automatically to Medicaid coverage issued by another state.",
+      "steps": [
+        "If your Medicaid enrollment is in another state, contact the Medicaid agency in the state that administers your coverage. Ask whether your eligibility group is subject to the federal community-engagement requirement.",
+        "The federal rule applies only to defined populations, not to every Medicaid member. CMS describes qualifying activities and exclusions in its national guidance.",
+        "If you have moved, ask both state agencies how to report the move and avoid a gap or duplicate enrollment. Do not assume that living in South Carolina changes the rules for coverage issued by another state.",
+        "Do not enter Medicaid IDs, notices, or personal information in Navigator."
+      ],
+      "cta": {
+        "href": "https://www.medicaid.gov/renew-info/sc",
+        "text": "Read the South Carolina-specific CMS guidance"
+      },
+      "extraCta": {
+        "href": "https://www.cms.gov/newsroom/fact-sheets/medicaid-community-engagement-requirement-certain-individuals-interim-final-rule-comment-period-cms",
+        "text": "Read CMS's national community-engagement overview"
+      },
+      "es": {
+        "head": "La respuesta para South Carolina se aplica a la cobertura de South Carolina Healthy Connections, no automáticamente a la cobertura de Medicaid emitida por otro estado.",
+        "steps": [
+          "Si está inscrito/a en Medicaid de otro estado, comuníquese con la agencia de Medicaid del estado que administra su cobertura. Pregunte si su grupo de elegibilidad está sujeto al requisito federal de participación comunitaria.",
+          "La regla federal se aplica solo a poblaciones definidas, no a todas las personas inscritas en Medicaid. CMS describe las actividades calificadas y las exclusiones en su guía nacional.",
+          "Si se mudó, pregunte a ambas agencias estatales cómo informar el cambio de residencia y evitar una interrupción o una inscripción duplicada. No suponga que vivir en South Carolina cambia las reglas de la cobertura emitida por otro estado.",
+          "No ingrese números de Medicaid, avisos ni información personal en Navigator."
+        ],
+        "cta": {
+          "href": "https://www.medicaid.gov/renew-info/sc",
+          "text": "Leer la guía de CMS específica para South Carolina"
+        },
+        "extraCta": {
+          "href": "https://www.cms.gov/newsroom/fact-sheets/medicaid-community-engagement-requirement-certain-individuals-interim-final-rule-comment-period-cms",
+          "text": "Leer la descripción nacional de CMS sobre participación comunitaria"
+        }
+      }
+    },
+    "SC_WORK_REQUIREMENT_PALMETTO_RESULT": {
+      "head": "Palmetto Pathways proposes a separate 80-hour monthly community-engagement condition for a limited new coverage pathway. It is not in effect.",
+      "steps": [
+        "STATUS: South Carolina submitted the Section 1115 waiver application on June 23, 2025. As of Nov. 23, 2026, CMS lists Palmetto Pathways to Independence as Pending, with no approval date or effective date. Until CMS approves it and SCDHHS announces implementation, the proposal is not an active coverage requirement.",
+        "WHO THE PROPOSAL WOULD COVER: Adults ages 19–64 who meet the parent/caretaker relative (PCR) eligibility definition and have income above 67% and up to 95% of the federal poverty level, with a 5% disregard (effectively up to 100% FPL). The application says people would be considered for this new pathway only if they are not eligible for another full-benefit Medicaid category and indicate they want to be considered.",
+        "WHAT THE PROPOSAL LISTS AS QUALIFYING: The application lists employment for at least 80 hours per month; qualifying adult secondary education and vocational training; qualifying degree- or certificate-seeking higher education; compliance with unemployment-insurance work-search requirements during the first 16 weeks of benefits; SNAP/TANF community-engagement compliance for dual participants; and medically necessary substance-use-disorder treatment. It also describes additional qualifying activities for Catawba Nation members. The application sets specific participation standards for education and training; these should not be treated as a blanket rule that every listed activity is simply counted hour-for-hour.",
+        "WHEN HOURS WOULD BE REQUIRED: The application proposes that an applicant meet the activity requirement in the month before applying and continue qualifying activities to maintain enrollment. The proposal also describes an enrollment cap of 11,400 participants. These are proposed terms and could change during federal review or implementation planning.",
+        "WHAT THIS DOES NOT MEAN: The proposal is a new, limited coverage pathway; the application says it would not modify other components of South Carolina's current Medicaid and CHIP programs. It does not mean every current Healthy Connections member must begin tracking 80 hours.",
+        "WHAT TO DO NOW: Do not stop, change, or delay existing coverage actions because of this pending proposal. Continue following current Healthy Connections renewal and reporting instructions. Check the official SCDHHS Palmetto Pathways page and CMS waiver status for updates before relying on any proposed eligibility or activity rules."
+      ],
+      "cta": {
+        "href": "https://www.scdhhs.gov/CEwaiver",
+        "text": "Read SCDHHS's official Palmetto Pathways information"
+      },
+      "extraCta": {
+        "href": "https://www.medicaid.gov/medicaid/section-1115-demo/demonstration-and-waiver-list/182266",
+        "text": "Check CMS's official waiver status"
+      },
+      "es": {
+        "head": "Palmetto Pathways propone una condición separada de 80 horas mensuales de participación comunitaria para una nueva vía limitada de cobertura. Todavía no está vigente.",
+        "steps": [
+          "ESTADO: South Carolina presentó la solicitud de exención de la Sección 1115 el 23 de junio de 2025. Al 23 de noviembre de 2026, CMS clasifica Palmetto Pathways to Independence como Pendiente, sin fecha de aprobación ni fecha de entrada en vigor. Hasta que CMS la apruebe y SCDHHS anuncie su implementación, la propuesta no es un requisito de cobertura activo.",
+          "A QUIÉNES CUBRIRÍA LA PROPUESTA: Adultos de 19 a 64 años que cumplan la definición de padre, madre o familiar cuidador (PCR) y tengan ingresos superiores al 67% y hasta el 95% del nivel federal de pobreza, con un descuento del 5% (efectivamente hasta el 100% del FPL). La solicitud indica que se consideraría a las personas para esta nueva vía solo si no son elegibles para otra categoría de Medicaid con beneficios completos y manifiestan que desean ser consideradas.",
+          "QUÉ ACTIVIDADES ENUMERA LA PROPUESTA COMO CALIFICADAS: La solicitud enumera empleo durante al menos 80 horas al mes; educación secundaria para adultos y capacitación vocacional calificadas; estudios superiores calificados para obtener un título o certificado; cumplimiento de los requisitos de búsqueda de empleo del seguro de desempleo durante las primeras 16 semanas de beneficios; cumplimiento de las normas de participación comunitaria de SNAP/TANF para participantes inscritos en ambos programas; y tratamiento médicamente necesario para trastornos por consumo de sustancias. También describe actividades adicionales para miembros de la Nación Catawba. La solicitud establece criterios específicos de participación para la educación y la capacitación; no debe interpretarse que todas las actividades enumeradas se cuentan simplemente hora por hora.",
+          "CUÁNDO SE EXIGIRÍAN LAS HORAS: La solicitud propone que la persona cumpla el requisito de actividad durante el mes anterior a la solicitud y continúe con actividades calificadas para mantener la inscripción. La propuesta también describe un límite de 11,400 participantes. Estos términos son propuestos y podrían cambiar durante la revisión federal o la planificación de implementación.",
+          "QUÉ NO SIGNIFICA: La propuesta es una nueva vía de cobertura limitada; la solicitud indica que no modificaría otros componentes del programa actual de Medicaid y CHIP de South Carolina. No significa que todos los miembros actuales de Healthy Connections deban comenzar a registrar 80 horas.",
+          "QUÉ HACER AHORA: No suspenda, cambie ni retrase acciones relacionadas con su cobertura actual debido a esta propuesta pendiente. Siga las instrucciones vigentes de renovación y notificación de cambios de Healthy Connections. Consulte la página oficial de SCDHHS sobre Palmetto Pathways y el estado de la exención en CMS antes de depender de cualquier regla de elegibilidad o actividad propuesta."
+        ],
+        "cta": {
+          "href": "https://www.scdhhs.gov/CEwaiver",
+          "text": "Leer la información oficial de SCDHHS sobre Palmetto Pathways"
+        },
+        "extraCta": {
+          "href": "https://www.medicaid.gov/medicaid/section-1115-demo/demonstration-and-waiver-list/182266",
+          "text": "Consultar el estado oficial de la exención en CMS"
         }
       }
     }
