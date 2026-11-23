@@ -19,7 +19,8 @@
         "Tengo facturas médicas recientes o necesito ayuda para entender la cobertura de Medicaid.",
         "Tengo preguntas sobre mi cobertura de Medicare + Medicaid, mi plan D-SNP o una exención.",
         "Soy miembro del personal de una clínica o trabajador/a de salud comunitaria (CHW)",
-        "Necesito ayuda con SNAP, vivienda o beneficios para veteranos"
+        "Necesito ayuda con SNAP, vivienda o beneficios para veteranos",
+        "Escuché sobre el nuevo requisito de Medicaid de 80 horas. ¿Se aplica en South Carolina?"
       ]
     },
     "SC_RETRO_Q1": {
@@ -347,6 +348,36 @@
         "Estoy inscrito/a en South Carolina Healthy Connections",
         "Recibí un aviso que menciona 80 horas",
         "Vivo en South Carolina, pero mi cobertura de Medicaid es de otro estado"
+      ]
+    },
+    "SC_WORK_REQUIREMENT_SC_RESULT": {
+      "name": "Respuesta para la cobertura de South Carolina",
+      "title": "Qué significa esto para su cobertura de South Carolina Healthy Connections",
+      "subtitle": "CMS indica que el nuevo requisito federal de 80 horas no se aplica a South Carolina Healthy Connections.",
+      "explanation": "Revise la guía y siga las instrucciones oficiales de renovación vigentes.",
+      "help": "Esta regla federal es independiente de las reglas de otros programas y de las instrucciones vigentes de renovación de Medicaid.",
+      "options": [
+        "Volver al inicio"
+      ]
+    },
+    "SC_WORK_REQUIREMENT_NOTICE_RESULT": {
+      "name": "Revisión del aviso",
+      "title": "Recibí un aviso que menciona 80 horas",
+      "subtitle": "Verifique la agencia y el programa indicados en el aviso. CMS indica que el nuevo requisito federal no se aplica a South Carolina Healthy Connections.",
+      "explanation": "No ignore otras fechas límite ni instrucciones de verificación incluidas en un aviso oficial.",
+      "help": "Si el aviso dice que se requieren 80 horas para South Carolina Healthy Connections, confirme la información con SCDHHS antes de actuar.",
+      "options": [
+        "Volver al inicio"
+      ]
+    },
+    "SC_WORK_REQUIREMENT_OTHER_STATE_RESULT": {
+      "name": "Cobertura de Medicaid de otro estado",
+      "title": "Mi cobertura de Medicaid es de otro estado",
+      "subtitle": "La guía de South Carolina se aplica a la cobertura de South Carolina Healthy Connections, no automáticamente al programa Medicaid de otro estado.",
+      "explanation": "Comuníquese con la agencia de Medicaid del estado que administra su cobertura para preguntar si su grupo de elegibilidad está sujeto a la regla federal.",
+      "help": "No suponga que su lugar de residencia cambia las reglas de la cobertura emitida por otro estado.",
+      "options": [
+        "Volver al inicio"
       ]
     }
   },
