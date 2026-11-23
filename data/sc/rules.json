@@ -572,6 +572,48 @@
           "next": "SC_WORK_REQUIREMENT_OTHER_STATE_RESULT"
         }
       ]
+    },
+    "SC_WORK_REQUIREMENT_SC_RESULT": {
+      "step": "3 of 4",
+      "name": "South Carolina coverage answer",
+      "title": "What this means for your South Carolina Healthy Connections coverage",
+      "subtitle": "CMS says the new federal 80-hour requirement does not apply to South Carolina Healthy Connections.",
+      "explanation": "Review the guidance and continue following existing official notices.",
+      "help": "This federal rule is separate from other program rules and existing Medicaid renewal instructions.",
+      "options": [
+        {
+          "text": "Return to the beginning",
+          "next": "WELCOME_SCREEN"
+        }
+      ]
+    },
+    "SC_WORK_REQUIREMENT_NOTICE_RESULT": {
+      "step": "3 of 4",
+      "name": "Notice review",
+      "title": "I received a notice mentioning 80 hours",
+      "subtitle": "Check the agency and program named on the notice. CMS says the new federal requirement does not apply to South Carolina Healthy Connections.",
+      "explanation": "Do not ignore other deadlines or verification instructions in an official notice.",
+      "help": "If the notice says 80 hours are required for South Carolina Healthy Connections, confirm it with SCDHHS before taking action.",
+      "options": [
+        {
+          "text": "Return to the beginning",
+          "next": "WELCOME_SCREEN"
+        }
+      ]
+    },
+    "SC_WORK_REQUIREMENT_OTHER_STATE_RESULT": {
+      "step": "3 of 4",
+      "name": "Medicaid coverage from another state",
+      "title": "My Medicaid coverage is from another state",
+      "subtitle": "The South Carolina guidance applies to South Carolina Healthy Connections coverage, not automatically to another state's Medicaid program.",
+      "explanation": "Contact the Medicaid agency in the state that administers your coverage to ask whether your eligibility group is subject to the federal rule.",
+      "help": "Do not assume your place of residence changes the rules for coverage issued by another state.",
+      "options": [
+        {
+          "text": "Return to the beginning",
+          "next": "WELCOME_SCREEN"
+        }
+      ]
     }
   },
   "results": {
