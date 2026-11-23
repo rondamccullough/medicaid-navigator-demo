@@ -626,7 +626,8 @@ const ES = {
             if (lang === 'es' && ES_ACC[nodeId]) { panel.innerHTML = acc(ES_ACC[nodeId]) + (nodeId === 'PROOF_GUIDE' ? '<a class="cta" href="https://www.marylandhealthconnection.gov" target="_blank" rel="noopener noreferrer">Abrir Maryland Health Connection</a>' : ''); return; }
             if (r.custom) { r.custom(panel); return; }
             let html = '<div class="answer"><h2>' + r.head + '</h2><ol>' + r.steps.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol>' +
-                '<a class="cta" href="' + r.cta.href + '"' + (r.cta.href.indexOf('http') === 0 ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' + r.cta.text + '</a></div>';
+                '<a class="cta" href="' + r.cta.href + '"' + (r.cta.href.indexOf('http') === 0 ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' + r.cta.text + '</a>' +
+                (r.extraCta ? '<a class="cta" style="margin-top:8px" href="' + r.extraCta.href + '" target="_blank" rel="noopener noreferrer">' + r.extraCta.text + '</a>' : '') + '</div>';
             if (r.directory) {
                 html += '<div class="dir-label">' + (lang === 'es' ? '¿Dónde vive?' : 'Where do you live?') + '</div><select id="region-select" aria-label="Select your area"><option value="">' + (lang === 'es' ? 'Elija su condado…' : 'Choose your county…') + '</option>' +
                     COUNTIES.map(function (c) { var k = c.n; return '<option' + (k === selectedRegion ? ' selected' : '') + '>' + k + '</option>'; }).join('') + '</select>';
