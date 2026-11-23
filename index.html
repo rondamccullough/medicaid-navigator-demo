@@ -864,6 +864,10 @@ const ES = {
     var originalRenderResult=renderResult;
     renderResult=function(nodeId){originalRenderResult(nodeId);var r=results[nodeId];if(r&&r.extraCta){var a=document.createElement('a');a.className='cta';a.href=r.extraCta.href;a.target='_blank';a.rel='noopener noreferrer';a.textContent=(document.documentElement.lang==='es'&&r.es&&r.es.extraCta?r.es.extraCta.text:r.extraCta.text);var panel=document.getElementById('result-panel');if(panel)panel.appendChild(a);}};
     setLang('en');
+    // The page initially renders the embedded Maryland fallback before the SC JSON loads.
+    // Re-render the welcome screen now that the SC navigation graph is installed so no stale
+    // fallback buttons can route users into unrelated language/access questions.
+    render('WELCOME_SCREEN');
     document.body.style.visibility='visible';
   }).catch(function(){fail('The South Carolina guide could not load. Please refresh or return to the Maryland demo.');});
 })();
