@@ -6,3 +6,16 @@
 @media print{.checkbox-field{border:0;padding:0;background:#fff}}
 
 @media print{body.standalone-deadline .deadline-card{display:block!important}}
+
+.checklist-items{display:grid;gap:7px;margin-top:10px}
+.checklist-items .checkbox-field{margin:0}
+.policy-page textarea{color:var(--ink);background:#fff;resize:vertical}
+.policy-page textarea:focus{border-color:var(--teal);outline:3px solid #8bdacb;outline-offset:2px}
+[data-notice-output] ol{padding-left:22px;color:#425e6d;font-size:12px}
+[data-notice-output] li{padding:4px 0}
+[data-notice-output] h3,[data-notice-output] h4{color:var(--navy);margin:4px 0 8px}
+@media print{
+  [data-call-prep] .progress-panel{border:0;padding:0;background:#fff}
+  [data-call-prep] .checkbox-field{break-inside:avoid}
+  [data-notice-output]{border:0;padding:0;background:#fff}
+}
