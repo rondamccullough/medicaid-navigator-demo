@@ -96,6 +96,11 @@ def state_post(state, platform, site_url):
             f"{name} has announced it will not use the optional Medicaid hold-harmless period. "
             "The federal framework remains relevant for applicable people, subject to exclusions, exceptions, and other approved relief."
         )
+    elif status == "not_applicable":
+        core = (
+            f"CMS's current state-specific page says the new Medicaid community-engagement work requirement does not apply in {name}. "
+            "This is the current CMS state-page statement; check the official page and state agency for updates."
+        )
     else:
         core = (
             f"We have not verified a public hold-harmless election for {name} in the Radiant Motive tracker. "
@@ -165,7 +170,7 @@ def main():
         if not states:
             raise SystemExit(f"Unknown state code: {args.state}")
     elif not args.all_states:
-        states = [state for state in states if state.get("status") in ("announced", "intent", "declined")]
+        states = [state for state in states if state.get("status") in ("announced", "intent", "declined", "not_applicable")]
 
     platforms = [args.platform] if args.platform else list(PLATFORMS)
     rows = []
