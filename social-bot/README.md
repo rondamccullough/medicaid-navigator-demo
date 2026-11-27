@@ -18,7 +18,7 @@ python3 generate_posts.py --state NC --platform x --site-url https://YOUR-PUBLIS
 python3 generate_posts.py --site-url https://YOUR-PUBLISHED-SITE-URL --output weekly-queue.csv
 ```
 
-Omit `--state` to create a post for every state and DC. This creates a large batch; review before using.
+By default, omitting `--state` creates drafts only for states with a verified announcement record in the current data file. Use `--all-states` to include states whose status has not yet been verified; those drafts must not imply the state declined or opted in.
 
 ## Important publishing boundary
 This MVP generates drafts; it does not log in to or publish to social networks. Automatic publishing requires the relevant platform developer applications, account permissions, access tokens, and secure secret storage. Some networks restrict publishing APIs or require review. Do not paste API tokens into source files or commit them to GitHub.
