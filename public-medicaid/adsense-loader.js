@@ -8,7 +8,7 @@
   "use strict";
   const publisherId = "";
 
-  if (!/^ca-pub-\\d{16}$/.test(publisherId)) return;
+  if (!/^ca-pub-\d{16}$/.test(publisherId)) return;
   if (document.querySelector("script[data-rm-adsense]")) return;
 
   const script = document.createElement("script");
