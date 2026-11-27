@@ -4,17 +4,17 @@ Approval-first social content generator for the Public Benefits Navigator.
 
 ## What it creates
 - State-specific Medicaid update drafts from the same state-status JSON used by the website.
-- Evergreen educational drafts about the 80-hour planner, applicability, renewals, notices, hold-harmless, and state updates.
+- Evergreen educational drafts about the 80-hour planner, hours conversion, pay-frequency conversion, renewal preparation, notice response, call preparation, hold-harmless, and state updates.
 - Drafts formatted for Facebook, Instagram, LinkedIn, Pinterest, and X.
 - A CSV review queue with post title, copy, landing URL, official source, human-review flag, and draft status.
 
 ## Run it
 Requires Python 3.9+ and no third-party packages.
 
-python3 generate_posts.py --site-url https://YOUR-PUBLISHED-SITE-URL
-python3 generate_posts.py --state MD --site-url https://YOUR-PUBLISHED-SITE-URL
-python3 generate_posts.py --platform pinterest --site-url https://YOUR-PUBLISHED-SITE-URL
-python3 generate_posts.py --site-url https://YOUR-PUBLISHED-SITE-URL --no-evergreen
+python3 generate_posts.py
+python3 generate_posts.py --state MD
+python3 generate_posts.py --platform pinterest
+python3 generate_posts.py --no-evergreen
 
 By default, the generator creates state drafts for records labeled announced, intent, declined, or not_applicable, plus evergreen educational posts. Use --all-states to include unverified records; those drafts must never imply the state declined or opted in. Use --no-evergreen to create only state updates.
 
