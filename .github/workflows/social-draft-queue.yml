@@ -1,0 +1,33 @@
+name: Radiant Motive social draft queue
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 14 * * 1,3,5"
+
+permissions:
+  contents: read
+
+jobs:
+  create-draft-queue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Generate state-specific draft posts
+        env:
+          PUBLIC_MEDICAID_SITE_URL: ${{ vars.PUBLIC_MEDICAID_SITE_URL || 'https://YOUR-PUBLIC-MEDICAID-SITE-URL' }}
+        run: |
+          python social-bot/generate_posts.py \
+            --site-url "$PUBLIC_MEDICAID_SITE_URL" \
+            --output social-post-queue.csv
+      - name: Save review queue as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: radiant-motive-social-draft-queue
+          path: social-post-queue.csv
+          retention-days: 14
