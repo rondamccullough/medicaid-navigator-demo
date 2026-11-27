@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow">
+<title>Medicaid 80-Hour Requirement Tracker | Monthly Activity Planner</title>
+<meta name="description" content="Free Medicaid 80-hour monthly activity planner. Add work, community service, training, and education hours, review the $580 earnings pathway, and print your planning summary.">
+<meta property="og:title" content="Medicaid 80-Hour Activity Planner"><meta property="og:description" content="Organize your monthly activity hours with a free browser-based Medicaid planning tool.">
+<link rel="stylesheet" href="./styles.css"><link rel="stylesheet" href="./components.css"><script defer src="./tool-pages.js"></script>
+<!-- Add the Google AdSense publisher script here only after account approval and receipt of the publisher code. -->
+</head><body>
+<header class="site-header"><a class="brand" href="./"><span class="brand-mark">RM</span><span><b>RADIANT MOTIVE</b><small>PUBLIC BENEFITS NAVIGATOR</small></span></a><nav><a href="./">Home</a><a href="guides.html">Medicaid guides</a><a href="medicaid-renewal-checklist.html">Renewal checklist</a></nav></header>
+<main class="policy-page">
+<p class="eyebrow">Free Medicaid planning tool</p><h1>Medicaid 80-hour monthly activity planner</h1>
+<p>Use this free tool to organize activity hours that may count under the federal Medicaid community-engagement framework. It adds your entries in your browser and compares them with the 80-hour monthly planning reference.</p>
+<div class="notice"><b>Important:</b> The requirement does not apply to every Medicaid member. CMS describes multiple pathways, including qualifying activities, monthly earnings of at least $580, and half-time education. Your state must confirm whether the requirement applies to you, which activities count, and what evidence it accepts.</div>
+<section class="tool-card activity-card" style="margin-top:24px">
+<div class="tool-number">MONTHLY ACTIVITY PLANNER</div><h2>Enter your monthly totals</h2>
+<div class="activity-fields">
+<label for="p-work">Work (paid, in-kind, or unpaid)<input id="p-work" data-hour-input type="number" min="0" max="744" step="0.5" inputmode="decimal" placeholder="0"></label>
+<label for="p-service">Community service<input id="p-service" data-hour-input type="number" min="0" max="744" step="0.5" inputmode="decimal" placeholder="0"></label>
+<label for="p-training">Qualifying work program / training<input id="p-training" data-hour-input type="number" min="0" max="744" step="0.5" inputmode="decimal" placeholder="0"></label>
+<label for="p-education">Education hours (if less than half-time)<input id="p-education" data-hour-input type="number" min="0" max="744" step="0.5" inputmode="decimal" placeholder="0"></label>
+<label for="p-earnings">Monthly earnings (optional)<span class="input-prefix"><span>$</span><input id="p-earnings" data-monthly-earnings type="number" min="0" step="1" inputmode="decimal" placeholder="0"></span></label>
+</div>
+<label class="checkbox-field"><input type="checkbox" data-half-time-education> I am enrolled in an education program at least half-time (as defined by the school).</label>
+<div class="progress-panel"><div class="progress-label"><span>Hours entered</span><strong data-hours-total>0 / 80</strong></div><div class="progress-track" role="progressbar" aria-label="Hours entered toward 80-hour planning reference" aria-valuemin="0" aria-valuemax="80" aria-valuenow="0" data-progressbar><span data-progress-fill></span></div>
+<p class="result-message" data-hours-message aria-live="polite">Enter activity hours to see your monthly total.</p><p class="earnings-message" data-earnings-message aria-live="polite">CMS's public guide currently lists at least $580 in monthly earnings as another pathway.</p><p class="earnings-message" data-education-message aria-live="polite">CMS guidance describes half-time education as a separate pathway.</p></div>
+<button class="button secondary" type="button" data-print-planner>Print my planning summary</button>
+<p class="micro">This tool runs in your browser. It does not send or store your entries, determine eligibility, verify qualifying hours, or establish compliance. Confirm all rules with your state Medicaid agency.</p>
+</section>
+<section><h2>How to use this planner</h2><ol><li>Enter the hours you completed or expect to complete in each activity category.</li><li>Use separate categories only when the hours do not overlap.</li><li>Enter monthly earnings if you want to compare them with the current CMS public-guide reference.</li><li>If you are enrolled at least half-time, check the education box; your state determines the applicable definition and documentation.</li><li>Print the summary for your own records, then ask your state what it accepts.</li></ol></section>
+<section><h2>Official sources</h2><p><a href="https://www.medicaid.gov/renew-info" target="_blank" rel="noopener noreferrer">CMS Medicaid Eligibility Changes ↗</a> · <a href="https://www.medicaid.gov/resources-for-states/working-families-tax-cut-legislation/community-engagement" target="_blank" rel="noopener noreferrer">CMS Community Engagement guidance ↗</a></p></section>
+<p><a href="./">← Return to the Public Benefits Navigator</a></p>
+</main><footer class="site-footer"><div class="footer-brand"><b>RADIANT MOTIVE</b><span>PUBLIC BENEFITS NAVIGATOR</span></div><p>Independent educational resource. Not affiliated with or endorsed by CMS or any state agency.</p></footer>
+</body></html>
