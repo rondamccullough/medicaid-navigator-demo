@@ -1,38 +1,56 @@
-# Public Medicaid Access Guide — MVP
+# Radiant Motive Public Benefits Navigator
 
-This folder is a separate public-facing resource site intended to be distinct from the branded FQHC Clinic Track.
+A public-facing utility website separate from the paid FQHC Clinic Track. Medicaid is the first interactive program module. The program registry is configuration-driven so SNAP, Housing Choice Vouchers (Section 8), veterans' benefits, and additional public programs can be added over time.
 
-## Files
-- `index.html`: public state selector and general navigation tool
-- `state-status.json`: state status records, source links, and review dates
-- `app.js` / `styles.css`: client-side functionality and responsive design
-- `guides.html`: original educational content for search users
-- `about.html`, `editorial-policy.html`, `privacy.html`, `terms.html`: trust, disclosure, and policy pages
-- `ADSENSE-SETUP.md`: prerequisites before enabling advertising
+## Current architecture
+- index.html: responsive public utility homepage, guided next-step builder, state selector, activity planner, deadline calculator, and program directory.
+- programs.json: program registry, official resource links, and rollout status. Add future programs here without rebuilding the homepage layout.
+- state-status.json: state-level Medicaid announcement records, source links, summaries, and review dates.
+- app.js: browser-only rendering and tool calculations. No backend, user account, or patient data store.
+- styles.css: responsive visual system, accessible states, and print layout.
+- guides.html: original Medicaid educational content and official references.
+- about.html, editorial-policy.html, privacy.html, terms.html: trust, source, privacy, and use disclosures.
+- ADSENSE-SETUP.md: owner-side AdSense setup sequence based on the video transcript.
+- ../social-bot/: approval-first social post generator; it creates draft content and does not publish to social networks.
 
-## Preview
-From the existing Netlify deployment, the folder is intended to be available at `/public-medicaid/` once this branch is deployed. The exact preview URL depends on the Netlify branch-deploy configuration.
+## Utility tools in the current Medicaid module
+1. State status lookup: shows the independent tracker's status, source links, review date, CMS state-specific page, and official Medicaid agency directory.
+2. Next-step builder: creates a general checklist for preparation, notices, renewals, applications, or questions about applicability.
+3. Monthly activity planner: totals user-entered hours across activity categories and displays the 80-hour planning reference. It also displays the $580 monthly earnings pathway currently listed by CMS.
+4. Deadline calculator: counts calendar days until a date entered by the visitor.
 
-## Initial status coverage\nThe first seed dataset includes official state announcements for Connecticut, Maryland, Massachusetts, North Carolina, and Oregon, plus California's announced intent to use the option. This is a partial initial dataset, not a complete state election tracker. All other states are deliberately marked unverified rather than incorrectly labeled as having declined or as having a confirmed enforcement decision.\n\n## State status data model
-Each state record uses:
-- `status`: `announced`, `intent`, `declined`, or `unverified`
-- `announcement_date`: date of public state announcement, if verified
-- `source_url`: source supporting the status, if verified
-- `summary`: plain-language state summary
-- `reviewed_on`: date this record was reviewed
+The planner and calculator run only in the visitor's browser. The values are not transmitted to Radiant Motive or stored on a server. They are not eligibility, compliance, or deadline determinations.
 
-Do not change a state to `announced` or `declined` without a reliable source. An announced state election is not the same as verified CMS approval. The page explains that distinction.
+## Program expansion
+The programs.json registry currently contains:
+- Medicaid — interactive module.
+- SNAP — official USDA links; interactive module planned.
+- Housing Choice Vouchers / Section 8 — official HUD links; interactive module planned.
+- Veterans' benefits — official VA links; interactive module planned.
 
-## Advertising
-No AdSense code is active. Do not add ads until the final domain, content, privacy disclosures, consent approach, and AdSense approval are in place. See `ADSENSE-SETUP.md`.
+For each additional module, add a program record and its own verified content, source hierarchy, state/local routing, and tools. Do not reuse Medicaid rules or data fields for SNAP, housing, or veterans' programs.
 
-## Public tool boundaries
-The state selector and checklists run in the visitor's browser. This MVP does not ask for patient information, store answers, upload documents, submit forms, or make eligibility decisions.
+## Medicaid state data
+The initial state dataset is a partial research tracker. It includes a small number of public state announcements and labels other records unverified where no announcement was confirmed in the source set. It is not a complete CMS approval database. An announced state plan is not the same as CMS approval. Never convert an unverified record to announced or declined without a reliable official source and a new review date.
 
-## Important next work
-1. Verify every state's election and implementation status from official state sources and CMS updates.
-2. Expand state-specific guidance only after verifying local notices, application/renewal steps, and official contacts.
-3. Add the final domain and canonical URLs, sitemap, and search console.
-4. Complete privacy/cookie and ad consent disclosures before turning on AdSense.
-5. Test mobile, keyboard accessibility, screen readers, and browser behavior.
-6. Connect social platform publishing APIs only after the owner selects platforms and authorizes secure account connections.
+## Privacy and product boundaries
+- Do not add patient names, Medicaid IDs, Social Security numbers, diagnoses, detailed income records, benefit documents, or other sensitive personal data.
+- Do not add document uploads, eligibility determinations, application submissions, or patient accounts to this public MVP.
+- The public utility site is not the FQHC Clinic Track and does not contain the paid clinic subscription flow.
+- Official government websites remain the place for applications, notices, decisions, and submissions.
+
+## Preview and deployment
+This branch is isolated: public-medicaid-ad-revenue-mvp-2026-11. It has not been merged or deployed. Once deployed through the configured host, the folder should be available at /public-medicaid/; confirm the exact branch-deploy URL before sharing it publicly.
+
+Before production:
+1. Run functional and mobile tests on the deployed preview.
+2. Verify state records and every official link.
+3. Choose the final domain/subdomain and set canonical URLs.
+4. Add a valid sitemap and robots configuration for that domain.
+5. Set up Google Search Console and a privacy-appropriate analytics approach.
+6. Complete the owner-side AdSense steps in ADSENSE-SETUP.md; never commit private account or payment details.
+7. Add the exact publisher script only after the owner's AdSense account supplies it, then request review.
+8. Update privacy and consent disclosures before activating advertising.
+
+## Social distribution
+The social generator is approval-first. It creates drafts from the state dataset; it does not authenticate to, or publish on, Facebook, Instagram, LinkedIn, Pinterest, or X. Platform publishing requires separate authorized developer apps, tokens, account permissions, and secure secret handling.
