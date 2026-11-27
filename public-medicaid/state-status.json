@@ -9,9 +9,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/al"
     },
     {
       "name": "Alaska",
@@ -19,9 +20,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/ak"
     },
     {
       "name": "Arizona",
@@ -29,9 +31,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/az"
     },
     {
       "name": "Arkansas",
@@ -39,9 +42,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/ar"
     },
     {
       "name": "California",
@@ -50,7 +54,8 @@
       "announcement_date": "2026-11-18",
       "source_url": "https://www.dhcs.ca.gov/news/dhcs-stakeholder-update-november-18-2026/",
       "summary": "California announced its intent to use the hold-harmless option and planned to submit a mitigation plan to CMS. This is not represented here as final CMS approval.",
-      "reviewed_on": "2026-11-27"
+      "reviewed_on": "2026-11-27",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/ca"
     },
     {
       "name": "Colorado",
@@ -58,9 +63,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/co"
     },
     {
       "name": "Connecticut",
@@ -69,7 +75,8 @@
       "announcement_date": "2026-11-16",
       "source_url": "https://portal.ct.gov/governor/news/press-releases/2026/11-2026/governor-lamont-and-commissioner-barton-reeves-announce-ct-will-participate-in-hold-harmless-period?language=en_US",
       "summary": "Connecticut announced participation for HUSKY D members through June 30, 2027.",
-      "reviewed_on": "2026-11-27"
+      "reviewed_on": "2026-11-27",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/ct"
     },
     {
       "name": "Delaware",
@@ -77,9 +84,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/de"
     },
     {
       "name": "District of Columbia",
@@ -87,9 +95,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/dc"
     },
     {
       "name": "Florida",
@@ -97,9 +106,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/fl"
     },
     {
       "name": "Georgia",
@@ -107,9 +117,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/ga"
     },
     {
       "name": "Hawaii",
@@ -117,9 +128,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/hi"
     },
     {
       "name": "Idaho",
@@ -127,9 +139,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/id"
     },
     {
       "name": "Illinois",
@@ -137,9 +150,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/il"
     },
     {
       "name": "Indiana",
@@ -147,9 +161,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/in"
     },
     {
       "name": "Iowa",
@@ -157,9 +172,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/ia"
     },
     {
       "name": "Kansas",
@@ -167,9 +183,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/ks"
     },
     {
       "name": "Kentucky",
@@ -177,9 +194,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/ky"
     },
     {
       "name": "Louisiana",
@@ -187,9 +205,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/la"
     },
     {
       "name": "Maine",
@@ -197,9 +216,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/me"
     },
     {
       "name": "Maryland",
@@ -208,7 +228,8 @@
       "announcement_date": "2026-11-20",
       "source_url": "https://health.maryland.gov/newsroom/Pages/Maryland%20to%20delay%20enforcement%20of%20new%20Medicaid%20work%20requirements%20through%20June%2030%2C%202027%2C%20helping%20Marylanders%20maintain%20coverage.aspx",
       "summary": "Maryland announced it will pursue delayed enforcement through June 30, 2027. Members will still be asked to verify whether they meet the requirement or qualify for an exclusion.",
-      "reviewed_on": "2026-11-27"
+      "reviewed_on": "2026-11-27",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/md"
     },
     {
       "name": "Massachusetts",
@@ -217,7 +238,8 @@
       "announcement_date": "2026-11-24",
       "source_url": "https://www.mass.gov/news/masshealth-announces-six-month-grace-period-for-compliance-with-federal-work-and-education-requirements",
       "summary": "MassHealth announced participation through June 30, 2027.",
-      "reviewed_on": "2026-11-27"
+      "reviewed_on": "2026-11-27",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/ma"
     },
     {
       "name": "Michigan",
@@ -225,9 +247,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/mi"
     },
     {
       "name": "Minnesota",
@@ -235,9 +258,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/mn"
     },
     {
       "name": "Mississippi",
@@ -245,9 +269,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/ms"
     },
     {
       "name": "Missouri",
@@ -255,9 +280,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/mo"
     },
     {
       "name": "Montana",
@@ -265,9 +291,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/mt"
     },
     {
       "name": "Nebraska",
@@ -275,9 +302,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/ne"
     },
     {
       "name": "Nevada",
@@ -285,9 +313,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/nv"
     },
     {
       "name": "New Hampshire",
@@ -295,9 +324,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/nh"
     },
     {
       "name": "New Jersey",
@@ -305,9 +335,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/nj"
     },
     {
       "name": "New Mexico",
@@ -315,9 +346,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/nm"
     },
     {
       "name": "New York",
@@ -325,9 +357,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/ny"
     },
     {
       "name": "North Carolina",
@@ -336,7 +369,8 @@
       "announcement_date": "2026-11-25",
       "source_url": "https://www.ncdhhs.gov/news/press-releases/2026/11/25/north-carolina-opts-federal-six-month-hold-harmless-grace-period-new-medicaid-expansion-work",
       "summary": "North Carolina announced it is opting into the six-month hold-harmless period through June 30, 2027.",
-      "reviewed_on": "2026-11-27"
+      "reviewed_on": "2026-11-27",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/nc"
     },
     {
       "name": "North Dakota",
@@ -344,9 +378,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/nd"
     },
     {
       "name": "Ohio",
@@ -354,9 +389,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/oh"
     },
     {
       "name": "Oklahoma",
@@ -364,9 +400,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/ok"
     },
     {
       "name": "Oregon",
@@ -375,7 +412,8 @@
       "announcement_date": "2026-11-23",
       "source_url": "https://www.oregon.gov/oha/ERD/Pages/OHA-to-delay-enforcement-of-new-federal-Medicaid-work-rules-to-keep-people-in-Oregon-insured-11.23.2026.aspx",
       "summary": "Oregon announced it will opt into the hold-harmless period through June 30, 2027.",
-      "reviewed_on": "2026-11-27"
+      "reviewed_on": "2026-11-27",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/or"
     },
     {
       "name": "Pennsylvania",
@@ -383,9 +421,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/pa"
     },
     {
       "name": "Rhode Island",
@@ -393,19 +432,23 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/ri"
     },
     {
       "name": "South Carolina",
       "code": "SC",
-      "status": "unverified",
+      "status": "not_applicable",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "CMS's state-specific page currently says the new Medicaid work requirement does not apply to South Carolina Healthy Connections. This is a CMS state-page applicability statement, not a hold-harmless election. Check CMS and South Carolina DHHS for updates.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/sc",
+      "cms_state_page_note": "CMS currently states that the new Medicaid work requirement does not apply to South Carolina Healthy Connections.",
+      "cms_state_page_reviewed_on": "2026-11-27"
     },
     {
       "name": "South Dakota",
@@ -413,9 +456,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/sd"
     },
     {
       "name": "Tennessee",
@@ -423,9 +467,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/tn"
     },
     {
       "name": "Texas",
@@ -433,9 +478,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/tx"
     },
     {
       "name": "Utah",
@@ -443,9 +489,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/ut"
     },
     {
       "name": "Vermont",
@@ -453,9 +500,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/vt"
     },
     {
       "name": "Virginia",
@@ -463,9 +511,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/va"
     },
     {
       "name": "Washington",
@@ -473,9 +522,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/wa"
     },
     {
       "name": "West Virginia",
@@ -483,9 +533,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/wv"
     },
     {
       "name": "Wisconsin",
@@ -493,9 +544,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/wi"
     },
     {
       "name": "Wyoming",
@@ -503,9 +555,10 @@
       "status": "unverified",
       "announcement_date": null,
       "source_url": null,
-      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "summary": "No public state hold-harmless election has been verified in this independent tracker. This does not mean the state declined or that the federal community-engagement requirement applies to every Medicaid member in this state. Check the CMS state-specific page and your state Medicaid agency for current applicability and instructions.",
       "reviewed_on": "2026-11-27",
-      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip"
+      "agency_directory_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "cms_state_page_url": "https://www.medicaid.gov/renew-info/wy"
     }
   ]
 }
