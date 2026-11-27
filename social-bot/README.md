@@ -16,7 +16,7 @@ python3 generate_posts.py --state MD --site-url https://YOUR-PUBLISHED-SITE-URL
 python3 generate_posts.py --platform pinterest --site-url https://YOUR-PUBLISHED-SITE-URL
 python3 generate_posts.py --site-url https://YOUR-PUBLISHED-SITE-URL --no-evergreen
 
-By default, the generator creates state drafts for records labeled announced, intent, or declined, plus evergreen educational posts. Use --all-states to include unverified records; those drafts must never imply the state declined or opted in. Use --no-evergreen to create only state updates.
+By default, the generator creates state drafts for records labeled announced, intent, declined, or not_applicable, plus evergreen educational posts. Use --all-states to include unverified records; those drafts must never imply the state declined or opted in. Use --no-evergreen to create only state updates.
 
 ## Scheduled draft workflow
 A GitHub Actions workflow is included at .github/workflows/social-draft-queue.yml. After this branch is merged into the repository's default branch, it can generate a draft queue three times per week and save it as a downloadable workflow artifact. Set the repository variable PUBLIC_MEDICAID_SITE_URL to the final public site URL. The workflow does not publish posts.
