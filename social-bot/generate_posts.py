@@ -77,7 +77,7 @@ def shorten(text, limit):
 
 def state_post(state, platform, site_url):
     name, code, status = state["name"], state["code"], state["status"]
-    source = state.get("source_url") or CMS_HOLD
+    source = state.get("source_url") or (state.get("cms_state_page_url") if status == "not_applicable" else CMS_HOLD)
     landing = f"{site_url}?state={code}"
 
     if status == "announced":
@@ -188,7 +188,7 @@ def main():
                 "post_title": title,
                 "post_text": text,
                 "landing_url": landing,
-                "source_url": state.get("source_url") or CMS_HOLD,
+                "source_url": state.get("source_url") or (state.get("cms_state_page_url") if state["status"] == "not_applicable" else CMS_HOLD),
                 "human_review_required": "YES",
                 "publishing_status": "DRAFT"
             })
