@@ -11,7 +11,7 @@ function statusCopy(s){
  if(s.status==="announced") return {label:"State announced participation",cls:"",detail:"The state has publicly announced that it plans to use the CMS hold-harmless option. CMS guidance requires state approval of the mitigation plan before the option is implemented. The state still assesses compliance; the approved period may pause denials or disenrollments based solely on community-engagement noncompliance."};
  if(s.status==="intent") return {label:"State announced intent",cls:"intent",detail:"The state has announced an intention to use the option or submit a plan. This is not the same as confirmed CMS approval. Check the state agency for the latest implementation details."};
  if(s.status==="declined") return {label:"State announced it will not participate",cls:"unverified",detail:"The state has publicly said it will not use the optional hold-harmless period. The January 1, 2027 federal baseline therefore remains relevant for applicable individuals, subject to any other approved relief or later change."};
- return {label:"No election verified in this guide",cls:"unverified",detail:"We have not verified a public state announcement about the optional hold-harmless period. Do not assume the state has declined. The federal January 1, 2027 date remains the baseline unless the state adopts an approved option or another implementation exemption."};
+ return {label:"No election verified in this guide",cls:"unverified",detail:"We have not verified a public state announcement about the optional hold-harmless period. Do not assume the state has declined. Whether the federal requirement applies in this state depends on the coverage groups subject to the law and any state-specific waiver or approved relief. Check the state agency."};
 }
 function renderGroups(){
  const container = $("state-groups");
@@ -30,8 +30,8 @@ function renderGroups(){
  });
  const unverified=stateData.states.filter(s=>s.status==="unverified");
  const card=document.createElement("div"); card.className="group-card neutral-card";
- const heading=document.createElement("h4"); heading.textContent="January 1 federal baseline / no election verified ("+unverified.length+")"; card.appendChild(heading);
- const desc=document.createElement("p"); desc.textContent="No public state election has been verified in this initial dataset. This does not mean the state declined. Select a state above for its current record."; card.appendChild(desc);
+ const heading=document.createElement("h4"); heading.textContent="No hold-harmless election verified ("+unverified.length+")"; card.appendChild(heading);
+ const desc=document.createElement("p"); desc.textContent="No public state election has been verified in this initial dataset. This does not mean the state declined or that every Medicaid enrollee in the state is subject to the federal requirement. Check the state agency and your coverage group."; card.appendChild(desc);
  container.appendChild(card);
 }
 function renderState(s){
