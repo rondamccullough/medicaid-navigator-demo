@@ -20,7 +20,7 @@ python3 generate_posts.py --site-url https://YOUR-PUBLISHED-SITE-URL --output we
 
 By default, omitting `--state` creates drafts only for states with a verified announcement record in the current data file. Use `--all-states` to include states whose status has not yet been verified; those drafts must not imply the state declined or opted in.
 
-## Important publishing boundary
+## Scheduled draft workflow\nA GitHub Actions workflow is included at `.github/workflows/social-draft-queue.yml`. After the branch is merged into the repository's default branch, it can generate a draft queue three times per week and save it as a downloadable workflow artifact. Set the repository variable `PUBLIC_MEDICAID_SITE_URL` to the final public site URL. The workflow does not publish posts.\n\n## Important publishing boundary
 This MVP generates drafts; it does not log in to or publish to social networks. Automatic publishing requires the relevant platform developer applications, account permissions, access tokens, and secure secret storage. Some networks restrict publishing APIs or require review. Do not paste API tokens into source files or commit them to GitHub.
 
 ## Editorial safety
