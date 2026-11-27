@@ -4,3 +4,6 @@ https://medicaid.radiantmotivenavigator.com/* https://benefits.radiantmotivenavi
 
 # Short legacy path
 /medicaid-tools https://benefits.radiantmotivenavigator.com/medicaid/ 301!
+
+# Return a real 404 for paths that do not map to a published file.
+/* /404.html 404
