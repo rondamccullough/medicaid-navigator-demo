@@ -13,7 +13,7 @@ This folder is a separate public-facing resource site intended to be distinct fr
 ## Preview
 From the existing Netlify deployment, the folder is intended to be available at `/public-medicaid/` once this branch is deployed. The exact preview URL depends on the Netlify branch-deploy configuration.
 
-## State status data model
+## Initial status coverage\nThe first seed dataset includes official state announcements for Connecticut, Maryland, Massachusetts, North Carolina, and Oregon, plus California's announced intent to use the option. This is a partial initial dataset, not a complete state election tracker. All other states are deliberately marked unverified rather than incorrectly labeled as having declined or as having a confirmed enforcement decision.\n\n## State status data model
 Each state record uses:
 - `status`: `announced`, `intent`, `declined`, or `unverified`
 - `announcement_date`: date of public state announcement, if verified
