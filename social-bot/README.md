@@ -1,26 +1,27 @@
-# Radiant Motive Social Content Bot (MVP)
+# Radiant Motive Social Content Bot
 
-This is an approval-first social content generator for the public Medicaid Access Guide.
+Approval-first social content generator for the Public Benefits Navigator.
 
-## What it does
-- Reads the same state-status JSON file used by the public website.
-- Creates state-specific draft posts for Facebook, Instagram, LinkedIn, and X.
-- Adds the source URL and the public state-guide URL.
-- Exports a CSV review queue.
-- Labels every post as requiring human review.
+## What it creates
+- State-specific Medicaid update drafts from the same state-status JSON used by the website.
+- Evergreen educational drafts about the 80-hour planner, applicability, renewals, notices, hold-harmless, and state updates.
+- Drafts formatted for Facebook, Instagram, LinkedIn, Pinterest, and X.
+- A CSV review queue with post title, copy, landing URL, official source, human-review flag, and draft status.
 
 ## Run it
 Requires Python 3.9+ and no third-party packages.
 
-```bash
+python3 generate_posts.py --site-url https://YOUR-PUBLISHED-SITE-URL
 python3 generate_posts.py --state MD --site-url https://YOUR-PUBLISHED-SITE-URL
-python3 generate_posts.py --state NC --platform x --site-url https://YOUR-PUBLISHED-SITE-URL
-python3 generate_posts.py --site-url https://YOUR-PUBLISHED-SITE-URL --output weekly-queue.csv
-```
+python3 generate_posts.py --platform pinterest --site-url https://YOUR-PUBLISHED-SITE-URL
+python3 generate_posts.py --site-url https://YOUR-PUBLISHED-SITE-URL --no-evergreen
 
-By default, omitting `--state` creates drafts only for states with a verified announcement record in the current data file. Use `--all-states` to include states whose status has not yet been verified; those drafts must not imply the state declined or opted in.
+By default, the generator creates state drafts for records labeled announced, intent, or declined, plus evergreen educational posts. Use --all-states to include unverified records; those drafts must never imply the state declined or opted in. Use --no-evergreen to create only state updates.
 
-## Scheduled draft workflow\nA GitHub Actions workflow is included at `.github/workflows/social-draft-queue.yml`. After the branch is merged into the repository's default branch, it can generate a draft queue three times per week and save it as a downloadable workflow artifact. Set the repository variable `PUBLIC_MEDICAID_SITE_URL` to the final public site URL. The workflow does not publish posts.\n\n## Important publishing boundary
+## Scheduled draft workflow
+A GitHub Actions workflow is included at .github/workflows/social-draft-queue.yml. After this branch is merged into the repository's default branch, it can generate a draft queue three times per week and save it as a downloadable workflow artifact. Set the repository variable PUBLIC_MEDICAID_SITE_URL to the final public site URL. The workflow does not publish posts.
+
+## Publishing boundary
 This MVP generates drafts; it does not log in to or publish to social networks. Automatic publishing requires the relevant platform developer applications, account permissions, access tokens, and secure secret storage. Some networks restrict publishing APIs or require review. Do not paste API tokens into source files or commit them to GitHub.
 
 ## Editorial safety
@@ -29,7 +30,7 @@ This MVP generates drafts; it does not log in to or publish to social networks. 
 - Do not imply every Medicaid member is subject to the federal requirement.
 - Do not tell people they are exempt or eligible.
 - Verify the source, status, date, and state-specific details before approving a post.
-- Avoid collecting or publishing personal beneficiary information.
+- Do not collect or publish personal beneficiary information.
 
 ## Next automation stage
-A scheduled Cloudflare Worker can later check approved official source feeds, compare state records, and add proposed posts to a review queue. Human approval should remain required before publication until the source-monitoring and correction process has been tested.
+A scheduled source-monitoring job can later check official source feeds, compare state records, and propose updates to the review queue. Human approval should remain required before publication until source monitoring and corrections have been tested.
