@@ -1,0 +1,52 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-11-27",
+  "programs": [
+    {
+      "id": "medicaid",
+      "name": "Medicaid",
+      "icon": "M",
+      "status": "active",
+      "statusLabel": "Interactive guide available",
+      "description": "Understand the 2027 community-engagement changes, check the state announcement tracker, organize monthly activity hours, and prepare for renewals or notices.",
+      "primaryUrl": "#medicaid-tools",
+      "primaryLabel": "Use the Medicaid tools"
+    },
+    {
+      "id": "snap",
+      "name": "SNAP / Food Assistance",
+      "icon": "S",
+      "status": "preview",
+      "statusLabel": "Official resources available · tools next",
+      "description": "A future guided module will help people organize application, recertification, interview, notice, and state-agency next steps. SNAP rules and application processes vary by state.",
+      "primaryUrl": "https://www.fns.usda.gov/snap/state-directory",
+      "primaryLabel": "Find your state's SNAP agency ↗",
+      "secondaryUrl": "https://www.fns.usda.gov/snap/recipient/eligibility",
+      "secondaryLabel": "USDA SNAP eligibility information ↗"
+    },
+    {
+      "id": "housing",
+      "name": "Housing Choice Vouchers / Section 8",
+      "icon": "H",
+      "status": "preview",
+      "statusLabel": "Official resources available · tools next",
+      "description": "A future guided module will help users find local Public Housing Agencies, understand application and waiting-list steps, and organize recertification questions.",
+      "primaryUrl": "https://www.hud.gov/program_offices/public_indian_housing/pha/contacts",
+      "primaryLabel": "Find a local Public Housing Agency ↗",
+      "secondaryUrl": "https://www.hud.gov/helping-americans/housing-choice-vouchers-tenants",
+      "secondaryLabel": "HUD Housing Choice Voucher information ↗"
+    },
+    {
+      "id": "veterans",
+      "name": "Veterans' Benefits",
+      "icon": "V",
+      "status": "preview",
+      "statusLabel": "Official resources available · tools next",
+      "description": "A future guided module will organize common VA benefits pathways, claims and appeals resources, contact options, and next steps for veterans and families.",
+      "primaryUrl": "https://www.va.gov/",
+      "primaryLabel": "Explore official VA benefits ↗",
+      "secondaryUrl": "https://www.va.gov/contact-us/",
+      "secondaryLabel": "Contact the Department of Veterans Affairs ↗"
+    }
+  ]
+}
