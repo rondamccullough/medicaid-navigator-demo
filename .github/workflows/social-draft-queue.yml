@@ -20,7 +20,7 @@ jobs:
           python-version: "3.11"
       - name: Generate state-specific draft posts
         env:
-          PUBLIC_MEDICAID_SITE_URL: ${{ vars.PUBLIC_MEDICAID_SITE_URL || 'https://YOUR-PUBLIC-MEDICAID-SITE-URL' }}
+          PUBLIC_MEDICAID_SITE_URL: ${{ vars.PUBLIC_MEDICAID_SITE_URL || 'https://benefits.radiantmotivenavigator.com' }}
         run: |
           python social-bot/generate_posts.py \
             --site-url "$PUBLIC_MEDICAID_SITE_URL" \
