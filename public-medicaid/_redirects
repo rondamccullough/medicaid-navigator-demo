@@ -1,0 +1,6 @@
+# Optional Medicaid-only host alias. Add this host as a domain alias in Netlify before using it.
+http://medicaid.radiantmotivenavigator.com/* https://benefits.radiantmotivenavigator.com/medicaid/:splat 301!
+https://medicaid.radiantmotivenavigator.com/* https://benefits.radiantmotivenavigator.com/medicaid/:splat 301!
+
+# Short legacy path
+/medicaid-tools https://benefits.radiantmotivenavigator.com/medicaid/ 301!
