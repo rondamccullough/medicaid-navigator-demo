@@ -7,19 +7,27 @@ A public-facing utility website separate from the paid FQHC Clinic Track. Medica
 - programs.json: program registry, official resource links, and rollout status. Add future programs here without rebuilding the homepage layout.
 - state-status.json: state-level Medicaid announcement records, source links, summaries, and review dates.
 - app.js: homepage rendering and Medicaid next-step builder. No backend, user account, or patient data store.
-- tool-pages.js: shared browser-only logic for focused activity-hour, renewal-checklist, and deadline-calculator pages.
-- medicaid-80-hour-tracker.html, medicaid-renewal-checklist.html, medicaid-notice-deadline-calculator.html: focused search landing pages with dedicated interactive tools.
+- tool-pages.js: browser-only logic for the original activity planner, renewal checklist, and notice deadline calculator.
+- extra-tools.js: browser-only logic for the weekly-to-monthly hours converter, income frequency converter, notice response planner, and agency call preparation sheet.
+- adsense-loader.js: shared, owner-configurable AdSense Auto Ads loader. The publisher ID is intentionally blank until the owner receives it from Google.
+- Focused search landing pages: `medicaid-80-hour-tracker.html`, `medicaid-renewal-checklist.html`, `medicaid-notice-deadline-calculator.html`, `medicaid-hours-converter.html`, `medicaid-income-converter.html`, `medicaid-notice-action-planner.html`, and `medicaid-call-prep.html`.
 - styles.css and components.css: responsive visual system, accessible controls, and print layout.
 - guides.html: original Medicaid educational content and official references.
 - about.html, editorial-policy.html, privacy.html, terms.html: trust, source, privacy, and use disclosures.
-- ADSENSE-SETUP.md: owner-side AdSense setup sequence based on the video transcript.
+- ADSENSE-SETUP.md: owner-side AdSense Auto Ads setup sequence based on the uploaded video transcript.
 - ../social-bot/: approval-first social post generator; it creates draft content and does not publish to social networks.
 
 ## Utility tools in the current Medicaid module
 1. State status lookup: shows the independent tracker's status, source links, review date, CMS state-specific page, and official Medicaid agency directory.
 2. Next-step builder: creates a general checklist for preparation, notices, renewals, applications, or questions about applicability.
-3. Monthly activity planner: totals user-entered hours across activity categories and displays the 80-hour planning reference. It also displays the $580 monthly earnings pathway and half-time education route currently described in CMS public guidance.
-4. Deadline calculator: counts calendar days until a date entered by the visitor.
+3. Monthly activity planner: totals user-entered hours across activity categories and displays the 80-hour planning reference, plus the earnings and education pathways currently described in CMS public guidance.
+4. 80-hour planner page: standalone version of the monthly activity planner.
+5. Hours converter: converts weekly, biweekly, twice-monthly, or monthly hours into a monthly estimate.
+6. Income frequency converter: converts gross pay frequency into a monthly and annual estimate; it is not an eligibility calculator.
+7. Renewal checklist: tracks common preparation steps and supports printing.
+8. Notice deadline calculator: counts calendar days to the date entered by the visitor; it is not a legal deadline calculator.
+9. Notice response planner: creates a general checklist based on the notice topic.
+10. Agency call preparation sheet: builds a topic-specific list of questions to consider before calling.
 
 The planner and calculator run only in the visitor's browser. The values are not transmitted to Radiant Motive or stored on a server. They are not eligibility, compliance, or deadline determinations.
 
