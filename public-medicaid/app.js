@@ -10,61 +10,11 @@ const statusLabels = {
 };
 
 const plans = {
-  prepare: {
-    title: "Prepare for possible Medicaid changes",
-    intro: "Start with your coverage group and your state's instructions. The federal change does not apply to every Medicaid member.",
-    steps: [
-      "Keep your mailing address, phone number, and email current with the state Medicaid agency.",
-      "Watch for official mail, email, and account messages. Read every notice and note its deadline.",
-      "Ask the state whether your Medicaid coverage group is subject to the community-engagement requirement.",
-      "If it may apply, ask which activities count, what records are accepted, and when information must be submitted.",
-      "Ask whether an exclusion, exception, or other pathway may apply to your circumstances."
-    ]
-  },
-  notice: {
-    title: "Organize a response to a Medicaid notice",
-    intro: "The notice itself is the starting point. Different notices can concern renewal, income, residency, community engagement, or another eligibility issue.",
-    steps: [
-      "Read the entire notice and identify the exact action requested.",
-      "Write down the notice date and the response deadline. Use the deadline calculator below if helpful.",
-      "Identify whether the notice concerns community engagement or a different eligibility factor.",
-      "Use the phone number, website, or mailing address printed on the notice or listed by the official state agency.",
-      "Keep a copy of the notice and confirmation of anything you submit. If you disagree with a decision, follow the appeal instructions in the notice."
-    ]
-  },
-  renewal: {
-    title: "Get organized for a Medicaid renewal",
-    intro: "A hold-harmless period does not pause every Medicaid rule or renewal deadline. Continue to follow your state's renewal instructions.",
-    steps: [
-      "Check your renewal date and the response deadline shown in the official notice.",
-      "Update your contact information with the state Medicaid agency.",
-      "Open and read all mail and electronic messages from the agency.",
-      "Use the official state portal or submission method listed in your notice.",
-      "Keep copies and submission confirmations. Contact a qualified assister if you need help."
-    ]
-  },
-  applying: {
-    title: "Prepare to apply for Medicaid",
-    intro: "Applications and eligibility decisions are handled by the state. Use the official state process and confirm which information is required for your household.",
-    steps: [
-      "Open your state's official Medicaid application page using the government links below.",
-      "Review the state's current instructions before starting an application.",
-      "Ask whether the 2027 community-engagement rules apply to the coverage group for which you are applying.",
-      "Use only the agency's official portal or contact channels to submit information.",
-      "Save the application confirmation and any notices or follow-up requests."
-    ]
-  },
-  unsure: {
-    title: "Find out what questions to ask",
-    intro: "You do not need to assume that a federal change applies to you. The state can confirm your coverage group and explain current instructions.",
-    steps: [
-      "Identify the name of your Medicaid coverage category from your card, account, or official notice.",
-      "Ask the state Medicaid agency whether that coverage group is included in the community-engagement requirement.",
-      "Ask whether any exclusions, exceptions, or alternative pathways may apply.",
-      "Ask when the state will verify information and what documentation it accepts.",
-      "Do not miss ordinary renewal deadlines while waiting for an answer."
-    ]
-  }
+  prepare: { title: "Prepare for possible Medicaid changes", intro: "Start with your coverage group and your state's instructions. The federal change does not apply to every Medicaid member.", steps: ["Keep your mailing address, phone number, and email current with the state Medicaid agency.", "Watch for official mail, email, and account messages. Read every notice and note its deadline.", "Ask the state whether your Medicaid coverage group is subject to the community-engagement requirement.", "If it may apply, ask which activities count, what records are accepted, and when information must be submitted.", "Ask whether an exclusion, exception, or other pathway may apply to your circumstances."] },
+  notice: { title: "Organize a response to a Medicaid notice", intro: "The notice itself is the starting point. Different notices can concern renewal, income, residency, community engagement, or another eligibility issue.", steps: ["Read the entire notice and identify the exact action requested.", "Write down the notice date and the response deadline. Use the deadline calculator below if helpful.", "Identify whether the notice concerns community engagement or a different eligibility factor.", "Use the phone number, website, or mailing address printed on the notice or listed by the official state agency.", "Keep a copy of the notice and confirmation of anything you submit. If you disagree with a decision, follow the appeal instructions in the notice."] },
+  renewal: { title: "Get organized for a Medicaid renewal", intro: "A hold-harmless period does not pause every Medicaid rule or renewal deadline. Continue to follow your state's renewal instructions.", steps: ["Check your renewal date and the response deadline shown in the official notice.", "Update your contact information with the state Medicaid agency.", "Open and read all mail and electronic messages from the agency.", "Use the official state portal or submission method listed in your notice.", "Keep copies and submission confirmations. Contact a qualified assister if you need help."] },
+  applying: { title: "Prepare to apply for Medicaid", intro: "Applications and eligibility decisions are handled by the state. Use the official state process and confirm which information is required for your household.", steps: ["Open your state's official Medicaid application page using the government links below.", "Review the state's current instructions before starting an application.", "Ask whether the 2027 community-engagement rules apply to the coverage group for which you are applying.", "Use only the agency's official portal or contact channels to submit information.", "Save the application confirmation and any notices or follow-up requests."] },
+  unsure: { title: "Find out what questions to ask", intro: "You do not need to assume that a federal change applies to you. The state can confirm your coverage group and explain current instructions.", steps: ["Identify the name of your Medicaid coverage category from your card, account, or official notice.", "Ask the state Medicaid agency whether that coverage group is included in the community-engagement requirement.", "Ask whether any exclusions, exceptions, or alternative pathways may apply.", "Ask when the state will verify information and what documentation it accepts.", "Do not miss ordinary renewal deadlines while waiting for an answer."] }
 };
 
 function makeElement(tag, className, text) {
@@ -73,20 +23,19 @@ function makeElement(tag, className, text) {
   if (text !== undefined && text !== null) node.textContent = text;
   return node;
 }
-
 function addLink(parent, href, label, className = "resource-link") {
   if (!href) return;
   const link = makeElement("a", className, label);
   link.href = href;
-  link.target = "_blank";
-  link.rel = "noopener noreferrer";
+  if (!href.startsWith("#")) {
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+  }
   parent.appendChild(link);
 }
-
 function getStatePageUrl(state) {
   return "https://www.medicaid.gov/renew-info/" + state.code.toLowerCase();
 }
-
 function renderPrograms() {
   const container = $("program-cards");
   container.replaceChildren();
@@ -99,9 +48,8 @@ function renderPrograms() {
     card.appendChild(makeElement("h3", "", program.name));
     card.appendChild(makeElement("p", "", program.description));
     const links = makeElement("div", "program-links");
-    if (program.status === "active") {
-      addLink(links, "#medicaid-tools", "Use the interactive tools →");
-    } else {
+    if (program.status === "active") addLink(links, program.primaryUrl, "Use the interactive tools →");
+    else {
       addLink(links, program.primaryUrl, program.primaryLabel || "Open official program resources ↗");
       card.appendChild(makeElement("p", "program-note", "Official resources are available now. Radiant Motive's guided tools for this program are planned for a later release."));
     }
@@ -110,39 +58,41 @@ function renderPrograms() {
     container.appendChild(card);
   });
 }
-
+function appendStateChips(parent, states) {
+  const list = makeElement("div", "chip-list");
+  states.forEach((state) => {
+    const button = makeElement("button", "state-chip", state.name);
+    button.type = "button";
+    button.addEventListener("click", () => {
+      $("state-select").value = state.code;
+      renderState(state);
+    });
+    list.appendChild(button);
+  });
+  parent.appendChild(list);
+}
 function renderStateGroups() {
   const container = $("state-groups");
   container.replaceChildren();
-  const groups = [
+  [
     { key: "announced", title: "Announced participation", note: "Public state announcements; CMS approval is a separate step." },
-    { key: "intent", title: "Announced intent", note: "A stated intention is not confirmation of CMS approval." },
-    { key: "unverified", title: "Not verified in this tracker", note: "Not verified does not mean declined. Check official sources." }
-  ];
-  groups.forEach((group) => {
+    { key: "intent", title: "Announced intent", note: "A stated intention is not confirmation of CMS approval." }
+  ].forEach((group) => {
     const matches = stateData.states.filter((state) => state.status === group.key);
     const card = makeElement("div", "group-card " + group.key);
     card.appendChild(makeElement("h4", "", group.title + " (" + matches.length + ")"));
     card.appendChild(makeElement("p", "", group.note));
-    if (matches.length) {
-      const list = makeElement("div", "chip-list");
-      matches.forEach((state) => {
-        const button = makeElement("button", "state-chip", state.name);
-        button.type = "button";
-        button.addEventListener("click", () => {
-          $("state-select").value = state.code;
-          renderState(state);
-        });
-        list.appendChild(button);
-      });
-      card.appendChild(list);
-    } else {
-      card.appendChild(makeElement("span", "micro", "No states currently listed."));
-    }
+    appendStateChips(card, matches);
     container.appendChild(card);
   });
+  const unverified = stateData.states.filter((state) => state.status === "unverified");
+  const details = makeElement("details", "group-card unverified");
+  const summary = makeElement("summary", "", "Not verified in this tracker (" + unverified.length + ")");
+  details.appendChild(summary);
+  details.appendChild(makeElement("p", "", "Not verified does not mean declined. Select a state to open its official CMS page and state agency directory."));
+  appendStateChips(details, unverified);
+  container.appendChild(details);
 }
-
 function renderState(state) {
   const result = $("state-result");
   result.replaceChildren();
@@ -162,12 +112,10 @@ function renderState(state) {
   card.appendChild(links);
   card.appendChild(makeElement("p", "micro", "State record reviewed " + state.reviewed_on + ". This independent tracker may not reflect a later state or CMS update."));
   result.appendChild(card);
-
   const url = new URL(window.location.href);
   url.searchParams.set("state", state.code);
   window.history.replaceState({}, "", url);
 }
-
 function renderPlan() {
   const stateCode = $("state-select").value;
   const state = stateData.states.find((item) => item.code === stateCode);
@@ -179,7 +127,6 @@ function renderPlan() {
   }
   const selectedPlan = plans[$("need-select").value] || plans.prepare;
   renderState(state);
-
   const section = $("plan-result");
   section.hidden = false;
   section.replaceChildren();
@@ -206,7 +153,6 @@ function renderPlan() {
   section.appendChild(card);
   section.scrollIntoView({ behavior: "smooth", block: "start" });
 }
-
 function updateActivityPlanner() {
   const ids = ["work-hours", "service-hours", "training-hours", "education-hours"];
   const total = ids.reduce((sum, id) => {
@@ -226,17 +172,22 @@ function updateActivityPlanner() {
     $("hours-message").textContent = rounded + " hours entered · " + remaining + " more hours to reach the 80-hour planning reference.";
     $("hours-message").className = "result-message";
   }
-
   const earnings = Number($("monthly-earnings").value);
   if (Number.isFinite(earnings) && earnings >= 580) {
-    $("earnings-message").textContent = "You entered $580 or more in monthly earnings. CMS currently lists this as another federal pathway. Your state must confirm how income is counted and verified and whether the rule applies to you.";
+    $("earnings-message").textContent = "You entered $580 or more in monthly earnings. CMS currently lists this as another federal pathway. Your state must confirm how income is counted and whether the rule applies to you.";
     $("earnings-message").className = "earnings-message result-caution";
   } else {
     $("earnings-message").textContent = "CMS's public guide currently lists at least $580 in monthly earnings as another pathway. Confirm the current amount and how your state counts income.";
     $("earnings-message").className = "earnings-message";
   }
+  if ($("half-time-education").checked) {
+    $("education-message").textContent = "You selected half-time enrollment. CMS public guidance describes half-time education as a separate pathway; your state must confirm the enrollment definition and documentation.";
+    $("education-message").className = "earnings-message result-caution";
+  } else {
+    $("education-message").textContent = "CMS guidance describes half-time education as a separate pathway. Confirm your enrollment status with your state.";
+    $("education-message").className = "earnings-message";
+  }
 }
-
 function calculateDeadline() {
   const value = $("deadline-date").value;
   const output = $("deadline-result");
@@ -250,25 +201,17 @@ function calculateDeadline() {
   const now = new Date();
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   const days = Math.round((deadline - today) / 86400000);
-  let message;
-  if (days < 0) message = "The date you entered was " + Math.abs(days) + " calendar day(s) ago. Contact the agency promptly to ask what options remain.";
-  else if (days === 0) message = "The date you entered is today. Contact the agency immediately if you have not completed the requested action.";
-  else message = days + " calendar day(s) remain until the date you entered. Do not wait until the last day to contact the agency or submit information.";
+  const message = days < 0 ? "The date you entered was " + Math.abs(days) + " calendar day(s) ago. Contact the agency promptly to ask what options remain." : days === 0 ? "The date you entered is today. Contact the agency immediately if you have not completed the requested action." : days + " calendar day(s) remain until the date you entered. Do not wait until the last day to contact the agency or submit information.";
   output.appendChild(makeElement("strong", "deadline-count", days < 0 ? "Date has passed" : days === 0 ? "Date is today" : days + " days remaining"));
   output.appendChild(makeElement("p", "", message));
   output.appendChild(makeElement("p", "micro", "This calculator counts calendar days only. The official notice controls; contact the agency if the date or deadline is unclear."));
 }
-
 async function init() {
   try {
-    const [stateResponse, programResponse] = await Promise.all([
-      fetch("./state-status.json", { cache: "no-store" }),
-      fetch("./programs.json", { cache: "no-store" })
-    ]);
+    const [stateResponse, programResponse] = await Promise.all([fetch("./state-status.json", { cache: "no-store" }), fetch("./programs.json", { cache: "no-store" })]);
     if (!stateResponse.ok || !programResponse.ok) throw new Error("Could not load the guide data.");
     stateData = await stateResponse.json();
     programData = await programResponse.json();
-
     const select = $("state-select");
     stateData.states.slice().sort((a, b) => a.name.localeCompare(b.name)).forEach((state) => {
       const option = makeElement("option", "", state.name);
@@ -278,7 +221,6 @@ async function init() {
     $("reviewed-date").textContent = "State tracker last reviewed: " + new Date(stateData.last_reviewed + "T12:00:00").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }) + ". Status can change.";
     renderPrograms();
     renderStateGroups();
-
     const params = new URLSearchParams(window.location.search);
     const initialState = params.get("state");
     if (initialState) select.value = initialState.toUpperCase();
@@ -286,11 +228,9 @@ async function init() {
       const initial = stateData.states.find((item) => item.code === select.value);
       if (initial) renderState(initial);
     }
-
     $("build-plan").addEventListener("click", renderPlan);
-    ["work-hours", "service-hours", "training-hours", "education-hours", "monthly-earnings"].forEach((id) => {
-      $(id).addEventListener("input", updateActivityPlanner);
-    });
+    ["work-hours", "service-hours", "training-hours", "education-hours", "monthly-earnings"].forEach((id) => $(id).addEventListener("input", updateActivityPlanner));
+    $("half-time-education").addEventListener("change", updateActivityPlanner);
     $("print-hours").addEventListener("click", () => window.print());
     $("calculate-deadline").addEventListener("click", calculateDeadline);
   } catch (error) {
@@ -299,5 +239,4 @@ async function init() {
     $("reviewed-date").textContent = "State tracker temporarily unavailable.";
   }
 }
-
 document.addEventListener("DOMContentLoaded", init);
