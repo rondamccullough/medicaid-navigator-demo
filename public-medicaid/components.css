@@ -4,3 +4,5 @@
 .group-card summary::marker{color:var(--teal)}
 .group-card details p{margin-top:7px}
 @media print{.checkbox-field{border:0;padding:0;background:#fff}}
+
+@media print{body.standalone-deadline .deadline-card{display:block!important}}
