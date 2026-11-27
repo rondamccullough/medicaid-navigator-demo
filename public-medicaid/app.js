@@ -52,7 +52,7 @@ async function init(){
   const sel=$("state-select");
   stateData.states.sort((a,b)=>a.name.localeCompare(b.name)).forEach(s=>{const o=document.createElement("option");o.value=s.code;o.textContent=s.name;sel.appendChild(o)});
   $("reviewed-date").textContent="State information last reviewed: "+new Date(stateData.last_reviewed+"T12:00:00").toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"})+". Status can change.";
-  renderGroups();\n  renderGroups();
+  renderGroups();
   const initial=new URLSearchParams(location.search).get("state");
   if(initial){sel.value=initial.toUpperCase();const s=stateData.states.find(x=>x.code===sel.value);if(s)renderState(s);}
   $("check-state").addEventListener("click",()=>{const s=stateData.states.find(x=>x.code===sel.value);if(s)renderState(s);else $("state-result").innerHTML='<p class="micro">Please select a state.</p>'});
