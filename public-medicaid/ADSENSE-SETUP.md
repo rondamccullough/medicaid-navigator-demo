@@ -1,6 +1,6 @@
 # Google AdSense launch checklist — not yet activated
 
-The public-benefits site is being prepared for AdSense Auto Ads. No publisher ID, AdSense script, live ad unit, or ad account approval is configured in this branch. Do not publish a placeholder publisher ID or copy someone else's code.
+The public-benefits site is being prepared for AdSense Auto Ads at https://benefits.radiantmotivenavigator.com/. No publisher ID, AdSense script, live ad unit, or ad account approval is configured in this branch. Do not publish a placeholder publisher ID or copy someone else's code.
 
 ## Build and content readiness
 - Publish the site on its final public domain or subdomain.
@@ -34,4 +34,4 @@ The website can be prepared for monetization from launch, but AdSense approval a
 - Auto Ads: not enabled.
 - Site verification / review request: not submitted.
 - Consent message: not configured.
-- Final domain, Search Console, analytics, and sitemap: pending owner selection and deployment.
+- Primary domain selected: https://benefits.radiantmotivenavigator.com/. Domain assignment, DNS, HTTPS, Search Console, analytics, and production deployment are still pending.
