@@ -41,18 +41,34 @@ The initial state dataset is a partial research tracker. It distinguishes announ
 - The public utility site is not the FQHC Clinic Track and does not contain the paid clinic subscription flow.
 - Official government websites remain the place for applications, notices, decisions, and submissions.
 
-## Preview and deployment
-This branch is isolated: public-medicaid-ad-revenue-mvp-2026-11. It has not been merged or deployed. Once deployed through the configured host, the folder should be available at /public-medicaid/; confirm the exact branch-deploy URL before sharing it publicly.
+## Production domain and deployment
 
-Before production:
-1. Run functional and mobile tests on the deployed preview.
-2. Verify state records and every official link.
-3. Choose the final domain/subdomain and set canonical URLs.
-4. Add a valid sitemap and robots configuration for that domain.
-5. Set up Google Search Console and a privacy-appropriate analytics approach.
-6. Complete the owner-side AdSense steps in ADSENSE-SETUP.md; never commit private account or payment details.
-7. Add the exact publisher script only after the owner's AdSense account supplies it, then request review.
-8. Update privacy and consent disclosures before activating advertising.
+**Selected primary address:** https://benefits.radiantmotivenavigator.com/  
+**Medicaid hub:** https://benefits.radiantmotivenavigator.com/medicaid/  
+**Optional Medicaid-only alias:** `https://medicaid.radiantmotivenavigator.com` → redirects to the Medicaid hub after it is added as a domain alias in Netlify and its DNS is configured.
+
+This public-benefits website is a separate Netlify site/deployment. Do not change the existing FQHC site's Netlify project, production branch, domain, or build settings.
+
+### Create the separate Netlify site
+1. In Netlify, choose **Add new project / Import an existing project** and connect the GitHub repository `rondamccullough/medicaid-navigator-demo`.
+2. Select production branch `public-medicaid-ad-revenue-mvp-2026-11`. Do not select `main`.
+3. Keep the repository root as the base directory; leave the build command blank (this is a static HTML/CSS/JS site).
+4. Set the publish directory to `public-medicaid`.
+5. Deploy. Netlify will provide a temporary `.netlify.app` address. Test that address before attaching the custom domain.
+6. In the new site's **Domain management**, add `benefits.radiantmotivenavigator.com` as the primary custom domain. Use the exact DNS record Netlify displays for this site.
+7. If you later want the Medicaid-only alias, add `medicaid.radiantmotivenavigator.com` to the same Netlify site as a domain alias. The included `_redirects` file sends both HTTP and HTTPS requests for that alias to the Medicaid hub.
+
+### DNS safety
+- Add the custom domain in Netlify first; then copy the exact CNAME target Netlify provides into the DNS provider for the `benefits` host.
+- Do not guess the CNAME target and do not delete or change existing MX, TXT, or other records used by company email.
+- DNS changes can take time to propagate. Netlify's external-DNS guide explains the subdomain CNAME process: https://docs.netlify.com/manage/domains/configure-domains/configure-external-dns/
+- The custom domain is configured in this codebase but is not live until the separate Netlify site, domain assignment, DNS, and HTTPS verification are completed.
+
+### Search readiness
+- `sitemap.xml` and `robots.txt` use the selected benefits subdomain.
+- HTML pages include canonical URLs for the selected host.
+- After the custom domain works, verify it in Google Search Console and submit `https://benefits.radiantmotivenavigator.com/sitemap.xml`.
+- The social-draft workflow now uses the benefits subdomain as its fallback site URL. Set the repository variable `PUBLIC_MEDICAID_SITE_URL` to the same URL if you want to override it.
 
 ## Social distribution
 The social generator is approval-first. It creates drafts from the state dataset; it does not authenticate to, or publish on, Facebook, Instagram, LinkedIn, Pinterest, or X. Platform publishing requires separate authorized developer apps, tokens, account permissions, and secure secret handling.
