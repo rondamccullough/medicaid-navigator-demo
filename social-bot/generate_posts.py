@@ -59,6 +59,46 @@ EVERGREEN = [
         "hashtags": "#MedicaidPolicy #MedicaidUpdates #PublicBenefits"
     },
     {
+        "topic": "Weekly-to-monthly hours calculator",
+        "title": "Convert Weekly Activity Hours Into a Monthly Estimate",
+        "body": "A weekly schedule does not always map neatly to a calendar month. This free calculator converts weekly, biweekly, twice-monthly, or monthly activity hours into an annualized monthly estimate. Use it to organize your records, then confirm your state's reporting rules.",
+        "path": "medicaid-hours-converter.html",
+        "source_url": CMS_GUIDE,
+        "hashtags": "#Medicaid #HoursCalculator #BenefitsTools"
+    },
+    {
+        "topic": "Income frequency calculator",
+        "title": "How Much Is Your Pay Per Month? Convert Your Pay Schedule",
+        "body": "Weekly, biweekly, twice-monthly, and annual pay schedules produce different paycheck counts. Use this free calculator to estimate a monthly gross amount. It is not a Medicaid eligibility calculator; state income-counting rules and coverage categories matter.",
+        "path": "medicaid-income-converter.html",
+        "source_url": CMS_GUIDE,
+        "hashtags": "#Medicaid #IncomeCalculator #BenefitsNavigation"
+    },
+    {
+        "topic": "Medicaid notice response planner",
+        "title": "Received a Medicaid Notice? Build a Next-Step Checklist",
+        "body": "A Medicaid notice may ask for a renewal, verification, or another action. This free organizer helps you identify the general notice type, record the response date, and prepare questions for the state agency. Follow the instructions on your official notice.",
+        "path": "medicaid-notice-action-planner.html",
+        "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+        "hashtags": "#Medicaid #MedicaidNotices #BenefitsHelp"
+    },
+    {
+        "topic": "Medicaid agency call preparation",
+        "title": "Prepare Questions Before Calling Your Medicaid Agency",
+        "body": "Before calling your state Medicaid agency, organize the questions you need answered about renewals, applications, notices, income, or the 2027 changes. This free printable worksheet helps you prepare without entering sensitive information online.",
+        "path": "medicaid-call-prep.html",
+        "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+        "hashtags": "#Medicaid #CommunityResources #BenefitsNavigation"
+    },
+    {
+        "topic": "Medicaid notice date calculator",
+        "title": "Count the Days Until the Date on Your Medicaid Notice",
+        "body": "Record the response date printed on your Medicaid notice and use a free calendar-day calculator to see how many days remain. The calculator does not determine a legal deadline; always follow the official notice and contact your state agency if anything is unclear.",
+        "path": "medicaid-notice-deadline-calculator.html",
+        "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+        "hashtags": "#Medicaid #DeadlineCalculator #BenefitsTools"
+    },
+    {
         "topic": "State information",
         "title": "Medicaid 2027 Changes: Start With Your State",
         "body": "State implementation details matter. Check the latest state-specific CMS information and your state Medicaid agency. An announcement of intent is not the same as CMS approval, and an unverified status is not proof a state declined.",
@@ -157,7 +197,7 @@ def main():
     parser = argparse.ArgumentParser(description="Generate review-ready public-benefits social drafts.")
     parser.add_argument("--state", help="Two-letter state code; omit to generate for verified announcement states.")
     parser.add_argument("--platform", choices=PLATFORMS, help="Generate for one platform; default is all five.")
-    parser.add_argument("--site-url", default="https://YOUR-PUBLIC-BENEFITS-SITE-URL", help="Published public guide URL.")
+    parser.add_argument("--site-url", default="https://benefits.radiantmotivenavigator.com", help="Published public guide URL.")
     parser.add_argument("--all-states", action="store_true", help="Include states without a verified public announcement.")
     parser.add_argument("--no-evergreen", action="store_true", help="Skip evergreen educational drafts.")
     parser.add_argument("--output", default="social-post-queue.csv", help="CSV output filename.")
