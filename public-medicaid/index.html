@@ -1,207 +1,88 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#102b3f">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#102b3f">
   <title>Medicaid 2027 Navigator | State Updates, 80-Hour Planner & Benefits Help</title>
   <meta name="description" content="Use free Medicaid 2027 tools to check state updates, plan qualifying activity hours, organize renewal and notice deadlines, and find official help. Independent resource by Radiant Motive.">
-  <meta name="robots" content="index,follow">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Radiant Motive Public Benefits Navigator">
-  <meta property="og:description" content="Understand your benefits. Find your state information. Build your next-step plan.">
-  <meta name="twitter:card" content="summary">
-  <link rel="stylesheet" href="./styles.css">
-  <script defer src="./app.js"></script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Radiant Motive Public Benefits Navigator",
-    "description": "Independent public-benefits navigation tools and educational resources, beginning with Medicaid 2027 changes."
-  }
-  </script>
+  <meta name="robots" content="index,follow"><meta property="og:type" content="website"><meta property="og:title" content="Radiant Motive Public Benefits Navigator"><meta property="og:description" content="Understand your benefits. Find your state information. Build your next-step plan."><meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="./styles.css"><script defer src="./app.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Radiant Motive Public Benefits Navigator","description":"Independent public-benefits navigation tools and educational resources, beginning with Medicaid 2027 changes."}</script>
   <!-- Add the Google AdSense publisher script here only after account approval and receipt of the publisher code. -->
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-  <a class="brand" href="./" aria-label="Radiant Motive Public Benefits Navigator home">
-    <span class="brand-mark">RM</span>
-    <span><b>RADIANT MOTIVE</b><small>PUBLIC BENEFITS NAVIGATOR</small></span>
-  </a>
-  <nav aria-label="Main navigation">
-    <a href="#programs">Programs</a>
-    <a href="#medicaid-tools">Medicaid tools</a>
-    <a href="guides.html">Guides</a>
-    <a href="about.html">About</a>
-  </nav>
-</header>
-
+<header class="site-header"><a class="brand" href="./" aria-label="Radiant Motive Public Benefits Navigator home"><span class="brand-mark">RM</span><span><b>RADIANT MOTIVE</b><small>PUBLIC BENEFITS NAVIGATOR</small></span></a><nav aria-label="Main navigation"><a href="#programs">Programs</a><a href="#medicaid-tools">Medicaid tools</a><a href="guides.html">Guides</a><a href="about.html">About</a></nav></header>
 <main id="main">
-  <section class="hero">
-    <div class="hero-copy">
-      <p class="eyebrow">Free public-benefits navigation tools</p>
-      <h1>Your benefits.<br><em>Your state. Your next step.</em></h1>
-      <p class="lead">Make sense of Medicaid changes, prepare for renewals, organize important deadlines, and find official help—without having to search through dozens of government pages.</p>
-      <div class="hero-actions">
-        <a class="button primary" href="#medicaid-tools">Use the Medicaid tools <span aria-hidden="true">→</span></a>
-        <a class="button secondary-outline" href="#programs">Explore benefit programs</a>
-      </div>
-      <p class="micro">Independent educational resource from Radiant Motive LLC. Not a government website. No patient account or document upload required.</p>
-    </div>
-
-    <aside class="start-card" aria-labelledby="start-heading">
-      <div class="start-card-top"><span class="pulse"></span> START WITH YOUR NEXT STEP</div>
-      <h2 id="start-heading">What do you need help with today?</h2>
-      <label for="need-select">Choose your situation</label>
-      <select id="need-select">
-        <option value="prepare">I want to prepare for Medicaid changes</option>
-        <option value="notice">I received a Medicaid notice</option>
-        <option value="renewal">My Medicaid renewal is coming up</option>
-        <option value="applying">I am applying for Medicaid</option>
-        <option value="unsure">I am not sure whether the changes apply to me</option>
-      </select>
-      <label for="state-select">Choose your state</label>
-      <select id="state-select"><option value="">Select a state…</option></select>
-      <button id="build-plan" class="button primary full-width" type="button">Build my next-step plan <span aria-hidden="true">→</span></button>
-      <p class="start-card-foot">Your selections stay in this browser. Do not enter personal, medical, or account information.</p>
-    </aside>
-  </section>
-
-  <section id="plan-result" class="plan-result" aria-live="polite" hidden></section>
-
-  <div class="trust-strip" aria-label="How this resource works">
-    <div><b>Plain language</b><span>Clear steps, not policy jargon</span></div>
-    <div><b>Official sources</b><span>Links back to government agencies</span></div>
-    <div><b>Privacy-conscious</b><span>No patient documents or benefit IDs</span></div>
+<section class="hero">
+  <div class="hero-copy"><p class="eyebrow">Free public-benefits navigation tools</p><h1>Your benefits.<br><em>Your state. Your next step.</em></h1>
+    <p class="lead">Make sense of Medicaid changes, prepare for renewals, organize important deadlines, and find official help—without having to search through dozens of government pages.</p>
+    <div class="hero-actions"><a class="button primary" href="#medicaid-tools">Use the Medicaid tools <span aria-hidden="true">→</span></a><a class="button secondary-outline" href="#programs">Explore benefit programs</a></div>
+    <p class="micro">Independent educational resource from Radiant Motive LLC. Not a government website. No patient account or document upload required.</p>
   </div>
+  <aside class="start-card" aria-labelledby="start-heading"><div class="start-card-top"><span class="pulse"></span> START WITH YOUR NEXT STEP</div><h2 id="start-heading">What do you need help with today?</h2>
+    <label for="need-select">Choose your situation</label><select id="need-select"><option value="prepare">I want to prepare for Medicaid changes</option><option value="notice">I received a Medicaid notice</option><option value="renewal">My Medicaid renewal is coming up</option><option value="applying">I am applying for Medicaid</option><option value="unsure">I am not sure whether the changes apply to me</option></select>
+    <label for="state-select">Choose your state</label><select id="state-select"><option value="">Select a state…</option></select>
+    <button id="build-plan" class="button primary full-width" type="button">Build my next-step plan <span aria-hidden="true">→</span></button>
+    <p class="start-card-foot">Your selections stay in this browser. Do not enter personal, medical, or account information.</p>
+  </aside>
+</section>
+<section id="plan-result" class="plan-result" aria-live="polite" hidden></section>
+<div class="trust-strip" aria-label="How this resource works"><div><b>Plain language</b><span>Clear steps, not policy jargon</span></div><div><b>Official sources</b><span>Links back to government agencies</span></div><div><b>Privacy-conscious</b><span>No patient documents or benefit IDs</span></div></div>
 
-  <section id="programs" class="section programs-section">
-    <div class="section-heading">
-      <p class="eyebrow">One navigation model. Multiple programs.</p>
-      <h2>Choose the benefit you are trying to navigate.</h2>
-      <p>Medicaid is our first interactive guide. The platform is designed to expand into other public programs using the same state-aware, step-by-step approach.</p>
+<section id="programs" class="section programs-section"><div class="section-heading"><p class="eyebrow">One navigation model. Multiple programs.</p><h2>Choose the benefit you are trying to navigate.</h2><p>Medicaid is our first interactive guide. The platform is designed to expand into other public programs using the same state-aware, step-by-step approach.</p></div><div id="program-cards" class="program-grid" aria-live="polite"><p class="loading-note">Loading program guides…</p></div></section>
+<div class="ad-slot" data-ad-placement="between-programs-and-tools" aria-label="Advertisement" hidden></div>
+
+<section id="medicaid-tools" class="section tools-section"><div class="section-heading"><p class="eyebrow">Featured utility · Medicaid 2027</p><h2>Practical tools for the changes ahead.</h2><p>Use these tools to understand public information, organize your next steps, and prepare questions for your state Medicaid agency. They do not make eligibility decisions.</p></div>
+<div class="tool-grid">
+  <article class="tool-card state-tool-card"><div class="tool-number">01 · STATE STATUS</div><h3>Check your state's update</h3><p>See the status documented in our state tracker, the date it was reviewed, and the official links to check the latest instructions.</p>
+    <div id="state-result" class="state-result" aria-live="polite"><div class="empty-state"><span class="empty-icon">⌖</span><h4>Select a state above</h4><p>Your state's information will appear here when you build your plan.</p></div></div>
+    <div id="state-groups" class="state-groups" aria-label="State announcement summary"></div><p id="reviewed-date" class="last-reviewed">Loading state review date…</p>
+    <p class="micro">Our state tracker is a research aid, not a complete CMS approval database. “Not verified” does not mean a state declined.</p>
+  </article>
+  <article class="tool-card activity-card"><div class="tool-number">02 · MONTHLY ACTIVITY PLANNER</div><h3>Organize your monthly hours</h3><p>If the community-engagement requirement applies to you, this planner can help you total activities that may count under the federal framework.</p>
+    <div class="activity-fields">
+      <label for="work-hours">Work (paid, in-kind, or unpaid)<input id="work-hours" type="number" min="0" max="744" step="0.5" inputmode="decimal" placeholder="0"></label>
+      <label for="service-hours">Community service<input id="service-hours" type="number" min="0" max="744" step="0.5" inputmode="decimal" placeholder="0"></label>
+      <label for="training-hours">Qualifying work program / training<input id="training-hours" type="number" min="0" max="744" step="0.5" inputmode="decimal" placeholder="0"></label>
+      <label for="education-hours">Education hours (if less than half-time)<input id="education-hours" type="number" min="0" max="744" step="0.5" inputmode="decimal" placeholder="0"></label>
+      <label for="monthly-earnings">Monthly earnings (optional)<span class="input-prefix"><span>$</span><input id="monthly-earnings" type="number" min="0" step="1" inputmode="decimal" placeholder="0"></span></label>
     </div>
-    <div id="program-cards" class="program-grid" aria-live="polite">
-      <p class="loading-note">Loading program guides…</p>
+    <label class="checkbox-field"><input id="half-time-education" type="checkbox"> I am enrolled in an education program at least half-time (as defined by the school).</label>
+    <div class="progress-panel"><div class="progress-label"><span>Hours entered</span><strong id="hours-total">0 / 80</strong></div><div class="progress-track" role="progressbar" aria-label="Hours entered toward 80-hour planning reference" aria-valuemin="0" aria-valuemax="80" aria-valuenow="0" id="hours-progress"><span id="hours-progress-fill"></span></div>
+      <p id="hours-message" class="result-message" aria-live="polite">Enter activity hours to see your monthly total.</p>
+      <p id="earnings-message" class="earnings-message" aria-live="polite">CMS's public guide currently lists $580 in monthly earnings as another pathway. Confirm the current amount and how your state counts income.</p>
+      <p id="education-message" class="earnings-message" aria-live="polite">CMS guidance describes half-time education as a separate pathway. Confirm your enrollment status with your state.</p>
     </div>
-  </section>
+    <button id="print-hours" class="button secondary" type="button">Print my planning summary</button>
+    <p class="micro">This is a private, browser-only planning aid. It does not save or transmit your entries, verify qualifying activities, or determine compliance. State rules and verification instructions control.</p>
+  </article>
+  <article class="tool-card deadline-card"><div class="tool-number">03 · NOTICE & RENEWAL DEADLINE</div><h3>Count the days to a deadline</h3><p>Enter the response date printed on your official notice or renewal request. This simple calendar tool counts the days remaining.</p>
+    <label for="deadline-date">Date shown on your notice<input id="deadline-date" type="date"></label><button id="calculate-deadline" class="button secondary" type="button">Calculate days remaining</button>
+    <div id="deadline-result" class="deadline-result" aria-live="polite">Your result will appear here. The date on your official notice controls.</div>
+    <p class="micro">This tool does not contact the agency or send reminders. If a deadline is close or unclear, contact the agency using the information on your notice.</p>
+  </article>
+</div></section>
 
-  <div class="ad-slot" data-ad-placement="between-programs-and-tools" aria-label="Advertisement" hidden></div>
+<section class="section how-section"><div class="section-heading"><p class="eyebrow">A simple navigation path</p><h2>Understand. Prepare. Connect. Complete.</h2></div><div class="four-steps">
+<article><span>01</span><h3>Understand</h3><p>See what has changed and what questions to ask about your program and state.</p></article><article><span>02</span><h3>Prepare</h3><p>Organize activities, notices, renewal dates, and the information you may need.</p></article><article><span>03</span><h3>Connect</h3><p>Go to the official agency or a qualified enrollment assister for current instructions.</p></article><article><span>04</span><h3>Complete</h3><p>Follow the official process, submit information through the agency, and keep confirmation.</p></article></div></section>
+<div class="ad-slot" data-ad-placement="before-guides" aria-label="Advertisement" hidden></div>
 
-  <section id="medicaid-tools" class="section tools-section">
-    <div class="section-heading">
-      <p class="eyebrow">Featured utility · Medicaid 2027</p>
-      <h2>Practical tools for the changes ahead.</h2>
-      <p>Use these tools to understand the public information, organize your own next steps, and prepare questions for your state Medicaid agency. They do not make eligibility decisions.</p>
-    </div>
+<section class="section guide-section"><div class="section-heading"><p class="eyebrow">Medicaid learning center</p><h2>Get clear answers before you take action.</h2><p>Our guides explain the federal framework, the state transition, notices, and renewals. Each guide points you back to official information.</p></div>
+<div class="guide-grid"><a class="guide-card" href="guides.html#community-engagement"><span>2027 CHANGES</span><h3>What is the community-engagement requirement?</h3><p>Understand the 80-hour activity pathway, other pathways, and who may be affected.</p><b>Read the guide →</b></a>
+<a class="guide-card" href="guides.html#hold-harmless"><span>STATE UPDATES</span><h3>What does the six-month option mean?</h3><p>Understand the optional hold-harmless period and why state approval matters.</p><b>Read the guide →</b></a>
+<a class="guide-card" href="guides.html#renewals"><span>KEEP YOUR COVERAGE</span><h3>Prepare for a renewal or notice.</h3><p>Use a practical checklist to organize deadlines and find official help.</p><b>Read the guide →</b></a></div><p class="all-guides"><a href="guides.html">Visit the Medicaid guide library →</a></p></section>
 
-    <div class="tool-grid">
-      <article class="tool-card state-tool-card">
-        <div class="tool-number">01 · STATE STATUS</div>
-        <h3>Check your state's update</h3>
-        <p>See the status documented in our state tracker, the date it was reviewed, and the official links to check the latest instructions.</p>
-        <div id="state-result" class="state-result" aria-live="polite">
-          <div class="empty-state"><span class="empty-icon">⌖</span><h4>Select a state above</h4><p>Your state's information will appear here when you build your plan.</p></div>
-        </div>
-        <div id="state-groups" class="state-groups" aria-label="State announcement summary"></div>
-        <p id="reviewed-date" class="last-reviewed">Loading state review date…</p>
-        <p class="micro">Our state tracker is a research aid, not a complete CMS approval database. “Not verified” does not mean a state declined.</p>
-      </article>
+<section class="resource-band"><div><p class="eyebrow">Official help comes first</p><h2>When it is time to apply, renew, or respond, go to the agency.</h2><p>Radiant Motive helps organize the journey. Only the responsible government agency can make decisions, accept official submissions, and confirm deadlines.</p></div><a class="button light" href="https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip" target="_blank" rel="noopener noreferrer">Find your state Medicaid agency ↗</a></section>
 
-      <article class="tool-card activity-card">
-        <div class="tool-number">02 · MONTHLY ACTIVITY PLANNER</div>
-        <h3>Organize your monthly hours</h3>
-        <p>If the community-engagement requirement applies to you, this planner can help you total activities that may count under the federal framework.</p>
-        <div class="activity-fields">
-          <label for="work-hours">Work (paid, in-kind, or unpaid) <input id="work-hours" type="number" min="0" max="744" step="0.5" inputmode="decimal" placeholder="0"></label>
-          <label for="service-hours">Community service <input id="service-hours" type="number" min="0" max="744" step="0.5" inputmode="decimal" placeholder="0"></label>
-          <label for="training-hours">Qualifying work program / training <input id="training-hours" type="number" min="0" max="744" step="0.5" inputmode="decimal" placeholder="0"></label>
-          <label for="education-hours">Education hours (if accepted by your state) <input id="education-hours" type="number" min="0" max="744" step="0.5" inputmode="decimal" placeholder="0"></label>
-          <label for="monthly-earnings">Monthly earnings (optional) <span class="input-prefix"><span>$</span><input id="monthly-earnings" type="number" min="0" step="1" inputmode="decimal" placeholder="0"></span></label>
-        </div>
-        <div class="progress-panel">
-          <div class="progress-label"><span>Hours entered</span><strong id="hours-total">0 / 80</strong></div>
-          <div class="progress-track" role="progressbar" aria-label="Hours entered toward 80-hour planning reference" aria-valuemin="0" aria-valuemax="80" aria-valuenow="0" id="hours-progress"><span id="hours-progress-fill"></span></div>
-          <p id="hours-message" class="result-message" aria-live="polite">Enter activity hours to see your monthly total.</p>
-          <p id="earnings-message" class="earnings-message" aria-live="polite">The CMS public guide currently lists $580 in monthly earnings as another pathway. Confirm the current amount and how your state counts income.</p>
-        </div>
-        <button id="print-hours" class="button secondary" type="button">Print my planning summary</button>
-        <p class="micro">This is a private, browser-only planning aid. It does not save or transmit your entries, verify qualifying activities, or determine compliance. State rules and verification instructions control.</p>
-      </article>
+<section class="section faq-section"><div class="section-heading"><p class="eyebrow">Frequently asked questions</p><h2>Important things to know.</h2></div>
+<details><summary>Does the 2027 Medicaid community-engagement requirement apply to everyone?</summary><p>No. It applies to defined groups of adults under the federal law, with exclusions and exceptions. Other Medicaid coverage groups are not automatically subject to it. Check the official notice and your state Medicaid agency.</p></details>
+<details><summary>Does 80 hours mean I must work 80 paid hours?</summary><p>No. The federal framework describes multiple qualifying activity pathways, including certain work, community service, work programs, and education. The CMS public guide also describes a monthly earnings pathway. Which activities count and how they must be documented should be confirmed with your state.</p></details>
+<details><summary>Does a six-month hold-harmless period mean I can ignore Medicaid notices?</summary><p>No. The optional period relates to certain denials or disenrollments based solely on community-engagement noncompliance during an approved period. Other eligibility rules, renewals, and notice deadlines still matter.</p></details>
+<details><summary>Can Radiant Motive tell me whether I qualify or whether I am exempt?</summary><p>No. This website provides general education and navigation tools. It does not make eligibility determinations, assess personal exemptions, submit forms, or replace a state agency or qualified assister.</p></details>
+<details><summary>Will the website include SNAP and Section 8?</summary><p>Yes. The platform is being built around reusable program modules. Medicaid is the first interactive module. SNAP, Housing Choice Vouchers (Section 8), and veterans' benefits are included in the expansion roadmap, with official resources available in the program directory.</p></details></section>
 
-      <article class="tool-card deadline-card">
-        <div class="tool-number">03 · NOTICE & RENEWAL DEADLINE</div>
-        <h3>Count the days to a deadline</h3>
-        <p>Enter the response date printed on your official notice or renewal request. This simple calendar tool counts the days remaining.</p>
-        <label for="deadline-date">Date shown on your notice <input id="deadline-date" type="date"></label>
-        <button id="calculate-deadline" class="button secondary" type="button">Calculate days remaining</button>
-        <div id="deadline-result" class="deadline-result" aria-live="polite">Your result will appear here. The date on your official notice controls.</div>
-        <p class="micro">This tool does not contact the agency or send reminders. If a deadline is close or unclear, contact the agency using the information on your notice.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section how-section">
-    <div class="section-heading">
-      <p class="eyebrow">A simple navigation path</p>
-      <h2>Understand. Prepare. Connect. Complete.</h2>
-    </div>
-    <div class="four-steps">
-      <article><span>01</span><h3>Understand</h3><p>See what has changed and what questions to ask about your program and state.</p></article>
-      <article><span>02</span><h3>Prepare</h3><p>Organize activities, notices, renewal dates, and the information you may need.</p></article>
-      <article><span>03</span><h3>Connect</h3><p>Go to the official agency or a qualified enrollment assister for current instructions.</p></article>
-      <article><span>04</span><h3>Complete</h3><p>Follow the official process, submit information through the agency, and keep confirmation.</p></article>
-    </div>
-  </section>
-
-  <div class="ad-slot" data-ad-placement="before-guides" aria-label="Advertisement" hidden></div>
-
-  <section class="section guide-section">
-    <div class="section-heading">
-      <p class="eyebrow">Medicaid learning center</p>
-      <h2>Get clear answers before you take action.</h2>
-      <p>Our guides explain the federal framework, the state transition, notices, and renewals. Each guide points you back to official information.</p>
-    </div>
-    <div class="guide-grid">
-      <a class="guide-card" href="guides.html#community-engagement"><span>2027 CHANGES</span><h3>What is the community-engagement requirement?</h3><p>Understand the 80-hour activity pathway, other pathways, and who may be affected.</p><b>Read the guide →</b></a>
-      <a class="guide-card" href="guides.html#hold-harmless"><span>STATE UPDATES</span><h3>What does the six-month option mean?</h3><p>Understand the optional hold-harmless period and why state approval matters.</p><b>Read the guide →</b></a>
-      <a class="guide-card" href="guides.html#renewals"><span>KEEP YOUR COVERAGE</span><h3>Prepare for a renewal or notice.</h3><p>Use a practical checklist to organize deadlines and find official help.</p><b>Read the guide →</b></a>
-    </div>
-    <p class="all-guides"><a href="guides.html">Visit the Medicaid guide library →</a></p>
-  </section>
-
-  <section class="resource-band">
-    <div><p class="eyebrow">Official help comes first</p><h2>When it is time to apply, renew, or respond, go to the agency.</h2><p>Radiant Motive helps organize the journey. Only the responsible government agency can make decisions, accept official submissions, and confirm deadlines.</p></div>
-    <a class="button light" href="https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip" target="_blank" rel="noopener">Find your state Medicaid agency ↗</a>
-  </section>
-
-  <section class="section faq-section">
-    <div class="section-heading"><p class="eyebrow">Frequently asked questions</p><h2>Important things to know.</h2></div>
-    <details><summary>Does the 2027 Medicaid community-engagement requirement apply to everyone?</summary><p>No. It applies to defined groups of adults under the federal law, with exclusions and exceptions. Other Medicaid coverage groups are not automatically subject to it. Check the official notice and your state Medicaid agency.</p></details>
-    <details><summary>Does 80 hours mean I must work 80 paid hours?</summary><p>No. The federal framework describes multiple qualifying activity pathways, including certain work, community service, work programs, and education. The CMS public guide also describes a monthly earnings pathway. Which activities count and how they must be documented should be confirmed with your state.</p></details>
-    <details><summary>Does a six-month hold-harmless period mean I can ignore Medicaid notices?</summary><p>No. The optional period relates to certain denials or disenrollments based solely on community-engagement noncompliance during an approved period. Other eligibility rules, renewals, and notice deadlines still matter.</p></details>
-    <details><summary>Can Radiant Motive tell me whether I qualify or whether I am exempt?</summary><p>No. This website provides general education and navigation tools. It does not make eligibility determinations, assess personal exemptions, submit forms, or replace a state agency or qualified assister.</p></details>
-    <details><summary>Will the website include SNAP and Section 8?</summary><p>Yes. The platform is being built around reusable program modules. Medicaid is the first interactive module. SNAP, Housing Choice Vouchers (Section 8), and veterans' benefits are included in the expansion roadmap, with official resources available in the program directory.</p></details>
-  </section>
-
-  <section class="about-strip">
-    <div><p class="eyebrow">About Radiant Motive</p><h2>Access exists. Navigating access is the challenge.</h2><p>Radiant Motive develops reusable navigation technology for complex public-benefit and healthcare access pathways. This public resource is separate from the paid FQHC Clinic Track.</p></div>
-    <a href="about.html" class="text-link">About this resource →</a>
-  </section>
+<section class="about-strip"><div><p class="eyebrow">About Radiant Motive</p><h2>Access exists. Navigating access is the challenge.</h2><p>Radiant Motive develops reusable navigation technology for complex public-benefit and healthcare access pathways. This public resource is separate from the paid FQHC Clinic Track.</p></div><a href="about.html" class="text-link">About this resource →</a></section>
 </main>
-
-<footer class="site-footer">
-  <div class="footer-top">
-    <div class="footer-brand"><b>RADIANT MOTIVE</b><span>PUBLIC BENEFITS NAVIGATOR</span><small>Access exists. Navigating access is the challenge.</small></div>
-    <div class="footer-links">
-      <a href="#programs">Programs</a><a href="guides.html">Guides</a><a href="about.html">About</a>
-      <a href="editorial-policy.html">Editorial standards</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
-    </div>
-  </div>
-  <p>This is an independent educational resource, not affiliated with or endorsed by CMS, Medicaid, USDA, HUD, VA, or any state or local agency. It does not provide legal advice, eligibility determinations, or individualized benefits advice. Always follow official agency notices and deadlines.</p>
-  <small>© 2026 Radiant Motive LLC. Public Benefits Navigator · Medicaid module 1.0 · State information last reviewed November 27, 2026.</small>
-</footer>
-</body>
-</html>
+<footer class="site-footer"><div class="footer-top"><div class="footer-brand"><b>RADIANT MOTIVE</b><span>PUBLIC BENEFITS NAVIGATOR</span><small>Access exists. Navigating access is the challenge.</small></div><div class="footer-links"><a href="#programs">Programs</a><a href="guides.html">Guides</a><a href="about.html">About</a><a href="editorial-policy.html">Editorial standards</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div>
+<p>This is an independent educational resource, not affiliated with or endorsed by CMS, Medicaid, USDA, HUD, VA, or any state or local agency. It does not provide legal advice, eligibility determinations, or individualized benefits advice. Always follow official agency notices and deadlines.</p><small>© 2026 Radiant Motive LLC. Public Benefits Navigator · Medicaid module 1.0 · State information last reviewed November 27, 2026.</small></footer>
+</body></html>
