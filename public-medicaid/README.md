@@ -7,7 +7,7 @@ A public-facing utility website separate from the paid FQHC Clinic Track. Medica
 - programs.json: program registry, official resource links, and rollout status. Add future programs here without rebuilding the homepage layout.
 - state-status.json: state-level Medicaid announcement records, source links, summaries, and review dates.
 - app.js: browser-only rendering and tool calculations. No backend, user account, or patient data store.
-- styles.css: responsive visual system, accessible states, and print layout.
+- styles.css and components.css: responsive visual system, accessible controls, and print layout.
 - guides.html: original Medicaid educational content and official references.
 - about.html, editorial-policy.html, privacy.html, terms.html: trust, source, privacy, and use disclosures.
 - ADSENSE-SETUP.md: owner-side AdSense setup sequence based on the video transcript.
