@@ -56,7 +56,7 @@ def main():
     parser.add_argument("--state", help="Two-letter state code; omit to generate for every state.")
     parser.add_argument("--platform", choices=PLATFORMS, help="Generate for one platform; default is all four.")
     parser.add_argument("--site-url", default="https://YOUR-PUBLIC-MEDICAID-SITE-URL", help="Published public guide URL.")
-    parser.add_argument("--output", default="social-post-queue.csv", help="CSV output filename.")
+    parser.add_argument("--all-states", action="store_true", help="Include states without a verified public announcement.")\n    parser.add_argument("--output", default="social-post-queue.csv", help="CSV output filename.")
     args = parser.parse_args()
     data = json.loads(STATUS_FILE.read_text(encoding="utf-8"))
     states = data["states"]
