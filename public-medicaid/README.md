@@ -33,7 +33,7 @@ The programs.json registry currently contains:
 For each additional module, add a program record and its own verified content, source hierarchy, state/local routing, and tools. Do not reuse Medicaid rules or data fields for SNAP, housing, or veterans' programs.
 
 ## Medicaid state data
-The initial state dataset is a partial research tracker. It includes a small number of public state announcements and labels other records unverified where no announcement was confirmed in the source set. It is not a complete CMS approval database. An announced state plan is not the same as CMS approval. Never convert an unverified record to announced or declined without a reliable official source and a new review date.
+The initial state dataset is a partial research tracker. It distinguishes announced participation, announced intent, no election verified, a state-reported decision not to participate, and a current CMS state-page statement that the requirement does not apply. It is not a complete CMS approval database or a determination that the requirement applies to every Medicaid member in a state. Each record includes a CMS state-specific page URL. Always open that official page and the state agency's instructions. Never convert an unverified record to another status without a reliable official source and a new review date.
 
 ## Privacy and product boundaries
 - Do not add patient names, Medicaid IDs, Social Security numbers, diagnoses, detailed income records, benefit documents, or other sensitive personal data.
