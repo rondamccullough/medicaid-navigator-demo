@@ -1,0 +1,466 @@
+{
+  "last_reviewed": "2026-11-27",
+  "federal_source": "https://www.medicaid.gov/Federal-Policy-Guidance/Downloads/smd26006.pdf",
+  "federal_summary": "CMS guidance dated November 13, 2026 offers states an optional hold-harmless period through June 30, 2027. A participating state must still assess whether applicable people meet the requirement or qualify for an exclusion or exception; the state may suspend denials and disenrollments based solely on community-engagement noncompliance during its approved period.",
+  "states": [
+    {
+      "name": "Alabama",
+      "code": "AL",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Alaska",
+      "code": "AK",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Arizona",
+      "code": "AZ",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Arkansas",
+      "code": "AR",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "California",
+      "code": "CA",
+      "status": "intent",
+      "announcement_date": "2026-11-18",
+      "source_url": "https://www.dhcs.ca.gov/news/dhcs-stakeholder-update-november-18-2026/",
+      "summary": "California announced its intent to use the hold-harmless option and planned to submit a mitigation plan to CMS. This is not represented here as final CMS approval.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Colorado",
+      "code": "CO",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Connecticut",
+      "code": "CT",
+      "status": "announced",
+      "announcement_date": "2026-11-16",
+      "source_url": "https://portal.ct.gov/governor/news/press-releases/2026/11-2026/governor-lamont-and-commissioner-barton-reeves-announce-ct-will-participate-in-hold-harmless-period?language=en_US",
+      "summary": "Connecticut announced participation for HUSKY D members through June 30, 2027.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Delaware",
+      "code": "DE",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "District of Columbia",
+      "code": "DC",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Florida",
+      "code": "FL",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Georgia",
+      "code": "GA",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Hawaii",
+      "code": "HI",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Idaho",
+      "code": "ID",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Illinois",
+      "code": "IL",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Indiana",
+      "code": "IN",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Iowa",
+      "code": "IA",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Kansas",
+      "code": "KS",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Kentucky",
+      "code": "KY",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Louisiana",
+      "code": "LA",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Maine",
+      "code": "ME",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Maryland",
+      "code": "MD",
+      "status": "announced",
+      "announcement_date": "2026-11-20",
+      "source_url": "https://health.maryland.gov/newsroom/Pages/Maryland%20to%20delay%20enforcement%20of%20new%20Medicaid%20work%20requirements%20through%20June%2030%2C%202027%2C%20helping%20Marylanders%20maintain%20coverage.aspx",
+      "summary": "Maryland announced it will pursue delayed enforcement through June 30, 2027. Members will still be asked to verify whether they meet the requirement or qualify for an exclusion.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Massachusetts",
+      "code": "MA",
+      "status": "announced",
+      "announcement_date": "2026-11-24",
+      "source_url": "https://www.mass.gov/news/masshealth-announces-six-month-grace-period-for-compliance-with-federal-work-and-education-requirements",
+      "summary": "MassHealth announced participation through June 30, 2027.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Michigan",
+      "code": "MI",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Minnesota",
+      "code": "MN",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Mississippi",
+      "code": "MS",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Missouri",
+      "code": "MO",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Montana",
+      "code": "MT",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Nebraska",
+      "code": "NE",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Nevada",
+      "code": "NV",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "New Hampshire",
+      "code": "NH",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "New Jersey",
+      "code": "NJ",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "New Mexico",
+      "code": "NM",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "New York",
+      "code": "NY",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "North Carolina",
+      "code": "NC",
+      "status": "announced",
+      "announcement_date": "2026-11-25",
+      "source_url": "https://www.ncdhhs.gov/news/press-releases/2026/11/25/north-carolina-opts-federal-six-month-hold-harmless-grace-period-new-medicaid-expansion-work",
+      "summary": "North Carolina announced it is opting into the six-month hold-harmless period through June 30, 2027.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "North Dakota",
+      "code": "ND",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Ohio",
+      "code": "OH",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Oklahoma",
+      "code": "OK",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Oregon",
+      "code": "OR",
+      "status": "announced",
+      "announcement_date": "2026-11-23",
+      "source_url": "https://www.oregon.gov/oha/ERD/Pages/OHA-to-delay-enforcement-of-new-federal-Medicaid-work-rules-to-keep-people-in-Oregon-insured-11.23.2026.aspx",
+      "summary": "Oregon announced it will opt into the hold-harmless period through June 30, 2027.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Pennsylvania",
+      "code": "PA",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Rhode Island",
+      "code": "RI",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "South Carolina",
+      "code": "SC",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "South Dakota",
+      "code": "SD",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Tennessee",
+      "code": "TN",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Texas",
+      "code": "TX",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Utah",
+      "code": "UT",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Vermont",
+      "code": "VT",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Virginia",
+      "code": "VA",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Washington",
+      "code": "WA",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "West Virginia",
+      "code": "WV",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Wisconsin",
+      "code": "WI",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    },
+    {
+      "name": "Wyoming",
+      "code": "WY",
+      "status": "unverified",
+      "announcement_date": null,
+      "source_url": "https://www.medicaid.gov/about-us/where-can-people-get-help-medicaid-chip",
+      "summary": "No state-specific hold-harmless election has been verified in this preview. The federal January 1, 2027 date remains the baseline unless the state adopts an approved hold-harmless period or another approved implementation option.",
+      "reviewed_on": "2026-11-27"
+    }
+  ]
+}
