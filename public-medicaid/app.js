@@ -5,6 +5,7 @@ let programData = null;
 const statusLabels = {
   announced: { label: "State announced participation", className: "announced", detail: "The state has publicly announced that it plans to use the optional CMS hold-harmless period. An announcement is not the same as confirmed CMS approval. The state still assesses applicable individuals; an approved period may pause certain denials or disenrollments based solely on community-engagement noncompliance." },
   intent: { label: "State announced intent", className: "intent", detail: "The state has announced an intention to use the option or submit a plan. This is not proof of CMS approval. Check the state and CMS for the latest status." },
+  not_applicable: { label: "CMS page currently says requirement does not apply", className: "not-applicable", detail: "CMS's current state-specific page says the new Medicaid community-engagement work requirement does not apply in this state. This is a state-page applicability statement, not a hold-harmless election. Recheck the official CMS page and state agency for updates." },
   declined: { label: "State announced it will not participate", className: "declined", detail: "A state announcement says it will not use this optional hold-harmless period. The federal implementation framework may still apply to defined individuals, subject to exclusions, exceptions, and any other approved relief." },
   unverified: { label: "No election verified in this guide", className: "unverified", detail: "We have not verified a public state announcement in this independent tracker. This does not mean the state declined. Check the official CMS state page and your state Medicaid agency." }
 };
@@ -34,7 +35,7 @@ function addLink(parent, href, label, className = "resource-link") {
   parent.appendChild(link);
 }
 function getStatePageUrl(state) {
-  return "https://www.medicaid.gov/renew-info/" + state.code.toLowerCase();
+  return state.cms_state_page_url || ("https://www.medicaid.gov/renew-info/" + state.code.toLowerCase());
 }
 function renderPrograms() {
   const container = $("program-cards");
@@ -76,7 +77,8 @@ function renderStateGroups() {
   container.replaceChildren();
   [
     { key: "announced", title: "Announced participation", note: "Public state announcements; CMS approval is a separate step." },
-    { key: "intent", title: "Announced intent", note: "A stated intention is not confirmation of CMS approval." }
+    { key: "intent", title: "Announced intent", note: "A stated intention is not confirmation of CMS approval." },
+    { key: "not_applicable", title: "CMS page says requirement does not apply", note: "This is a current CMS state-page statement. Open the official page to confirm details." }
   ].forEach((group) => {
     const matches = stateData.states.filter((state) => state.status === group.key);
     const card = makeElement("div", "group-card " + group.key);
