@@ -6,7 +6,9 @@ A public-facing utility website separate from the paid FQHC Clinic Track. Medica
 - index.html: responsive public utility homepage, guided next-step builder, state selector, activity planner, deadline calculator, and program directory.
 - programs.json: program registry, official resource links, and rollout status. Add future programs here without rebuilding the homepage layout.
 - state-status.json: state-level Medicaid announcement records, source links, summaries, and review dates.
-- app.js: browser-only rendering and tool calculations. No backend, user account, or patient data store.
+- app.js: homepage rendering and Medicaid next-step builder. No backend, user account, or patient data store.
+- tool-pages.js: shared browser-only logic for focused activity-hour, renewal-checklist, and deadline-calculator pages.
+- medicaid-80-hour-tracker.html, medicaid-renewal-checklist.html, medicaid-notice-deadline-calculator.html: focused search landing pages with dedicated interactive tools.
 - styles.css and components.css: responsive visual system, accessible controls, and print layout.
 - guides.html: original Medicaid educational content and official references.
 - about.html, editorial-policy.html, privacy.html, terms.html: trust, source, privacy, and use disclosures.
@@ -16,7 +18,7 @@ A public-facing utility website separate from the paid FQHC Clinic Track. Medica
 ## Utility tools in the current Medicaid module
 1. State status lookup: shows the independent tracker's status, source links, review date, CMS state-specific page, and official Medicaid agency directory.
 2. Next-step builder: creates a general checklist for preparation, notices, renewals, applications, or questions about applicability.
-3. Monthly activity planner: totals user-entered hours across activity categories and displays the 80-hour planning reference. It also displays the $580 monthly earnings pathway currently listed by CMS.
+3. Monthly activity planner: totals user-entered hours across activity categories and displays the 80-hour planning reference. It also displays the $580 monthly earnings pathway and half-time education route currently described in CMS public guidance.
 4. Deadline calculator: counts calendar days until a date entered by the visitor.
 
 The planner and calculator run only in the visitor's browser. The values are not transmitted to Radiant Motive or stored on a server. They are not eligibility, compliance, or deadline determinations.
